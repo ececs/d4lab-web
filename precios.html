@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAQ & Presupuesto | D4Lab</title>
+<meta name="description" content="Preguntas frecuentes sobre los servicios de D4Lab. Presupuesto personalizado sin compromiso."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#64FFDA", "on-primary": "#001a14",
+          "surface": "#0a192f", "surface-container": "#112240",
+          "surface-container-high": "#1d2d50", "surface-container-low": "#020c1b",
+          "on-surface": "#ccd6f6", "on-surface-variant": "#8892b0", "outline": "#233554",
+        },
+        fontFamily: { "headline": ["Space Grotesk","sans-serif"], "body": ["Inter","sans-serif"], "label": ["Space Grotesk","sans-serif"] },
+        borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "1rem", "full": "9999px" },
+      },
+    },
+  }
+</script>
+<style>
+  .glass { background: rgba(17,34,64,0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(100,255,218,0.1); }
+  .text-glow { text-shadow: 0 0 15px rgba(100,255,218,0.4); }
+  .blueprint-grid { background-image: linear-gradient(to right, rgba(100,255,218,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(100,255,218,0.05) 1px, transparent 1px); background-size: 40px 40px; }
+  .nav-item::after { content: ''; display: block; width: 0; height: 2px; background: #64FFDA; transition: width .3s; }
+  .nav-item:hover::after { width: 100%; }
+  .kinetic-border { border: 1px solid rgba(100,255,218,0.2); transition: border-color 0.3s ease, background 0.3s ease; }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  #nav-header.scrolled { background: rgba(10,25,47,0.97); box-shadow: 0 1px 0 rgba(100,255,218,0.1); }
+  #mobile-menu { display: none; }
+  #mobile-menu.open { display: flex; }
+  /* FAQ accordion */
+  details summary { cursor: pointer; list-style: none; }
+  details summary::-webkit-details-marker { display: none; }
+  details[open] summary .icon-plus { display: none; }
+  details[open] summary .icon-minus { display: block; }
+  details summary .icon-minus { display: none; }
+  details[open] { border-color: rgba(100,255,218,0.4) !important; }
+  details[open] summary { color: #64FFDA; }
+</style>
+</head>
+<body class="bg-surface font-body text-on-surface overflow-x-hidden">
+
+<!-- Header -->
+<header id="nav-header" class="fixed top-0 left-0 right-0 z-50 glass border-b border-outline/30 transition-all">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex h-20 items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 group">
+      <div class="relative size-10 flex items-center justify-center">
+        <div class="absolute inset-0 border border-primary/40 rounded-sm rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+        <span class="material-symbols-outlined text-primary text-lg">terminal</span>
+      </div>
+      <span class="text-white text-xl font-headline font-bold tracking-tight">D4Lab<span class="text-primary">.dev</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-10">
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="servicios.html">Servicios</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="sobre-mi.html">Sobre mí</a>
+      <a class="nav-item text-primary text-xs font-label font-bold uppercase tracking-[0.2em]" href="precios.html">FAQ</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="blog.html">Blog</a>
+    </nav>
+    <a href="contacto.html" class="hidden md:inline-flex bg-primary px-6 py-2 rounded-sm text-on-primary font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all items-center gap-2">Contactar</a>
+    <button id="menu-btn" class="md:hidden text-primary" aria-label="Menú"><span class="material-symbols-outlined text-3xl">menu</span></button>
+  </div>
+  <div id="mobile-menu" class="flex-col px-6 pb-6 gap-4 md:hidden">
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="servicios.html">Servicios</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="sobre-mi.html">Sobre mí</a>
+    <a class="text-primary text-sm font-label font-bold uppercase tracking-[0.2em]" href="precios.html">FAQ</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="blog.html">Blog</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="contacto.html">Contacto</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="relative pt-40 pb-20 px-6 overflow-hidden">
+  <div class="absolute inset-0 blueprint-grid opacity-20"></div>
+  <div class="absolute top-1/3 left-1/3 w-96 h-96 bg-primary/5 rounded-full blur-[120px]"></div>
+  <div class="max-w-4xl mx-auto relative z-10 text-center">
+    <span class="text-primary text-[10px] uppercase tracking-[0.4em] font-label font-bold mb-4 block">Preguntas frecuentes</span>
+    <h1 class="text-5xl md:text-6xl font-headline font-bold text-white tracking-tighter text-glow mb-6">FAQ &<br/>Presupuesto</h1>
+    <p class="text-on-surface-variant text-lg font-light leading-relaxed max-w-2xl mx-auto">
+      No tengo tarifas fijas porque cada proyecto es diferente. Aquí respondo las preguntas más habituales. Si tienes alguna duda más, escríbeme sin compromiso.
+    </p>
+  </div>
+</section>
+
+<!-- Por qué no hay precios fijos -->
+<section class="px-6 max-w-4xl mx-auto mb-12">
+  <div class="glass rounded-sm p-8 border border-primary/20 reveal">
+    <div class="flex items-start gap-4">
+      <span class="material-symbols-outlined text-primary text-3xl mt-1">info</span>
+      <div>
+        <h2 class="text-white font-headline font-bold text-lg mb-2">¿Por qué no hay precios fijos?</h2>
+        <p class="text-on-surface-variant font-light leading-relaxed">
+          El precio de un proyecto depende de muchos factores: la complejidad, el tiempo estimado, si es presencial o remoto, si incluye soporte posterior y qué tecnologías son necesarias. Prefiero darte un presupuesto honesto y ajustado a lo que realmente necesitas, en lugar de un precio genérico que no encaje. <strong class="text-on-surface">Siempre sin compromiso y con respuesta rápida.</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="px-6 max-w-4xl mx-auto pb-32">
+  <div class="space-y-3 reveal">
+
+    <details class="kinetic-border rounded-sm group">
+      <summary class="flex items-center justify-between p-6 text-white font-headline font-bold transition-colors">
+        <span>¿Trabajas de forma remota o presencial?</span>
+        <div class="flex-shrink-0 ml-4">
+          <span class="material-symbols-outlined icon-plus text-primary">add</span>
+          <span class="material-symbols-outlined icon-minus text-primary">remove</span>
+        </div>
+      </summary>
+      <div class="px-6 pb-6 text-on-surface-variant font-light leading-relaxed">
+        <p>Ambas modalidades. Para soporte técnico presencial me desplazo por Tenerife (principalmente el Sur y Santa Cruz). Para desarrollo web, apps, soporte remoto e infraestructura trabajo desde cualquier lugar del mundo sin problema. Muchas veces es más eficiente resolver las cosas en remoto.</p>
+      </div>
+    </details>
+
+    <details class="kinetic-border rounded-sm">
+      <summary class="flex items-center justify-between p-6 text-white font-headline font-bold transition-colors">
+        <span>¿Cuánto cuesta una web o una app?</span>
+        <div class="flex-shrink-0 ml-4">
+          <span class="material-symbols-outlined icon-plus text-primary">add</span>
+          <span class="material-symbols-outlined icon-minus text-primary">remove</span>
+        </div>
+      </summary>
+      <div class="px-6 pb-6 text-on-surface-variant font-light leading-relaxed space-y-3">
+        <p>Depende del alcance del proyecto. Una landing page sencilla no cuesta lo mismo que una aplicación web con panel de administración, base de datos e integración de IA. Para darte una cifra concreta necesito conocer tus necesidades.</p>
+        <p>Lo que sí te puedo decir: trabajo con presupuestos ajustados a la realidad de autónomos y PYMEs. Nada de precios de agencia inflados.</p>
+        <a href="mailto:eudaldocal@gmail.com" class="inline-flex items-center gap-2 text-primary text-sm font-label font-bold uppercase tracking-[0.2em] mt-2 hover:gap-3 transition-all">
+          Cuéntame tu proyecto <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+    </details>
+
+    <details class="kinetic-border rounded-sm">
+      <summary class="flex items-center justify-between p-6 text-white font-headline font-bold transition-colors">
+        <span>¿Con qué rapidez puedes atender una incidencia?</span>
+        <div class="flex-shrink-0 ml-4">
+          <span class="material-symbols-outlined icon-plus text-primary">add</span>
+          <span class="material-symbols-outlined icon-minus text-primary">remove</span>
+        </div>
+      </summary>
+      <div class="px-6 pb-6 text-on-surface-variant font-light leading-relaxed">
+        <p>Para soporte remoto suelo responder en el mismo día. Para soporte presencial en Tenerife, me coordino contigo para el desplazamiento lo antes posible. Si tienes necesidades de respuesta urgente recurrente, podemos acordar un nivel de servicio específico en el presupuesto.</p>
+      </div>
+    </details>
+
+    <details class="kinetic-border rounded-sm">
+      <summary class="flex items-center justify-between p-6 text-white font-headline font-bold transition-colors">
+        <span>¿Trabajas con particulares, autónomos o solo empresas?</span>
+        <div class="flex-shrink-0 ml-4">
+          <span class="material-symbols-outlined icon-plus text-primary">add</span>
+          <span class="material-symbols-outlined icon-minus text-primary">remove</span>
+        </div>
+      </summary>
+      <div class="px-6 pb-6 text-on-surface-variant font-light leading-relaxed">
+        <p>Con todos. Tanto si eres un particular que necesita reparar el portátil o montar una web personal, como si eres un autónomo que quiere digitalizar su negocio o una empresa que necesita soporte IT o un proyecto de domótica. Me adapto al tamaño y la necesidad.</p>
+      </div>
+    </details>
+
+    <details class="kinetic-border rounded-sm">
+      <summary class="flex items-center justify-between p-6 text-white font-headline font-bold transition-colors">
+        <span>¿Tienes experiencia en mi sector?</span>
+        <div class="flex-shrink-0 ml-4">
+          <span class="material-symbols-outlined icon-plus text-primary">add</span>
+          <span class="material-symbols-outlined icon-minus text-primary">remove</span>
+        </div>
+      </summary>
+      <div class="px-6 pb-6 text-on-surface-variant font-light leading-relaxed">
+        <p>Tengo experiencia en entornos industriales (16 años en infraestructura crítica), educativo (TesIA.es), electrónica y tecnología de consumo, y domótica residencial. Si tu sector es diferente, cuéntame el contexto: la experiencia técnica generalista me permite adaptarme con rapidez a cualquier ámbito.</p>
+      </div>
+    </details>
+
+    <details class="kinetic-border rounded-sm">
+      <summary class="flex items-center justify-between p-6 text-white font-headline font-bold transition-colors">
+        <span>¿Puedo ver ejemplos de tu trabajo?</span>
+        <div class="flex-shrink-0 ml-4">
+          <span class="material-symbols-outlined icon-plus text-primary">add</span>
+          <span class="material-symbols-outlined icon-minus text-primary">remove</span>
+        </div>
+      </summary>
+      <div class="px-6 pb-6 text-on-surface-variant font-light leading-relaxed space-y-3">
+        <p>El proyecto más representativo es <strong class="text-on-surface">TesIA.es</strong> — una plataforma web completa que he diseñado, construido y que está en producción. Puedes visitarla directamente para ver el resultado.</p>
+        <p>Para código, mi GitHub está disponible en <strong class="text-on-surface">github.com/ececs</strong>.</p>
+        <div class="flex flex-wrap gap-3 mt-3">
+          <a href="https://tesia.es" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary text-sm font-label font-bold uppercase tracking-[0.2em] hover:gap-3 transition-all">
+            Ver TesIA.es <span class="material-symbols-outlined text-sm">open_in_new</span>
+          </a>
+          <a href="https://github.com/ececs" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary text-sm font-label font-bold uppercase tracking-[0.2em] hover:gap-3 transition-all">
+            Ver GitHub <span class="material-symbols-outlined text-sm">open_in_new</span>
+          </a>
+        </div>
+      </div>
+    </details>
+
+    <details class="kinetic-border rounded-sm">
+      <summary class="flex items-center justify-between p-6 text-white font-headline font-bold transition-colors">
+        <span>¿Cómo funciona el plan de mantenimiento mensual?</span>
+        <div class="flex-shrink-0 ml-4">
+          <span class="material-symbols-outlined icon-plus text-primary">add</span>
+          <span class="material-symbols-outlined icon-minus text-primary">remove</span>
+        </div>
+      </summary>
+      <div class="px-6 pb-6 text-on-surface-variant font-light leading-relaxed space-y-3">
+        <p>El plan de mantenimiento mensual cubre el cuidado continuo de tu web o app: actualizaciones de seguridad, copias de seguridad verificadas, monitorización de disponibilidad, corrección de bugs menores y pequeños ajustes de contenido o visuales.</p>
+        <p>Cada plan tiene un número de horas de intervención mensual pactado. Los cambios grandes (nuevas funcionalidades, rediseños) quedan fuera del plan y se presupuestan aparte. El contrato es mensual y sin permanencia.</p>
+        <p>Hay modalidades para webs estáticas, webs con backend o CMS, y apps web más complejas. Contáctame para que te indique qué encaja mejor con tu caso.</p>
+        <a href="mailto:eudaldocal@gmail.com" class="inline-flex items-center gap-2 text-primary text-sm font-label font-bold uppercase tracking-[0.2em] mt-2 hover:gap-3 transition-all">
+          Consultar plan <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+    </details>
+
+    <details class="kinetic-border rounded-sm">
+      <summary class="flex items-center justify-between p-6 text-white font-headline font-bold transition-colors">
+        <span>¿Ofreces mantenimiento o soporte después de entregar el proyecto?</span>
+        <div class="flex-shrink-0 ml-4">
+          <span class="material-symbols-outlined icon-plus text-primary">add</span>
+          <span class="material-symbols-outlined icon-minus text-primary">remove</span>
+        </div>
+      </summary>
+      <div class="px-6 pb-6 text-on-surface-variant font-light leading-relaxed">
+        <p>Sí. El mantenimiento posterior se puede acordar como un servicio adicional: actualizaciones, corrección de errores, mejoras o soporte técnico continuo. Lo definimos en el presupuesto según lo que necesites.</p>
+      </div>
+    </details>
+
+    <details class="kinetic-border rounded-sm">
+      <summary class="flex items-center justify-between p-6 text-white font-headline font-bold transition-colors">
+        <span>¿Cómo es el proceso de trabajo?</span>
+        <div class="flex-shrink-0 ml-4">
+          <span class="material-symbols-outlined icon-plus text-primary">add</span>
+          <span class="material-symbols-outlined icon-minus text-primary">remove</span>
+        </div>
+      </summary>
+      <div class="px-6 pb-6 text-on-surface-variant font-light leading-relaxed">
+        <ol class="space-y-2 list-none">
+          <li class="flex items-start gap-3"><span class="text-primary font-headline font-bold">01</span><span>Me cuentas lo que necesitas por email o teléfono.</span></li>
+          <li class="flex items-start gap-3"><span class="text-primary font-headline font-bold">02</span><span>Te envío un presupuesto detallado y sin compromiso en el menor tiempo posible.</span></li>
+          <li class="flex items-start gap-3"><span class="text-primary font-headline font-bold">03</span><span>Si te parece bien, acordamos plazos y empezamos.</span></li>
+          <li class="flex items-start gap-3"><span class="text-primary font-headline font-bold">04</span><span>Te mantengo informado del avance y puedes hacer cambios durante el proceso.</span></li>
+          <li class="flex items-start gap-3"><span class="text-primary font-headline font-bold">05</span><span>Entrega, pruebas y soporte posterior si lo necesitas.</span></li>
+        </ol>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<!-- CTA Final -->
+<section class="py-24 px-6 bg-surface-container-low border-t border-primary/10">
+  <div class="max-w-4xl mx-auto text-center reveal">
+    <span class="text-primary text-[10px] uppercase tracking-[0.4em] font-label font-bold mb-4 block">¿Listo para empezar?</span>
+    <h2 class="text-4xl font-headline font-bold text-white tracking-tight mb-4">Escríbeme. Sin rodeos.</h2>
+    <p class="text-on-surface-variant text-lg font-light mb-10 max-w-xl mx-auto">
+      Cuéntame tu proyecto o problema. Respondo rápido y el presupuesto no tiene ningún compromiso.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="mailto:eudaldocal@gmail.com" class="bg-primary text-on-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs shadow-xl shadow-primary/20 hover:brightness-110 transition-all flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">mail</span>
+        eudaldocal@gmail.com
+      </a>
+      <a href="tel:+34666750753" class="border border-primary/30 text-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs hover:bg-primary/5 transition-all flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">phone</span>
+        +34 666 750 753
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-surface-container-low py-12 px-6 border-t border-primary/10">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <a href="index.html" class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary">terminal</span>
+      <span class="text-white font-headline font-bold">D4Lab<span class="text-primary">.dev</span></span>
+    </a>
+    <nav class="flex flex-wrap gap-6 text-on-surface-variant text-xs font-label font-bold uppercase tracking-[0.2em]">
+      <a href="index.html" class="hover:text-primary transition-colors">Inicio</a>
+      <a href="servicios.html" class="hover:text-primary transition-colors">Servicios</a>
+      <a href="sobre-mi.html" class="hover:text-primary transition-colors">Sobre mí</a>
+      <a href="precios.html" class="text-primary">FAQ</a>
+      <a href="blog.html" class="hover:text-primary transition-colors">Blog</a>
+      <a href="contacto.html" class="hover:text-primary transition-colors">Contacto</a>
+    </nav>
+    <p class="text-on-surface-variant text-[9px] font-headline uppercase tracking-[0.3em]">© 2026 D4Lab</p>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav-header');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+  document.getElementById('menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('open'));
+  const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }), { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
+</script>
+</body>
+</html>

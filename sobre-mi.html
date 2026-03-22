@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sobre mí | D4Lab</title>
+<meta name="description" content="Eudaldo Cal Saul — Desarrollador Full-Stack y Técnico de Sistemas con 20 años de experiencia. Basado en Tenerife."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#64FFDA", "on-primary": "#001a14",
+          "surface": "#0a192f", "surface-container": "#112240",
+          "surface-container-high": "#1d2d50", "surface-container-low": "#020c1b",
+          "on-surface": "#ccd6f6", "on-surface-variant": "#8892b0", "outline": "#233554",
+        },
+        fontFamily: { "headline": ["Space Grotesk","sans-serif"], "body": ["Inter","sans-serif"], "label": ["Space Grotesk","sans-serif"] },
+        borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "1rem", "full": "9999px" },
+      },
+    },
+  }
+</script>
+<style>
+  .glass { background: rgba(17,34,64,0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(100,255,218,0.1); }
+  .text-glow { text-shadow: 0 0 15px rgba(100,255,218,0.4); }
+  .blueprint-grid { background-image: linear-gradient(to right, rgba(100,255,218,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(100,255,218,0.05) 1px, transparent 1px); background-size: 40px 40px; }
+  .nav-item::after { content: ''; display: block; width: 0; height: 2px; background: #64FFDA; transition: width .3s; }
+  .nav-item:hover::after { width: 100%; }
+  .kinetic-border { border: 1px solid rgba(100,255,218,0.2); transition: border-color 0.3s ease, background 0.3s ease; }
+  .kinetic-border:hover { border-color: rgba(100,255,218,0.5); }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  #nav-header.scrolled { background: rgba(10,25,47,0.97); box-shadow: 0 1px 0 rgba(100,255,218,0.1); }
+  #mobile-menu { display: none; }
+  #mobile-menu.open { display: flex; }
+  .skill-bar { height: 2px; background: rgba(100,255,218,0.15); border-radius: 1px; overflow: hidden; }
+  .skill-bar-fill { height: 100%; background: #64FFDA; border-radius: 1px; transition: width 1.2s ease; width: 0; }
+  .skill-bar-fill.animated { width: var(--level); }
+</style>
+</head>
+<body class="bg-surface font-body text-on-surface overflow-x-hidden">
+
+<!-- Header -->
+<header id="nav-header" class="fixed top-0 left-0 right-0 z-50 glass border-b border-outline/30 transition-all">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex h-20 items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 group">
+      <div class="relative size-10 flex items-center justify-center">
+        <div class="absolute inset-0 border border-primary/40 rounded-sm rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+        <span class="material-symbols-outlined text-primary text-lg">terminal</span>
+      </div>
+      <span class="text-white text-xl font-headline font-bold tracking-tight">D4Lab<span class="text-primary">.dev</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-10">
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="servicios.html">Servicios</a>
+      <a class="nav-item text-primary text-xs font-label font-bold uppercase tracking-[0.2em]" href="sobre-mi.html">Sobre mí</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="precios.html">FAQ</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="blog.html">Blog</a>
+    </nav>
+    <a href="contacto.html" class="hidden md:inline-flex bg-primary px-6 py-2 rounded-sm text-on-primary font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all items-center gap-2">Contactar</a>
+    <button id="menu-btn" class="md:hidden text-primary" aria-label="Menú"><span class="material-symbols-outlined text-3xl">menu</span></button>
+  </div>
+  <div id="mobile-menu" class="flex-col px-6 pb-6 gap-4 md:hidden">
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="servicios.html">Servicios</a>
+    <a class="text-primary text-sm font-label font-bold uppercase tracking-[0.2em]" href="sobre-mi.html">Sobre mí</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="precios.html">FAQ</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="blog.html">Blog</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="contacto.html">Contacto</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="relative pt-40 pb-24 px-6 overflow-hidden">
+  <div class="absolute inset-0 blueprint-grid opacity-20"></div>
+  <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[120px]"></div>
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <span class="text-primary text-[10px] uppercase tracking-[0.4em] font-label font-bold mb-4 block">Sobre mí</span>
+        <h1 class="text-5xl md:text-6xl font-headline font-bold text-white tracking-tighter text-glow mb-6">Eudaldo<br/>Cal Saul</h1>
+        <p class="text-primary font-label font-bold text-sm uppercase tracking-[0.2em] mb-6">Full-Stack Developer & Técnico de Sistemas</p>
+        <p class="text-on-surface-variant text-lg font-light leading-relaxed mb-8">
+          20 años de experiencia técnica. Desde reparar hardware en una tienda de electrónica hasta operar sistemas industriales críticos 24/7, y ahora construyendo productos web completos desde cero.
+        </p>
+        <p class="text-on-surface-variant font-light leading-relaxed mb-8">
+          Entiendo la tecnología de arriba abajo: sé lo que pasa en el servidor, en la red, en el hardware y en la interfaz del usuario. Eso me permite ofrecer soluciones reales y completas, sin depender de terceros para cada pieza del puzzle.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://www.linkedin.com/in/eudaldo-alvaro-c-b37aa731" target="_blank" rel="noopener" class="kinetic-border px-4 py-2 rounded-sm flex items-center gap-2 text-on-surface-variant text-xs font-label font-bold uppercase tracking-[0.2em] hover:text-primary transition-all">
+            <svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/ececs" target="_blank" rel="noopener" class="kinetic-border px-4 py-2 rounded-sm flex items-center gap-2 text-on-surface-variant text-xs font-label font-bold uppercase tracking-[0.2em] hover:text-primary transition-all">
+            <svg class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            GitHub
+          </a>
+          <a href="https://tesia.es" target="_blank" rel="noopener" class="kinetic-border px-4 py-2 rounded-sm flex items-center gap-2 text-on-surface-variant text-xs font-label font-bold uppercase tracking-[0.2em] hover:text-primary transition-all">
+            <span class="material-symbols-outlined text-sm">language</span>
+            TesIA.es
+          </a>
+        </div>
+      </div>
+      <!-- Stats card -->
+      <div class="glass rounded-sm p-8 reveal">
+        <div class="space-y-6">
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="text-on-surface text-sm font-label font-bold">Desarrollo Web & Apps</span>
+              <span class="text-primary text-xs font-label font-bold">Avanzado</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--level: 85%"></div></div>
+            <p class="text-on-surface-variant text-xs mt-1 font-light">PHP · Python · JavaScript · SQL · Firebase</p>
+          </div>
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="text-on-surface text-sm font-label font-bold">Sistemas & Redes</span>
+              <span class="text-primary text-xs font-label font-bold">Experto</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--level: 92%"></div></div>
+            <p class="text-on-surface-variant text-xs mt-1 font-light">Linux · Windows Server · TCP/IP · Apache</p>
+          </div>
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="text-on-surface text-sm font-label font-bold">Hardware & Mantenimiento</span>
+              <span class="text-primary text-xs font-label font-bold">Experto</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--level: 95%"></div></div>
+            <p class="text-on-surface-variant text-xs mt-1 font-light">Diagnóstico · Reparación · Preventivo</p>
+          </div>
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="text-on-surface text-sm font-label font-bold">Domótica & IoT</span>
+              <span class="text-primary text-xs font-label font-bold">Avanzado</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--level: 78%"></div></div>
+            <p class="text-on-surface-variant text-xs mt-1 font-light">Hardware + software · Automatización</p>
+          </div>
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="text-on-surface text-sm font-label font-bold">Diseño Web & UX</span>
+              <span class="text-primary text-xs font-label font-bold">Avanzado</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--level: 80%"></div></div>
+            <p class="text-on-surface-variant text-xs mt-1 font-light">HTML5 · CSS3 · Tailwind · Responsive</p>
+          </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-primary/10 flex items-center justify-around">
+          <div class="text-center">
+            <span class="text-3xl font-headline font-bold text-white text-glow">20+</span>
+            <p class="text-primary text-[9px] uppercase tracking-widest font-label font-bold mt-1">Años exp.</p>
+          </div>
+          <div class="w-px h-10 bg-primary/20"></div>
+          <div class="text-center">
+            <span class="text-3xl font-headline font-bold text-white text-glow">B2</span>
+            <p class="text-primary text-[9px] uppercase tracking-widest font-label font-bold mt-1">Inglés cert.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experiencia -->
+<section class="py-24 px-6 bg-surface-container-low border-t border-primary/10">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-12 reveal">
+      <span class="text-primary text-[10px] uppercase tracking-[0.4em] font-label font-bold mb-4 block">Trayectoria</span>
+      <h2 class="text-4xl font-headline font-bold text-white tracking-tighter">Experiencia</h2>
+    </div>
+    <div class="space-y-4">
+
+      <!-- TesIA -->
+      <div class="kinetic-border rounded-sm p-8 reveal">
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+          <div>
+            <h3 class="text-xl font-headline font-bold text-white">Founder & Lead Product Engineer</h3>
+            <p class="text-primary font-label font-bold text-sm mt-1">TesIA.es</p>
+          </div>
+          <span class="text-on-surface-variant text-xs font-label font-bold uppercase tracking-[0.2em] bg-surface-container px-3 py-1.5 rounded-sm whitespace-nowrap">Feb 2026 – Presente</span>
+        </div>
+        <p class="text-on-surface-variant font-light leading-relaxed mb-4">
+          Diseño, desarrollo y operación completa de una plataforma web de preparación de oposiciones. Arquitectura full-stack, integración de IA, SSR para SEO, comunidad y monetización premium.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-label font-bold uppercase tracking-wide rounded-sm">JavaScript</span>
+          <span class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-label font-bold uppercase tracking-wide rounded-sm">Firebase</span>
+          <span class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-label font-bold uppercase tracking-wide rounded-sm">Node.js</span>
+          <span class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-label font-bold uppercase tracking-wide rounded-sm">Gemini API</span>
+          <span class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-label font-bold uppercase tracking-wide rounded-sm">Tailwind CSS</span>
+          <span class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-label font-bold uppercase tracking-wide rounded-sm">SSR</span>
+        </div>
+      </div>
+
+      <!-- Veolia -->
+      <div class="kinetic-border rounded-sm p-8 reveal">
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+          <div>
+            <h3 class="text-xl font-headline font-bold text-white">Operador de Sistemas Críticos | Técnico de Datos</h3>
+            <p class="text-primary font-label font-bold text-sm mt-1">Operador de Sistemas Críticos · 16 años</p>
+          </div>
+          <span class="text-on-surface-variant text-xs font-label font-bold uppercase tracking-[0.2em] bg-surface-container px-3 py-1.5 rounded-sm whitespace-nowrap">Sep 2007 – Ene 2024</span>
+        </div>
+        <p class="text-on-surface-variant font-light leading-relaxed mb-4">
+          16 años operando infraestructura industrial crítica 24/7 en plantas desaladoras. Diseñé sistemas de análisis de datos, supervisé equipos técnicos complejos y mantuve protocolos de alta disponibilidad con uptime &gt;99%.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-label font-bold uppercase tracking-wide rounded-sm">SCADA</span>
+          <span class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-label font-bold uppercase tracking-wide rounded-sm">Excel VBA</span>
+          <span class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-label font-bold uppercase tracking-wide rounded-sm">Hardware industrial</span>
+          <span class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-label font-bold uppercase tracking-wide rounded-sm">Análisis de datos</span>
+          <span class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-label font-bold uppercase tracking-wide rounded-sm">Alta disponibilidad</span>
+        </div>
+      </div>
+
+      <!-- Visanta -->
+      <div class="kinetic-border rounded-sm p-8 reveal">
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+          <div>
+            <h3 class="text-xl font-headline font-bold text-white">Asesor Técnico Especializado</h3>
+            <p class="text-primary font-label font-bold text-sm mt-1">Asesor Técnico Especializado</p>
+          </div>
+          <span class="text-on-surface-variant text-xs font-label font-bold uppercase tracking-[0.2em] bg-surface-container px-3 py-1.5 rounded-sm whitespace-nowrap">Jul 2004 – Ago 2007</span>
+        </div>
+        <p class="text-on-surface-variant font-light leading-relaxed mb-4">
+          Asesoramiento técnico especializado en hardware, informática y fotografía. Soporte al cliente, diagnóstico de equipos y gestión de inventario tecnológico.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-label font-bold uppercase tracking-wide rounded-sm">Hardware</span>
+          <span class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-label font-bold uppercase tracking-wide rounded-sm">Soporte técnico</span>
+          <span class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-label font-bold uppercase tracking-wide rounded-sm">Electrónica</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Formación -->
+<section class="py-24 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-12 reveal">
+      <span class="text-primary text-[10px] uppercase tracking-[0.4em] font-label font-bold mb-4 block">Educación</span>
+      <h2 class="text-4xl font-headline font-bold text-white tracking-tighter">Formación</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="kinetic-border rounded-sm p-6 reveal">
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-primary text-3xl mt-1">school</span>
+          <div>
+            <h3 class="text-white font-headline font-bold mb-1">Grado Superior DAW</h3>
+            <p class="text-primary text-xs font-label font-bold uppercase tracking-[0.2em] mb-2">Desarrollo de Aplicaciones Web</p>
+            <p class="text-on-surface-variant text-sm font-light">CIFP César Manrique · 2024–2026</p>
+          </div>
+        </div>
+      </div>
+      <div class="kinetic-border rounded-sm p-6 reveal">
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-primary text-3xl mt-1">school</span>
+          <div>
+            <h3 class="text-white font-headline font-bold mb-1">Grado en Ingeniería Informática</h3>
+            <p class="text-primary text-xs font-label font-bold uppercase tracking-[0.2em] mb-2">Tecnologías de la Información</p>
+            <p class="text-on-surface-variant text-sm font-light">UNED · 2012–2022</p>
+            <p class="text-on-surface-variant text-xs mt-2 font-light">186 créditos aprobados</p>
+          </div>
+        </div>
+      </div>
+      <div class="kinetic-border rounded-sm p-6 reveal">
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-primary text-3xl mt-1">computer</span>
+          <div>
+            <h3 class="text-white font-headline font-bold mb-1">Técnico en Microinformática y Redes</h3>
+            <p class="text-primary text-xs font-label font-bold uppercase tracking-[0.2em] mb-2">Especialización técnica</p>
+            <p class="text-on-surface-variant text-sm font-light">Círculo Informático</p>
+          </div>
+        </div>
+      </div>
+      <!-- Piloto — solo aquí -->
+      <div class="kinetic-border rounded-sm p-6 reveal border-primary/10">
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-primary text-3xl mt-1">flight</span>
+          <div>
+            <h3 class="text-white font-headline font-bold mb-1">Piloto Privado — CPL/IR en curso</h3>
+            <p class="text-primary text-xs font-label font-bold uppercase tracking-[0.2em] mb-2">Teórico ATPL(A) · 236h de vuelo</p>
+            <p class="text-on-surface-variant text-sm font-light">Canvia + BlueTeam Aviation · 2024–2026</p>
+            <p class="text-on-surface-variant text-xs mt-3 font-light leading-relaxed">
+              La aviación enseña algo que el código agradece: los procedimientos son no negociables, las checklists se siguen siempre y los errores tienen consecuencias. Esa mentalidad la aplico en cada proyecto.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stack técnico -->
+<section class="py-24 px-6 bg-surface-container-low border-t border-primary/10">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-12 reveal">
+      <span class="text-primary text-[10px] uppercase tracking-[0.4em] font-label font-bold mb-4 block">Herramientas</span>
+      <h2 class="text-4xl font-headline font-bold text-white tracking-tighter">Stack técnico</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 reveal">
+      <div class="bg-surface-container p-4 rounded-sm text-center kinetic-border">
+        <p class="text-white font-label font-bold text-sm">JavaScript</p>
+        <p class="text-on-surface-variant text-xs font-light mt-1">ES6 / Vanilla</p>
+      </div>
+      <div class="bg-surface-container p-4 rounded-sm text-center kinetic-border">
+        <p class="text-white font-label font-bold text-sm">PHP</p>
+        <p class="text-on-surface-variant text-xs font-light mt-1">Backend</p>
+      </div>
+      <div class="bg-surface-container p-4 rounded-sm text-center kinetic-border">
+        <p class="text-white font-label font-bold text-sm">Python</p>
+        <p class="text-on-surface-variant text-xs font-light mt-1">Backend / Scripts</p>
+      </div>
+      <div class="bg-surface-container p-4 rounded-sm text-center kinetic-border">
+        <p class="text-white font-label font-bold text-sm">HTML5 + CSS3</p>
+        <p class="text-on-surface-variant text-xs font-light mt-1">Frontend</p>
+      </div>
+      <div class="bg-surface-container p-4 rounded-sm text-center kinetic-border">
+        <p class="text-white font-label font-bold text-sm">SQL / MySQL</p>
+        <p class="text-on-surface-variant text-xs font-light mt-1">Bases de datos</p>
+      </div>
+      <div class="bg-surface-container p-4 rounded-sm text-center kinetic-border">
+        <p class="text-white font-label font-bold text-sm">Firebase</p>
+        <p class="text-on-surface-variant text-xs font-light mt-1">Auth, Firestore, Hosting</p>
+      </div>
+      <div class="bg-surface-container p-4 rounded-sm text-center kinetic-border">
+        <p class="text-white font-label font-bold text-sm">Node.js</p>
+        <p class="text-on-surface-variant text-xs font-light mt-1">Express / SSR</p>
+      </div>
+      <div class="bg-surface-container p-4 rounded-sm text-center kinetic-border">
+        <p class="text-white font-label font-bold text-sm">Linux</p>
+        <p class="text-on-surface-variant text-xs font-light mt-1">Admin de sistemas</p>
+      </div>
+      <div class="bg-surface-container p-4 rounded-sm text-center kinetic-border">
+        <p class="text-white font-label font-bold text-sm">Windows Server</p>
+        <p class="text-on-surface-variant text-xs font-light mt-1">Administración</p>
+      </div>
+      <div class="bg-surface-container p-4 rounded-sm text-center kinetic-border">
+        <p class="text-white font-label font-bold text-sm">Git</p>
+        <p class="text-on-surface-variant text-xs font-light mt-1">Control de versiones</p>
+      </div>
+      <div class="bg-surface-container p-4 rounded-sm text-center kinetic-border">
+        <p class="text-white font-label font-bold text-sm">Tailwind CSS</p>
+        <p class="text-on-surface-variant text-xs font-light mt-1">UI / Diseño</p>
+      </div>
+      <div class="bg-surface-container p-4 rounded-sm text-center kinetic-border">
+        <p class="text-white font-label font-bold text-sm">Gemini API</p>
+        <p class="text-on-surface-variant text-xs font-light mt-1">Integración IA</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 px-6">
+  <div class="max-w-4xl mx-auto glass p-12 rounded-sm border border-primary/20 text-center relative overflow-hidden reveal">
+    <div class="absolute -top-20 -right-20 size-64 bg-primary/10 rounded-full blur-[100px]"></div>
+    <h2 class="text-3xl font-headline font-bold text-white mb-4 relative z-10">¿Hablamos?</h2>
+    <p class="text-on-surface-variant mb-8 font-light relative z-10">Si necesitas alguien que entienda tu problema de verdad y lo resuelva, escríbeme.</p>
+    <a href="contacto.html" class="inline-flex items-center gap-2 bg-primary text-on-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs shadow-xl shadow-primary/20 hover:brightness-110 transition-all relative z-10">
+      Ver contacto <span class="material-symbols-outlined text-base">arrow_forward</span>
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-surface-container-low py-12 px-6 border-t border-primary/10">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <a href="index.html" class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary">terminal</span>
+      <span class="text-white font-headline font-bold">D4Lab<span class="text-primary">.dev</span></span>
+    </a>
+    <nav class="flex flex-wrap gap-6 text-on-surface-variant text-xs font-label font-bold uppercase tracking-[0.2em]">
+      <a href="index.html" class="hover:text-primary transition-colors">Inicio</a>
+      <a href="servicios.html" class="hover:text-primary transition-colors">Servicios</a>
+      <a href="sobre-mi.html" class="text-primary">Sobre mí</a>
+      <a href="precios.html" class="hover:text-primary transition-colors">FAQ</a>
+      <a href="blog.html" class="hover:text-primary transition-colors">Blog</a>
+      <a href="contacto.html" class="hover:text-primary transition-colors">Contacto</a>
+    </nav>
+    <p class="text-on-surface-variant text-[9px] font-headline uppercase tracking-[0.3em]">© 2026 D4Lab</p>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav-header');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+  document.getElementById('menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('open'));
+  const observer = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      // Animate skill bars
+      e.target.querySelectorAll('.skill-bar-fill').forEach(bar => bar.classList.add('animated'));
+      observer.unobserve(e.target);
+    }
+  }), { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
+</script>
+</body>
+</html>
