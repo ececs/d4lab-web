@@ -67,6 +67,8 @@
     border: 1px solid rgba(100,255,218,0.16);
   }
   .mockup-embed {
+    position: relative;
+    --device-radius: 34px;
     height: 620px;
     max-width: 860px;
     margin: 0 auto;
@@ -74,13 +76,141 @@
     background: linear-gradient(180deg, #2b3344 0%, #161d2b 100%);
     border-radius: 34px;
     box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    clip-path: inset(0 round var(--device-radius));
   }
   .mockup-embed iframe {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    top: var(--frame-top, 14px);
+    left: var(--frame-left, 14px);
+    width: var(--frame-width, 100%);
+    height: var(--frame-height, 100%);
     border: 0;
     background: #131313;
-    border-radius: 22px;
+    border-radius: inherit;
+    transform: scale(var(--frame-scale, 1));
+    transform-origin: top left;
+  }
+  .mockup-stage {
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    border: 1px solid rgba(100,255,218,0.08);
+  }
+  .controls-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: flex-end;
+  }
+  .mockup-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .view-toggle {
+    background: rgba(17,34,64,0.52);
+    border: 1px solid rgba(100,255,218,0.12);
+  }
+  .view-toggle button.active {
+    background: linear-gradient(135deg, rgba(100,255,218,0.16), rgba(100,255,218,0.04));
+    color: #64FFDA;
+  }
+  .devices-grid {
+    display: grid;
+    grid-template-columns: minmax(500px, 1.15fr) minmax(300px, 0.72fr);
+    gap: 0.85rem;
+    align-items: stretch;
+    justify-content: center;
+  }
+  .device-shell {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255,255,255,0.05);
+    background: linear-gradient(180deg, rgba(30,41,66,0.58) 0%, rgba(14,22,38,0.42) 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.03), 0 18px 36px rgba(0, 0, 0, 0.14);
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .device-shell.tablet-shell {
+    width: min(100%, 554px);
+    border-radius: 18px;
+    padding: 2px;
+  }
+  .device-shell.tablet-shell::before {
+    content: '';
+    width: 3px;
+    height: 3px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.04);
+    box-shadow: 0 0 0 1px rgba(8,16,31,0.08);
+    align-self: center;
+    margin-top: 2px;
+    margin-bottom: 1px;
+  }
+  .device-shell.mobile-shell {
+    width: min(100%, 326px);
+    border-radius: 18px;
+    padding: 0;
+  }
+  .device-shell.mobile-shell::before {
+    content: '';
+    width: 34%;
+    max-width: 52px;
+    height: 3px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.05);
+    align-self: center;
+    margin-top: 2px;
+    margin-bottom: 1px;
+  }
+  .device-shell.mobile-shell::after {
+    content: '';
+    width: 34%;
+    max-width: 66px;
+    height: 2px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.05);
+    align-self: center;
+    margin-top: 1px;
+    margin-bottom: 0;
+  }
+  .mockup-embed.desktop {
+    --device-radius: 26px;
+    height: 760px;
+    max-width: none;
+    padding: 12px;
+    border-radius: 26px;
+  }
+  .mockup-embed.tablet {
+    --device-radius: 16px;
+    width: 100%;
+    height: 800px;
+    max-width: 552px;
+    padding: 0;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .mockup-embed.mobile {
+    --device-radius: 16px;
+    width: 100%;
+    height: 676px;
+    max-width: 324px;
+    padding: 0;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  @media (max-width: 1024px) {
+    .devices-grid {
+      grid-template-columns: 1fr;
+    }
+    .mockup-embed.tablet {
+      max-width: 100%;
+    }
+    .mockup-embed.mobile {
+      max-width: 324px;
+      margin: 0 auto;
+    }
   }
   .mockup-book {
     background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
@@ -90,6 +220,10 @@
     border: 1px solid rgba(100,255,218,0.12);
     background: rgba(17,34,64,0.52);
     transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    min-width: 220px;
+    min-height: 54px;
+    padding: 8px 14px;
+    border-radius: 18px;
   }
   .mockup-tab:hover {
     transform: translateY(-2px);
@@ -161,146 +295,176 @@
       Catálogo de bases visuales por categoría para que puedas elegir una dirección clara antes de construir tu web. Seleccionas una maqueta y la conectamos directamente al presupuesto.
     </p>
     <div class="flex flex-wrap gap-3 mt-10">
-      <a href="#restauracion" class="kinetic-border px-4 py-2 rounded-sm text-xs font-label font-bold text-on-surface-variant hover:text-primary uppercase tracking-[0.15em] transition-all">Restauración</a>
+      <button type="button" data-category-filter="all" class="kinetic-border px-4 py-2 rounded-sm text-xs font-label font-bold text-primary uppercase tracking-[0.15em] transition-all">Todas</button>
+      <button type="button" data-category-filter="restauracion" class="kinetic-border px-4 py-2 rounded-sm text-xs font-label font-bold text-on-surface-variant hover:text-primary uppercase tracking-[0.15em] transition-all">Restauración</button>
+      <button type="button" data-category-filter="comercio" class="kinetic-border px-4 py-2 rounded-sm text-xs font-label font-bold text-on-surface-variant hover:text-primary uppercase tracking-[0.15em] transition-all">Comercio</button>
       <a href="contacto.html" class="kinetic-border px-4 py-2 rounded-sm text-xs font-label font-bold text-on-surface-variant hover:text-primary uppercase tracking-[0.15em] transition-all">Contacto</a>
     </div>
   </div>
 </section>
 
-<section id="restauracion" class="service-section px-6 pb-24">
+<section id="restauracion" data-category-section="restauracion" class="service-section px-6 pb-24">
   <div class="max-w-7xl mx-auto reveal">
     <div class="showcase-card rounded-xl border border-primary/15 p-8 md:p-10 lg:p-12 overflow-hidden relative">
       <div class="absolute inset-0 blueprint-grid opacity-10"></div>
       <div class="absolute -top-16 right-0 w-72 h-72 bg-primary/10 blur-[110px] rounded-full"></div>
-      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-[0.95fr_1.2fr] gap-10 items-center">
+      <div class="relative z-10 space-y-10">
         <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 border border-primary/20 rounded-full mb-5">
-            <span class="material-symbols-outlined text-primary text-sm">deployed_code</span>
-            <span class="text-primary text-[10px] font-label font-bold uppercase tracking-[0.24em]">Catálogo de diseños</span>
-          </div>
           <h2 class="text-3xl md:text-5xl font-headline font-bold text-white tracking-tight mb-4">Elige una base visual y la adapto a tu negocio</h2>
-          <p class="text-on-surface-variant text-base md:text-lg font-light leading-relaxed max-w-xl">
-            Primera categoría activa: restauración. Puedes navegar entre distintas propuestas reales y elegir la que mejor encaja con el tono de tu marca.
-          </p>
-          <div class="mt-6 flex flex-wrap gap-2">
-            <span class="category-chip px-3 py-1.5 rounded-full text-[10px] font-label font-bold uppercase tracking-[0.2em] text-primary">Categoría activa: Restauración</span>
-            <span class="px-3 py-1.5 rounded-full text-[10px] font-label font-bold uppercase tracking-[0.2em] text-on-surface-variant border border-outline">Diseño moderno</span>
-            <span class="px-3 py-1.5 rounded-full text-[10px] font-label font-bold uppercase tracking-[0.2em] text-on-surface-variant border border-outline">Funcional para reservas</span>
-          </div>
-          <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div class="bg-surface-container/80 border border-primary/10 rounded-lg p-4">
-              <p class="text-[10px] text-primary/70 font-label font-bold uppercase tracking-[0.24em] mb-2">Categoría</p>
-              <p class="text-white font-headline font-bold">Restauración</p>
-              <p class="text-on-surface-variant text-sm mt-1">Restaurantes, cafeterías y brunch spots</p>
-            </div>
-            <div class="bg-surface-container/80 border border-primary/10 rounded-lg p-4">
-              <p class="text-[10px] text-primary/70 font-label font-bold uppercase tracking-[0.24em] mb-2">Maquetas</p>
-              <p class="text-white font-headline font-bold">2 opciones disponibles</p>
-              <p class="text-on-surface-variant text-sm mt-1">Oscura editorial y bistró clara minimalista</p>
-            </div>
-            <div class="bg-surface-container/80 border border-primary/10 rounded-lg p-4">
-              <p class="text-[10px] text-primary/70 font-label font-bold uppercase tracking-[0.24em] mb-2">Objetivo</p>
-              <p class="text-white font-headline font-bold">Cerrar más contactos</p>
-              <p class="text-on-surface-variant text-sm mt-1">Transmitir nivel premium desde el primer vistazo</p>
-            </div>
-          </div>
-          <div class="mt-6 bg-surface-container/70 border border-primary/10 rounded-xl p-5">
+          <p class="text-on-surface-variant text-base md:text-lg font-light leading-relaxed max-w-xl">Primera categoría activa: restauración. Puedes navegar entre distintas propuestas reales y elegir la que mejor encaja con el tono de tu marca.</p>
+        </div>
+        <div class="grid grid-cols-1 xl:grid-cols-[1.3fr_0.7fr_0.7fr] gap-3 items-stretch">
+          <div class="bg-surface-container/70 border border-primary/10 rounded-xl p-4 h-full flex flex-col">
             <p class="text-[10px] text-primary/70 font-label font-bold uppercase tracking-[0.24em] mb-3">Funciones según la categoría</p>
-            <div class="grid sm:grid-cols-2 gap-3 text-sm text-on-surface-variant">
-              <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">event_seat</span>Botón de reserva siempre visible</div>
-              <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">menu_book</span>Carta destacada con platos estrella</div>
-              <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">photo_library</span>Galería del local y ambiente</div>
-              <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">reviews</span>Opiniones para generar confianza</div>
+            <div class="grid sm:grid-cols-2 gap-x-4 gap-y-3 text-sm text-on-surface-variant flex-1">
+              <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5 shrink-0">event_seat</span><span class="leading-relaxed">Botón de reserva siempre visible</span></div>
+              <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5 shrink-0">menu_book</span><span class="leading-relaxed">Carta destacada con platos estrella</span></div>
+              <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5 shrink-0">photo_library</span><span class="leading-relaxed">Galería del local y ambiente</span></div>
+              <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5 shrink-0">reviews</span><span class="leading-relaxed">Opiniones para generar confianza</span></div>
             </div>
           </div>
-          <div class="mt-8 space-y-4">
-            <div class="mockup-book rounded-2xl p-4 md:p-5">
-              <div class="flex items-center justify-between gap-4 mb-4">
-                <div>
-                  <p class="text-[10px] uppercase tracking-[0.22em] text-primary/70 font-label font-bold">Book de categoría</p>
-                  <p class="text-white text-sm mt-1">Navega entre las maquetas y elige la que quieres usar como base para tu presupuesto.</p>
-                </div>
-                <p class="text-[10px] uppercase tracking-[0.24em] text-white/45 font-label">2 maquetas</p>
-              </div>
-              <div class="grid gap-3">
-                <button type="button" class="mockup-tab active rounded-2xl p-4 text-left" data-mockup-tab data-target="mockup-01" aria-pressed="true">
-                  <div class="flex items-start justify-between gap-3">
-                    <div>
-                      <p class="text-[10px] uppercase tracking-[0.22em] text-primary/70 font-label font-bold">Maqueta 01</p>
-                      <p class="text-white font-headline font-bold text-lg mt-1">Reserva Atelier</p>
-                      <p class="text-on-surface-variant text-sm mt-1">Editorial, cálida y premium para reservas y eventos.</p>
-                    </div>
-                    <span class="mockup-tab-indicator inline-flex items-center justify-center rounded-full w-8 h-8 text-[10px] font-bold bg-white/10 text-white">01</span>
-                  </div>
-                </button>
-                <button type="button" class="mockup-tab rounded-2xl p-4 text-left" data-mockup-tab data-target="mockup-02" aria-pressed="false">
-                  <div class="flex items-start justify-between gap-3">
-                    <div>
-                      <p class="text-[10px] uppercase tracking-[0.22em] text-primary/70 font-label font-bold">Maqueta 02</p>
-                      <p class="text-white font-headline font-bold text-lg mt-1">Bistro Light Concept</p>
-                      <p class="text-on-surface-variant text-sm mt-1">Bistró de día, más minimalista, clara y editorial.</p>
-                    </div>
-                    <span class="mockup-tab-indicator inline-flex items-center justify-center rounded-full w-8 h-8 text-[10px] font-bold bg-white/10 text-white">02</span>
-                  </div>
-                </button>
-              </div>
-            </div>
-            <button type="button" data-d4-open data-mockup-primary-cta class="inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-sm font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all">
-              Elegir Reserva Atelier
-            </button>
-            <a href="contacto.html" class="inline-flex items-center gap-2 border border-primary/20 text-primary px-6 py-3 rounded-sm font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-primary/5 transition-all">
-              Hablar sobre mi proyecto
-            </a>
+          <div class="bg-surface-container/80 border border-primary/10 rounded-xl p-4 h-full flex flex-col">
+            <p class="text-[10px] text-primary/70 font-label font-bold uppercase tracking-[0.24em] mb-2">Categoría</p>
+            <p class="text-white font-headline font-bold leading-tight">Restauración</p>
+            <p class="text-on-surface-variant text-sm leading-relaxed mt-3">Restaurantes, cafeterías y brunch spots</p>
+          </div>
+          <div class="bg-surface-container/80 border border-primary/10 rounded-xl p-4 h-full flex flex-col">
+            <p class="text-[10px] text-primary/70 font-label font-bold uppercase tracking-[0.24em] mb-2">Maquetas</p>
+            <p class="text-white font-headline font-bold leading-tight">2 opciones</p>
+            <p class="text-on-surface-variant text-sm leading-relaxed mt-3">Oscura editorial y bistró clara minimalista</p>
           </div>
         </div>
-
-        <div class="mockup-screen rounded-[28px] border border-white/10 p-4 md:p-5">
-          <div class="book-page rounded-[22px] overflow-hidden border border-white/10 bg-[#08101f]">
-            <div class="flex items-center justify-between px-4 py-3 border-b border-white/10 bg-white/5">
-              <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#ff6b6b]"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-[#ffd166]"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-[#06d6a0]"></span>
-              </div>
-              <div class="flex items-center gap-3">
-                <a href="stitch/maqueta-restauracion-stitch.html" target="_blank" rel="noopener noreferrer" data-mockup-open-link class="text-[10px] uppercase tracking-[0.22em] text-primary font-label font-bold hover:text-white transition-colors">Abrir completa</a>
-                <span class="text-[10px] uppercase tracking-[0.3em] text-white/50 font-label" data-mockup-badge>Mockup 01</span>
+        <div class="mockup-stage rounded-[32px] p-4 md:p-6 lg:p-8" data-mockup-showcase="restauracion">
+          <div class="controls-bar mb-6">
+            <div>
+              <p class="text-[10px] uppercase tracking-[0.22em] text-primary/70 font-label font-bold mb-3">Maqueta</p>
+              <div class="mockup-selector">
+                <button type="button" class="mockup-tab active text-left" data-mockup-tab data-target="mockup-01" aria-pressed="true"><div class="flex items-center gap-3"><span class="mockup-tab-indicator inline-flex items-center justify-center rounded-full w-8 h-8 text-[10px] font-bold bg-white/10 text-white shrink-0">01</span><div class="min-w-0"><p class="text-white font-headline font-bold text-sm leading-none">Reserva Atelier</p><p class="text-on-surface-variant text-[11px] mt-1 leading-none">Oscura y editorial</p></div></div></button>
+                <button type="button" class="mockup-tab text-left" data-mockup-tab data-target="mockup-02" aria-pressed="false"><div class="flex items-center gap-3"><span class="mockup-tab-indicator inline-flex items-center justify-center rounded-full w-8 h-8 text-[10px] font-bold bg-white/10 text-white shrink-0">02</span><div class="min-w-0"><p class="text-white font-headline font-bold text-sm leading-none">Bistro Light Concept</p><p class="text-on-surface-variant text-[11px] mt-1 leading-none">Clara y minimalista</p></div></div></button>
               </div>
             </div>
-            <div class="p-4 md:p-5">
-              <div class="mockup-embed overflow-hidden border border-white/10">
-                <iframe src="stitch/maqueta-restauracion-stitch.html" title="Maqueta de restauración" loading="lazy" data-mockup-iframe></iframe>
-              </div>
-              <div class="mt-4 grid gap-3 md:grid-cols-[1.2fr_0.8fr]">
-                <div class="rounded-2xl bg-surface-container-high/70 border border-primary/10 p-4">
-                  <p class="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-label font-bold mb-2">Concepto activo</p>
-                  <p class="text-white text-sm leading-relaxed" data-mockup-description>Hero editorial, carta destacada, reservas, galería, testimonios, mapa y contacto.</p>
-                </div>
-                <div class="rounded-2xl bg-surface-container-high/70 border border-primary/10 p-4">
-                  <p class="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-label font-bold mb-2">Proyecto</p>
-                  <p class="text-white text-sm" data-mockup-project>maquetas guia d4lab · categoría restauración · propuesta 01.</p>
-                </div>
-              </div>
-              <div class="mt-4 flex justify-center">
-                <button type="button" data-d4-open data-mockup-secondary-cta class="inline-flex items-center gap-2 border border-primary/25 text-primary px-5 py-2.5 rounded-sm font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-primary/5 transition-all">
-                  Pedir presupuesto con esta maqueta
-                </button>
+            <div>
+              <p class="text-[10px] uppercase tracking-[0.22em] text-primary/70 font-label font-bold mb-3">Modo de visualización</p>
+              <div class="view-toggle inline-flex flex-wrap rounded-2xl p-1.5 gap-1.5">
+                <button type="button" class="active rounded-xl px-4 py-3 text-[10px] uppercase tracking-[0.22em] text-on-surface-variant font-label font-bold" data-view-toggle="desktop">Ordenador</button>
+                <button type="button" class="rounded-xl px-4 py-3 text-[10px] uppercase tracking-[0.22em] text-on-surface-variant font-label font-bold" data-view-toggle="devices">Tablet + Móvil</button>
               </div>
             </div>
           </div>
-          <div class="grid sm:grid-cols-3 gap-3 mt-4">
-            <div class="bg-surface-container-high/70 border border-primary/10 rounded-2xl p-4">
-              <p class="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-label font-bold mb-2">Estilo</p>
-              <p class="text-white text-sm" data-mockup-style>Editorial, cálido y premium</p>
+          <div class="view-panel" data-view-panel="desktop">
+            <div class="mockup-screen rounded-[28px] border border-white/10 p-4 md:p-5">
+              <div class="book-page rounded-[22px] overflow-hidden border border-white/10 bg-[#08101f]">
+                <div class="grid grid-cols-[1fr_auto_1fr] items-center px-4 py-3 border-b border-white/10 bg-white/5 gap-3">
+                  <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-[#ff6b6b]"></span><span class="w-2.5 h-2.5 rounded-full bg-[#ffd166]"></span><span class="w-2.5 h-2.5 rounded-full bg-[#06d6a0]"></span></div>
+                  <a href="stitch/maqueta-restauracion-stitch.html" target="_blank" rel="noopener noreferrer" data-mockup-open-link class="inline-flex items-center justify-center gap-2 bg-primary text-on-primary px-5 py-1.5 rounded-full font-headline font-bold text-[10px] uppercase tracking-[0.22em] shadow-lg shadow-primary/20 hover:brightness-110 transition-all whitespace-nowrap"><span class="material-symbols-outlined text-sm">open_in_new</span>Abrir completa</a>
+                  <div class="flex justify-end"><span class="text-[10px] uppercase tracking-[0.3em] text-white/50 font-label" data-mockup-badge>Mockup 01</span></div>
+                </div>
+                <div class="p-4 md:p-5"><div class="mockup-embed desktop overflow-hidden border border-white/10" data-preview-device="desktop"><iframe src="stitch/maqueta-restauracion-stitch.html" title="Maqueta en ordenador" loading="lazy" data-mockup-desktop-iframe></iframe></div></div>
+              </div>
             </div>
-            <div class="bg-surface-container-high/70 border border-primary/10 rounded-2xl p-4">
-              <p class="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-label font-bold mb-2">Pensada para</p>
-              <p class="text-white text-sm" data-mockup-fit>Reservas, eventos y carta</p>
+          </div>
+          <div class="view-panel hidden" data-view-panel="devices">
+            <div class="devices-grid">
+              <div class="device-shell tablet-shell"><div class="mockup-embed tablet overflow-hidden border border-white/10" data-preview-device="tablet"><iframe src="stitch/maqueta-restauracion-stitch.html" title="Maqueta en tablet" loading="lazy" data-mockup-tablet-iframe></iframe></div></div>
+              <div class="device-shell mobile-shell"><div class="mockup-embed mobile overflow-hidden border border-white/10" data-preview-device="mobile"><iframe src="stitch/maqueta-restauracion-stitch.html" title="Maqueta en móvil" loading="lazy" data-mockup-mobile-iframe></iframe></div></div>
             </div>
-            <div class="bg-surface-container-high/70 border border-primary/10 rounded-2xl p-4">
-              <p class="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-label font-bold mb-2">Mood</p>
-              <p class="text-white text-sm" data-mockup-mood>Premium nocturno con fuerza visual</p>
+          </div>
+          <div class="mt-4 rounded-[28px] border border-primary/10 bg-surface-container/45 p-3 md:p-4">
+            <div class="grid gap-3 xl:grid-cols-[1.5fr_0.9fr_0.9fr_0.9fr_1.1fr]">
+              <div class="rounded-2xl bg-transparent p-4 min-h-[108px]"><p class="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-label font-bold mb-2">Concepto activo</p><p class="text-white text-sm leading-relaxed" data-mockup-description>Hero editorial, carta destacada, reservas, galería, testimonios, mapa y contacto.</p></div>
+              <div class="bg-transparent rounded-2xl p-4 min-h-[92px]"><p class="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-label font-bold mb-2">Estilo</p><p class="text-white text-sm leading-relaxed" data-mockup-style>Editorial, cálido y premium</p></div>
+              <div class="bg-transparent rounded-2xl p-4 min-h-[92px]"><p class="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-label font-bold mb-2">Pensada para</p><p class="text-white text-sm leading-relaxed" data-mockup-fit>Reservas, eventos y carta</p></div>
+              <div class="bg-transparent rounded-2xl p-4 min-h-[92px]"><p class="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-label font-bold mb-2">Mood</p><p class="text-white text-sm leading-relaxed" data-mockup-mood>Premium nocturno con fuerza visual</p></div>
+              <div class="rounded-2xl bg-transparent p-4 min-h-[108px]"><p class="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-label font-bold mb-2">Referencia</p><p class="text-white text-sm" data-mockup-project>maquetas guia d4lab · categoría restauración · propuesta 01.</p></div>
             </div>
+          </div>
+          <div class="mt-5 flex flex-col sm:flex-row justify-center gap-3">
+            <button type="button" data-d4-open data-mockup-secondary-cta class="inline-flex min-w-[240px] items-center justify-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-sm font-headline font-bold text-[10px] uppercase tracking-[0.2em] shadow-lg shadow-primary/20 hover:brightness-110 transition-all">Pedir presupuesto con esta maqueta</button>
+            <a href="contacto.html" class="inline-flex min-w-[240px] items-center justify-center gap-2 border border-primary/30 bg-primary/10 text-primary px-6 py-3 rounded-sm font-headline font-bold text-[10px] uppercase tracking-[0.2em] shadow-lg shadow-primary/10 hover:bg-primary/15 transition-all">Hablar sobre mi proyecto</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="comercio" data-category-section="comercio" class="service-section px-6 pb-24">
+  <div class="max-w-7xl mx-auto reveal">
+    <div class="showcase-card rounded-xl border border-primary/15 p-8 md:p-10 lg:p-12 overflow-hidden relative">
+      <div class="absolute inset-0 blueprint-grid opacity-10"></div>
+      <div class="absolute -top-16 right-0 w-72 h-72 bg-primary/10 blur-[110px] rounded-full"></div>
+      <div class="relative z-10 space-y-10">
+        <div>
+          <h2 class="text-3xl md:text-5xl font-headline font-bold text-white tracking-tight mb-4">Comercio / Tienda</h2>
+          <p class="text-on-surface-variant text-base md:text-lg font-light leading-relaxed max-w-xl">Primera categoría de comercio con una maqueta orientada a tiendas boutique, producto físico y marcas lifestyle que quieren vender con una presencia más cuidada.</p>
+        </div>
+        <div class="grid grid-cols-1 xl:grid-cols-[1.3fr_0.7fr_0.7fr] gap-3 items-stretch">
+          <div class="bg-surface-container/70 border border-primary/10 rounded-xl p-4 h-full flex flex-col">
+            <p class="text-[10px] text-primary/70 font-label font-bold uppercase tracking-[0.24em] mb-3">Funciones según la categoría</p>
+            <div class="grid sm:grid-cols-2 gap-x-4 gap-y-3 text-sm text-on-surface-variant flex-1">
+              <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5 shrink-0">storefront</span><span class="leading-relaxed">Hero con colección destacada</span></div>
+              <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5 shrink-0">view_cozy</span><span class="leading-relaxed">Grid de producto y categorías</span></div>
+              <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5 shrink-0">local_shipping</span><span class="leading-relaxed">Envíos, devoluciones y confianza</span></div>
+              <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5 shrink-0">loyalty</span><span class="leading-relaxed">Promoción, newsletter y prueba social</span></div>
+            </div>
+          </div>
+          <div class="bg-surface-container/80 border border-primary/10 rounded-xl p-4 h-full flex flex-col">
+            <p class="text-[10px] text-primary/70 font-label font-bold uppercase tracking-[0.24em] mb-2">Categoría</p>
+            <p class="text-white font-headline font-bold leading-tight">Comercio / Tienda</p>
+            <p class="text-on-surface-variant text-sm leading-relaxed mt-3">Boutiques, lifestyle y venta directa</p>
+          </div>
+          <div class="bg-surface-container/80 border border-primary/10 rounded-xl p-4 h-full flex flex-col">
+            <p class="text-[10px] text-primary/70 font-label font-bold uppercase tracking-[0.24em] mb-2">Maquetas</p>
+            <p class="text-white font-headline font-bold leading-tight">1 opción</p>
+            <p class="text-on-surface-variant text-sm leading-relaxed mt-3">Storefront Atelier</p>
+          </div>
+        </div>
+        <div class="mockup-stage rounded-[32px] p-4 md:p-6 lg:p-8" data-mockup-showcase="comercio">
+          <div class="controls-bar mb-6">
+            <div>
+              <p class="text-[10px] uppercase tracking-[0.22em] text-primary/70 font-label font-bold mb-3">Maqueta</p>
+              <div class="mockup-selector">
+                <button type="button" class="mockup-tab active text-left" data-mockup-tab data-target="mockup-01" aria-pressed="true"><div class="flex items-center gap-3"><span class="mockup-tab-indicator inline-flex items-center justify-center rounded-full w-8 h-8 text-[10px] font-bold bg-white/10 text-white shrink-0">01</span><div class="min-w-0"><p class="text-white font-headline font-bold text-sm leading-none">Storefront Atelier</p><p class="text-on-surface-variant text-[11px] mt-1 leading-none">Clara y orientada a conversión</p></div></div></button>
+              </div>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-[0.22em] text-primary/70 font-label font-bold mb-3">Modo de visualización</p>
+              <div class="view-toggle inline-flex flex-wrap rounded-2xl p-1.5 gap-1.5">
+                <button type="button" class="active rounded-xl px-4 py-3 text-[10px] uppercase tracking-[0.22em] text-on-surface-variant font-label font-bold" data-view-toggle="desktop">Ordenador</button>
+                <button type="button" class="rounded-xl px-4 py-3 text-[10px] uppercase tracking-[0.22em] text-on-surface-variant font-label font-bold" data-view-toggle="devices">Tablet + Móvil</button>
+              </div>
+            </div>
+          </div>
+          <div class="view-panel" data-view-panel="desktop">
+            <div class="mockup-screen rounded-[28px] border border-white/10 p-4 md:p-5">
+              <div class="book-page rounded-[22px] overflow-hidden border border-white/10 bg-[#08101f]">
+                <div class="grid grid-cols-[1fr_auto_1fr] items-center px-4 py-3 border-b border-white/10 bg-white/5 gap-3">
+                  <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-[#ff6b6b]"></span><span class="w-2.5 h-2.5 rounded-full bg-[#ffd166]"></span><span class="w-2.5 h-2.5 rounded-full bg-[#06d6a0]"></span></div>
+                  <a href="stitch/maqueta-comercio-tienda-stitch.html" target="_blank" rel="noopener noreferrer" data-mockup-open-link class="inline-flex items-center justify-center gap-2 bg-primary text-on-primary px-5 py-1.5 rounded-full font-headline font-bold text-[10px] uppercase tracking-[0.22em] shadow-lg shadow-primary/20 hover:brightness-110 transition-all whitespace-nowrap"><span class="material-symbols-outlined text-sm">open_in_new</span>Abrir completa</a>
+                  <div class="flex justify-end"><span class="text-[10px] uppercase tracking-[0.3em] text-white/50 font-label" data-mockup-badge>Mockup 01</span></div>
+                </div>
+                <div class="p-4 md:p-5"><div class="mockup-embed desktop overflow-hidden border border-white/10" data-preview-device="desktop"><iframe src="stitch/maqueta-comercio-tienda-stitch.html" title="Maqueta en ordenador" loading="lazy" data-mockup-desktop-iframe></iframe></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="view-panel hidden" data-view-panel="devices">
+            <div class="devices-grid">
+              <div class="device-shell tablet-shell"><div class="mockup-embed tablet overflow-hidden border border-white/10" data-preview-device="tablet"><iframe src="stitch/maqueta-comercio-tienda-stitch.html" title="Maqueta en tablet" loading="lazy" data-mockup-tablet-iframe></iframe></div></div>
+              <div class="device-shell mobile-shell"><div class="mockup-embed mobile overflow-hidden border border-white/10" data-preview-device="mobile"><iframe src="stitch/maqueta-comercio-tienda-stitch.html" title="Maqueta en móvil" loading="lazy" data-mockup-mobile-iframe></iframe></div></div>
+            </div>
+          </div>
+          <div class="mt-4 rounded-[28px] border border-primary/10 bg-surface-container/45 p-3 md:p-4">
+            <div class="grid gap-3 xl:grid-cols-[1.5fr_0.9fr_0.9fr_0.9fr_1.1fr]">
+              <div class="rounded-2xl bg-transparent p-4 min-h-[108px]"><p class="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-label font-bold mb-2">Concepto activo</p><p class="text-white text-sm leading-relaxed" data-mockup-description>Hero con colección principal, categorías destacadas, grid de producto, promociones, confianza y newsletter.</p></div>
+              <div class="bg-transparent rounded-2xl p-4 min-h-[92px]"><p class="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-label font-bold mb-2">Estilo</p><p class="text-white text-sm leading-relaxed" data-mockup-style>Editorial, luminoso y premium</p></div>
+              <div class="bg-transparent rounded-2xl p-4 min-h-[92px]"><p class="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-label font-bold mb-2">Pensada para</p><p class="text-white text-sm leading-relaxed" data-mockup-fit>Venta directa, colecciones y marca</p></div>
+              <div class="bg-transparent rounded-2xl p-4 min-h-[92px]"><p class="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-label font-bold mb-2">Mood</p><p class="text-white text-sm leading-relaxed" data-mockup-mood>Boutique contemporánea con aire curado</p></div>
+              <div class="rounded-2xl bg-transparent p-4 min-h-[108px]"><p class="text-[10px] uppercase tracking-[0.2em] text-primary/70 font-label font-bold mb-2">Referencia</p><p class="text-white text-sm" data-mockup-project>maquetas comercio tienda d4lab · categoría comercio · propuesta 01.</p></div>
+            </div>
+          </div>
+          <div class="mt-5 flex flex-col sm:flex-row justify-center gap-3">
+            <button type="button" data-d4-open data-mockup-secondary-cta class="inline-flex min-w-[240px] items-center justify-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-sm font-headline font-bold text-[10px] uppercase tracking-[0.2em] shadow-lg shadow-primary/20 hover:brightness-110 transition-all">Pedir presupuesto con esta maqueta</button>
+            <a href="contacto.html" class="inline-flex min-w-[240px] items-center justify-center gap-2 border border-primary/30 bg-primary/10 text-primary px-6 py-3 rounded-sm font-headline font-bold text-[10px] uppercase tracking-[0.2em] shadow-lg shadow-primary/10 hover:bg-primary/15 transition-all">Hablar sobre mi proyecto</a>
           </div>
         </div>
       </div>
@@ -350,69 +514,24 @@
   document.getElementById('menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('open'));
   const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }), { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
+  const categoryFilters = document.querySelectorAll('[data-category-filter]');
+  const categorySections = document.querySelectorAll('[data-category-section]');
 
-  const mockupCatalog = {
-    'mockup-01': {
-      badge: 'Mockup 01',
-      openHref: 'stitch/maqueta-restauracion-stitch.html',
-      iframeSrc: 'stitch/maqueta-restauracion-stitch.html',
-      iframeTitle: 'Maqueta Reserva Atelier',
-      description: 'Hero editorial, carta destacada, reservas, galería, testimonios, mapa y contacto.',
-      project: 'maquetas guia d4lab · categoría restauración · propuesta 01.',
-      style: 'Editorial, cálido y premium',
-      fit: 'Reservas, eventos y carta',
-      mood: 'Premium nocturno con fuerza visual',
-      primaryLabel: 'Elegir Reserva Atelier',
-      secondaryLabel: 'Pedir presupuesto con esta maqueta',
-      template: {
-        id: 'restauracion-reserva-atelier-01',
-        name: 'Reserva Atelier',
-        category: 'Restauración',
-        style: 'Editorial, cálido y premium',
-        description: 'Hero editorial, carta destacada, reservas, galería, testimonios, mapa y contacto',
-        source: 'maquetas guia d4lab',
-        preview: 'https://www.d4lab.es/stitch/maqueta-restauracion-stitch.html',
-        automessage: 'Hola, quiero presupuesto para una web de restauración y me gustaría usar esta maqueta como punto de partida.',
-        automessageShort: 'Hola, quiero presupuesto para una web basada en esta maqueta de restauración.'
+  const showcaseConfigs = {
+    restauracion: {
+      defaultMockup: 'mockup-01',
+      catalog: {
+        'mockup-01': { badge: 'Mockup 01', openHref: 'stitch/maqueta-restauracion-stitch.html', iframeSrc: 'stitch/maqueta-restauracion-stitch.html', iframeTitle: 'Maqueta Reserva Atelier', description: 'Hero editorial, carta destacada, reservas, galería, testimonios, mapa y contacto.', project: 'maquetas guia d4lab · categoría restauración · propuesta 01.', style: 'Editorial, cálido y premium', fit: 'Reservas, eventos y carta', mood: 'Premium nocturno con fuerza visual', secondaryLabel: 'Pedir presupuesto con esta maqueta', template: { id: 'restauracion-reserva-atelier-01', name: 'Reserva Atelier', category: 'Restauración', style: 'Editorial, cálido y premium', description: 'Hero editorial, carta destacada, reservas, galería, testimonios, mapa y contacto', source: 'maquetas guia d4lab', preview: 'https://www.d4lab.es/stitch/maqueta-restauracion-stitch.html', automessage: 'Hola, quiero presupuesto para una web de restauración y me gustaría usar esta maqueta como punto de partida.', automessageShort: 'Hola, quiero presupuesto para una web basada en esta maqueta de restauración.' } },
+        'mockup-02': { badge: 'Mockup 02', openHref: 'stitch/maqueta-restauracion-stitch-02.html', iframeSrc: 'stitch/maqueta-restauracion-stitch-02.html', iframeTitle: 'Maqueta D4Lab Bistro Light Concept', description: 'Bistró de día con hero serif, CTA de reserva fijo, tasting menu, historia del chef, testimonios y contacto.', project: 'maquetas guia d4lab · categoría restauración · Bistro Light Concept.', style: 'Clara, editorial y minimalista', fit: 'Brunch, bistró y restauración boutique', mood: 'Luz de día, aire premium y más calma visual', secondaryLabel: 'Pedir presupuesto con esta maqueta', template: { id: 'restauracion-bistro-light-02', name: 'Bistro Light Concept', category: 'Restauración', style: 'Clara, editorial y minimalista', description: 'Hero serif, tasting menu, historia del chef, testimonios, mapa y CTA de reserva', source: 'maquetas guia d4lab', preview: 'https://www.d4lab.es/stitch/maqueta-restauracion-stitch-02.html', automessage: 'Hola, quiero presupuesto para una web de restauración y me gustaría usar la maqueta Bistro Light Concept como base.', automessageShort: 'Hola, quiero presupuesto para una web basada en la maqueta Bistro Light Concept.' } }
       }
     },
-    'mockup-02': {
-      badge: 'Mockup 02',
-      openHref: 'stitch/maqueta-restauracion-stitch-02.html',
-      iframeSrc: 'stitch/maqueta-restauracion-stitch-02.html',
-      iframeTitle: 'Maqueta D4Lab Bistro Light Concept',
-      description: 'Bistró de día con hero serif, CTA de reserva fijo, tasting menu, historia del chef, testimonios y contacto.',
-      project: 'maquetas guia d4lab · categoría restauración · D4Lab Bistro - Light Concept.',
-      style: 'Clara, editorial y minimalista',
-      fit: 'Brunch, bistró y restauración boutique',
-      mood: 'Luz de día, aire premium y más calma visual',
-      primaryLabel: 'Elegir Bistro Light Concept',
-      secondaryLabel: 'Pedir presupuesto con esta maqueta',
-      template: {
-        id: 'restauracion-bistro-light-02',
-        name: 'Bistro Light Concept',
-        category: 'Restauración',
-        style: 'Clara, editorial y minimalista',
-        description: 'Hero serif, tasting menu, historia del chef, testimonios, mapa y CTA de reserva',
-        source: 'maquetas guia d4lab',
-        preview: 'https://www.d4lab.es/stitch/maqueta-restauracion-stitch-02.html',
-        automessage: 'Hola, quiero presupuesto para una web de restauración y me gustaría usar la maqueta Bistro Light Concept como base.',
-        automessageShort: 'Hola, quiero presupuesto para una web basada en la maqueta Bistro Light Concept.'
+    comercio: {
+      defaultMockup: 'mockup-01',
+      catalog: {
+        'mockup-01': { badge: 'Mockup 01', openHref: 'stitch/maqueta-comercio-tienda-stitch.html', iframeSrc: 'stitch/maqueta-comercio-tienda-stitch.html', iframeTitle: 'Maqueta Storefront Atelier', description: 'Hero con colección principal, categorías destacadas, grid de producto, promociones, confianza y newsletter.', project: 'maquetas comercio tienda d4lab · categoría comercio · propuesta 01.', style: 'Editorial, luminoso y premium', fit: 'Venta directa, colecciones y marca', mood: 'Boutique contemporánea con aire curado', secondaryLabel: 'Pedir presupuesto con esta maqueta', template: { id: 'comercio-storefront-atelier-01', name: 'Storefront Atelier', category: 'Comercio / Tienda', style: 'Editorial, luminoso y premium', description: 'Hero de colección, grid de producto, promociones, social proof, envíos y newsletter', source: 'maquetas comercio tienda d4lab', preview: 'https://www.d4lab.es/stitch/maqueta-comercio-tienda-stitch.html', automessage: 'Hola, quiero presupuesto para una web de comercio y me gustaría usar la maqueta Storefront Atelier como base.', automessageShort: 'Hola, quiero presupuesto para una web basada en esta maqueta de comercio.' } }
       }
     }
   };
-
-  const mockupTabs = document.querySelectorAll('[data-mockup-tab]');
-  const mockupIframe = document.querySelector('[data-mockup-iframe]');
-  const mockupBadge = document.querySelector('[data-mockup-badge]');
-  const mockupDescription = document.querySelector('[data-mockup-description]');
-  const mockupProject = document.querySelector('[data-mockup-project]');
-  const mockupStyle = document.querySelector('[data-mockup-style]');
-  const mockupFit = document.querySelector('[data-mockup-fit]');
-  const mockupMood = document.querySelector('[data-mockup-mood]');
-  const mockupOpenLink = document.querySelector('[data-mockup-open-link]');
-  const mockupPrimaryCta = document.querySelector('[data-mockup-primary-cta]');
-  const mockupSecondaryCta = document.querySelector('[data-mockup-secondary-cta]');
 
   const applyTemplateData = (button, template, shortMode = false) => {
     if (!button || !template) return;
@@ -426,39 +545,133 @@
     button.setAttribute('data-d4-automessage', shortMode ? template.automessageShort : template.automessage);
   };
 
-  const activateMockup = (id) => {
-    const config = mockupCatalog[id];
-    if (!config) return;
-    mockupTabs.forEach((tab) => {
-      const active = tab.dataset.target === id;
-      tab.classList.toggle('active', active);
-      tab.setAttribute('aria-pressed', active ? 'true' : 'false');
-    });
-    if (mockupIframe) {
-      mockupIframe.src = config.iframeSrc;
-      mockupIframe.title = config.iframeTitle;
-    }
-    if (mockupBadge) mockupBadge.textContent = config.badge;
-    if (mockupDescription) mockupDescription.textContent = config.description;
-    if (mockupProject) mockupProject.textContent = config.project;
-    if (mockupStyle) mockupStyle.textContent = config.style;
-    if (mockupFit) mockupFit.textContent = config.fit;
-    if (mockupMood) mockupMood.textContent = config.mood;
-    if (mockupOpenLink) mockupOpenLink.href = config.openHref;
-    if (mockupPrimaryCta) {
-      mockupPrimaryCta.textContent = config.primaryLabel;
-      applyTemplateData(mockupPrimaryCta, config.template, false);
-    }
-    if (mockupSecondaryCta) {
-      mockupSecondaryCta.textContent = config.secondaryLabel;
-      applyTemplateData(mockupSecondaryCta, config.template, true);
-    }
+  const initMockupShowcase = (showcase, config) => {
+    if (!showcase || !config) return;
+    const mockupTabs = showcase.querySelectorAll('[data-mockup-tab]');
+    const viewToggles = showcase.querySelectorAll('[data-view-toggle]');
+    const viewPanels = showcase.querySelectorAll('[data-view-panel]');
+    const desktopIframe = showcase.querySelector('[data-mockup-desktop-iframe]');
+    const tabletIframe = showcase.querySelector('[data-mockup-tablet-iframe]');
+    const mobileIframe = showcase.querySelector('[data-mockup-mobile-iframe]');
+    const mockupBadge = showcase.querySelector('[data-mockup-badge]');
+    const mockupDescription = showcase.querySelector('[data-mockup-description]');
+    const mockupProject = showcase.querySelector('[data-mockup-project]');
+    const mockupStyle = showcase.querySelector('[data-mockup-style]');
+    const mockupFit = showcase.querySelector('[data-mockup-fit]');
+    const mockupMood = showcase.querySelector('[data-mockup-mood]');
+    const mockupOpenLink = showcase.querySelector('[data-mockup-open-link]');
+    const mockupSecondaryCta = showcase.querySelector('[data-mockup-secondary-cta]');
+
+    const activateMockup = (id) => {
+      const mockup = config.catalog[id];
+      if (!mockup) return;
+      mockupTabs.forEach((tab) => {
+        const active = tab.dataset.target === id;
+        tab.classList.toggle('active', active);
+        tab.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      [desktopIframe, tabletIframe, mobileIframe].forEach((frame) => {
+        if (!frame) return;
+        frame.src = mockup.iframeSrc;
+        frame.title = mockup.iframeTitle;
+      });
+      if (mockupBadge) mockupBadge.textContent = mockup.badge;
+      if (mockupDescription) mockupDescription.textContent = mockup.description;
+      if (mockupProject) mockupProject.textContent = mockup.project;
+      if (mockupStyle) mockupStyle.textContent = mockup.style;
+      if (mockupFit) mockupFit.textContent = mockup.fit;
+      if (mockupMood) mockupMood.textContent = mockup.mood;
+      if (mockupOpenLink) mockupOpenLink.href = mockup.openHref;
+      if (mockupSecondaryCta) {
+        mockupSecondaryCta.textContent = mockup.secondaryLabel;
+        applyTemplateData(mockupSecondaryCta, mockup.template, true);
+      }
+    };
+
+    const activateView = (mode) => {
+      viewToggles.forEach((toggle) => {
+        toggle.classList.toggle('active', toggle.dataset.viewToggle === mode);
+      });
+      viewPanels.forEach((panel) => {
+        panel.classList.toggle('hidden', panel.dataset.viewPanel !== mode);
+      });
+      requestAnimationFrame(() => syncResponsivePreviews());
+    };
+
+    mockupTabs.forEach((tab) => tab.addEventListener('click', () => activateMockup(tab.dataset.target)));
+    viewToggles.forEach((toggle) => toggle.addEventListener('click', () => activateView(toggle.dataset.viewToggle)));
+    activateMockup(config.defaultMockup);
+    activateView('desktop');
   };
 
-  mockupTabs.forEach((tab) => {
-    tab.addEventListener('click', () => activateMockup(tab.dataset.target));
+  const previewViewportMap = {
+    desktop: { width: 1440, height: 960 },
+    tablet: { width: 834, height: 1194 },
+    mobile: { width: 390, height: 844 }
+  };
+
+  const syncResponsivePreviews = () => {
+    document.querySelectorAll('[data-preview-device]').forEach((embed) => {
+      const device = embed.dataset.previewDevice;
+      const viewport = previewViewportMap[device];
+      const iframe = embed.querySelector('iframe');
+      if (!viewport || !iframe) return;
+
+      const styles = window.getComputedStyle(embed);
+      const paddingX = parseFloat(styles.paddingLeft) + parseFloat(styles.paddingRight);
+      const paddingY = parseFloat(styles.paddingTop) + parseFloat(styles.paddingBottom);
+      const availableWidth = Math.max(embed.clientWidth - paddingX, 1);
+      const availableHeight = Math.max(embed.clientHeight - paddingY, 1);
+      if (availableWidth <= 1 || availableHeight <= 1) return;
+      const scale = Math.min(availableWidth / viewport.width, availableHeight / viewport.height);
+      const renderedWidth = viewport.width * scale;
+      const renderedHeight = viewport.height * scale;
+      const offsetLeft = Math.max((availableWidth - renderedWidth) / 2 + parseFloat(styles.paddingLeft), parseFloat(styles.paddingLeft));
+      const offsetTop = Math.max((availableHeight - renderedHeight) / 2 + parseFloat(styles.paddingTop), parseFloat(styles.paddingTop));
+
+      embed.style.setProperty('--frame-width', `${viewport.width}px`);
+      embed.style.setProperty('--frame-height', `${viewport.height}px`);
+      embed.style.setProperty('--frame-scale', `${scale}`);
+      embed.style.setProperty('--frame-left', `${offsetLeft}px`);
+      embed.style.setProperty('--frame-top', `${offsetTop}px`);
+    });
+  };
+
+  const activateCategoryFilter = (category) => {
+    const normalizedCategory = category && category !== 'all' ? category : 'all';
+    categoryFilters.forEach((filter) => {
+      const active = filter.dataset.categoryFilter === normalizedCategory;
+      filter.classList.toggle('text-primary', active);
+      filter.classList.toggle('text-on-surface-variant', !active);
+    });
+    categorySections.forEach((section) => {
+      const visible = normalizedCategory === 'all' || section.dataset.categorySection === normalizedCategory;
+      section.classList.toggle('hidden', !visible);
+    });
+    requestAnimationFrame(() => syncResponsivePreviews());
+    if (normalizedCategory === 'all') {
+      history.replaceState(null, '', 'maquetas.html');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    history.replaceState(null, '', `#${normalizedCategory}`);
+    document.getElementById(normalizedCategory)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  categoryFilters.forEach((filter) => {
+    filter.addEventListener('click', () => activateCategoryFilter(filter.dataset.categoryFilter));
   });
-  activateMockup('mockup-01');
+
+  const initialCategory = ['restauracion', 'comercio'].includes(window.location.hash.slice(1))
+    ? window.location.hash.slice(1)
+    : 'all';
+
+  document.querySelectorAll('[data-mockup-showcase]').forEach((showcase) => {
+    initMockupShowcase(showcase, showcaseConfigs[showcase.dataset.mockupShowcase]);
+  });
+  window.addEventListener('resize', syncResponsivePreviews);
+  syncResponsivePreviews();
+  activateCategoryFilter(initialCategory);
 </script>
 <script src="/chat-widget.js"></script>
 </body>

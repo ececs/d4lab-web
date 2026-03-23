@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary": "#ffffff",
+              "primary": "#061b0e",
+              "on-tertiary-fixed": "#231a11",
+              "tertiary-fixed-dim": "#d5c3b6",
+              "error": "#ba1a1a",
+              "tertiary-container": "#342920",
+              "surface-container-low": "#f4f4ef",
+              "surface-tint": "#4d6453",
+              "surface-container": "#eeeee9",
+              "error-container": "#ffdad6",
+              "on-secondary-fixed-variant": "#5d4201",
+              "surface-variant": "#e3e3de",
+              "on-tertiary-container": "#a08f83",
+              "primary-fixed": "#d0e9d4",
+              "inverse-primary": "#b4cdb8",
+              "tertiary": "#1e150d",
+              "on-tertiary-fixed-variant": "#51443a",
+              "secondary": "#775a19",
+              "secondary-fixed-dim": "#e9c176",
+              "on-primary-fixed": "#0b2013",
+              "inverse-surface": "#2f312e",
+              "surface-container-lowest": "#ffffff",
+              "secondary-container": "#fed488",
+              "surface-dim": "#dadad5",
+              "on-primary-fixed-variant": "#364c3c",
+              "outline-variant": "#c3c8c1",
+              "on-secondary-container": "#785a1a",
+              "surface-container-highest": "#e3e3de",
+              "on-secondary-fixed": "#261900",
+              "outline": "#737973",
+              "on-error": "#ffffff",
+              "surface": "#fafaf5",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#b4cdb8",
+              "on-surface": "#1a1c19",
+              "on-error-container": "#93000a",
+              "on-primary-container": "#819986",
+              "on-surface-variant": "#434843",
+              "on-background": "#1a1c19",
+              "inverse-on-surface": "#f1f1ec",
+              "surface-container-high": "#e8e8e3",
+              "secondary-fixed": "#ffdea5",
+              "primary-container": "#1b3022",
+              "tertiary-fixed": "#f2dfd1",
+              "background": "#fafaf5",
+              "on-secondary": "#ffffff",
+              "surface-bright": "#fafaf5"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+      .glass-nav { background: rgba(250, 250, 245, 0.8); backdrop-filter: blur(20px); }
+      .text-shadow-subtle { text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 glass-nav shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-6 md:px-12 py-6 max-w-full mx-auto">
+<div class="flex items-center gap-8">
+<a class="font-serif text-2xl italic text-emerald-950 dark:text-white tracking-tight" href="#">D4Lab</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium uppercase tracking-widest Manrope text-emerald-900 dark:text-emerald-400 border-b border-emerald-900 dark:border-emerald-400 pb-1" href="#">Collections</a>
+<a class="text-sm font-medium uppercase tracking-widest Manrope text-zinc-500 dark:text-zinc-400 hover:text-emerald-900 dark:hover:text-emerald-200 transition-colors" href="#">Atelier</a>
+<a class="text-sm font-medium uppercase tracking-widest Manrope text-zinc-500 dark:text-zinc-400 hover:text-emerald-900 dark:hover:text-emerald-200 transition-colors" href="#">Archive</a>
+<a class="text-sm font-medium uppercase tracking-widest Manrope text-zinc-500 dark:text-zinc-400 hover:text-emerald-900 dark:hover:text-emerald-200 transition-colors" href="#">Journal</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center border-b border-outline/30 pb-1">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-32 font-light" placeholder="Buscar..." type="text"/>
+</div>
+<button class="hover:opacity-80 transition-opacity duration-300">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+</button>
+<button class="hover:opacity-80 transition-opacity duration-300 relative">
+<span class="material-symbols-outlined text-primary" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Promotional Strip -->
+<div class="bg-primary text-on-primary py-3 px-4 text-center">
+<p class="text-xs font-medium uppercase tracking-[0.2em]">Envío gratuito en pedidos superiores a 150€ — Compra ahora</p>
+</div>
+<!-- Editorial Hero Section -->
+<header class="relative w-full min-h-[921px] flex flex-col md:flex-row items-stretch overflow-hidden">
+<div class="w-full md:w-3/5 relative h-[614px] md:h-auto">
+<img alt="High-end fashion photography" class="w-full h-full object-cover" data-alt="Modelo con vestido de seda en un estudio minimalista" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV8-MibvQcBBLOHyhe5LmdGHG-FSt2qhdSLNU9VdT3CtZ2UR5frUn_AiiIJ2MKEU0VNzlGBrROr4sdG83rorPiqv2rNWFZiNkAltiQRWZxGZZR1kQn5xmox8-8fQnzw3wjRbKAWL-FyhcAoqhuKiX6mKnoqlwlH31k9e8mTwKXFGqaQpSKBopbcsCKT-mGG-7LeNuEQwqb8E4zemwjJGV8u8uZ35hWZMYuDseeQy0mb7vpa3OLEC33UH-x9m5i6IXJ-KFbWeXwJg"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
+</div>
+<div class="w-full md:w-2/5 bg-surface flex flex-col justify-center px-8 md:px-16 py-12 md:py-0 relative">
+<div class="absolute -left-12 top-1/2 -translate-y-1/2 hidden md:block">
+<span class="text-[12rem] font-serif italic text-surface-container-highest select-none leading-none opacity-50">01</span>
+</div>
+<div class="relative z-10 space-y-8">
+<span class="label-md text-secondary font-bold uppercase tracking-widest block">Nueva Temporada</span>
+<h1 class="font-headline text-5xl md:text-7xl leading-[1.1] text-primary tracking-tight">Elegancia<br/><i class="font-serif">Redefinida</i></h1>
+<p class="text-lg text-on-surface-variant max-w-sm leading-relaxed font-light">
+                    Descubre nuestra colección exclusiva D4Lab, donde la artesanía tradicional se encuentra con el minimalismo contemporáneo.
+                </p>
+<div class="pt-4 flex items-center gap-6">
+<a class="inline-block bg-primary text-on-primary px-10 py-4 font-medium rounded-sm shadow-xl shadow-primary/10 hover:bg-primary-container transition-all active:scale-95" href="#">
+                        Colección de Temporada
+                    </a>
+<a class="text-sm font-bold uppercase tracking-widest border-b border-secondary pb-1 text-primary hover:text-secondary transition-colors" href="#">
+                        Ver Catálogo
+                    </a>
+</div>
+</div>
+</div>
+</header>
+<!-- Category Highlights -->
+<section class="py-24 px-6 md:px-12 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-headline text-4xl text-primary italic mb-2">Curaduría de Estilo</h2>
+<p class="text-on-surface-variant font-light">Explora nuestras categorías seleccionadas para ti.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-[700px]">
+<div class="md:col-span-8 relative group overflow-hidden rounded-md bg-surface-container-highest">
+<img alt="Moda" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Moda femenina contemporánea con tonos neutros" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-z3nhzeDYq0nGIrwqWsngMX0A8CAEEqiVHuEpmD0ORKI8kJBoYh_fL2_7uewJ7VoArmUISxZwPnMGY7kdsdcrNiLGG4hGr0i-nZtlieCtX5AwEQXB8QU9ss3WFXUwPzGaq-_3aSYQPptPIDlIS3RFY7loEzjn6uU8xE6NYDatD7QsGp--7_-UsOu0hDqX6sfCI7AlnO8O6f4H-t5zfdVx8eSAH_D0mI-77JKkwC3NjbUkEbZUK5AV3dE8WsPY4y59q6kyWnkzcA"/>
+<div class="absolute inset-0 bg-black/10 transition-opacity group-hover:bg-black/30"></div>
+<div class="absolute bottom-10 left-10 text-white">
+<h3 class="font-headline text-4xl mb-4">Moda</h3>
+<a class="inline-block px-6 py-2 border border-white/50 backdrop-blur-md text-sm uppercase tracking-widest hover:bg-white hover:text-primary transition-all" href="#">Explorar</a>
+</div>
+</div>
+<div class="md:col-span-4 grid grid-rows-2 gap-6">
+<div class="relative group overflow-hidden rounded-md bg-surface-container-highest">
+<img alt="Hogar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Decoración de hogar minimalista y lujosa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-CIbct5-KI8XsDmDL-ZRShb3HQKx2zwdp5SDDmIfDe2-rlEg4bfq1ll4iJLijrzfie9xv61-80CH8KUhzdb_7UHLPzxO3-c-_vsXjVYMcLtb0tM3XGb7F__M0WfkwHHBfO7Drvu95klExPTU7gz12Piogb5_9qyk6KlZdsd9y12jiSgtcAoGZkD6wZcUb4gLV3J-TYYBzxxhyQvVcaqYFb-HvsWWK0LVDtVqIEqg8Xt-qj8b2SZo_bts3wNhbGbNKA5_22wjKYQ"/>
+<div class="absolute inset-0 bg-black/10"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<h3 class="font-headline text-2xl mb-2">Hogar</h3>
+<a class="text-xs uppercase tracking-widest border-b border-white pb-1" href="#">Ver piezas</a>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-md bg-surface-container-highest">
+<img alt="Accesorios" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Accesorios de cuero de alta calidad" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASTGls6aQhtw8ZO7OZvgpw-PgGi_s0xzhyoa1gKDyBQkL8KfW23Ziy-u_aCZlwCx97cSFV4EmIx9-JSSo3RCvA7Kreo7Afq0-WOYrTsDsl31eXsCkOVh9hDscEVteT3nEJBqnpKmDHZjmTC0Un6mtz2Fm4iUJkzyQ2TRTa0W-FhHWU32DeeKmQibXHj47RI1kvhl7DnxCdkvCn4TpPMAiGMGOBWyL93W1ymvSzNPvMz7c0A17LhLtXpXt8pdqmeX9t5KVRy-x6lQ"/>
+<div class="absolute inset-0 bg-black/10"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<h3 class="font-headline text-2xl mb-2">Accesorios</h3>
+<a class="text-xs uppercase tracking-widest border-b border-white pb-1" href="#">Descubrir</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Grid: Bestsellers -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="text-center mb-16">
+<span class="text-xs font-bold uppercase tracking-[0.3em] text-secondary mb-4 block">Imprescindibles</span>
+<h2 class="font-headline text-5xl text-primary">Nuestros Best Sellers</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Product 1 -->
+<div class="group">
+<div class="relative aspect-[3/4] overflow-hidden bg-white rounded-sm mb-6">
+<img alt="Blusa Atelier" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Blusa de seda blanca premium" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmDjkiJ7XVIAj4c0qQEgNnDF0G5Roj9cNRwoAsuGqdY0MUAekRbpWfd6_4IDHVkZvuVVm0QnB4DPtC946tUEdY1sU4qkIfzr7n7RVN5To_dogIfhC222FqAtnGexuNZjCQLYR_DBTO0yklsf3g2nojL0mvh_PZvgpWOnNrLq-TJN96O5v118-_Mx6m7fxmRGbUCfUafWo9OVY3v1axJbxFo6u29kpTUWFX7gxLP3ABb3edviEFeoYR3LBhQsKzpW_4zNSK3e1dJw"/>
+<button class="absolute bottom-0 left-0 w-full bg-primary text-on-primary py-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 font-medium text-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span> Compra Rápida
+                        </button>
+</div>
+<h4 class="font-serif text-lg text-primary">Blusa de Seda Atelier</h4>
+<p class="text-secondary font-bold mt-1">185,00 €</p>
+</div>
+<!-- Product 2 -->
+<div class="group">
+<div class="relative aspect-[3/4] overflow-hidden bg-white rounded-sm mb-6">
+<img alt="Bolso Cuero" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Bolso de mano de cuero artesanal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDupA5169KpgCm4ycK1i3raEhGBgoW8lyU4pNt4GEl_IDYcc4c9oKK1TmJ6oEeoT0_gdXq8iOgq3rukfD9y7m2btFBLAE1DMZ9ebzsbk7A7WqzjBH24ftaaTBtZbemp-A5TNfqXx1MSvhAtktuEr4NTNlb1ssKxNWlqc-7Milnvcun10V8CJAZTuVmTR75PBeagjJhWokMjbltNjdIVhOOBdUuE9ME_gfg51nxxvczYSvcf9d9Xcs0Ndl1hYau-pJwaXebexg9D_w"/>
+<button class="absolute bottom-0 left-0 w-full bg-primary text-on-primary py-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 font-medium text-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span> Compra Rápida
+                        </button>
+</div>
+<h4 class="font-serif text-lg text-primary">Bolso Tote Signature</h4>
+<p class="text-secondary font-bold mt-1">420,00 €</p>
+</div>
+<!-- Product 3 -->
+<div class="group">
+<div class="relative aspect-[3/4] overflow-hidden bg-white rounded-sm mb-6">
+<img alt="Abrigo Lana" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Abrigo de lana minimalista" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkhl_3QrYMRmDJ9_cJM-b6lbUB420_fco_kiWQ3r1ERasPWY6ekApP-YF4bvlW0RMRqnFb6pHUD6N_MN0kzOwh3uFFagEIi7aEcSBXfUVIRxgRK-Bg6BUPco1LRMHlM7dCTUQ9dEoKfLYS9ySQwA10zi3g7zYPBr7JpaY82aG7P0xX1NPxZiva0DP4JFrUzeDQAQ0JgbN06klOVk6q9qH6xX-LHwisfsXdK3INdWT9ZTbbBlcjoZzVo8pJspt3HYuOFYV8WQuW9w"/>
+<button class="absolute bottom-0 left-0 w-full bg-primary text-on-primary py-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 font-medium text-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span> Compra Rápida
+                        </button>
+</div>
+<h4 class="font-serif text-lg text-primary">Abrigo Estructurado Gris</h4>
+<p class="text-secondary font-bold mt-1">590,00 €</p>
+</div>
+<!-- Product 4 -->
+<div class="group">
+<div class="relative aspect-[3/4] overflow-hidden bg-white rounded-sm mb-6">
+<img alt="Vela Lujo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Vela aromática artesanal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDilNXDQ5uhsU-9EoFVmHvKJKbdVQsITzY1Zl8A4TjwC6girKcjWPWXGBnuJZSFhci3tow9PVeo6pFcJckZuxBgxUSAqeHnJDRswnGspBuDSJJO-BnTZJbXCQlBsoCClyTYvipNFQZMaJlmiF5shM9LlFgYijslODNflJwHDfliggG92SBFWQAIuE7f7liZyoAx6phH4Fsob7MT05Jj7WNoRYgR8qU2dYRCh85HHV2Moz62kuOrXASaefRBfJ0XujybgysJNAANBA"/>
+<button class="absolute bottom-0 left-0 w-full bg-primary text-on-primary py-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 font-medium text-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span> Compra Rápida
+                        </button>
+</div>
+<h4 class="font-serif text-lg text-primary">Vela Ambre &amp; Santal</h4>
+<p class="text-secondary font-bold mt-1">65,00 €</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Badges -->
+<section class="py-16 bg-surface">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="material-symbols-outlined text-4xl text-secondary" data-icon="eco">eco</span>
+<h5 class="font-serif text-xl text-primary">Sostenibilidad</h5>
+<p class="text-sm text-on-surface-variant leading-relaxed">Comprometidos con materiales éticos y procesos de bajo impacto.</p>
+</div>
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="material-symbols-outlined text-4xl text-secondary" data-icon="handyman">handyman</span>
+<h5 class="font-serif text-xl text-primary">Calidad Artesanal</h5>
+<p class="text-sm text-on-surface-variant leading-relaxed">Cada pieza es confeccionada a mano por artesanos locales.</p>
+</div>
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="material-symbols-outlined text-4xl text-secondary" data-icon="verified_user">verified_user</span>
+<h5 class="font-serif text-xl text-primary">Pago Seguro</h5>
+<p class="text-sm text-on-surface-variant leading-relaxed">Tecnología de encriptación de última generación para tus datos.</p>
+</div>
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="material-symbols-outlined text-4xl text-secondary" data-icon="local_shipping">local_shipping</span>
+<h5 class="font-serif text-xl text-primary">Envío Express</h5>
+<p class="text-sm text-on-surface-variant leading-relaxed">Entrega garantizada en 24-48 horas en toda Europa.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 bg-surface-container-highest">
+<div class="max-w-4xl mx-auto px-6 text-center">
+<span class="text-xs font-bold uppercase tracking-[0.2em] text-secondary mb-8 block">Lo que dicen de nosotros</span>
+<div class="space-y-12">
+<span class="material-symbols-outlined text-5xl text-outline-variant opacity-40" data-icon="format_quote">format_quote</span>
+<p class="font-headline text-3xl md:text-4xl text-primary leading-snug italic">
+                    "La atención al detalle y la calidad de los materiales superó todas mis expectativas. Una experiencia de compra verdaderamente boutique."
+                </p>
+<div>
+<p class="font-bold text-primary tracking-widest uppercase text-sm">Elena V.</p>
+<p class="text-xs text-on-surface-variant mt-1">Cliente Verificada, Madrid</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Shipping & Returns Split -->
+<section class="flex flex-col md:flex-row bg-surface">
+<div class="w-full md:w-1/2 p-12 md:p-24 bg-surface-container">
+<h3 class="font-headline text-3xl text-primary mb-6 italic">Envíos y Devoluciones</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">Entendemos que la perfección requiere tiempo, pero su pedido no debería. Ofrecemos una política de devolución de 30 días sin preguntas.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-4 text-sm font-medium">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+                    Devoluciones gratuitas en tienda
+                </li>
+<li class="flex items-center gap-4 text-sm font-medium">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+                    Seguimiento de pedido en tiempo real
+                </li>
+</ul>
+</div>
+<div class="w-full md:w-1/2 h-[400px] md:h-auto relative">
+<img alt="Shipping" class="w-full h-full object-cover" data-alt="Paquete de lujo cuidadosamente envuelto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACP3HlS0t_hbaQyaofShrDb7j-rOfpQ9DIJ-LCKFdECrZm3tw5z_sXyewau-FvMFGg41iPz_gOExTMEMo70Rm7EdJQUki8kmuT6z0vYHa3YHxWl_4saPGS5Nffhr7tm2f2iJ9Z3R04BA5FZkx5reGaL9OZgQ9gGwJh4_MiRN30JwzPmsm1LapAfM9806u6FoBmsIqAwCtBYQCRpEIYFBil2zdIZPd2o04V3lTo8qy1FOrNEqSrPk1M-F3ULIOvci-7FzMGS9O7LQ"/>
+</div>
+</section>
+<!-- Instagram / Social Feed -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="flex justify-between items-center mb-12">
+<h2 class="font-headline text-4xl text-primary tracking-tight italic">@D4Lab_Atelier</h2>
+<a class="text-sm font-bold uppercase tracking-widest border-b border-primary pb-1" href="#">Síguenos</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+<img class="aspect-square object-cover rounded-sm grayscale hover:grayscale-0 transition-all cursor-pointer" data-alt="Post de instagram moda" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqve69Xsb_JYxoCnzO2attkA-6tTUBKvFW3iCOw2XQXnAIGbTPH7bRLZBQAG2Xm9522-OGSTK2YVefRiF6d4ivuAIK2ZlTc66FJjCLE6mn6lIGJqFnGFqcHUkbKOqh4Vajea_KQlBX0J16WzHwdETU_tp_amXwWxR5hsht1cQ53ui2E0-TaS6mBYL9gzHC_hDdMBms5a2ojvk7brThVRXlqFl7QCGg2swGLCsL1jh-9VDozD6cYjgOa19ZlRmELuU8pjd4cRmhug"/>
+<img class="aspect-square object-cover rounded-sm grayscale hover:grayscale-0 transition-all cursor-pointer" data-alt="Post de instagram atelier" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPSyQSAtMDhOhLRKs8yBQclAN57cL6DkXIfdyOZNwmUFzetIIyXfONA4CLeMShsKfkjP6mq_fHLKHsVTtAgddjh79pR_N0rLmwt0wiy2Q-nQygBb7ej-AflV684Eu7UGFvqfRbdWFfJ8ctAxDJkYoCykqfDdDMgV4g-PbnAmtJ-d20sWO280wkEVuzkK4w4iFEW0HD5XTRWYXC-eYC8cR9uwf2mSIt3f1ilynuPfNSEvLp1zdJgY8XbyGSjHtUgRwKcqyee8_tEA"/>
+<img class="aspect-square object-cover rounded-sm grayscale hover:grayscale-0 transition-all cursor-pointer" data-alt="Post de instagram tienda" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCREZLht32UAZ6fppiww-drnDiHy9B_ZFVmYbI7ycB23YiSyhIdqsFHW95jp6GcTfWqm5Biph7LMWIXXj3_gYBxzf5H0mkVrmmxYTE3YVtEyAHtTFkhawF4hr4IxiKuGjHSs4y5MTgwWJnfLdPjhfwvZPbCktgQv7ogJ8KzGOvP5ZuN2yG9Ne4M9E1O4VLzb9Yz-5-qCHGEpdBE0-Z70NDKCbGed98MjfEcCaNMfCtwjrE78Sgbfb5tOFJh7E-KylAe6BDxahmhOw"/>
+<img class="aspect-square object-cover rounded-sm grayscale hover:grayscale-0 transition-all cursor-pointer" data-alt="Post de instagram detalles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLfmst0EYC6xFViymdrploQ7iwyIiZ1xpZfMLmiWQ9lx_5oBgKXQK6E4QlcvQo_koiMhpDuyCBbA06YtUoMeM4rgxS_YPGFsu7tvBNl2Cugs_ZMOieQZqyYXiORKgFY_qQnpXOJG-RKiy8lVpnzH_T7lnz9DmoqdyJxcu7wbSqZAIpqAsdhea1K19uF48J0arqizsL-Wq56Zw9FKLViKLRPlIoedR81vmSHRz08S7P4xIW0xxrQKfsF_c5nLss7AxcJvU7QjPw5g"/>
+<img class="aspect-square object-cover rounded-sm grayscale hover:grayscale-0 transition-all cursor-pointer" data-alt="Post de instagram lifestyle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyxBHgHMhs2lTZ3HT1j3dBL4S-0xkN3ePWbHKahfQDw8CIuIhRRtXIYOqmPS7zedgZnb7MkJza79PsoJDv5668kpzIuNBnbma1X63v14bMHtgxpom-bFVKS2ll6R86dS66A9hnvdo7hSai8OpFXGScWh7LGVXWP6PaNoAi7lcDjyO6xlercsQEL2724Q2tLTlP_cXMoyum8EedBp0hJqeW4CdfvDwDjDgiM5zsZNOXcBYuzceFPEVMUdnK9WiDeQqWwiAul_dyOA"/>
+</div>
+</div>
+</section>
+<!-- Newsletter -->
+<section class="py-24 bg-primary text-on-primary">
+<div class="max-w-4xl mx-auto px-6 text-center">
+<h2 class="font-headline text-5xl mb-6">Únete al Círculo</h2>
+<p class="text-on-primary/70 mb-10 text-lg font-light leading-relaxed">Recibe acceso anticipado a nuestras colecciones cápsula y eventos exclusivos del Atelier.</p>
+<form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
+<input class="flex-1 bg-white/10 border-white/20 focus:border-white focus:ring-0 text-white placeholder:text-white/50 px-6 py-4 rounded-sm" placeholder="Tu correo electrónico" type="email"/>
+<button class="bg-secondary text-on-tertiary px-8 py-4 font-bold uppercase tracking-widest text-sm hover:bg-secondary-fixed transition-colors">Suscribirse</button>
+</form>
+<p class="mt-6 text-[10px] uppercase tracking-widest text-white/40">Al suscribirte aceptas nuestra política de privacidad.</p>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-zinc-50 dark:bg-zinc-900 w-full pt-20 pb-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 max-w-7xl mx-auto">
+<div class="space-y-6">
+<h4 class="text-xl font-serif text-emerald-950 dark:text-white italic">D4Lab</h4>
+<p class="text-sm font-light Manrope text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                    Un espacio dedicado a la curaduría de objetos y moda con alma. Elevando lo cotidiano a través del diseño.
+                </p>
+</div>
+<div>
+<h5 class="font-serif italic Noto Serif text-emerald-900 dark:text-emerald-400 mb-6">Tienda</h5>
+<ul class="space-y-3 text-sm font-light Manrope">
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 transition-colors" href="#">Nueva Colección</a></li>
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 transition-colors" href="#">Bestsellers</a></li>
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 transition-colors" href="#">Cuidado de Prendas</a></li>
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 transition-colors" href="#">Tarjetas Regalo</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-serif italic Noto Serif text-emerald-900 dark:text-emerald-400 mb-6">Asistencia</h5>
+<ul class="space-y-3 text-sm font-light Manrope">
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 transition-colors" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-serif italic Noto Serif text-emerald-900 dark:text-emerald-400 mb-6">Contacto</h5>
+<p class="text-sm font-light Manrope text-zinc-600 dark:text-zinc-400 mb-4">Calle de la Elegancia 12, Madrid, España</p>
+<div class="flex gap-4">
+<a class="text-emerald-900 dark:text-emerald-400 hover:text-amber-700 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-12 mt-20 pt-8 border-t border-zinc-200 dark:border-zinc-800 text-center">
+<p class="text-[10px] uppercase tracking-[0.3em] text-zinc-400">© 2024 D4Lab Atelier. All rights reserved.</p>
+</div>
+</footer>
+<!-- Sticky CTA -->
+<div class="fixed bottom-8 right-8 z-[60]">
+<button class="bg-primary text-on-primary w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-primary-container transition-all group overflow-hidden">
+<span class="material-symbols-outlined group-hover:-translate-y-12 transition-transform duration-300" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute translate-y-12 group-hover:translate-y-0 transition-transform duration-300 font-bold text-xs">SHOP</span>
+</button>
+</div>
+</body></html>
