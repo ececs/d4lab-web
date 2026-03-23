@@ -480,6 +480,7 @@
     document.querySelectorAll('[data-d4-open]').forEach(function (el) {
       el.addEventListener('click', function (e) {
         e.preventDefault();
+        e.stopPropagation();
         openChat();
       });
     });
