@@ -38,7 +38,17 @@
       "Read(//Users/daldo/Library/**)",
       "Bash(grep -n class=.*card '/Users/daldo/Library/Mobile Documents/com~apple~CloudDocs/VsCode/Pagina servicios/servicios.html')",
       "Bash(grep -l guia.html /Users/daldo/Library/Mobile Documents/com~apple~CloudDocs/VsCode/Pagina servicios/*.html /Users/daldo/Library/Mobile Documents/com~apple~CloudDocs/VsCode/Pagina servicios/blog/*.html)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(vercel git:*)",
+      "Read(//Users/daldo/.claude/**)",
+      "Read(//Users/daldo/**)",
+      "Bash(claude mcp:*)",
+      "mcp__Claude_Preview__preview_start",
+      "mcp__stitch__create_project",
+      "mcp__stitch__generate_screen_from_text",
+      "mcp__stitch__list_screens",
+      "WebFetch(domain:contribution.usercontent.google.com)",
+      "mcp__stitch__get_screen"
     ]
   }
 }
