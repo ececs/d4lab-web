@@ -261,9 +261,9 @@ module.exports = async function handler(req, res) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+          systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
           contents,
-          tools: [{ google_search: {} }],
+          tools: [{ googleSearch: {} }],
           generationConfig: {
             temperature: 0.4,
             maxOutputTokens: 1024,
