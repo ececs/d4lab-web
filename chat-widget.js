@@ -464,6 +464,16 @@
     }, 3000);
   }
 
+  // Exponer función para abrir el chat desde cualquier elemento de la página
+  window.d4ChatOpen = function () {
+    if (!document.getElementById('d4chat-btn')) {
+      init();
+      setTimeout(openChat, 100);
+    } else {
+      openChat();
+    }
+  };
+
   // Esperar a que el DOM esté listo
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
