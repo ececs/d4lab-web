@@ -379,7 +379,7 @@
 
   // ─── Abre / cierra el panel ───────────────────────────────────────────────────
   function openChat(autoMessage) {
-    dismissTooltip();
+    dismissTooltip(true);
     state.open = true;
     var panel = document.getElementById('d4chat-panel');
     var badge = document.querySelector('#d4chat-btn .d4chat-badge');
@@ -418,9 +418,14 @@
   }
 
   // ─── Tooltip flotante de presentación ────────────────────────────────────────
+  var tipAutoHideTimer = null;
+  var tipReshowTimer  = null;
+  var tipDismissed    = false; // solo persiste en esta sesión de página
+
   function showTooltip() {
-    try { if (localStorage.getItem('d4chat-tip-seen')) return; } catch (e) {}
+    if (tipDismissed) return;
     if (state.open) return;
+    if (document.getElementById('d4chat-tooltip')) return; // ya visible
 
     var tip = document.createElement('div');
     tip.id = 'd4chat-tooltip';
@@ -428,27 +433,52 @@
     tip.innerHTML = '<button id="d4chat-tooltip-close" aria-label="Cerrar">×</button>👋 ¿Tienes dudas o quieres un <strong>presupuesto gratis</strong>? ¡Pregúntame!';
     document.body.appendChild(tip);
 
+    // Botón X → descarta para toda la sesión
     document.getElementById('d4chat-tooltip-close').addEventListener('click', function (e) {
       e.stopPropagation();
-      dismissTooltip();
+      cancelTipTimers();
+      dismissTooltip(true);
     });
 
-    tip.addEventListener('click', function () {
-      dismissTooltip();
+    // Click en el cuerpo → abre el chat
+    tip.addEventListener('click', function (e) {
+      if (e.target.id === 'd4chat-tooltip-close') return;
+      cancelTipTimers();
+      dismissTooltip(true);
       openChat();
     });
 
-    setTimeout(function () { dismissTooltip(); }, 8000);
+    // Scroll → oculta y re-programa para 45 s después
+    function onScroll() {
+      window.removeEventListener('scroll', onScroll);
+      clearTimeout(tipAutoHideTimer);
+      dismissTooltip(false);
+      clearTimeout(tipReshowTimer);
+      tipReshowTimer = setTimeout(function () { showTooltip(); }, 45000);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Auto-ocultar a los 8 s
+    clearTimeout(tipAutoHideTimer);
+    tipAutoHideTimer = setTimeout(function () {
+      window.removeEventListener('scroll', onScroll);
+      dismissTooltip(false);
+    }, 8000);
   }
 
-  function dismissTooltip() {
+  function cancelTipTimers() {
+    clearTimeout(tipAutoHideTimer);
+    clearTimeout(tipReshowTimer);
+  }
+
+  function dismissTooltip(permanent) {
+    if (permanent) { tipDismissed = true; cancelTipTimers(); }
     var tip = document.getElementById('d4chat-tooltip');
     if (!tip) return;
     tip.style.transition = 'opacity .25s,transform .25s';
     tip.style.opacity = '0';
     tip.style.transform = 'translateY(8px)';
     setTimeout(function () { if (tip.parentNode) tip.parentNode.removeChild(tip); }, 280);
-    try { localStorage.setItem('d4chat-tip-seen', '1'); } catch (e) {}
   }
 
   // ─── Ajuste automático altura del textarea ───────────────────────────────────
@@ -509,14 +539,14 @@
     buildDOM();
     bindEvents();
 
-    // Mostrar badge + tooltip después de 4s (primera visita)
+    // Mostrar badge + tooltip después de 60s
     setTimeout(function () {
       if (!state.open) {
         var badge = document.querySelector('#d4chat-btn .d4chat-badge');
         if (badge) badge.style.display = 'block';
         showTooltip();
       }
-    }, 4000);
+    }, 60000);
   }
 
   // Esperar a que el DOM esté listo
