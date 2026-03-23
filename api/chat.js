@@ -41,6 +41,11 @@ const SYSTEM_PROMPT = `Eres el asistente virtual de D4Lab, el estudio tecnológi
 - Infraestructura IT y redes: presupuesto según proyecto
 - Domótica e instalaciones: presupuesto según proyecto (siempre presencial)
 
+## INICIO DE CONVERSACIÓN — SIEMPRE
+Antes de entrar en detalle sobre el servicio, pide al cliente sus datos de contacto en el primer o segundo mensaje:
+"Para poder enviarte el presupuesto y contactarte si tenemos alguna duda, ¿nos puedes dejar tu email o número de móvil?"
+Este dato es importante: inclúyelo en el campo "cliente_contacto" del BUDGET_SUMMARY.
+
 ## FLUJO DE CONVERSACIÓN
 
 ### Para SOPORTE IT:
@@ -77,8 +82,10 @@ const SYSTEM_PROMPT = `Eres el asistente virtual de D4Lab, el estudio tecnológi
 Cuando presentes cualquier presupuesto (aunque sea estimado), incluye AL FINAL de tu respuesta el siguiente bloque exacto. El sistema lo procesa automáticamente y el cliente NO lo verá. Rellena todos los campos:
 
 <BUDGET_SUMMARY>
-{"cliente_nombre":"NOMBRE_O_DESCONOCIDO","cliente_empresa":"EMPRESA_O_VACIO","tipo_cliente":"particular|empresa","modalidad":"remoto|presencial|mixto","descripcion":"DESCRIPCION_BREVE_DEL_TRABAJO","horas_estimadas":0,"tarifa_hora":0,"km_desplazamiento":0,"coste_desplazamiento":0,"total_estimado":0,"notas":"NOTAS_ADICIONALES"}
-</BUDGET_SUMMARY>`;
+{"cliente_nombre":"NOMBRE_O_DESCONOCIDO","cliente_contacto":"EMAIL_O_MOVIL_O_DESCONOCIDO","cliente_empresa":"EMPRESA_O_VACIO","tipo_cliente":"particular|empresa","modalidad":"remoto|presencial|mixto","descripcion":"DESCRIPCION_BREVE_DEL_TRABAJO","horas_estimadas":0,"tarifa_hora":0,"km_desplazamiento":0,"coste_desplazamiento":0,"total_estimado":0,"notas":"NOTAS_ADICIONALES"}
+</BUDGET_SUMMARY>
+
+RECUERDA: Este bloque es OBLIGATORIO cada vez que des un presupuesto. Debe estar al final de tu respuesta, en una línea nueva, con el JSON en una sola línea entre las etiquetas.`;
 
 // Construye el HTML del email con la conversación y el resumen del presupuesto
 function buildEmailHtml(messages, summary, fecha) {
@@ -136,6 +143,7 @@ function buildEmailHtml(messages, summary, fecha) {
           <td style="color:#8892b0;font-size:12px;padding:5px 0;width:130px;vertical-align:top">Nombre</td>
           <td style="color:#ccd6f6;font-size:14px;font-weight:600;padding:5px 0">${summary.cliente_nombre || '—'}</td>
         </tr>
+        ${summary.cliente_contacto && summary.cliente_contacto !== 'EMAIL_O_MOVIL_O_DESCONOCIDO' ? `<tr><td style="color:#8892b0;font-size:12px;padding:5px 0;vertical-align:top">Contacto</td><td style="color:#64FFDA;font-size:14px;font-weight:600;padding:5px 0">${summary.cliente_contacto}</td></tr>` : ''}
         ${summary.cliente_empresa ? `<tr><td style="color:#8892b0;font-size:12px;padding:5px 0;vertical-align:top">Empresa</td><td style="color:#ccd6f6;font-size:14px;padding:5px 0">${summary.cliente_empresa}</td></tr>` : ''}
         <tr>
           <td style="color:#8892b0;font-size:12px;padding:5px 0;vertical-align:top">Tipo cliente</td>
@@ -290,20 +298,28 @@ module.exports = async function handler(req, res) {
     const parts = candidate.content?.parts || [];
     const responseText = parts.filter(p => p.text).map(p => p.text).join('');
 
-    // Detectar bloque de presupuesto
+    // Detectar bloque de presupuesto (tolerante a variaciones de formato)
     const budgetMatch = responseText.match(/<BUDGET_SUMMARY>\s*([\s\S]*?)\s*<\/BUDGET_SUMMARY>/);
     let budgetDetected = false;
 
+    console.log('[D4Lab] RESEND_API_KEY set:', !!process.env.RESEND_API_KEY);
+    console.log('[D4Lab] Budget block found:', !!budgetMatch);
+
     if (budgetMatch) {
       budgetDetected = true;
+      // Limpiar posibles bloques markdown ```json ... ``` que Gemini pueda añadir
+      const rawJson = budgetMatch[1]
+        .replace(/^```(?:json)?\s*/m, '')
+        .replace(/\s*```\s*$/m, '')
+        .trim();
+      console.log('[D4Lab] Budget JSON raw:', rawJson.substring(0, 200));
       try {
-        const summary = JSON.parse(budgetMatch[1]);
-        // Enviar email en background (no bloqueamos la respuesta)
+        const summary = JSON.parse(rawJson);
         sendBudgetEmail(messages, summary).catch(e =>
           console.error('[D4Lab] Error enviando email:', e)
         );
       } catch (e) {
-        console.error('[D4Lab] Error parseando BUDGET_SUMMARY:', e, '\nContenido:', budgetMatch[1]);
+        console.error('[D4Lab] Error parseando BUDGET_SUMMARY:', e.message, '\nContenido:', rawJson);
       }
     }
 
