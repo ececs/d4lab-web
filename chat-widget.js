@@ -250,8 +250,12 @@
     wrap.appendChild(bubble);
     msgs.appendChild(wrap);
 
-    // Scroll al final
-    msgs.scrollTop = msgs.scrollHeight;
+    // Usuario → scroll al final; Bot → scroll al inicio del nuevo mensaje
+    if (role === 'user') {
+      msgs.scrollTop = msgs.scrollHeight;
+    } else {
+      wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   // ─── Typing indicator ─────────────────────────────────────────────────────────
