@@ -419,13 +419,31 @@
 
   // ─── Tooltip flotante de presentación ────────────────────────────────────────
   var tipAutoHideTimer = null;
-  var tipReshowTimer  = null;
-  var tipDismissed    = false; // solo persiste en esta sesión de página
+  var tipIdleTimer     = null;
+  var tipDismissed     = false;
+  var tipActivityBound = false;
+
+  // Comprueba que el tooltip no solapa contenido importante
+  // (no mostrar si el usuario está en el 85% inferior de la página)
+  function tipIsSafe() {
+    var ratio = (window.scrollY + window.innerHeight) / Math.max(document.body.scrollHeight, 1);
+    return ratio < 0.85;
+  }
+
+  // Reinicia el contador de inactividad; al cumplirse, reaparece el tooltip
+  function armIdleWatch() {
+    clearTimeout(tipIdleTimer);
+    if (tipDismissed || state.open) return;
+    tipIdleTimer = setTimeout(function () {
+      if (!tipDismissed && !state.open && tipIsSafe()) showTooltip();
+    }, 45000); // 45 s de inactividad
+  }
 
   function showTooltip() {
     if (tipDismissed) return;
     if (state.open) return;
-    if (document.getElementById('d4chat-tooltip')) return; // ya visible
+    if (document.getElementById('d4chat-tooltip')) return;
+    if (!tipIsSafe()) { armIdleWatch(); return; } // no solapar
 
     var tip = document.createElement('div');
     tip.id = 'd4chat-tooltip';
@@ -436,25 +454,22 @@
     // Botón X → descarta para toda la sesión
     document.getElementById('d4chat-tooltip-close').addEventListener('click', function (e) {
       e.stopPropagation();
-      cancelTipTimers();
       dismissTooltip(true);
     });
 
     // Click en el cuerpo → abre el chat
     tip.addEventListener('click', function (e) {
       if (e.target.id === 'd4chat-tooltip-close') return;
-      cancelTipTimers();
       dismissTooltip(true);
       openChat();
     });
 
-    // Scroll → oculta y re-programa para 45 s después
+    // Scroll → oculta y activa vigilancia de inactividad
     function onScroll() {
       window.removeEventListener('scroll', onScroll);
       clearTimeout(tipAutoHideTimer);
       dismissTooltip(false);
-      clearTimeout(tipReshowTimer);
-      tipReshowTimer = setTimeout(function () { showTooltip(); }, 45000);
+      armIdleWatch();
     }
     window.addEventListener('scroll', onScroll, { passive: true });
 
@@ -463,16 +478,21 @@
     tipAutoHideTimer = setTimeout(function () {
       window.removeEventListener('scroll', onScroll);
       dismissTooltip(false);
+      armIdleWatch();
     }, 60000);
-  }
 
-  function cancelTipTimers() {
-    clearTimeout(tipAutoHideTimer);
-    clearTimeout(tipReshowTimer);
+    // Enlazar detectores de actividad una sola vez
+    if (!tipActivityBound) {
+      tipActivityBound = true;
+      ['mousemove', 'keydown', 'touchstart', 'click'].forEach(function (ev) {
+        document.addEventListener(ev, function () { armIdleWatch(); }, { passive: true });
+      });
+    }
   }
 
   function dismissTooltip(permanent) {
-    if (permanent) { tipDismissed = true; cancelTipTimers(); }
+    clearTimeout(tipAutoHideTimer);
+    if (permanent) { tipDismissed = true; clearTimeout(tipIdleTimer); }
     var tip = document.getElementById('d4chat-tooltip');
     if (!tip) return;
     tip.style.transition = 'opacity .25s,transform .25s';
