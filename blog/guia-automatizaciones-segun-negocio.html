@@ -60,7 +60,7 @@
   .prose-article p { color:#8892b0; line-height:1.85; margin-bottom:1.2rem; font-size:0.97rem; }
   .prose-article .callout { background:rgba(100,255,218,0.05); border-left:3px solid #64FFDA; padding:1rem 1.2rem; border-radius:0 4px 4px 0; margin:1.5rem 0; }
   .prose-article .callout p { margin:0; color:#8892b0; }
-  .cat-card { background:rgba(17,34,64,0.5); border:1px solid rgba(100,255,218,0.1); border-radius:4px; padding:1.5rem; transition:border-color 0.3s, background 0.3s; }
+  .cat-card { background:rgba(17,34,64,0.5); border:1px solid rgba(100,255,218,0.1); border-radius:4px; padding:1.5rem; transition:border-color 0.3s, background 0.3s; cursor:pointer; }
   .cat-card:hover { border-color:rgba(100,255,218,0.4); background:rgba(100,255,218,0.03); }
   .cat-card ul { list-style:none; padding:0; margin:0.8rem 0 1.2rem; }
   .cat-card ul li { color:#8892b0; padding-left:1.2rem; position:relative; margin-bottom:0.35rem; font-size:0.88rem; line-height:1.6; }
@@ -347,6 +347,15 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.1 });
   revealEls.forEach(el => observer.observe(el));
+
+  // Click en toda la tarjeta abre el chatbot con el mensaje del botón
+  document.querySelectorAll('.cat-card').forEach(function(card) {
+    card.addEventListener('click', function(e) {
+      if (e.target.closest('.cat-cta')) return;
+      var btn = card.querySelector('.cat-cta[data-d4-open]');
+      if (btn) btn.click();
+    });
+  });
 </script>
 </body>
 </html>

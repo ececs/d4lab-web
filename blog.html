@@ -72,8 +72,9 @@
   #nav-header.scrolled { background: rgba(10,25,47,0.97); box-shadow: 0 1px 0 rgba(100,255,218,0.1); }
   #mobile-menu { display: none; }
   #mobile-menu.open { display: flex; }
-  .article-card { transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease; }
+  .article-card { transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease; position: relative; cursor: pointer; }
   .article-card:hover { transform: translateY(-4px); border-color: #64FFDA; background: rgba(100,255,218,0.03); }
+  .article-card a.card-link::after { content: ''; position: absolute; inset: 0; z-index: 1; }
   .tag { display: inline-flex; align-items: center; padding: 2px 8px; background: rgba(100,255,218,0.08); border: 1px solid rgba(100,255,218,0.2); border-radius: 2px; font-size: 9px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #64FFDA; letter-spacing: 0.15em; text-transform: uppercase; }
 </style>
 </head>
@@ -153,7 +154,7 @@
         <p class="text-on-surface-variant text-sm font-light leading-relaxed flex-1">Hay tareas que haces a mano cada día que podrían hacerse solas. Encuentra tu sector, identifica lo que te roba tiempo y descubre cuánto puedes recuperar cada semana. Con presupuesto personalizado por tipo de negocio.</p>
         <div class="mt-5 pt-4 border-t border-outline/30 flex items-center justify-between">
           <span class="text-on-surface-variant/60 text-xs">7 min lectura</span>
-          <a href="/blog/guia-automatizaciones-segun-negocio.html" class="text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer guía <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          <a href="/blog/guia-automatizaciones-segun-negocio.html" class="card-link text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer guía <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
         </div>
       </div>
     </article>
@@ -174,7 +175,7 @@
         <p class="text-on-surface-variant text-sm font-light leading-relaxed flex-1">Restaurante, tienda, clínica, autónomo, instalador o empresa: cada negocio necesita una web diferente. Descubre qué debe incluir la tuya, qué precio esperar y pide presupuesto personalizado en segundos.</p>
         <div class="mt-5 pt-4 border-t border-outline/30 flex items-center justify-between">
           <span class="text-on-surface-variant/60 text-xs">6 min lectura</span>
-          <a href="/blog/guia-web-segun-negocio.html" class="text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer guía <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          <a href="/blog/guia-web-segun-negocio.html" class="card-link text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer guía <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
         </div>
       </div>
     </article>
@@ -195,7 +196,7 @@
         <p class="text-on-surface-variant text-sm font-light leading-relaxed flex-1">Consolida ventas, reservas, visitas web y campañas en un panel actualizado automáticamente. Sin hojas de cálculo manuales ni reportes de fin de mes. Decisiones basadas en datos reales, no en intuición.</p>
         <div class="mt-5 pt-4 border-t border-outline/30 flex items-center justify-between">
           <span class="text-on-surface-variant/60 text-xs">7 min lectura</span>
-          <a href="/blog/dashboard-datos.html" class="text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer artículo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          <a href="/blog/dashboard-datos.html" class="card-link text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer artículo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
         </div>
       </div>
     </article>
@@ -216,7 +217,7 @@
         <p class="text-on-surface-variant text-sm font-light leading-relaxed flex-1">Conecta tu email, CRM y herramientas de gestión para que los presupuestos se generen solos tras una consulta, las facturas se envíen automáticamente al cerrar un servicio y ningún lead se quede sin respuesta. Menos trabajo manual, más tiempo para lo que importa.</p>
         <div class="mt-5 pt-4 border-t border-outline/30 flex items-center justify-between">
           <span class="text-on-surface-variant/60 text-xs">8 min lectura</span>
-          <a href="/blog/automatizacion-procesos.html" class="text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer artículo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          <a href="/blog/automatizacion-procesos.html" class="card-link text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer artículo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
         </div>
       </div>
     </article>
@@ -237,7 +238,7 @@
         <p class="text-on-surface-variant text-sm font-light leading-relaxed flex-1">Conecta tu Instagram DM, WhatsApp Business o Messenger a un flujo de IA: responde preguntas frecuentes al instante, filtra leads, agenda citas y deriva al equipo humano solo cuando hace falta. Los clientes no esperan, tú no te saturás.</p>
         <div class="mt-5 pt-4 border-t border-outline/30 flex items-center justify-between">
           <span class="text-on-surface-variant/60 text-xs">7 min lectura</span>
-          <a href="/blog/automatizacion-redes-sociales.html" class="text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer artículo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          <a href="/blog/automatizacion-redes-sociales.html" class="card-link text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer artículo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
         </div>
       </div>
     </article>
@@ -258,7 +259,7 @@
         <p class="text-on-surface-variant text-sm font-light leading-relaxed flex-1">Un chatbot integrado en tu web responde dudas, diferencia entre particulares y empresas, calcula presupuestos personalizados y te avisa por email cuando hay un lead caliente. Sin operador. Sin horarios. Sin coste extra por conversación.</p>
         <div class="mt-5 pt-4 border-t border-outline/30 flex items-center justify-between">
           <span class="text-on-surface-variant/60 text-xs">6 min lectura</span>
-          <a href="/blog/chatbot-ia-web.html" class="text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer artículo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          <a href="/blog/chatbot-ia-web.html" class="card-link text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer artículo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
         </div>
       </div>
     </article>
@@ -278,7 +279,7 @@
         <p class="text-on-surface-variant text-sm font-light leading-relaxed flex-1">El polvo mata los ordenadores lentamente. Limpiar los ventiladores, revisar la pasta térmica y liberar espacio en disco son tareas de 30 minutos que alargan la vida del equipo años.</p>
         <div class="mt-5 pt-4 border-t border-outline/30 flex items-center justify-between">
           <span class="text-on-surface-variant/60 text-xs">5 min lectura</span>
-          <a href="/blog/mantenimiento-pc.html" class="text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer artículo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          <a href="/blog/mantenimiento-pc.html" class="card-link text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer artículo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
         </div>
       </div>
     </article>
@@ -298,7 +299,7 @@
         <p class="text-on-surface-variant text-sm font-light leading-relaxed flex-1">No toda empresa necesita un chatbot ni un agente autónomo. Pero hay tareas concretas donde la IA ahorra tiempo de verdad. Te cuento cuáles son y por dónde empezar sin gastar de más.</p>
         <div class="mt-5 pt-4 border-t border-outline/30 flex items-center justify-between">
           <span class="text-on-surface-variant/60 text-xs">8 min lectura</span>
-          <a href="/blog/ia-negocios.html" class="text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer artículo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          <a href="/blog/ia-negocios.html" class="card-link text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer artículo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
         </div>
       </div>
     </article>
@@ -318,7 +319,7 @@
         <p class="text-on-surface-variant text-sm font-light leading-relaxed flex-1">La mayoría de routers domésticos tienen la seguridad por defecto mal configurada. Te enseño a ver quién está conectado, cambiar lo que importa y evitar intrusiones sin complicarte.</p>
         <div class="mt-5 pt-4 border-t border-outline/30 flex items-center justify-between">
           <span class="text-on-surface-variant/60 text-xs">6 min lectura</span>
-          <a href="/blog/seguridad-wifi.html" class="text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer artículo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          <a href="/blog/seguridad-wifi.html" class="card-link text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer artículo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
         </div>
       </div>
     </article>
@@ -338,7 +339,7 @@
         <p class="text-on-surface-variant text-sm font-light leading-relaxed flex-1">No funciona en móvil, tarda más de 3 segundos en cargar, no tiene HTTPS... Si reconoces alguna de estas señales, tu web está perdiendo clientes cada día.</p>
         <div class="mt-5 pt-4 border-t border-outline/30 flex items-center justify-between">
           <span class="text-on-surface-variant/60 text-xs">4 min lectura</span>
-          <a href="/blog/renovar-web.html" class="text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer artículo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          <a href="/blog/renovar-web.html" class="card-link text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer artículo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
         </div>
       </div>
     </article>
@@ -358,7 +359,7 @@
         <p class="text-on-surface-variant text-sm font-light leading-relaxed flex-1">No hace falta reformar la casa. Con un par de dispositivos bien elegidos puedes automatizar la iluminación, el clima y el acceso. Te cuento por dónde empezar y qué evitar.</p>
         <div class="mt-5 pt-4 border-t border-outline/30 flex items-center justify-between">
           <span class="text-on-surface-variant/60 text-xs">7 min lectura</span>
-          <a href="/blog/domotica-inicio.html" class="text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer artículo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          <a href="/blog/domotica-inicio.html" class="card-link text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer artículo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
         </div>
       </div>
     </article>
@@ -378,7 +379,7 @@
         <p class="text-on-surface-variant text-sm font-light leading-relaxed flex-1">Las imágenes sin comprimir, el exceso de plugins y el hosting de baja calidad son los tres culpables más habituales. Aquí te explico cómo detectar el cuello de botella y qué priorizar.</p>
         <div class="mt-5 pt-4 border-t border-outline/30 flex items-center justify-between">
           <span class="text-on-surface-variant/60 text-xs">5 min lectura</span>
-          <a href="/blog/web-lenta.html" class="text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer artículo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          <a href="/blog/web-lenta.html" class="card-link text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Leer artículo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
         </div>
       </div>
     </article>
