@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mantenimiento básico del PC que la mayoría ignora | D4Lab</title>
+<meta name="description" content="El polvo, la pasta térmica seca y el disco lleno matan ordenadores a cámara lenta. Aprende a prevenir fallos con estos hábitos de mantenimiento preventivo."/>
+<link rel="canonical" href="https://www.d4lab.es/blog/mantenimiento-pc.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="D4Lab"/>
+<meta property="og:locale" content="es_ES"/>
+<meta property="og:url" content="https://www.d4lab.es/blog/mantenimiento-pc.html"/>
+<meta property="og:title" content="Mantenimiento básico del PC que la mayoría ignora | D4Lab"/>
+<meta property="og:description" content="El polvo, la pasta térmica seca y el disco lleno matan ordenadores a cámara lenta. Aprende a prevenir fallos con estos hábitos de mantenimiento preventivo."/>
+<meta property="og:image" content="https://www.d4lab.es/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Mantenimiento básico del PC que la mayoría ignora | D4Lab"/>
+<meta name="twitter:description" content="El polvo, la pasta térmica seca y el disco lleno matan ordenadores a cámara lenta. Aprende a prevenir fallos con estos hábitos de mantenimiento preventivo."/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Mantenimiento básico del PC que la mayoría ignora",
+  "description": "El polvo, la pasta térmica seca y el disco lleno matan ordenadores a cámara lenta. Aprende a prevenir fallos con estos hábitos de mantenimiento preventivo.",
+  "url": "https://www.d4lab.es/blog/mantenimiento-pc.html",
+  "datePublished": "2026-03-23",
+  "author": {"@type": "Person", "name": "Eudaldo Cal Saul", "url": "https://www.d4lab.es/sobre-mi.html"},
+  "publisher": {"@type": "Organization", "name": "D4Lab", "url": "https://www.d4lab.es"}
+}
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#64FFDA", "on-primary": "#001a14",
+          "surface": "#0a192f", "surface-container": "#112240",
+          "surface-container-high": "#1d2d50", "surface-container-low": "#020c1b",
+          "on-surface": "#ccd6f6", "on-surface-variant": "#8892b0", "outline": "#233554",
+        },
+        fontFamily: { "headline":["Space Grotesk","sans-serif"], "body":["Inter","sans-serif"], "label":["Space Grotesk","sans-serif"] },
+        borderRadius: { "DEFAULT":"0.25rem","lg":"0.5rem","xl":"1rem","full":"9999px" },
+      },
+    },
+  }
+</script>
+<style>
+  .glass { background:rgba(17,34,64,0.7); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(100,255,218,0.1); }
+  .nav-item::after { content:''; display:block; width:0; height:2px; background:#64FFDA; transition:width .3s; }
+  .nav-item:hover::after { width:100%; }
+  #nav-header.scrolled { background:rgba(10,25,47,0.97); box-shadow:0 1px 0 rgba(100,255,218,0.1); }
+  #mobile-menu { display:none; }
+  #mobile-menu.open { display:flex; }
+  .tag { display:inline-flex; align-items:center; padding:2px 8px; background:rgba(100,255,218,0.08); border:1px solid rgba(100,255,218,0.2); border-radius:2px; font-size:9px; font-family:'Space Grotesk',sans-serif; font-weight:700; color:#64FFDA; letter-spacing:0.15em; text-transform:uppercase; }
+  .prose-article h2 { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.4rem; color:#ccd6f6; margin-top:2.5rem; margin-bottom:1rem; }
+  .prose-article h3 { font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:1.1rem; color:#64FFDA; margin-top:1.8rem; margin-bottom:0.6rem; }
+  .prose-article p { color:#8892b0; line-height:1.85; margin-bottom:1.2rem; font-size:0.97rem; }
+  .prose-article ul { list-style:none; padding:0; margin-bottom:1.4rem; }
+  .prose-article ul li { color:#8892b0; padding-left:1.4rem; position:relative; margin-bottom:0.5rem; font-size:0.97rem; line-height:1.7; }
+  .prose-article ul li::before { content:'▹'; color:#64FFDA; position:absolute; left:0; }
+  .prose-article strong { color:#ccd6f6; font-weight:600; }
+  .prose-article .callout { background:rgba(100,255,218,0.05); border-left:3px solid #64FFDA; padding:1rem 1.2rem; border-radius:0 4px 4px 0; margin:1.5rem 0; }
+  .prose-article .callout p { margin:0; }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen">
+
+<header id="nav-header" class="fixed top-0 left-0 right-0 z-50 glass border-b border-outline/30 transition-all">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex h-20 items-center justify-between">
+    <a href="/index.html" class="flex items-center gap-3 group">
+      <div class="relative size-10 flex items-center justify-center">
+        <div class="absolute inset-0 border border-primary/40 rounded-sm rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+        <span class="material-symbols-outlined text-primary text-lg">terminal</span>
+      </div>
+      <span class="text-white text-xl font-headline font-bold tracking-tight"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-10">
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/servicios.html">Servicios</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/sobre-mi.html">Sobre mí</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/precios.html">FAQ</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/blog.html">Blog</a>
+    </nav>
+    <a href="/contacto.html" class="hidden md:inline-flex bg-primary px-6 py-2 rounded-sm text-on-primary font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all items-center gap-2">Contactar</a>
+    <button id="menu-btn" class="md:hidden text-primary" aria-label="Menú"><span class="material-symbols-outlined text-3xl">menu</span></button>
+  </div>
+  <div id="mobile-menu" class="flex-col px-6 pb-6 gap-4 md:hidden">
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/servicios.html">Servicios</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/sobre-mi.html">Sobre mí</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/precios.html">FAQ</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/blog.html">Blog</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/contacto.html">Contacto</a>
+  </div>
+</header>
+
+<!-- Article Header -->
+<section class="pt-32 pb-12 px-6 border-b border-primary/10">
+  <div class="max-w-3xl mx-auto">
+    <div class="flex items-center gap-2 text-on-surface-variant/60 text-xs font-label uppercase tracking-wider mb-6">
+      <a href="/blog.html" class="hover:text-primary transition-colors">Blog</a>
+      <span class="material-symbols-outlined text-xs">chevron_right</span>
+      <span class="text-on-surface-variant">Hardware</span>
+    </div>
+    <div class="flex gap-2 flex-wrap mb-4">
+      <span class="tag">Hardware</span>
+      <span class="tag">PC</span>
+    </div>
+    <h1 class="text-3xl md:text-5xl font-headline font-bold text-white tracking-tight leading-tight mb-6">Mantenimiento básico del PC que la mayoría ignora</h1>
+    <p class="text-on-surface-variant text-lg font-light leading-relaxed mb-8">La mayoría de los ordenadores no mueren de golpe — se deterioran lentamente. Un ventilador atascado de polvo, la pasta térmica seca o un disco al límite de su capacidad hacen que tu equipo se ralentice, falle y finalmente deje de funcionar. Aquí tienes lo que nadie te enseña pero deberías hacer.</p>
+    <div class="flex items-center gap-4 text-on-surface-variant/60 text-xs font-label uppercase tracking-wider">
+      <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">person</span> Eudaldo Cal Saul</span>
+      <span>·</span>
+      <span>Marzo 2026</span>
+      <span>·</span>
+      <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 5 min lectura</span>
+    </div>
+  </div>
+</section>
+
+<!-- Article Body -->
+<article class="max-w-3xl mx-auto px-6 py-12 prose-article">
+
+  <h2>El polvo: el enemigo número uno de tu equipo</h2>
+  <p>El polvo no es simplemente estético. Actúa como un aislante térmico que impide que el calor se disipe correctamente. Cuando el procesador no puede enfriarse, el sistema operativo activa el <strong>throttling térmico</strong>: reduce la velocidad del procesador de forma automática para bajar la temperatura. El resultado visible es un ordenador que va lento sin razón aparente.</p>
+  <p>En casos extremos, las altas temperaturas sostenidas acortan la vida útil de la CPU, la GPU y los condensadores de la placa base. Un ordenador que debería durar 8-10 años puede fallar en 4 si trabaja siempre a 90 °C. Los síntomas habituales son apagados repentinos (el equipo se apaga solo antes de quemarse), ventiladores que suenan a turbina de avión, y un rendimiento que cae en picado al cabo de 15-20 minutos de uso intensivo.</p>
+
+  <div class="callout"><p><strong>Regla práctica:</strong> si llevas más de un año sin abrir tu equipo de torre, casi con toda seguridad tiene una capa de polvo que está afectando su rendimiento. Los portátiles son todavía más sensibles porque el espacio interior es mucho más reducido.</p></div>
+
+  <h3>Cómo limpiar correctamente</h3>
+  <p>No necesitas ser técnico para hacer una limpieza básica. El material que necesitas: <strong>spray de aire comprimido</strong> (en cualquier tienda de informática, unos 5-8 €), un destornillador de estrella para abrir el lateral de la torre, y opcionalmente un pincel de cerdas suaves para aflojar el polvo apelmazado.</p>
+  <ul>
+    <li>Apaga el equipo completamente y desenchúfalo de la corriente.</li>
+    <li>Llévalo a un espacio bien ventilado o, mejor aún, al exterior. El polvo que vas a remover es considerable.</li>
+    <li>Con el spray de aire comprimido, sopla en ráfagas cortas sobre los ventiladores, el disipador del procesador y las rejillas de entrada y salida de aire.</li>
+    <li>Sujeta los ventiladores con un dedo mientras los soplas para evitar que giren a alta velocidad sin lubricante, lo que puede dañar los rodamientos.</li>
+    <li>Limpia los filtros de polvo si tu caja los tiene — suelen ser de plástico fino y se lavan con agua.</li>
+  </ul>
+  <p><strong>Frecuencia recomendada:</strong> cada 6-12 meses para entornos normales. Cada 3-4 meses si tienes mascotas, si fumas en la habitación, o si el equipo está en el suelo en lugar de sobre una mesa.</p>
+
+  <h2>La pasta térmica: lo que nadie te dice</h2>
+  <p>La pasta térmica es un compuesto que se aplica entre el procesador y su disipador para mejorar la transferencia de calor. De fábrica todos los equipos llevan pasta, pero con el tiempo se reseca, se contrae y pierde conductividad. En un ordenador de 4-5 años con la pasta original, la diferencia de temperatura entre antes y después de cambiarla puede ser de <strong>10 a 20 °C</strong>. Eso es la diferencia entre throttling constante y rendimiento pleno.</p>
+
+  <h3>Señales de que la pasta está seca</h3>
+  <ul>
+    <li>Temperaturas de CPU superiores a 85 °C en reposo o por encima de 95 °C bajo carga.</li>
+    <li>El ordenador se apaga solo después de varios minutos de uso intensivo.</li>
+    <li>El ventilador del procesador funciona casi siempre a máxima velocidad.</li>
+    <li>El equipo tiene más de 4-5 años y nunca se le ha hecho mantenimiento.</li>
+  </ul>
+  <p>Para aplicar pasta nueva: retira el disipador, limpia la superficie del procesador y el disipador con alcohol isopropílico al 90 % y un hisopo, aplica una gota del tamaño de un grano de arroz en el centro del procesador y vuelve a montar el disipador. No la extiendas con el dedo — la presión del disipador la distribuye sola.</p>
+
+  <div class="callout"><p><strong>Marcas fiables de pasta térmica:</strong> Arctic MX-4, Thermal Grizzly Kryonaut, Noctua NT-H1. Precio entre 6 y 12 €. Una aplicación puede durar 3-5 años.</p></div>
+
+  <h2>Liberar espacio en disco: qué borrar sin miedo</h2>
+  <p>Un disco que supera el 85-90 % de su capacidad empieza a ralentizar el sistema. En los SSD esto afecta al rendimiento de escritura; en los HDD tradicionales, la fragmentación y la falta de espacio libre se combinan para crear un cuello de botella real.</p>
+  <p>En Windows, puedes borrar con total seguridad estos tres tipos de archivos:</p>
+  <ul>
+    <li><strong>Archivos temporales del sistema:</strong> abre el menú Inicio, escribe <em>%temp%</em>, pulsa Enter y borra todo lo que aparezca. El sistema no usará nada de lo que hay ahí.</li>
+    <li><strong>Caché de Windows Update:</strong> ve a <em>C:\Windows\SoftwareDistribution\Download</em> y borra el contenido (no la carpeta en sí). Windows volverá a descargar lo que necesite si hay actualizaciones pendientes.</li>
+    <li><strong>Limpieza de disco con WinSxS:</strong> abre el símbolo del sistema como administrador y ejecuta <code>Dism.exe /Online /Cleanup-Image /StartComponentCleanup</code>. Esta carpeta puede ocupar varios GB y almacena versiones antiguas de componentes del sistema que ya no son necesarias.</li>
+  </ul>
+  <p>También vale la pena revisar la carpeta de Descargas, vaciar la Papelera de reciclaje y desinstalar programas que no uses. Muchos equipos tienen instalados software de prueba, herramientas de impresora obsoletas o juegos que nadie juega y ocupan decenas de gigabytes.</p>
+
+  <h2>Programas de inicio: el lastre invisible</h2>
+  <p>Cada programa que se instala intenta añadirse al inicio de Windows para "estar disponible más rápido". El resultado acumulado es que el equipo tarda 3-4 minutos en estar listo cuando debería tardar 30 segundos. Abre el Administrador de tareas (Ctrl + Shift + Esc), ve a la pestaña <strong>Inicio</strong> y deshabilita todo aquello que no necesites en el arranque: Spotify, Discord, OneDrive (si no lo usas activamente), Skype, clientes de juegos, utilidades de fabricante de hardware que nadie usa.</p>
+  <p>Una buena regla: si no recuerdas para qué sirve, búscalo en Google antes de deshabilitarlo. Pero en la mayoría de los casos, el 70 % de los programas de inicio pueden deshabilitarse sin consecuencia alguna.</p>
+
+  <h2>Backup básico: la regla 3-2-1</h2>
+  <p>El mantenimiento no es solo hacer que el equipo funcione bien — también es asegurarse de no perder los datos cuando falle. Y <em>cuando</em>, no <em>si</em>. Los discos duros mecánicos tienen una vida media de 3-5 años. Los SSD duran más, pero también fallan.</p>
+  <p>La regla <strong>3-2-1</strong> es el estándar mínimo de cualquier backup serio:</p>
+  <ul>
+    <li><strong>3 copias</strong> de tus datos (el original + 2 copias).</li>
+    <li>En <strong>2 tipos de soporte diferentes</strong> (por ejemplo, disco duro externo + nube).</li>
+    <li>Con <strong>1 copia fuera de tu ubicación física</strong> (ante robos, incendios o inundaciones).</li>
+  </ul>
+  <p>Para usuarios domésticos, una solución práctica y barata: activa OneDrive o Google Drive para tus documentos importantes (copia en la nube automática) y conecta un disco duro externo una vez al mes para hacer una copia completa. Con eso ya cumples la regla 3-2-1 de forma básica.</p>
+
+  <h2>Cuándo es momento de llamar a un técnico</h2>
+  <p>Hay señales que van más allá del mantenimiento que puedes hacer tú mismo y que indican un problema de hardware que requiere diagnóstico profesional:</p>
+  <ul>
+    <li>El equipo no arranca o da pitidos al encender (códigos de error POST).</li>
+    <li>Pantallazos azules frecuentes con códigos de error diferentes cada vez (puede indicar RAM defectuosa o problema en la placa base).</li>
+    <li>El disco duro hace ruidos de clic o rascado — señal de fallo inminente, actúa inmediatamente.</li>
+    <li>Artefactos visuales en pantalla (líneas, píxeles de colores, parpadeos) que no desaparecen al reiniciar.</li>
+    <li>El equipo se reinicia solo al arrancar sin llegar al escritorio.</li>
+  </ul>
+
+  <div class="callout"><p>Un diagnóstico profesional a tiempo puede salvarte el coste de comprar un equipo nuevo. La diferencia entre cambiar un módulo de RAM defectuoso (20-40 €) y perder todos tus datos por no haber actuado a tiempo no tiene precio.</p></div>
+
+</article>
+
+<!-- CTA -->
+<section class="py-16 px-6 bg-surface-container-low border-t border-primary/10">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-2xl md:text-3xl font-headline font-bold text-white tracking-tight mb-4">¿Tu equipo necesita una revisión profesional?</h2>
+    <p class="text-on-surface-variant font-light mb-8">Si tu ordenador va lento, hace ruidos extraños o simplemente no te transmite confianza, pide diagnóstico. Limpieza, pasta térmica, diagnóstico de hardware y optimización del sistema incluidos.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <button data-d4-open class="bg-primary text-on-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs shadow-xl shadow-primary/20 hover:brightness-110 transition-all inline-flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">calculate</span>
+        Pedir presupuesto
+      </button>
+      <a href="/servicios.html" class="border border-primary/30 text-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs hover:bg-primary/5 transition-all inline-flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">build</span>
+        Ver servicios
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-surface-container-low py-12 px-6 border-t border-primary/10">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <a href="/index.html" class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary">terminal</span>
+      <span class="text-white font-headline font-bold"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="flex flex-wrap gap-6 text-on-surface-variant text-xs font-label font-bold uppercase tracking-[0.2em]">
+      <a href="/index.html" class="hover:text-primary transition-colors">Inicio</a>
+      <a href="/servicios.html" class="hover:text-primary transition-colors">Servicios</a>
+      <a href="/sobre-mi.html" class="hover:text-primary transition-colors">Sobre mí</a>
+      <a href="/precios.html" class="hover:text-primary transition-colors">FAQ</a>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Blog</a>
+      <a href="/contacto.html" class="hover:text-primary transition-colors">Contacto</a>
+    </nav>
+    <p class="text-on-surface-variant text-[9px] font-headline uppercase tracking-[0.3em]">© 2026 D4Lab</p>
+  </div>
+</footer>
+<script>
+  const nav = document.getElementById('nav-header');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+  document.getElementById('menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('open'));
+</script>
+<script src="/chat-widget.js"></script>
+</body>
+</html>

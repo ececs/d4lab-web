@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cómo saber si alguien usa tu WiFi y cómo echarlo | D4Lab</title>
+<meta name="description" content="Guía práctica para detectar intrusos en tu red WiFi, securizar el router paso a paso y proteger tus datos. Apps, configuración del router y cuándo llamar a un técnico."/>
+<link rel="canonical" href="https://www.d4lab.es/blog/seguridad-wifi.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="D4Lab"/>
+<meta property="og:locale" content="es_ES"/>
+<meta property="og:url" content="https://www.d4lab.es/blog/seguridad-wifi.html"/>
+<meta property="og:title" content="Cómo saber si alguien usa tu WiFi y cómo echarlo"/>
+<meta property="og:description" content="Guía práctica para detectar intrusos en tu red WiFi, securizar el router paso a paso y proteger tus datos. Apps, configuración del router y cuándo llamar a un técnico."/>
+<meta property="og:image" content="https://www.d4lab.es/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Cómo saber si alguien usa tu WiFi y cómo echarlo"/>
+<meta name="twitter:description" content="Guía práctica para detectar intrusos en tu red WiFi, securizar el router paso a paso y proteger tus datos. Apps, configuración del router y cuándo llamar a un técnico."/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Cómo saber si alguien usa tu WiFi y cómo echarlo",
+  "description": "Guía práctica para detectar intrusos en tu red WiFi, securizar el router paso a paso y proteger tus datos. Apps, configuración del router y cuándo llamar a un técnico.",
+  "url": "https://www.d4lab.es/blog/seguridad-wifi.html",
+  "datePublished": "2026-03-23",
+  "author": {"@type": "Person", "name": "Eudaldo Cal Saul", "url": "https://www.d4lab.es/sobre-mi.html"},
+  "publisher": {"@type": "Organization", "name": "D4Lab", "url": "https://www.d4lab.es"}
+}
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#64FFDA", "on-primary": "#001a14",
+          "surface": "#0a192f", "surface-container": "#112240",
+          "surface-container-high": "#1d2d50", "surface-container-low": "#020c1b",
+          "on-surface": "#ccd6f6", "on-surface-variant": "#8892b0", "outline": "#233554",
+        },
+        fontFamily: { "headline":["Space Grotesk","sans-serif"], "body":["Inter","sans-serif"], "label":["Space Grotesk","sans-serif"] },
+        borderRadius: { "DEFAULT":"0.25rem","lg":"0.5rem","xl":"1rem","full":"9999px" },
+      },
+    },
+  }
+</script>
+<style>
+  .glass { background:rgba(17,34,64,0.7); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(100,255,218,0.1); }
+  .nav-item::after { content:''; display:block; width:0; height:2px; background:#64FFDA; transition:width .3s; }
+  .nav-item:hover::after { width:100%; }
+  #nav-header.scrolled { background:rgba(10,25,47,0.97); box-shadow:0 1px 0 rgba(100,255,218,0.1); }
+  #mobile-menu { display:none; }
+  #mobile-menu.open { display:flex; }
+  .tag { display:inline-flex; align-items:center; padding:2px 8px; background:rgba(100,255,218,0.08); border:1px solid rgba(100,255,218,0.2); border-radius:2px; font-size:9px; font-family:'Space Grotesk',sans-serif; font-weight:700; color:#64FFDA; letter-spacing:0.15em; text-transform:uppercase; }
+  .prose-article h2 { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.4rem; color:#ccd6f6; margin-top:2.5rem; margin-bottom:1rem; }
+  .prose-article h3 { font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:1.1rem; color:#64FFDA; margin-top:1.8rem; margin-bottom:0.6rem; }
+  .prose-article p { color:#8892b0; line-height:1.85; margin-bottom:1.2rem; font-size:0.97rem; }
+  .prose-article ul { list-style:none; padding:0; margin-bottom:1.4rem; }
+  .prose-article ul li { color:#8892b0; padding-left:1.4rem; position:relative; margin-bottom:0.5rem; font-size:0.97rem; line-height:1.7; }
+  .prose-article ul li::before { content:'▹'; color:#64FFDA; position:absolute; left:0; }
+  .prose-article strong { color:#ccd6f6; font-weight:600; }
+  .prose-article .callout { background:rgba(100,255,218,0.05); border-left:3px solid #64FFDA; padding:1rem 1.2rem; border-radius:0 4px 4px 0; margin:1.5rem 0; }
+  .prose-article .callout p { margin:0; }
+  body { background-color: #0a192f; }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body">
+
+<!-- NAV -->
+<header id="nav-header" class="fixed top-0 left-0 right-0 z-50 glass border-b border-outline/30 transition-all">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex h-20 items-center justify-between">
+    <a href="/index.html" class="flex items-center gap-3 group">
+      <div class="relative size-10 flex items-center justify-center">
+        <div class="absolute inset-0 border border-primary/40 rounded-sm rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+        <span class="material-symbols-outlined text-primary text-lg">terminal</span>
+      </div>
+      <span class="text-white text-xl font-headline font-bold tracking-tight"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-10">
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/servicios.html">Servicios</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/sobre-mi.html">Sobre mí</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/precios.html">FAQ</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/blog.html">Blog</a>
+    </nav>
+    <a href="/contacto.html" class="hidden md:inline-flex bg-primary px-6 py-2 rounded-sm text-on-primary font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all items-center gap-2">Contactar</a>
+    <button id="menu-btn" class="md:hidden text-primary" aria-label="Menú"><span class="material-symbols-outlined text-3xl">menu</span></button>
+  </div>
+  <div id="mobile-menu" class="flex-col px-6 pb-6 gap-4 md:hidden">
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/servicios.html">Servicios</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/sobre-mi.html">Sobre mí</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/precios.html">FAQ</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/blog.html">Blog</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/contacto.html">Contacto</a>
+  </div>
+</header>
+
+<!-- Article Header -->
+<section class="pt-32 pb-12 px-6 border-b border-primary/10">
+  <div class="max-w-3xl mx-auto">
+    <div class="flex items-center gap-2 text-on-surface-variant/60 text-xs font-label uppercase tracking-wider mb-6">
+      <a href="/blog.html" class="hover:text-primary transition-colors">Blog</a>
+      <span class="material-symbols-outlined text-xs">chevron_right</span>
+      <span class="text-on-surface-variant">Seguridad</span>
+    </div>
+    <div class="flex gap-2 flex-wrap mb-4">
+      <span class="tag">Seguridad</span>
+      <span class="tag">Redes</span>
+    </div>
+    <h1 class="text-3xl md:text-5xl font-headline font-bold text-white tracking-tight leading-tight mb-6">Cómo saber si alguien usa tu WiFi y cómo echarlo</h1>
+    <p class="text-on-surface-variant text-lg font-light leading-relaxed mb-8">La velocidad baja de repente, el consumo de datos no cuadra y tienes la sensación de que algo no va bien. Puede que no estés solo en tu red. Esta guía práctica te enseña a detectarlo y solucionarlo.</p>
+    <div class="flex items-center gap-4 text-on-surface-variant/60 text-xs font-label uppercase tracking-wider">
+      <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">person</span> Eudaldo Cal Saul</span>
+      <span>·</span>
+      <span>Marzo 2026</span>
+      <span>·</span>
+      <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 6 min lectura</span>
+    </div>
+  </div>
+</section>
+
+<!-- Article Body -->
+<article class="max-w-3xl mx-auto px-6 py-12 prose-article">
+
+  <p>Un intruso en tu red WiFi no es solo alguien que te roba ancho de banda. Dependiendo de sus conocimientos, puede ver qué sitios visitas, interceptar tráfico no cifrado, acceder a dispositivos conectados en tu red doméstica —impresoras, cámaras, discos duros compartidos— o usar tu conexión para actividades ilegales que quedarían registradas a tu nombre. No es un escenario apocalíptico: es un riesgo real y concreto.</p>
+
+  <p>La buena noticia es que detectar intrusos y cerrar el acceso es más sencillo de lo que parece, y puedes hacerlo sin conocimientos técnicos avanzados.</p>
+
+  <h2>Señales de que puede haber un intruso en tu red</h2>
+
+  <p>Antes de ponerte a revisar el router, hay señales de comportamiento que pueden alertarte:</p>
+
+  <ul>
+    <li><strong>La velocidad de internet cae sin razón aparente</strong>, especialmente en horas en que normalmente va bien. Si tu fibra va lenta a las 11 de la mañana de un martes laborable, algo consume ancho de banda.</li>
+    <li><strong>El consumo de datos mensual es más alto de lo esperado</strong>. Si tu operadora te notifica que has consumido mucho más de lo habitual sin que hayas cambiado tus hábitos, merece investigación.</li>
+    <li><strong>El piloto de actividad del router parpadea constantemente</strong> incluso cuando todos tus dispositivos están apagados o en reposo. Desconecta todos los dispositivos que conozcas y observa si el router sigue mostrando actividad.</li>
+    <li><strong>Aparecen dispositivos desconocidos en tu red</strong> cuando revisas la lista del router (lo veremos a continuación).</li>
+  </ul>
+
+  <h2>Cómo ver todos los dispositivos conectados a tu router</h2>
+
+  <h3>Método 1: Desde el panel del router</h3>
+
+  <p>Abre un navegador e introduce la dirección IP de tu router. En la mayoría de routers domésticos españoles es <strong>192.168.1.1</strong> o <strong>192.168.0.1</strong>. Si no sabes cuál es la tuya, en Windows puedes verla abriendo el símbolo del sistema y ejecutando <code>ipconfig</code>: la "Puerta de enlace predeterminada" es la IP del router.</p>
+
+  <p>Una vez dentro (usuario y contraseña suelen estar en la pegatina del router, o son "admin/admin" si nunca los has cambiado), busca una sección llamada "Dispositivos conectados", "DHCP", "Mapa de red" o similar. Verás una lista con el nombre de cada dispositivo, su dirección MAC y su IP asignada.</p>
+
+  <p>Recorre la lista e identifica cada dispositivo: tu móvil, el portátil, la tablet, el televisor inteligente, la consola, el robot aspirador, las bombillas WiFi si las tienes... Si ves algún dispositivo que no reconoces, es una señal de alerta.</p>
+
+  <h3>Método 2: La app Fing (más fácil y visual)</h3>
+
+  <p><strong>Fing</strong> es una app gratuita disponible para iOS y Android que escanea tu red WiFi y muestra todos los dispositivos conectados con su fabricante, dirección MAC y nombre del dispositivo cuando está disponible. Es mucho más visual que el panel del router y detecta dispositivos que a veces el router no lista correctamente. Es la herramienta que uso cuando necesito un diagnóstico rápido de una red doméstica.</p>
+
+  <div class="callout"><p>Si encuentras un dispositivo desconocido, anota su dirección MAC (formato tipo AA:BB:CC:DD:EE:FF). La podrás usar para bloquearlo específicamente desde el router, aunque lo más efectivo es cambiar la contraseña del WiFi directamente.</p></div>
+
+  <h2>5 pasos para securizar tu router ahora mismo</h2>
+
+  <h3>Paso 1: Cambia la contraseña del WiFi</h3>
+
+  <p>Es la acción más efectiva y directa. Al cambiar la contraseña, todos los dispositivos conectados —incluido el intruso— se desconectan inmediatamente. Deberás volver a conectar tus propios dispositivos con la nueva contraseña. Elige una contraseña de al menos 12 caracteres, combinando letras mayúsculas, minúsculas, números y algún símbolo. Nada de fechas de nacimiento ni nombres propios.</p>
+
+  <h3>Paso 2: Usa WPA3 o como mínimo WPA2</h3>
+
+  <p>El protocolo de cifrado que usa tu WiFi determina lo difícil que es para alguien de fuera descifrar tu contraseña aunque la intercepte. <strong>WEP está completamente roto</strong> y puede crackearse en minutos con herramientas gratuitas. WPA1 tampoco es seguro. Lo mínimo aceptable hoy es <strong>WPA2-AES</strong>. Si tu router es relativamente moderno (posterior a 2020), probablemente soporte <strong>WPA3</strong>, que es significativamente más robusto.</p>
+
+  <p>Para comprobarlo y cambiarlo, ve al panel del router, busca la sección de configuración WiFi y localiza el campo "Seguridad" o "Cifrado". Selecciona WPA3 si está disponible, o WPA2-AES si no.</p>
+
+  <h3>Paso 3: Desactiva WPS</h3>
+
+  <p>WPS (WiFi Protected Setup) es una función diseñada para conectar dispositivos al router pulsando un botón físico o introduciendo un PIN de 8 dígitos. El problema es que ese PIN de 8 dígitos tiene una vulnerabilidad conocida que permite atacarlo por fuerza bruta en cuestión de horas. La mayoría de los ataques a redes domésticas aprovechan WPS.</p>
+
+  <p>Desactívalo desde el panel del router buscando la sección "WPS" y cambiando el estado a "Desactivado". La comodidad de conectar dispositivos sin contraseña no compensa el riesgo de seguridad.</p>
+
+  <h3>Paso 4: Crea una red de invitados para tus dispositivos IoT</h3>
+
+  <p>La mayoría de routers modernos permiten crear una red WiFi secundaria o "de invitados". Esta red tiene acceso a internet pero está aislada de tu red principal: los dispositivos conectados a ella no pueden comunicarse con los dispositivos de tu red principal.</p>
+
+  <p>Úsala para conectar todos tus dispositivos domóticos: bombillas, enchufes inteligentes, robots aspiradores, cámaras WiFi. Estos dispositivos son notoriamente menos seguros que ordenadores o móviles y pueden ser vectores de ataque si alguien los compromete. Al aislarlos en una red separada, aunque alguien acceda a través de ellos, no podrá llegar a tu ordenador o NAS.</p>
+
+  <h3>Paso 5: Actualiza el firmware del router</h3>
+
+  <p>El firmware es el sistema operativo del router. Los fabricantes publican actualizaciones que corrigen vulnerabilidades de seguridad conocidas. Un router con firmware de hace tres años puede tener fallos de seguridad que ya tienen solución pero que tú no has aplicado.</p>
+
+  <p>Desde el panel del router, busca la sección "Actualización de firmware" o "Software". Algunos routers lo hacen automáticamente; otros requieren descargarlo manualmente desde la web del fabricante. Si tu router tiene más de 5-6 años y el fabricante ya no publica actualizaciones para él, considera reemplazarlo.</p>
+
+  <h2>¿Qué hacer si sospechas que te han robado datos?</h2>
+
+  <p>Si el intruso llevaba tiempo en tu red o si tienes indicios de que ha interceptado tráfico, las acciones prioritarias son:</p>
+
+  <ul>
+    <li>Cambia las contraseñas de tus cuentas más importantes (correo, banca online, redes sociales) desde un dispositivo en una red segura diferente, como los datos del móvil.</li>
+    <li>Activa la autenticación en dos pasos en todas las cuentas que lo permitan. Aunque alguien tenga tu contraseña, no podrá acceder sin el segundo factor.</li>
+    <li>Revisa los accesos recientes a tus cuentas de correo y banca. La mayoría muestran el historial de sesiones con IP y ubicación.</li>
+    <li>Si usas servicios bancarios desde casa habitualmente, notifica a tu banco para que revisen si ha habido intentos de acceso sospechosos.</li>
+  </ul>
+
+  <h2>Cuándo llamar a un técnico</h2>
+
+  <p>La mayoría de lo que hemos visto en este artículo lo puede hacer cualquier persona con un poco de paciencia. Pero hay situaciones en que tiene sentido pedir ayuda profesional:</p>
+
+  <ul>
+    <li>Si después de cambiar la contraseña y securizar el router sigues detectando actividad sospechosa: puede que el problema sea más profundo, como un dispositivo comprometido dentro de tu propia red.</li>
+    <li>Si tienes una red empresarial con varios equipos, servidores o datos sensibles de clientes: las medidas domésticas no son suficientes.</li>
+    <li>Si sospechas que alguien ha tenido acceso a datos bancarios o personales durante un período prolongado: la revisión profesional puede identificar hasta dónde llegó el acceso.</li>
+  </ul>
+
+  <div class="callout"><p>Resumen rápido de acción inmediata: accede al router (192.168.1.1), revisa los dispositivos conectados, cambia la contraseña del WiFi por una robusta, desactiva WPS y activa WPA2 o WPA3. Con eso resuelves el 95% de los casos de intrusos domésticos.</p></div>
+
+</article>
+
+<!-- CTA -->
+<section class="py-16 px-6 bg-surface-container-low border-t border-primary/10">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-2xl md:text-3xl font-headline font-bold text-white tracking-tight mb-4">¿Necesitas que alguien revise tu red desde cero?</h2>
+    <p class="text-on-surface-variant font-light mb-8">Audito redes domésticas y de pequeña empresa: detecto vulnerabilidades, configuro el router correctamente y te dejo la red segura y bien organizada.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <button data-d4-open class="bg-primary text-on-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs shadow-xl shadow-primary/20 hover:brightness-110 transition-all inline-flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">calculate</span>
+        Pedir presupuesto
+      </button>
+      <a href="/servicios.html" class="border border-primary/30 text-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs hover:bg-primary/5 transition-all inline-flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">build</span>
+        Ver servicios
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-surface-container-low py-12 px-6 border-t border-primary/10">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <a href="/index.html" class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary">terminal</span>
+      <span class="text-white font-headline font-bold"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="flex flex-wrap gap-6 text-on-surface-variant text-xs font-label font-bold uppercase tracking-[0.2em]">
+      <a href="/index.html" class="hover:text-primary transition-colors">Inicio</a>
+      <a href="/servicios.html" class="hover:text-primary transition-colors">Servicios</a>
+      <a href="/sobre-mi.html" class="hover:text-primary transition-colors">Sobre mí</a>
+      <a href="/precios.html" class="hover:text-primary transition-colors">FAQ</a>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Blog</a>
+      <a href="/contacto.html" class="hover:text-primary transition-colors">Contacto</a>
+    </nav>
+    <p class="text-on-surface-variant text-[9px] font-headline uppercase tracking-[0.3em]">© 2026 D4Lab</p>
+  </div>
+</footer>
+<script>
+  const nav = document.getElementById('nav-header');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+  document.getElementById('menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('open'));
+</script>
+<script src="/chat-widget.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chatbot con IA en tu web: atiende clientes y da presupuestos automáticamente | D4Lab</title>
+<meta name="description" content="Un chatbot con IA no es un FAQ glorificado. Puede calcular presupuestos, filtrar leads y responder clientes a las 2am. Así funciona y esto es lo que vale."/>
+<link rel="canonical" href="https://www.d4lab.es/blog/chatbot-ia-web.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="D4Lab"/>
+<meta property="og:locale" content="es_ES"/>
+<meta property="og:url" content="https://www.d4lab.es/blog/chatbot-ia-web.html"/>
+<meta property="og:title" content="Chatbot con IA en tu web: atiende clientes y da presupuestos automáticamente | D4Lab"/>
+<meta property="og:description" content="Un chatbot con IA no es un FAQ glorificado. Puede calcular presupuestos, filtrar leads y responder clientes a las 2am. Así funciona y esto es lo que vale."/>
+<meta property="og:image" content="https://www.d4lab.es/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Chatbot con IA en tu web: atiende clientes y da presupuestos automáticamente | D4Lab"/>
+<meta name="twitter:description" content="Un chatbot con IA no es un FAQ glorificado. Puede calcular presupuestos, filtrar leads y responder clientes a las 2am. Así funciona y esto es lo que vale."/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Chatbot con IA en tu web: atiende clientes y da presupuestos automáticamente",
+  "description": "Un chatbot con IA no es un FAQ glorificado. Puede calcular presupuestos, filtrar leads y responder clientes a las 2am. Así funciona y esto es lo que vale.",
+  "url": "https://www.d4lab.es/blog/chatbot-ia-web.html",
+  "datePublished": "2026-03-23",
+  "author": {"@type": "Person", "name": "Eudaldo Cal Saul", "url": "https://www.d4lab.es/sobre-mi.html"},
+  "publisher": {"@type": "Organization", "name": "D4Lab", "url": "https://www.d4lab.es"}
+}
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#64FFDA", "on-primary": "#001a14",
+          "surface": "#0a192f", "surface-container": "#112240",
+          "surface-container-high": "#1d2d50", "surface-container-low": "#020c1b",
+          "on-surface": "#ccd6f6", "on-surface-variant": "#8892b0", "outline": "#233554",
+        },
+        fontFamily: { "headline":["Space Grotesk","sans-serif"], "body":["Inter","sans-serif"], "label":["Space Grotesk","sans-serif"] },
+        borderRadius: { "DEFAULT":"0.25rem","lg":"0.5rem","xl":"1rem","full":"9999px" },
+      },
+    },
+  }
+</script>
+<style>
+  .glass { background:rgba(17,34,64,0.7); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(100,255,218,0.1); }
+  .nav-item::after { content:''; display:block; width:0; height:2px; background:#64FFDA; transition:width .3s; }
+  .nav-item:hover::after { width:100%; }
+  #nav-header.scrolled { background:rgba(10,25,47,0.97); box-shadow:0 1px 0 rgba(100,255,218,0.1); }
+  #mobile-menu { display:none; }
+  #mobile-menu.open { display:flex; }
+  .tag { display:inline-flex; align-items:center; padding:2px 8px; background:rgba(100,255,218,0.08); border:1px solid rgba(100,255,218,0.2); border-radius:2px; font-size:9px; font-family:'Space Grotesk',sans-serif; font-weight:700; color:#64FFDA; letter-spacing:0.15em; text-transform:uppercase; }
+  .prose-article h2 { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.4rem; color:#ccd6f6; margin-top:2.5rem; margin-bottom:1rem; }
+  .prose-article h3 { font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:1.1rem; color:#64FFDA; margin-top:1.8rem; margin-bottom:0.6rem; }
+  .prose-article p { color:#8892b0; line-height:1.85; margin-bottom:1.2rem; font-size:0.97rem; }
+  .prose-article ul { list-style:none; padding:0; margin-bottom:1.4rem; }
+  .prose-article ul li { color:#8892b0; padding-left:1.4rem; position:relative; margin-bottom:0.5rem; font-size:0.97rem; line-height:1.7; }
+  .prose-article ul li::before { content:'▹'; color:#64FFDA; position:absolute; left:0; }
+  .prose-article strong { color:#ccd6f6; font-weight:600; }
+  .prose-article .callout { background:rgba(100,255,218,0.05); border-left:3px solid #64FFDA; padding:1rem 1.2rem; border-radius:0 4px 4px 0; margin:1.5rem 0; }
+  .prose-article .callout p { margin:0; }
+  .chat-demo { background: rgba(17,34,64,0.6); border: 1px solid rgba(100,255,218,0.15); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+  .chat-demo .msg { margin-bottom: 0.8rem; font-size: 0.9rem; line-height: 1.6; }
+  .chat-demo .msg.user { color: #ccd6f6; padding-left: 1rem; border-left: 2px solid #64FFDA33; }
+  .chat-demo .msg.bot { color: #8892b0; padding-left: 1rem; border-left: 2px solid #64FFDA; }
+  .chat-demo .label { font-size: 0.7rem; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.2rem; }
+  .chat-demo .label.user-label { color: #64FFDA99; }
+  .chat-demo .label.bot-label { color: #64FFDA; }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen">
+
+<header id="nav-header" class="fixed top-0 left-0 right-0 z-50 glass border-b border-outline/30 transition-all">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex h-20 items-center justify-between">
+    <a href="/index.html" class="flex items-center gap-3 group">
+      <div class="relative size-10 flex items-center justify-center">
+        <div class="absolute inset-0 border border-primary/40 rounded-sm rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+        <span class="material-symbols-outlined text-primary text-lg">terminal</span>
+      </div>
+      <span class="text-white text-xl font-headline font-bold tracking-tight"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-10">
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/servicios.html">Servicios</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/sobre-mi.html">Sobre mí</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/precios.html">FAQ</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/blog.html">Blog</a>
+    </nav>
+    <a href="/contacto.html" class="hidden md:inline-flex bg-primary px-6 py-2 rounded-sm text-on-primary font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all items-center gap-2">Contactar</a>
+    <button id="menu-btn" class="md:hidden text-primary" aria-label="Menú"><span class="material-symbols-outlined text-3xl">menu</span></button>
+  </div>
+  <div id="mobile-menu" class="flex-col px-6 pb-6 gap-4 md:hidden">
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/servicios.html">Servicios</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/sobre-mi.html">Sobre mí</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/precios.html">FAQ</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/blog.html">Blog</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/contacto.html">Contacto</a>
+  </div>
+</header>
+
+<!-- Article Header -->
+<section class="pt-32 pb-12 px-6 border-b border-primary/10">
+  <div class="max-w-3xl mx-auto">
+    <div class="flex items-center gap-2 text-on-surface-variant/60 text-xs font-label uppercase tracking-wider mb-6">
+      <a href="/blog.html" class="hover:text-primary transition-colors">Blog</a>
+      <span class="material-symbols-outlined text-xs">chevron_right</span>
+      <span class="text-on-surface-variant">IA · Automatización</span>
+    </div>
+    <div class="flex gap-2 flex-wrap mb-4">
+      <span class="tag">IA</span>
+      <span class="tag">Automatización</span>
+      <span class="tag">Negocios</span>
+    </div>
+    <h1 class="text-3xl md:text-5xl font-headline font-bold text-white tracking-tight leading-tight mb-6">Chatbot con IA en tu web: atiende clientes y da presupuestos automáticamente</h1>
+    <p class="text-on-surface-variant text-lg font-light leading-relaxed mb-8">Un cliente llega a tu web a las 11 de la noche, tiene una pregunta concreta y quiere saber cuánto le va a costar. Si no hay nadie para responder, se va y contacta al siguiente. Un chatbot con IA moderno puede atender esa consulta, calcular el presupuesto y enviarle un resumen por email antes de que cierre la pestaña.</p>
+    <div class="flex items-center gap-4 text-on-surface-variant/60 text-xs font-label uppercase tracking-wider">
+      <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">person</span> Eudaldo Cal Saul</span>
+      <span>·</span>
+      <span>Marzo 2026</span>
+      <span>·</span>
+      <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 6 min lectura</span>
+    </div>
+  </div>
+</section>
+
+<!-- Article Body -->
+<article class="max-w-3xl mx-auto px-6 py-12 prose-article">
+
+  <h2>El problema real: clientes que llegan cuando no estás</h2>
+  <p>Si tienes un negocio de servicios — soporte IT, instalaciones, consultoría, clínica, academia — sabes que las consultas no llegan solo de lunes a viernes en horario de oficina. Llegan cuando el cliente tiene el problema delante, que puede ser un sábado a las 8 de la mañana o un miércoles a las 11 de la noche.</p>
+  <p>El coste de no responder a tiempo es directo: estudios del sector muestran que <strong>el 78 % de los clientes contratan al proveedor que les responde primero</strong>. Si tu competencia tiene un sistema de respuesta inmediata y tú no, la probabilidad de perder ese lead es altísima, independientemente de que tu servicio sea mejor o más barato.</p>
+  <p>Pero no es solo el horario. También es el volumen. Las mismas 10-15 preguntas se repiten una y otra vez: ¿cuánto cuesta?, ¿cubrís mi zona?, ¿cuánto tiempo tardáis?, ¿qué incluye el servicio? Responder manualmente cada una de ellas es tiempo que podrías estar invirtiendo en el trabajo real.</p>
+
+  <h2>Chatbot básico vs chatbot con IA: la diferencia es enorme</h2>
+  <p>El chatbot clásico de árbol de decisiones — "pulsa 1 para esto, pulsa 2 para aquello" — lleva en el mercado 20 años y todo el mundo lo odia. No entiende la pregunta si no está formulada exactamente como el programador previó, no puede razonar y no puede calcular nada.</p>
+  <p>Un chatbot moderno con IA generativa funciona de forma radicalmente distinta. Entiende lenguaje natural, mantiene el contexto de la conversación y puede ejecutar lógica compleja. En términos concretos, puede:</p>
+  <ul>
+    <li><strong>Identificar el tipo de cliente y su necesidad</strong> antes de darle información, para no responder lo mismo a un particular que a una empresa de 50 empleados.</li>
+    <li><strong>Calcular un presupuesto personalizado</strong> en tiempo real, aplicando las tarifas de tu negocio según las variables que el cliente introduce (número de equipos, distancia, tipo de servicio, urgencia).</li>
+    <li><strong>Buscar y citar información de tu negocio</strong> — horarios, zona de cobertura, servicios disponibles — sin inventarse nada.</li>
+    <li><strong>Calcular distancias de desplazamiento</strong> y aplicar suplementos automáticamente si tu tarificación incluye gastos de viaje.</li>
+    <li><strong>Enviar un resumen por email automáticamente</strong> — tanto al cliente como a ti — con los datos de la consulta y el presupuesto orientativo.</li>
+    <li><strong>Derivar a WhatsApp o teléfono</strong> cuando detecta intención de compra real o una consulta que requiere criterio humano.</li>
+  </ul>
+
+  <div class="callout"><p><strong>La diferencia clave:</strong> un chatbot de FAQs responde preguntas predefinidas. Un chatbot con IA razona sobre la información de tu negocio y genera respuestas adaptadas a cada conversación. Son herramientas fundamentalmente distintas.</p></div>
+
+  <h2>Ejemplo real: consulta de soporte IT para empresa en Tenerife</h2>
+  <p>Para que quede claro cómo funciona en la práctica, este es el flujo de una conversación real:</p>
+
+  <div class="chat-demo">
+    <div class="msg user"><div class="label user-label">Cliente · 23:14</div>Hola, necesito soporte informático para mi empresa. Tenemos 8 ordenadores y estamos en Santa Cruz de Tenerife.</div>
+    <div class="msg bot"><div class="label bot-label">D4Lab IA</div>Hola, con mucho gusto. Para darte una estimación precisa, ¿me puedes decir si buscáis un servicio de mantenimiento mensual o soporte puntual cuando surja un problema?</div>
+    <div class="msg user"><div class="label user-label">Cliente · 23:15</div>Mantenimiento mensual preferiblemente. También nos interesa que alguien venga presencialmente si hace falta.</div>
+    <div class="label bot-label" style="font-size:0.7rem; color:#64FFDA; margin-bottom:0.2rem;">D4Lab IA</div>
+    <div class="msg bot">Perfecto. Para 8 equipos con mantenimiento mensual y cobertura presencial en Santa Cruz, la tarifa orientativa sería de <strong style="color:#64FFDA">85-110 €/mes</strong>, dependiendo del nivel de soporte y tiempo de respuesta garantizado. Santa Cruz está dentro de nuestra zona sin suplemento de desplazamiento.<br><br>¿Quieres que te envíe un resumen por email con estos datos para que lo puedas consultar con calma?</div>
+    <div class="msg user"><div class="label user-label">Cliente · 23:16</div>Sí, mándamelo a empresa@ejemplo.com</div>
+    <div class="msg bot"><div class="label bot-label">D4Lab IA</div>Listo, en un momento recibirás el resumen. También le he enviado una copia al equipo de D4Lab para que os contacten mañana por la mañana si os parece bien. ¿Tienes alguna otra pregunta ahora?</div>
+  </div>
+
+  <p>Tiempo total: menos de 2 minutos. El cliente tiene una cifra orientativa, tú tienes los datos del lead en tu email y el seguimiento está programado. Todo sin que hayas hecho absolutamente nada.</p>
+
+  <h2>La tecnología detrás: sencilla y fiable</h2>
+  <p>No hace falta una infraestructura compleja para montar esto. La pila tecnológica que usamos en D4Lab para este tipo de integraciones es minimalista y con costes reales muy bajos:</p>
+  <ul>
+    <li><strong>Gemini (Google):</strong> el modelo de IA que procesa el lenguaje y genera las respuestas. Con el plan gratuito de la API tienes suficiente capacidad para cientos de conversaciones al mes.</li>
+    <li><strong>API serverless (Vercel Functions o Cloudflare Workers):</strong> el backend que conecta la web con la IA. No hay servidor que mantener ni que pagar mientras no hay tráfico.</li>
+    <li><strong>Resend:</strong> el servicio de envío de emails transaccionales. Plan gratuito incluye 3.000 emails al mes, suficiente para la mayoría de pymes.</li>
+  </ul>
+
+  <div class="callout"><p>Coste de infraestructura para una pyme con menos de 500 consultas mensuales: <strong>0 € al mes</strong>. Los free tiers de estas herramientas cubren perfectamente ese volumen. El coste es el de implementación, no el de operación.</p></div>
+
+  <h2>El ROI: ¿cuánto vale una consulta respondida a las 2 am?</h2>
+  <p>Hagamos números sencillos. Si tu ticket medio de cliente es de 150 € y tu tasa de conversión de consultas respondidas es del 30 %, cada consulta que recibes tiene un valor esperado de 45 €. Si al mes recibes 20 consultas fuera de horario y antes no respondías ninguna, el chatbot tiene un valor mensual potencial de <strong>900 €</strong> en ingresos que antes se perdían.</p>
+  <p>Incluso siendo conservadores y asumiendo que solo el 20 % de esas consultas nocturnas se convierten en clientes reales, el retorno es evidente en el primer mes. Y el chatbot también atiende durante el día, reduciendo el tiempo que tú dedicas a responder preguntas repetitivas.</p>
+
+  <h2>¿Para qué tipo de negocio tiene sentido?</h2>
+  <p>No todos los negocios necesitan esto con la misma urgencia. Tiene más sentido cuanto más se cumpla alguna de estas condiciones:</p>
+  <ul>
+    <li>Recibes consultas repetitivas con información similar (precio, zona, disponibilidad, qué incluye el servicio).</li>
+    <li>Tu proceso de presupuesto tiene variables claras que se pueden parametrizar (número de unidades, distancia, tipo de trabajo).</li>
+    <li>Tienes competencia directa que ya responde rápido y perder la primera respuesta te cuesta clientes.</li>
+    <li>Tu negocio funciona fuera del horario típico de atención o tiene clientes en distintas franjas horarias.</li>
+    <li>El volumen de consultas ha crecido al punto de que responderlas manualmente consume demasiado tiempo.</li>
+  </ul>
+  <p>Sectores donde vemos más impacto inmediato: servicios de mantenimiento y soporte técnico, clínicas y centros de salud, academias y formación, instaladores (electricistas, fontaneros, climatización), agencias inmobiliarias y seguros.</p>
+
+</article>
+
+<!-- CTA -->
+<section class="py-16 px-6 bg-surface-container-low border-t border-primary/10">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-2xl md:text-3xl font-headline font-bold text-white tracking-tight mb-4">¿Quieres un chatbot así en tu web?</h2>
+    <p class="text-on-surface-variant font-light mb-8">Implementamos chatbots con IA personalizados para tu negocio: con tu información, tus tarifas y tu tono. Desde la integración en la web hasta el envío automático de emails.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <button data-d4-open class="bg-primary text-on-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs shadow-xl shadow-primary/20 hover:brightness-110 transition-all inline-flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">calculate</span>
+        Pedir presupuesto
+      </button>
+      <a href="/servicios.html" class="border border-primary/30 text-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs hover:bg-primary/5 transition-all inline-flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">build</span>
+        Ver servicios
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-surface-container-low py-12 px-6 border-t border-primary/10">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <a href="/index.html" class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary">terminal</span>
+      <span class="text-white font-headline font-bold"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="flex flex-wrap gap-6 text-on-surface-variant text-xs font-label font-bold uppercase tracking-[0.2em]">
+      <a href="/index.html" class="hover:text-primary transition-colors">Inicio</a>
+      <a href="/servicios.html" class="hover:text-primary transition-colors">Servicios</a>
+      <a href="/sobre-mi.html" class="hover:text-primary transition-colors">Sobre mí</a>
+      <a href="/precios.html" class="hover:text-primary transition-colors">FAQ</a>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Blog</a>
+      <a href="/contacto.html" class="hover:text-primary transition-colors">Contacto</a>
+    </nav>
+    <p class="text-on-surface-variant text-[9px] font-headline uppercase tracking-[0.3em]">© 2026 D4Lab</p>
+  </div>
+</footer>
+<script>
+  const nav = document.getElementById('nav-header');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+  document.getElementById('menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('open'));
+</script>
+<script src="/chat-widget.js"></script>
+</body>
+</html>

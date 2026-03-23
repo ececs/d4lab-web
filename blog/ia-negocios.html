@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IA para pequeños negocios: qué tiene sentido y qué es humo | D4Lab</title>
+<meta name="description" content="Guía sin hype sobre IA para pymes: qué automatizaciones tienen ROI real, qué no vale la pena todavía, cuánto cuesta implementarlas y por dónde empezar."/>
+<link rel="canonical" href="https://www.d4lab.es/blog/ia-negocios.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="D4Lab"/>
+<meta property="og:locale" content="es_ES"/>
+<meta property="og:url" content="https://www.d4lab.es/blog/ia-negocios.html"/>
+<meta property="og:title" content="IA para pequeños negocios: qué tiene sentido y qué es humo"/>
+<meta property="og:description" content="Guía sin hype sobre IA para pymes: qué automatizaciones tienen ROI real, qué no vale la pena todavía, cuánto cuesta implementarlas y por dónde empezar."/>
+<meta property="og:image" content="https://www.d4lab.es/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="IA para pequeños negocios: qué tiene sentido y qué es humo"/>
+<meta name="twitter:description" content="Guía sin hype sobre IA para pymes: qué automatizaciones tienen ROI real, qué no vale la pena todavía, cuánto cuesta implementarlas y por dónde empezar."/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "IA para pequeños negocios: qué tiene sentido y qué es humo",
+  "description": "Guía sin hype sobre IA para pymes: qué automatizaciones tienen ROI real, qué no vale la pena todavía, cuánto cuesta implementarlas y por dónde empezar.",
+  "url": "https://www.d4lab.es/blog/ia-negocios.html",
+  "datePublished": "2026-03-23",
+  "author": {"@type": "Person", "name": "Eudaldo Cal Saul", "url": "https://www.d4lab.es/sobre-mi.html"},
+  "publisher": {"@type": "Organization", "name": "D4Lab", "url": "https://www.d4lab.es"}
+}
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#64FFDA", "on-primary": "#001a14",
+          "surface": "#0a192f", "surface-container": "#112240",
+          "surface-container-high": "#1d2d50", "surface-container-low": "#020c1b",
+          "on-surface": "#ccd6f6", "on-surface-variant": "#8892b0", "outline": "#233554",
+        },
+        fontFamily: { "headline":["Space Grotesk","sans-serif"], "body":["Inter","sans-serif"], "label":["Space Grotesk","sans-serif"] },
+        borderRadius: { "DEFAULT":"0.25rem","lg":"0.5rem","xl":"1rem","full":"9999px" },
+      },
+    },
+  }
+</script>
+<style>
+  .glass { background:rgba(17,34,64,0.7); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(100,255,218,0.1); }
+  .nav-item::after { content:''; display:block; width:0; height:2px; background:#64FFDA; transition:width .3s; }
+  .nav-item:hover::after { width:100%; }
+  #nav-header.scrolled { background:rgba(10,25,47,0.97); box-shadow:0 1px 0 rgba(100,255,218,0.1); }
+  #mobile-menu { display:none; }
+  #mobile-menu.open { display:flex; }
+  .tag { display:inline-flex; align-items:center; padding:2px 8px; background:rgba(100,255,218,0.08); border:1px solid rgba(100,255,218,0.2); border-radius:2px; font-size:9px; font-family:'Space Grotesk',sans-serif; font-weight:700; color:#64FFDA; letter-spacing:0.15em; text-transform:uppercase; }
+  .prose-article h2 { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.4rem; color:#ccd6f6; margin-top:2.5rem; margin-bottom:1rem; }
+  .prose-article h3 { font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:1.1rem; color:#64FFDA; margin-top:1.8rem; margin-bottom:0.6rem; }
+  .prose-article p { color:#8892b0; line-height:1.85; margin-bottom:1.2rem; font-size:0.97rem; }
+  .prose-article ul { list-style:none; padding:0; margin-bottom:1.4rem; }
+  .prose-article ul li { color:#8892b0; padding-left:1.4rem; position:relative; margin-bottom:0.5rem; font-size:0.97rem; line-height:1.7; }
+  .prose-article ul li::before { content:'▹'; color:#64FFDA; position:absolute; left:0; }
+  .prose-article strong { color:#ccd6f6; font-weight:600; }
+  .prose-article .callout { background:rgba(100,255,218,0.05); border-left:3px solid #64FFDA; padding:1rem 1.2rem; border-radius:0 4px 4px 0; margin:1.5rem 0; }
+  .prose-article .callout p { margin:0; }
+  body { background-color: #0a192f; }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body">
+
+<!-- NAV -->
+<header id="nav-header" class="fixed top-0 left-0 right-0 z-50 glass border-b border-outline/30 transition-all">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex h-20 items-center justify-between">
+    <a href="/index.html" class="flex items-center gap-3 group">
+      <div class="relative size-10 flex items-center justify-center">
+        <div class="absolute inset-0 border border-primary/40 rounded-sm rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+        <span class="material-symbols-outlined text-primary text-lg">terminal</span>
+      </div>
+      <span class="text-white text-xl font-headline font-bold tracking-tight"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-10">
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/servicios.html">Servicios</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/sobre-mi.html">Sobre mí</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/precios.html">FAQ</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/blog.html">Blog</a>
+    </nav>
+    <a href="/contacto.html" class="hidden md:inline-flex bg-primary px-6 py-2 rounded-sm text-on-primary font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all items-center gap-2">Contactar</a>
+    <button id="menu-btn" class="md:hidden text-primary" aria-label="Menú"><span class="material-symbols-outlined text-3xl">menu</span></button>
+  </div>
+  <div id="mobile-menu" class="flex-col px-6 pb-6 gap-4 md:hidden">
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/servicios.html">Servicios</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/sobre-mi.html">Sobre mí</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/precios.html">FAQ</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/blog.html">Blog</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/contacto.html">Contacto</a>
+  </div>
+</header>
+
+<!-- Article Header -->
+<section class="pt-32 pb-12 px-6 border-b border-primary/10">
+  <div class="max-w-3xl mx-auto">
+    <div class="flex items-center gap-2 text-on-surface-variant/60 text-xs font-label uppercase tracking-wider mb-6">
+      <a href="/blog.html" class="hover:text-primary transition-colors">Blog</a>
+      <span class="material-symbols-outlined text-xs">chevron_right</span>
+      <span class="text-on-surface-variant">IA</span>
+    </div>
+    <div class="flex gap-2 flex-wrap mb-4">
+      <span class="tag">IA</span>
+      <span class="tag">Negocios</span>
+    </div>
+    <h1 class="text-3xl md:text-5xl font-headline font-bold text-white tracking-tight leading-tight mb-6">IA para pequeños negocios: qué tiene sentido y qué es humo</h1>
+    <p class="text-on-surface-variant text-lg font-light leading-relaxed mb-8">Todo el mundo habla de inteligencia artificial pero muy pocos saben qué pueden hacer concretamente con ella sin un presupuesto de multinacional. Esta guía separa lo que funciona de lo que es ruido de marketing.</p>
+    <div class="flex items-center gap-4 text-on-surface-variant/60 text-xs font-label uppercase tracking-wider">
+      <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">person</span> Eudaldo Cal Saul</span>
+      <span>·</span>
+      <span>Marzo 2026</span>
+      <span>·</span>
+      <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 8 min lectura</span>
+    </div>
+  </div>
+</section>
+
+<!-- Article Body -->
+<article class="max-w-3xl mx-auto px-6 py-12 prose-article">
+
+  <p>Desde 2023, apenas pasa una semana sin que algún titular anuncie que la IA va a revolucionar tal o cual sector. Los proveedores de software añaden el prefijo "IA" a cualquier función de autocompletado. Los consultores cobran por "estrategias de IA" que en la práctica son búsquedas en ChatGPT. Y en medio de todo ese ruido, el propietario de una clínica dental, una ferretería o una gestoría intenta entender si esto le afecta a él y, si es así, qué debería hacer al respecto.</p>
+
+  <p>La respuesta honesta es: sí, la IA ya tiene aplicaciones prácticas y asequibles para pequeños negocios. Pero no son las que normalmente se publicitan. Este artículo va directo a lo que funciona, lo que no vale la pena todavía, y cómo calcular si tiene sentido económico para tu caso concreto.</p>
+
+  <h2>El problema del hype: por qué es difícil filtrar la señal del ruido</h2>
+
+  <p>El mercado de IA está en una fase en que casi cualquier cosa se vende como "IA" aunque no lo sea, y al mismo tiempo herramientas genuinamente útiles se subestiman porque no tienen el mismo marketing detrás. Un chatbot con respuestas predefinidas y un árbol de decisiones se vende como "atención al cliente con IA". Un modelo de lenguaje que realmente entiende preguntas complejas y genera respuestas coherentes pasa desapercibido para muchos negocios.</p>
+
+  <p>El criterio que propongo para evaluar cualquier herramienta de IA es simple: <strong>¿cuántas horas de trabajo humano me ahorra por semana y a qué coste mensual?</strong> Si la respuesta es "me ahorra 3 horas y cuesta 30€ al mes", es una buena inversión. Si cuesta 500€ al mes y "agiliza procesos" sin que puedas cuantificarlo, es humo.</p>
+
+  <h2>Lo que SÍ tiene sentido con bajo presupuesto</h2>
+
+  <h3>Chatbots de atención al cliente para preguntas frecuentes</h3>
+
+  <p>Si recibes frecuentemente las mismas preguntas —horarios, precios, cómo funciona tu servicio, qué documentación necesitan traer, si tienes parking— un chatbot bien configurado puede responder el 70-80% de esas consultas sin intervención humana, a cualquier hora del día.</p>
+
+  <p>El coste de implementar un chatbot básico integrado en tu web o WhatsApp Business oscila entre <strong>0€ y 50€ al mes</strong> dependiendo de la solución. Herramientas como Tidio, Crisp o ManyChat tienen planes gratuitos o muy económicos. Para una pyme que recibe 20-30 consultas repetitivas a la semana, el ahorro de tiempo es inmediato y medible.</p>
+
+  <p>Lo importante es configurarlo correctamente: el chatbot debe saber cuándo escalar la conversación a una persona real. Un chatbot que no sabe reconocer sus límites genera frustración, no ahorra tiempo.</p>
+
+  <h3>Automatización de emails de seguimiento</h3>
+
+  <p>¿Cuántos presupuestos enviados nunca reciben respuesta porque no hay tiempo de hacer el seguimiento? ¿Cuántos clientes que pidieron información hace tres semanas podrían haberse convertido con un simple recordatorio en el momento adecuado?</p>
+
+  <p>Las herramientas de email marketing con automatización —Mailchimp, Brevo (antes Sendinblue), ActiveCampaign— permiten crear secuencias automáticas: si alguien rellena el formulario de contacto y no hay respuesta en 48 horas, recibe un email automático. Si abrió tu presupuesto pero no contestó en 5 días, recibe un seguimiento. Si es cliente desde hace 6 meses y no ha vuelto, recibe un recordatorio.</p>
+
+  <p>Esto no es exactamente "IA" en el sentido estricto, pero muchas de estas plataformas ya incorporan modelos que sugieren el mejor momento de envío, el asunto más efectivo o segmentan automáticamente la audiencia. El coste para una pyme pequeña es de <strong>0-30€ al mes</strong> y el retorno en clientes recuperados puede ser muy significativo.</p>
+
+  <h3>Generación de contenido para redes sociales</h3>
+
+  <p>Mantener una presencia activa en redes sociales requiere tiempo que la mayoría de pequeños negocios no tienen. Escribir textos para Instagram, LinkedIn o Google Business, crear variaciones de un mismo mensaje, adaptar el tono a distintas plataformas: son tareas repetitivas y de bajo valor estratégico que se pueden delegar a herramientas como ChatGPT, Claude o herramientas especializadas como Buffer AI o Lately.</p>
+
+  <p>El flujo de trabajo real: dedicas 30 minutos a la semana a dar instrucciones (tema de la semana, oferta especial, evento próximo), la IA genera borradores, tú los revisas y ajustas en 10 minutos, y los programas para publicación automática. Lo que antes llevaba 3-4 horas se convierte en 40 minutos.</p>
+
+  <p>El coste de ChatGPT Plus o Claude Pro es de <strong>18-22€ al mes</strong>. Para cualquier negocio que necesite producir contenido regularmente, la ecuación es favorable desde el primer mes.</p>
+
+  <h3>Resumen automático de documentos y reuniones</h3>
+
+  <p>Si trabajas con contratos, informes, normativas o cualquier tipo de documentación extensa, los modelos de lenguaje actuales pueden resumir un documento de 50 páginas en 2 minutos, extraer los puntos clave, identificar fechas y compromisos relevantes, y responder preguntas específicas sobre su contenido.</p>
+
+  <p>Herramientas como NotebookLM de Google (gratuita), la función de análisis de documentos de Claude, o soluciones como Notion AI permiten hacer esto directamente con tus documentos. Para una gestoría, una inmobiliaria o cualquier negocio con mucha documentación, el ahorro de tiempo es considerable.</p>
+
+  <h3>Generación de presupuestos y propuestas</h3>
+
+  <p>Con una plantilla bien diseñada y un modelo de IA, puedes generar el borrador de un presupuesto o propuesta comercial en minutos en lugar de horas. Das al modelo la información del cliente, el alcance del proyecto y tus tarifas, y él estructura el documento, redacta las descripciones de cada servicio y calcula los totales. Tú revisas, ajustas y envías.</p>
+
+  <div class="callout"><p>Regla práctica para evaluar cualquier herramienta de IA: calcula las horas que te ahorra por mes, multiplícalas por el coste de tu hora de trabajo, y compara con el precio de la suscripción. Si el ahorro es al menos 3 veces el coste, merece la pena.</p></div>
+
+  <h2>Lo que NO vale la pena todavía para una pyme</h2>
+
+  <h3>Entrenar modelos de IA propios</h3>
+
+  <p>Cuando alguien dice "quiero que la IA aprenda de mis datos", en realidad está describiendo un proyecto de meses, un equipo técnico especializado y un presupuesto de decenas de miles de euros. Para una pyme con datos limitados y sin equipo de datos, el retorno no justifica la inversión. Las APIs de modelos ya entrenados (OpenAI, Anthropic, Google) permiten acceder a capacidades muy potentes sin ninguno de esos costes.</p>
+
+  <h3>IA generativa de imágenes para uso profesional serio</h3>
+
+  <p>Midjourney, DALL-E y similares son útiles para ilustraciones de blog, presentaciones internas o conceptos rápidos. Pero para fotografía de producto, identidad visual de marca o campañas publicitarias donde la coherencia y la calidad son críticas, la IA generativa de imágenes todavía produce resultados inconsistentes que requieren más trabajo de corrección del que ahorran. Un fotógrafo o diseñador profesional sigue siendo más eficiente para estos casos.</p>
+
+  <h3>Visión por computadora para pymes</h3>
+
+  <p>El reconocimiento de imágenes en tiempo real —detectar defectos en una línea de producción, identificar personas en cámaras de seguridad, analizar documentos físicos automáticamente— requiere hardware específico, integración compleja y un volumen de datos que raramente tiene una pyme. Es una tecnología con aplicaciones reales en industria y logística, pero el punto de entrada económico sigue siendo demasiado alto para la mayoría de pequeños negocios.</p>
+
+  <h2>Cuánto cuesta implementar IA básica</h2>
+
+  <p>Para una pyme que quiere empezar a usar IA de forma práctica, el presupuesto mensual en herramientas puede ser:</p>
+
+  <ul>
+    <li><strong>Nivel mínimo (solo herramientas de IA generativa):</strong> 20-40€/mes. Un plan de ChatGPT o Claude para el equipo cubre la mayoría de necesidades de redacción, resumen y generación de contenido.</li>
+    <li><strong>Nivel intermedio (más automatización):</strong> 80-150€/mes. Añades una plataforma de email marketing con IA, un chatbot para la web y herramientas de programación de contenido en redes.</li>
+    <li><strong>Nivel avanzado (automatización de procesos):</strong> 200-400€/mes. Integras herramientas de automatización como Make (antes Integromat) o Zapier con IA para conectar tu CRM, tu email, tu web y tus herramientas de gestión. En este nivel, el ahorro de tiempo empieza a medirse en días de trabajo al mes.</li>
+  </ul>
+
+  <h2>Cómo calcular el ROI antes de invertir</h2>
+
+  <p>Antes de contratar cualquier herramienta, hazte estas preguntas:</p>
+
+  <ul>
+    <li>¿Qué tarea concreta va a automatizar o acelerar esta herramienta?</li>
+    <li>¿Cuántas horas a la semana dedico actualmente a esa tarea?</li>
+    <li>Si la herramienta reduce ese tiempo en un 60-70%, ¿cuánto vale eso en dinero?</li>
+    <li>¿Hay un período de aprendizaje significativo? ¿Cuánto tiempo me llevará configurarla correctamente?</li>
+    <li>¿Tiene prueba gratuita o plan básico para testear antes de comprometer un gasto mensual?</li>
+  </ul>
+
+  <p>Un ejemplo concreto: una clínica que recibe 40 llamadas y mensajes por semana preguntando horarios, precios y disponibilidad. El recepcionista dedica aproximadamente 15 minutos al día a responder esas consultas repetitivas. Son unas 6 horas al mes. Si el coste de esas 6 horas es de 90€ (15€/hora), y un chatbot que responde esas preguntas cuesta 25€ al mes, el ahorro neto es de 65€ al mes y el recepcionista puede dedicar ese tiempo a tareas de mayor valor. El ROI es evidente.</p>
+
+  <h2>Por dónde empezar: el orden recomendado</h2>
+
+  <p>Si nunca has usado IA en tu negocio, el camino más sensato es este:</p>
+
+  <ul>
+    <li><strong>Semana 1-2:</strong> Empieza a usar ChatGPT o Claude para tareas de redacción y resumen en tu trabajo diario. Emails, borradores de propuestas, resúmenes de documentos. Sin coste o coste mínimo. El objetivo es familiarizarte con cómo funciona antes de invertir en integraciones.</li>
+    <li><strong>Mes 1-2:</strong> Identifica la tarea repetitiva que más tiempo te consume. Busca si existe una herramienta específica que la automatice. Prueba el plan gratuito antes de suscribirte.</li>
+    <li><strong>Mes 3-6:</strong> Una vez que tienes una herramienta funcionando bien, añade la siguiente. No implementes varias cosas a la vez: es mejor una herramienta bien integrada que cinco a medias.</li>
+    <li><strong>A partir del mes 6:</strong> Si ya tienes varias herramientas, considera un experto en automatización que las conecte entre sí. La suma de herramientas bien integradas es mucho más potente que cada una por separado.</li>
+  </ul>
+
+  <div class="callout"><p>La IA no va a transformar tu negocio de la noche a la mañana. Pero sí puede ahorrarte 5-10 horas de trabajo al mes desde el primer mes si eliges bien dónde aplicarla. Empieza pequeño, mide el resultado y escala lo que funciona.</p></div>
+
+</article>
+
+<!-- CTA -->
+<section class="py-16 px-6 bg-surface-container-low border-t border-primary/10">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-2xl md:text-3xl font-headline font-bold text-white tracking-tight mb-4">¿Quieres saber qué IA tiene sentido para tu negocio concreto?</h2>
+    <p class="text-on-surface-variant font-light mb-8">Analizo tu flujo de trabajo, identifico dónde la automatización tiene más impacto y lo implemento. Sin humo, sin suscripciones innecesarias, con resultados medibles.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <button data-d4-open class="bg-primary text-on-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs shadow-xl shadow-primary/20 hover:brightness-110 transition-all inline-flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">calculate</span>
+        Pedir presupuesto
+      </button>
+      <a href="/servicios.html" class="border border-primary/30 text-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs hover:bg-primary/5 transition-all inline-flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">build</span>
+        Ver servicios
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-surface-container-low py-12 px-6 border-t border-primary/10">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <a href="/index.html" class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary">terminal</span>
+      <span class="text-white font-headline font-bold"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="flex flex-wrap gap-6 text-on-surface-variant text-xs font-label font-bold uppercase tracking-[0.2em]">
+      <a href="/index.html" class="hover:text-primary transition-colors">Inicio</a>
+      <a href="/servicios.html" class="hover:text-primary transition-colors">Servicios</a>
+      <a href="/sobre-mi.html" class="hover:text-primary transition-colors">Sobre mí</a>
+      <a href="/precios.html" class="hover:text-primary transition-colors">FAQ</a>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Blog</a>
+      <a href="/contacto.html" class="hover:text-primary transition-colors">Contacto</a>
+    </nav>
+    <p class="text-on-surface-variant text-[9px] font-headline uppercase tracking-[0.3em]">© 2026 D4Lab</p>
+  </div>
+</footer>
+<script>
+  const nav = document.getElementById('nav-header');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+  document.getElementById('menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('open'));
+</script>
+<script src="/chat-widget.js"></script>
+</body>
+</html>

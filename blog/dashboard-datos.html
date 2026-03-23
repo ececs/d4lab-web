@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Panel de datos en tiempo real para tu negocio sin equipo técnico | D4Lab</title>
+<meta name="description" content="Consolida ventas, reservas, tráfico web y campañas en un panel actualizado automáticamente. Toma decisiones con datos reales, no intuición. Sin equipo de datos."/>
+<link rel="canonical" href="https://www.d4lab.es/blog/dashboard-datos.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="D4Lab"/>
+<meta property="og:locale" content="es_ES"/>
+<meta property="og:url" content="https://www.d4lab.es/blog/dashboard-datos.html"/>
+<meta property="og:title" content="Panel de datos en tiempo real para tu negocio sin equipo técnico | D4Lab"/>
+<meta property="og:description" content="Consolida ventas, reservas, tráfico web y campañas en un panel actualizado automáticamente. Toma decisiones con datos reales, no intuición."/>
+<meta property="og:image" content="https://www.d4lab.es/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Panel de datos en tiempo real para tu negocio sin equipo técnico | D4Lab"/>
+<meta name="twitter:description" content="Consolida ventas, reservas, tráfico web y campañas en un panel automático. Decisiones con datos reales, no intuición."/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Panel de datos en tiempo real para tu negocio sin equipo técnico",
+  "description": "Consolida ventas, reservas, tráfico web y campañas en un panel actualizado automáticamente.",
+  "url": "https://www.d4lab.es/blog/dashboard-datos.html",
+  "datePublished": "2026-03-23",
+  "author": {"@type": "Person", "name": "Eudaldo Cal Saul", "url": "https://www.d4lab.es/sobre-mi.html"},
+  "publisher": {"@type": "Organization", "name": "D4Lab", "url": "https://www.d4lab.es"}
+}
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#64FFDA", "on-primary": "#001a14",
+          "surface": "#0a192f", "surface-container": "#112240",
+          "surface-container-high": "#1d2d50", "surface-container-low": "#020c1b",
+          "on-surface": "#ccd6f6", "on-surface-variant": "#8892b0", "outline": "#233554",
+        },
+        fontFamily: { "headline":["Space Grotesk","sans-serif"], "body":["Inter","sans-serif"], "label":["Space Grotesk","sans-serif"] },
+        borderRadius: { "DEFAULT":"0.25rem","lg":"0.5rem","xl":"1rem","full":"9999px" },
+      },
+    },
+  }
+</script>
+<style>
+  .glass { background:rgba(17,34,64,0.7); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(100,255,218,0.1); }
+  .nav-item::after { content:''; display:block; width:0; height:2px; background:#64FFDA; transition:width .3s; }
+  .nav-item:hover::after { width:100%; }
+  #nav-header.scrolled { background:rgba(10,25,47,0.97); box-shadow:0 1px 0 rgba(100,255,218,0.1); }
+  #mobile-menu { display:none; }
+  #mobile-menu.open { display:flex; }
+  .tag { display:inline-flex; align-items:center; padding:2px 8px; background:rgba(100,255,218,0.08); border:1px solid rgba(100,255,218,0.2); border-radius:2px; font-size:9px; font-family:'Space Grotesk',sans-serif; font-weight:700; color:#64FFDA; letter-spacing:0.15em; text-transform:uppercase; }
+  .prose-article h2 { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.4rem; color:#ccd6f6; margin-top:2.5rem; margin-bottom:1rem; }
+  .prose-article h3 { font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:1.1rem; color:#64FFDA; margin-top:1.8rem; margin-bottom:0.6rem; }
+  .prose-article p { color:#8892b0; line-height:1.85; margin-bottom:1.2rem; font-size:0.97rem; }
+  .prose-article ul { list-style:none; padding:0; margin-bottom:1.4rem; }
+  .prose-article ul li { color:#8892b0; padding-left:1.4rem; position:relative; margin-bottom:0.5rem; font-size:0.97rem; line-height:1.7; }
+  .prose-article ul li::before { content:'▹'; color:#64FFDA; position:absolute; left:0; }
+  .prose-article strong { color:#ccd6f6; font-weight:600; }
+  .prose-article .callout { background:rgba(100,255,218,0.05); border-left:3px solid #64FFDA; padding:1rem 1.2rem; border-radius:0 4px 4px 0; margin:1.5rem 0; }
+  .prose-article .callout p { margin:0; }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen">
+
+<header id="nav-header" class="fixed top-0 left-0 right-0 z-50 glass border-b border-outline/30 transition-all">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex h-20 items-center justify-between">
+    <a href="/index.html" class="flex items-center gap-3 group">
+      <div class="relative size-10 flex items-center justify-center">
+        <div class="absolute inset-0 border border-primary/40 rounded-sm rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+        <span class="material-symbols-outlined text-primary text-lg">terminal</span>
+      </div>
+      <span class="text-white text-xl font-headline font-bold tracking-tight"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-10">
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/servicios.html">Servicios</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/sobre-mi.html">Sobre mí</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/precios.html">FAQ</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/blog.html">Blog</a>
+    </nav>
+    <a href="/contacto.html" class="hidden md:inline-flex bg-primary px-6 py-2 rounded-sm text-on-primary font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all items-center gap-2">Contactar</a>
+    <button id="menu-btn" class="md:hidden text-primary" aria-label="Menú"><span class="material-symbols-outlined text-3xl">menu</span></button>
+  </div>
+  <div id="mobile-menu" class="flex-col px-6 pb-6 gap-4 md:hidden">
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/servicios.html">Servicios</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/sobre-mi.html">Sobre mí</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/precios.html">FAQ</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/blog.html">Blog</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/contacto.html">Contacto</a>
+  </div>
+</header>
+
+<section class="pt-32 pb-12 px-6 border-b border-primary/10">
+  <div class="max-w-3xl mx-auto">
+    <div class="flex items-center gap-2 text-on-surface-variant/60 text-xs font-label uppercase tracking-wider mb-6">
+      <a href="/blog.html" class="hover:text-primary transition-colors">Blog</a>
+      <span class="material-symbols-outlined text-xs">chevron_right</span>
+      <span class="text-on-surface-variant">IA · Web</span>
+    </div>
+    <div class="flex gap-2 flex-wrap mb-4">
+      <span class="tag">IA</span>
+      <span class="tag">Web</span>
+      <span class="tag">Negocios</span>
+    </div>
+    <h1 class="text-3xl md:text-5xl font-headline font-bold text-white tracking-tight leading-tight mb-6">Deja de gestionar tu negocio a ciegas: panel de datos en tiempo real sin equipo técnico</h1>
+    <p class="text-on-surface-variant text-lg font-light leading-relaxed mb-8">El TPV dice una cosa, la web de reservas dice otra, las campañas de Meta muestran sus propios números y la contabilidad vive en una hoja Excel. Cuando necesitas saber cómo va el negocio, tardas una hora en reunir los datos. Un dashboard bien hecho te da esa respuesta en segundos, siempre actualizada.</p>
+    <div class="flex items-center gap-4 text-on-surface-variant/60 text-xs font-label uppercase tracking-wider">
+      <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">person</span> Eudaldo Cal Saul</span>
+      <span>·</span>
+      <span>Marzo 2026</span>
+      <span>·</span>
+      <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 7 min lectura</span>
+    </div>
+  </div>
+</section>
+
+<article class="max-w-3xl mx-auto px-6 py-12 prose-article">
+
+  <h2>El problema: datos dispersos en cinco herramientas distintas</h2>
+  <p>La mayoría de los negocios acumulan datos útiles en sitios completamente separados: las ventas en el TPV, las reservas en una app de agenda, el tráfico web en Google Analytics, la publicidad en Meta Ads Manager, y la facturación en una hoja de cálculo. Ninguna de estas herramientas habla con las otras.</p>
+  <p>Si quieres saber si una campaña de publicidad generó más ventas, tienes que cruzar manualmente datos de Meta con los del TPV. Si quieres saber qué producto es más rentable, tienes que exportar datos de varios sitios y construir la tabla tú mismo. Nadie lo hace porque lleva demasiado tiempo, y al final las decisiones se toman por intuición.</p>
+
+  <div class="callout"><p><strong>Dato real:</strong> el 70% de las pymes toman decisiones de precios, stock y marketing basándose en la experiencia del propietario, no en datos. No porque no los tengan — los tienen — sino porque están fragmentados y son difíciles de consultar en tiempo real.</p></div>
+
+  <h2>Qué es un dashboard (y qué no es)</h2>
+  <p>Un dashboard no es un informe de fin de mes que alguien prepara en Excel. Es una pantalla — visible en el ordenador, tablet o una pantalla en la oficina — que muestra las métricas clave de tu negocio <strong>actualizadas automáticamente</strong>. Lo abres y ves el estado actual. Sin preparar nada.</p>
+  <p>Tampoco es el cuadro de mando de una multinacional con 200 indicadores. Un buen dashboard para una pyme tiene entre 6 y 15 métricas, todas con significado claro, que responden a una pregunta simple: <strong>¿cómo va el negocio hoy?</strong></p>
+
+  <h2>Qué métricas incluir según tu negocio</h2>
+
+  <h3>Tienda o comercio</h3>
+  <ul>
+    <li>Ventas del día / semana / mes vs objetivo y vs mismo período del año anterior</li>
+    <li>Ticket medio por transacción</li>
+    <li>Productos más vendidos y productos con stock bajo</li>
+    <li>Comparativa de canales (tienda física vs online)</li>
+    <li>Tasa de conversión de visitas a compras</li>
+  </ul>
+
+  <h3>Clínica, spa o servicio de citas</h3>
+  <ul>
+    <li>Citas confirmadas, canceladas y pendientes para hoy y esta semana</li>
+    <li>Tasa de ocupación de la agenda (% de huecos cubiertos)</li>
+    <li>Ingresos generados vs proyectados</li>
+    <li>Clientes nuevos vs recurrentes</li>
+    <li>Tiempo medio entre primera visita y siguiente (para detectar abandono)</li>
+  </ul>
+
+  <h3>Empresa de servicios o agencia</h3>
+  <ul>
+    <li>Leads recibidos esta semana y su origen (web, redes, referidos)</li>
+    <li>Presupuestos enviados vs aceptados (tasa de conversión)</li>
+    <li>Proyectos activos y su estado</li>
+    <li>Facturación del mes vs objetivo</li>
+    <li>Tiempo medio de cierre desde consulta hasta firma</li>
+  </ul>
+
+  <h2>Qué tecnología usar y cuándo</h2>
+
+  <h3>Looker Studio — gratis, ideal para el ecosistema Google</h3>
+  <p>Si tus datos están en Google Analytics, Google Ads, Google Sheets o YouTube, Looker Studio es la opción más rápida y económica. Completamente gratuito, con conectores nativos para todas las herramientas de Google. Para datos externos (Meta Ads, Shopify, TPV propio) necesitas conectores de terceros, algunos de pago (10-30 €/mes).</p>
+
+  <h3>Power BI — para entornos Microsoft</h3>
+  <p>Si usas Office 365, Excel, Dynamics o Azure, Power BI es la opción más integrada. Incluido en muchas licencias de Microsoft 365. Más potente para datos complejos y grandes volúmenes, pero con mayor curva de aprendizaje.</p>
+
+  <h3>Grafana — para datos técnicos e infraestructura</h3>
+  <p>Estándar para monitorizar servidores, aplicaciones y bases de datos. Si gestionas infraestructura IT, tiendas online con base de datos propia o aplicaciones a medida, Grafana permite dashboards en tiempo real con actualización en segundos. Open-source y gratuito para autoalojar.</p>
+
+  <h3>Dashboard custom con Next.js o React — control total</h3>
+  <p>Cuando necesitas integrar fuentes de datos propias, o cuando el dashboard debe ser parte de tu web o app interna, la solución a medida es la más flexible. Mayor inversión inicial, pero máxima adaptación a lo que necesita exactamente tu negocio.</p>
+
+  <h2>Cómo se conecta a tus fuentes de datos</h2>
+  <p>Un dashboard no tiene datos propios — los lee de las herramientas que ya usas. Hay tres formas de conectarlo:</p>
+  <ul>
+    <li><strong>APIs nativas:</strong> Shopify, Meta Ads, Google Analytics, Holded, Stripe y la mayoría de herramientas modernas tienen APIs para leer datos en tiempo real.</li>
+    <li><strong>Webhooks:</strong> cuando ocurre un evento (una venta, una cita, un lead nuevo), la herramienta envía los datos automáticamente. Sin retrasos.</li>
+    <li><strong>Base de datos centralizada:</strong> los datos de varias fuentes se consolidan en PostgreSQL, BigQuery o Supabase. Más complejo, pero más rápido y con histórico ilimitado.</li>
+  </ul>
+
+  <h2>Coste real de implementación</h2>
+  <ul>
+    <li><strong>Dashboard básico en Looker Studio</strong> (datos de Google + 1-2 fuentes externas): 4-8 horas de configuración, coste mensual 0-30 €.</li>
+    <li><strong>Dashboard intermedio</strong> con 4-6 fuentes de datos (Meta, Shopify, CRM, Analytics): 10-20 horas, coste mensual 20-80 €.</li>
+    <li><strong>Dashboard custom a medida</strong> con datos propios y lógica específica: 30-80 horas de desarrollo, coste mensual de hosting y mantenimiento.</li>
+  </ul>
+  <p>Una vez construido, el dashboard prácticamente no necesita mantenimiento. Solo se actualiza cuando cambias herramientas o añades nuevas métricas. La inversión inicial se amortiza rápido cuando el dueño deja de perder 2-3 horas semanales buscando datos.</p>
+
+  <div class="callout"><p>El negocio que toma decisiones con datos frescos tiene ventaja sobre el que toma decisiones con datos de hace un mes. Y esa ventaja se acumula con el tiempo. No es tecnología de empresa grande — cualquier pyme puede tenerlo funcionando en días.</p></div>
+
+</article>
+
+<section class="py-16 px-6 bg-surface-container-low border-t border-primary/10">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-2xl md:text-3xl font-headline font-bold text-white tracking-tight mb-4">¿Cuánto tiempo pierdes buscando datos cada semana?</h2>
+    <p class="text-on-surface-variant font-light mb-8">Diseñamos el panel de datos que necesita tu negocio: conectado a tus herramientas actuales, actualizado en tiempo real y sin complicaciones técnicas para ti.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <button data-d4-open class="bg-primary text-on-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs shadow-xl shadow-primary/20 hover:brightness-110 transition-all inline-flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">calculate</span>
+        Pedir presupuesto
+      </button>
+      <a href="/servicios.html" class="border border-primary/30 text-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs hover:bg-primary/5 transition-all inline-flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">build</span>
+        Ver servicios
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-surface-container-low py-12 px-6 border-t border-primary/10">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <a href="/index.html" class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary">terminal</span>
+      <span class="text-white font-headline font-bold"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="flex flex-wrap gap-6 text-on-surface-variant text-xs font-label font-bold uppercase tracking-[0.2em]">
+      <a href="/index.html" class="hover:text-primary transition-colors">Inicio</a>
+      <a href="/servicios.html" class="hover:text-primary transition-colors">Servicios</a>
+      <a href="/sobre-mi.html" class="hover:text-primary transition-colors">Sobre mí</a>
+      <a href="/precios.html" class="hover:text-primary transition-colors">FAQ</a>
+      <a href="/blog.html" class="hover:text-primary transition-colors">Blog</a>
+      <a href="/contacto.html" class="hover:text-primary transition-colors">Contacto</a>
+    </nav>
+    <p class="text-on-surface-variant text-[9px] font-headline uppercase tracking-[0.3em]">© 2026 D4Lab</p>
+  </div>
+</footer>
+<script>
+  const nav = document.getElementById('nav-header');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+  document.getElementById('menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('open'));
+</script>
+<script src="/chat-widget.js"></script>
+</body>
+</html>
