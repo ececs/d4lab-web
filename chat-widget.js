@@ -115,8 +115,16 @@
       '#d4chat-send:disabled{opacity:.4;cursor:not-allowed}',
       '#d4chat-send .material-symbols-outlined{color:' + C.onPrimary + ';font-size:20px;font-variation-settings:"FILL" 1}',
 
+      /* Tooltip flotante */
+      '#d4chat-tooltip{position:fixed;bottom:96px;right:28px;z-index:9997;background:#fff;color:#0a192f;padding:11px 34px 11px 14px;border-radius:12px 12px 4px 12px;box-shadow:0 4px 24px rgba(0,0,0,0.3);font-size:13px;font-family:"Space Grotesk",sans-serif;max-width:220px;line-height:1.45;cursor:pointer;animation:d4slideup .3s ease}',
+      '#d4chat-tooltip::after{content:"";position:absolute;bottom:-7px;right:18px;border:7px solid transparent;border-top-color:#fff;border-bottom:0}',
+      '#d4chat-tooltip strong{color:' + C.onPrimary + ';font-weight:700}',
+      '#d4chat-tooltip-close{position:absolute;top:5px;right:5px;width:20px;height:20px;border:none;background:rgba(0,0,0,0.08);border-radius:50%;cursor:pointer;font-size:13px;line-height:20px;text-align:center;color:#666;padding:0;display:flex;align-items:center;justify-content:center}',
+      '#d4chat-tooltip-close:hover{background:rgba(0,0,0,0.15)}',
+      '@keyframes d4slideup{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}',
+
       /* Mobile responsive */
-      '@media(max-width:480px){#d4chat-panel{width:100%;right:0;bottom:0;border-radius:16px 16px 0 0;max-height:90vh}#d4chat-btn{bottom:20px;right:20px}}',
+      '@media(max-width:480px){#d4chat-panel{width:100%;right:0;bottom:0;border-radius:16px 16px 0 0;max-height:90vh}#d4chat-btn{bottom:20px;right:20px}#d4chat-tooltip{right:20px;bottom:88px;max-width:190px}}',
     ].join('');
     document.head.appendChild(s);
   }
@@ -371,6 +379,7 @@
 
   // ─── Abre / cierra el panel ───────────────────────────────────────────────────
   function openChat(autoMessage) {
+    dismissTooltip();
     state.open = true;
     var panel = document.getElementById('d4chat-panel');
     var badge = document.querySelector('#d4chat-btn .d4chat-badge');
@@ -406,6 +415,40 @@
     var icon = document.getElementById('d4chat-btn-icon');
     panel.classList.add('d4chat-hidden');
     if (icon) icon.textContent = 'chat';
+  }
+
+  // ─── Tooltip flotante de presentación ────────────────────────────────────────
+  function showTooltip() {
+    try { if (localStorage.getItem('d4chat-tip-seen')) return; } catch (e) {}
+    if (state.open) return;
+
+    var tip = document.createElement('div');
+    tip.id = 'd4chat-tooltip';
+    tip.setAttribute('role', 'status');
+    tip.innerHTML = '<button id="d4chat-tooltip-close" aria-label="Cerrar">×</button>👋 ¿Tienes dudas o quieres un <strong>presupuesto gratis</strong>? ¡Pregúntame!';
+    document.body.appendChild(tip);
+
+    document.getElementById('d4chat-tooltip-close').addEventListener('click', function (e) {
+      e.stopPropagation();
+      dismissTooltip();
+    });
+
+    tip.addEventListener('click', function () {
+      dismissTooltip();
+      openChat();
+    });
+
+    setTimeout(function () { dismissTooltip(); }, 8000);
+  }
+
+  function dismissTooltip() {
+    var tip = document.getElementById('d4chat-tooltip');
+    if (!tip) return;
+    tip.style.transition = 'opacity .25s,transform .25s';
+    tip.style.opacity = '0';
+    tip.style.transform = 'translateY(8px)';
+    setTimeout(function () { if (tip.parentNode) tip.parentNode.removeChild(tip); }, 280);
+    try { localStorage.setItem('d4chat-tip-seen', '1'); } catch (e) {}
   }
 
   // ─── Ajuste automático altura del textarea ───────────────────────────────────
@@ -466,13 +509,14 @@
     buildDOM();
     bindEvents();
 
-    // Mostrar badge de notificación después de 3s (primera visita)
+    // Mostrar badge + tooltip después de 4s (primera visita)
     setTimeout(function () {
       if (!state.open) {
         var badge = document.querySelector('#d4chat-btn .d4chat-badge');
         if (badge) badge.style.display = 'block';
+        showTooltip();
       }
-    }, 3000);
+    }, 4000);
   }
 
   // Esperar a que el DOM esté listo
