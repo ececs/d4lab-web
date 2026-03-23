@@ -211,5 +211,6 @@
   const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }), { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
 </script>
+<script src="/chat-widget.js"></script>
 </body>
 </html>
