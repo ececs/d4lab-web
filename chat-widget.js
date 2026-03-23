@@ -10,6 +10,7 @@
   var CFG = {
     whatsapp: '34666750753',
     api: '/api/chat',
+    templateStorageKey: 'd4lab:selected-template',
     welcomeMsg: '¡Hola! Soy el asistente de **D4Lab**.\n\nPuedo ayudarte a resolver dudas sobre nuestros servicios y calcular un presupuesto estimado.\n\n¿En qué puedo ayudarte hoy?',
     quickActions: [
       { label: '💻 Solicitar presupuesto', msg: 'Hola, me gustaría solicitar un presupuesto para un proyecto.' },
@@ -25,6 +26,7 @@
     loading: false,
     budgetSent: false,
     whatsappText: 'Hola D4Lab, me interesa vuestros servicios.',
+    selectedTemplate: null,
   };
 
   // ─── Colores D4Lab ────────────────────────────────────────────────────────────
@@ -57,6 +59,14 @@
 
       /* Header */
       '#d4chat-header{background:' + C.container + ';border-bottom:1px solid ' + C.border + ';padding:14px 16px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}',
+      '#d4chat-context{padding:10px 16px;border-bottom:1px solid ' + C.border + ';background:rgba(100,255,218,0.04);display:flex;align-items:flex-start;justify-content:space-between;gap:10px}',
+      '#d4chat-context.d4chat-hidden{display:none}',
+      '.d4chat-context-copy{display:flex;flex-direction:column;gap:3px}',
+      '.d4chat-context-label{color:' + C.primary + ';font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.18em}',
+      '.d4chat-context-title{color:#fff;font-size:13px;font-weight:700;font-family:"Space Grotesk",sans-serif}',
+      '.d4chat-context-meta{color:' + C.muted + ';font-size:11px;line-height:1.4}',
+      '#d4chat-context-clear{border:none;background:transparent;color:' + C.primary + ';font-size:11px;font-weight:600;cursor:pointer;padding:0;white-space:nowrap}',
+      '#d4chat-context-clear:hover{text-decoration:underline}',
       '.d4chat-hinfo{display:flex;align-items:center;gap:10px}',
       '.d4chat-avatar{width:36px;height:36px;border-radius:8px;background:' + C.primary + ';display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:' + C.onPrimary + ';font-family:"Space Grotesk",sans-serif;flex-shrink:0}',
       '.d4chat-hname{color:#fff;font-weight:700;font-size:13px;font-family:"Space Grotesk",sans-serif}',
@@ -183,6 +193,116 @@
     return 'https://wa.me/' + CFG.whatsapp + '?text=' + encodeURIComponent(text);
   }
 
+  function escapeHtml(text) {
+    return String(text || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function safeStorageGet(key) {
+    try {
+      return window.localStorage.getItem(key);
+    } catch (err) {
+      return null;
+    }
+  }
+
+  function safeStorageSet(key, value) {
+    try {
+      window.localStorage.setItem(key, value);
+    } catch (err) {}
+  }
+
+  function safeStorageRemove(key) {
+    try {
+      window.localStorage.removeItem(key);
+    } catch (err) {}
+  }
+
+  function loadSelectedTemplate() {
+    var raw = safeStorageGet(CFG.templateStorageKey);
+    if (!raw) return null;
+    try {
+      return JSON.parse(raw);
+    } catch (err) {
+      safeStorageRemove(CFG.templateStorageKey);
+      return null;
+    }
+  }
+
+  function renderSelectedTemplateContext() {
+    var el = document.getElementById('d4chat-context');
+    if (!el) return;
+
+    if (!state.selectedTemplate || !state.selectedTemplate.name) {
+      el.classList.add('d4chat-hidden');
+      el.innerHTML = '';
+      return;
+    }
+
+    var meta = [];
+    if (state.selectedTemplate.category) meta.push(state.selectedTemplate.category);
+    if (state.selectedTemplate.style) meta.push(state.selectedTemplate.style);
+
+    el.innerHTML = [
+      '<div class="d4chat-context-copy">',
+        '<span class="d4chat-context-label">Maqueta elegida</span>',
+        '<span class="d4chat-context-title">' + escapeHtml(state.selectedTemplate.name) + '</span>',
+        '<span class="d4chat-context-meta">' + escapeHtml(meta.join(' · ') || 'Se enviará junto al presupuesto') + '</span>',
+      '</div>',
+      '<button id="d4chat-context-clear" type="button">Cambiar</button>',
+    ].join('');
+
+    el.classList.remove('d4chat-hidden');
+    document.getElementById('d4chat-context-clear').addEventListener('click', function () {
+      setSelectedTemplate(null);
+    });
+  }
+
+  function setSelectedTemplate(template) {
+    state.selectedTemplate = template || null;
+    if (state.selectedTemplate) {
+      safeStorageSet(CFG.templateStorageKey, JSON.stringify(state.selectedTemplate));
+    } else {
+      safeStorageRemove(CFG.templateStorageKey);
+    }
+    renderSelectedTemplateContext();
+    updateWhatsAppLink();
+  }
+
+  function getTemplateFromElement(el) {
+    if (!el) return null;
+    var name = el.getAttribute('data-d4-template-name');
+    if (!name) return null;
+    return {
+      id: el.getAttribute('data-d4-template-id') || '',
+      name: name,
+      category: el.getAttribute('data-d4-template-category') || '',
+      style: el.getAttribute('data-d4-template-style') || '',
+      description: el.getAttribute('data-d4-template-description') || '',
+      source: el.getAttribute('data-d4-template-source') || '',
+      previewUrl: el.getAttribute('data-d4-template-preview') || '',
+    };
+  }
+
+  function buildTemplateAutoMessage(baseMessage, template) {
+    if (!template || !template.name) return baseMessage || null;
+
+    var details = [];
+    if (template.category) details.push('categoría ' + template.category.toLowerCase());
+    if (template.style) details.push('estilo ' + template.style.toLowerCase());
+
+    var templateLine = 'Quiero pedir presupuesto tomando como base la maqueta "' + template.name + '"' + (details.length ? ' (' + details.join(', ') + ')' : '') + '.';
+    if (template.description) {
+      templateLine += ' Referencia: ' + template.description + '.';
+    }
+
+    if (!baseMessage) return 'Hola, ' + templateLine;
+    return baseMessage + '\n\n' + templateLine;
+  }
+
   // ─── DOM: crea el widget completo ─────────────────────────────────────────────
   function buildDOM() {
     // Botón flotante
@@ -218,6 +338,8 @@
           '</button>',
         '</div>',
       '</div>',
+
+      '<div id="d4chat-context" class="d4chat-hidden"></div>',
 
       // Mensajes
       '<div id="d4chat-msgs"></div>',
@@ -319,7 +441,10 @@
     // Actualizar el href del botón WhatsApp con el contexto actual
     updateWhatsAppLink(text);
 
-    var payload = { messages: state.messages };
+    var payload = {
+      messages: state.messages,
+      selectedTemplate: state.selectedTemplate,
+    };
 
     fetch(CFG.api, {
       method: 'POST',
@@ -355,7 +480,11 @@
 
   // ─── Actualiza el link de WhatsApp con contexto de la conversación ────────────
   function updateWhatsAppLink(lastUserMsg) {
-    var waText = 'Hola D4Lab, vengo del chat de la web y me interesa: ' + (lastUserMsg || 'vuestros servicios');
+    var templateText = '';
+    if (state.selectedTemplate && state.selectedTemplate.name) {
+      templateText = ' usando la maqueta "' + state.selectedTemplate.name + '"';
+    }
+    var waText = 'Hola D4Lab, vengo del chat de la web y me interesa' + templateText + ': ' + (lastUserMsg || 'vuestros servicios');
     state.whatsappText = waText;
     var url = buildWhatsAppUrl(waText);
 
@@ -398,9 +527,11 @@
       if (!autoMessage) renderQuickActions();
     }
 
-    // Si viene de una categoría, enviar el mensaje automático tras el saludo
+    // Si viene de una categoría o maqueta, enviamos el mensaje automático
     if (autoMessage && isFirst) {
       setTimeout(function () { sendMessage(autoMessage); }, 900);
+    } else if (autoMessage) {
+      setTimeout(function () { sendMessage(autoMessage); }, 200);
     } else {
       setTimeout(function () {
         var input = document.getElementById('d4chat-input');
@@ -557,6 +688,9 @@
 
     injectStyles();
     buildDOM();
+    state.selectedTemplate = loadSelectedTemplate();
+    renderSelectedTemplateContext();
+    updateWhatsAppLink();
     bindEvents();
 
     // Mostrar badge + tooltip después de 4s
@@ -586,7 +720,9 @@
       el.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
-        var autoMsg = el.getAttribute('data-d4-automessage') || null;
+        var template = getTemplateFromElement(el);
+        if (template) setSelectedTemplate(template);
+        var autoMsg = buildTemplateAutoMessage(el.getAttribute('data-d4-automessage') || null, template);
         openChat(autoMsg);
       });
     });
@@ -594,4 +730,5 @@
 
   // También exponer globalmente por si se usa desde otro script
   window.d4ChatOpen = openChat;
+  window.d4ChatSetTemplate = setSelectedTemplate;
 })();

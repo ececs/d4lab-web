@@ -158,6 +158,21 @@ function buildEmailHtml(messages, summary, fecha) {
       </table>
     </div>
 
+    ${summary.maqueta_nombre ? `
+    <div style="background:#112240;border:1px solid rgba(100,255,218,0.15);border-radius:8px;padding:20px;margin-bottom:16px">
+      <h2 style="margin:0 0 14px;color:#64FFDA;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em">Maqueta elegida</h2>
+      <table style="width:100%;border-collapse:collapse">
+        <tr>
+          <td style="color:#8892b0;font-size:12px;padding:5px 0;width:130px;vertical-align:top">Nombre</td>
+          <td style="color:#ccd6f6;font-size:14px;font-weight:600;padding:5px 0">${summary.maqueta_nombre}</td>
+        </tr>
+        ${summary.maqueta_categoria ? `<tr><td style="color:#8892b0;font-size:12px;padding:5px 0;vertical-align:top">Categoría</td><td style="color:#ccd6f6;font-size:14px;padding:5px 0">${summary.maqueta_categoria}</td></tr>` : ''}
+        ${summary.maqueta_estilo ? `<tr><td style="color:#8892b0;font-size:12px;padding:5px 0;vertical-align:top">Estilo</td><td style="color:#ccd6f6;font-size:14px;padding:5px 0">${summary.maqueta_estilo}</td></tr>` : ''}
+        ${summary.maqueta_descripcion ? `<tr><td style="color:#8892b0;font-size:12px;padding:5px 0;vertical-align:top">Referencia</td><td style="color:#ccd6f6;font-size:14px;padding:5px 0">${summary.maqueta_descripcion}</td></tr>` : ''}
+        ${summary.maqueta_preview_url ? `<tr><td style="color:#8892b0;font-size:12px;padding:5px 0;vertical-align:top">Preview</td><td style="padding:5px 0"><a href="${summary.maqueta_preview_url}" style="color:#64FFDA;font-size:13px;text-decoration:underline">${summary.maqueta_preview_url}</a></td></tr>` : ''}
+      </table>
+    </div>` : ''}
+
     <!-- Descripción y presupuesto -->
     <div style="background:#112240;border:1px solid rgba(100,255,218,0.15);border-radius:8px;padding:20px;margin-bottom:16px">
       <h2 style="margin:0 0 10px;color:#64FFDA;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em">Trabajo solicitado</h2>
@@ -214,6 +229,7 @@ async function sendBudgetEmail(messages, summary) {
   const nombre = summary.cliente_nombre && summary.cliente_nombre !== 'NOMBRE_O_DESCONOCIDO'
     ? summary.cliente_nombre
     : 'Cliente';
+  const templateTag = summary.maqueta_nombre ? ` · ${summary.maqueta_nombre}` : '';
 
   const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
@@ -224,7 +240,7 @@ async function sendBudgetEmail(messages, summary) {
     body: JSON.stringify({
       from: process.env.RESEND_FROM_EMAIL || 'D4Lab Bot <onboarding@resend.dev>',
       to: [process.env.NOTIFY_EMAIL || 'eudaldocal@gmail.com'],
-      subject: `🤖 Nuevo presupuesto D4Lab — ${nombre} — ${summary.total_estimado || '?'} € (est.)`,
+      subject: `🤖 Nuevo presupuesto D4Lab — ${nombre}${templateTag} — ${summary.total_estimado || '?'} € (est.)`,
       html,
     }),
   });
@@ -247,7 +263,7 @@ module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Método no permitido' });
 
-  const { messages } = req.body || {};
+  const { messages, selectedTemplate } = req.body || {};
   if (!Array.isArray(messages) || messages.length === 0) {
     return res.status(400).json({ error: 'messages requerido' });
   }
@@ -255,6 +271,10 @@ module.exports = async function handler(req, res) {
   if (!process.env.GEMINI_API_KEY) {
     return res.status(500).json({ error: 'GEMINI_API_KEY no configurada' });
   }
+
+  const selectedTemplateContext = selectedTemplate && selectedTemplate.name
+    ? `\n\n## MAQUETA ELEGIDA POR EL CLIENTE\n- Nombre: ${selectedTemplate.name}\n- Categoría: ${selectedTemplate.category || 'No especificada'}\n- Estilo: ${selectedTemplate.style || 'No especificado'}\n- Descripción: ${selectedTemplate.description || 'No especificada'}\n- Fuente: ${selectedTemplate.source || 'No especificada'}\n- Preview: ${selectedTemplate.previewUrl || 'No disponible'}\n\nSi el usuario pide presupuesto web o app, ten en cuenta esta maqueta como referencia visual y funcional.`
+    : '';
 
   // Convertir historial al formato de Gemini (role: user|model)
   const contents = messages.map(m => ({
@@ -269,7 +289,7 @@ module.exports = async function handler(req, res) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
+          systemInstruction: { parts: [{ text: SYSTEM_PROMPT + selectedTemplateContext }] },
           contents,
           generationConfig: {
             temperature: 0.4,
@@ -315,7 +335,17 @@ module.exports = async function handler(req, res) {
       console.log('[D4Lab] Budget JSON raw:', rawJson.substring(0, 200));
       try {
         const summary = JSON.parse(rawJson);
-        sendBudgetEmail(messages, summary).catch(e =>
+        const enrichedSummary = {
+          ...summary,
+          maqueta_id: selectedTemplate?.id || '',
+          maqueta_nombre: selectedTemplate?.name || '',
+          maqueta_categoria: selectedTemplate?.category || '',
+          maqueta_estilo: selectedTemplate?.style || '',
+          maqueta_descripcion: selectedTemplate?.description || '',
+          maqueta_fuente: selectedTemplate?.source || '',
+          maqueta_preview_url: selectedTemplate?.previewUrl || '',
+        };
+        sendBudgetEmail(messages, enrichedSummary).catch(e =>
           console.error('[D4Lab] Error enviando email:', e)
         );
       } catch (e) {

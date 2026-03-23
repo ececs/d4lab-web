@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>D4Lab | Crónica de un sabor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Manrope:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#d2edce",
+              "surface-container-highest": "#e0e4dc",
+              "on-error-container": "#752121",
+              "error": "#9f403d",
+              "on-secondary-fixed": "#3e4040",
+              "surface-container": "#edeee8",
+              "on-primary-container": "#525151",
+              "secondary": "#5e5f5f",
+              "on-primary-fixed": "#403f3f",
+              "surface-variant": "#e0e4dc",
+              "surface-container-high": "#e6e9e2",
+              "surface-bright": "#faf9f5",
+              "on-secondary-container": "#505252",
+              "on-tertiary-fixed-variant": "#546c54",
+              "surface-dim": "#d6dcd2",
+              "outline": "#787c75",
+              "background": "#faf9f5",
+              "error-dim": "#4e0309",
+              "primary-fixed": "#e5e2e1",
+              "tertiary-fixed": "#e0fbdc",
+              "primary": "#5f5e5e",
+              "inverse-on-surface": "#9d9d9a",
+              "tertiary-container": "#e0fbdc",
+              "surface-tint": "#5f5e5e",
+              "on-tertiary-container": "#4a614a",
+              "on-error": "#fff7f6",
+              "outline-variant": "#afb3ac",
+              "on-background": "#2f342e",
+              "on-secondary-fixed-variant": "#5a5c5c",
+              "on-secondary": "#f9f9f9",
+              "secondary-fixed": "#e2e2e2",
+              "surface-container-low": "#f4f4ef",
+              "secondary-dim": "#525353",
+              "surface-container-lowest": "#ffffff",
+              "inverse-primary": "#ffffff",
+              "inverse-surface": "#0d0f0d",
+              "tertiary": "#4e654d",
+              "surface": "#faf9f5",
+              "on-primary-fixed-variant": "#5c5b5b",
+              "secondary-fixed-dim": "#d4d4d4",
+              "primary-fixed-dim": "#d6d4d3",
+              "tertiary-dim": "#425942",
+              "on-surface-variant": "#5c605a",
+              "on-primary": "#faf7f6",
+              "on-tertiary-fixed": "#394f39",
+              "on-surface": "#2f342e",
+              "secondary-container": "#e2e2e2",
+              "error-container": "#fe8983",
+              "on-tertiary": "#e9ffe5",
+              "primary-container": "#e5e2e1",
+              "primary-dim": "#535252"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #faf9f5; color: #2f342e; }
+        h1, h2, h3, .font-serif { font-family: 'Noto Serif', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .tonal-shift { background-color: #f4f4ef; }
+        .no-border { border: none !important; }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-[#faf9f5]/80 backdrop-blur-xl dark:bg-stone-900/80">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-screen-2xl mx-auto">
+<span class="text-2xl font-serif italic font-bold text-stone-800 dark:text-stone-50">D4Lab</span>
+<div class="hidden md:flex items-center gap-12">
+<a class="text-stone-900 dark:text-stone-50 font-bold border-b-2 border-stone-500 pb-1 font-serif text-lg tracking-tight italic transition-transform scale-95 active:opacity-80" href="#">Historia</a>
+<a class="text-stone-500 dark:text-stone-400 font-sans uppercase tracking-[0.2em] text-[10px] hover:text-stone-800 dark:hover:text-stone-100 transition-colors duration-300" href="#">Menú</a>
+<a class="text-stone-500 dark:text-stone-400 font-sans uppercase tracking-[0.2em] text-[10px] hover:text-stone-800 dark:hover:text-stone-100 transition-colors duration-300" href="#">Reservas</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-md font-label text-sm uppercase tracking-widest hover:bg-primary-dim transition-all active:scale-95">
+                Reservar Mesa
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center px-12 pt-20 overflow-hidden">
+<div class="max-w-screen-2xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-5 z-10">
+<span class="text-tertiary font-label uppercase tracking-[0.3em] text-xs mb-6 block">Est. 2024</span>
+<h1 class="text-7xl md:text-9xl font-headline font-bold leading-[0.9] text-on-surface mb-8 tracking-tighter">
+                    D4Lab: <br/><span class="italic font-normal">Crónica</span> de un sabor
+                </h1>
+<p class="text-lg md:text-xl font-body text-on-surface-variant max-w-md leading-relaxed mb-10">
+                    Experiencias diurnas y cocina de autor. Un refugio donde la luz del sol define el ritmo de cada plato.
+                </p>
+<div class="flex items-center gap-8">
+<button class="group flex items-center gap-4 text-on-surface font-label uppercase tracking-widest text-xs">
+<span class="w-12 h-[1px] bg-outline-variant group-hover:w-20 transition-all duration-500"></span>
+                        Explorar Menú
+                    </button>
+</div>
+</div>
+<div class="md:col-span-7 relative h-[716px] md:h-[870px]">
+<div class="absolute inset-0 bg-surface-container-low translate-x-12 translate-y-12 -z-10"></div>
+<img alt="Sunlit dining table" class="w-full h-full object-cover shadow-sm grayscale-[0.2] hover:grayscale-0 transition-all duration-1000" data-alt="Sunlit minimalist restaurant table with fine glassware and linens" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzsKbxgb9O9Ko-GKOMl6YLigmsaHnlZGekQEn-SfGl4bfRTzqGVtE9zzRGl44qDzKRd5W-CN4e6odO8awiKT5R-8uLYksdtIXrKJlpWU3mjcaICtVRHm3MhjDqa6Y5fdFA-j_E2KSZxCNaDOJrz0q5eEXUCpp5z5qR-73EuYRH8rKbG6f7tbxKhKzpcdgBXrPpee8VugmBaNogW-5u6K5BTzO4UaFRtHepOJolL7a5e0KrR5J97XOEZgU428H_7hFs8elWZQkWZc4"/>
+</div>
+</div>
+</section>
+<!-- Tasting Menu Preview -->
+<section class="py-24 md:py-48 px-12 bg-surface-container-low">
+<div class="max-w-screen-xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+<div class="max-w-2xl">
+<h2 class="text-5xl md:text-7xl font-headline italic mb-8">Muestra del Menú</h2>
+<p class="font-body text-on-surface-variant uppercase tracking-widest text-sm">Selección estacional curada por nuestro Chef.</p>
+</div>
+<div class="hidden md:block">
+<span class="material-symbols-outlined text-outline-variant text-6xl font-extralight">restaurant_menu</span>
+</div>
+</div>
+<div class="space-y-20">
+<!-- Menu Item 1 -->
+<div class="group flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-outline-variant/20 pb-12">
+<div class="flex-1">
+<div class="flex items-center gap-4 mb-2">
+<h3 class="text-3xl font-headline group-hover:italic transition-all">Carpaccio de Remolacha Ahumada</h3>
+<span class="inline-block px-3 py-1 bg-tertiary-container text-on-tertiary-container text-[10px] font-label uppercase tracking-widest rounded-full">Chef's Note</span>
+</div>
+<p class="text-on-surface-variant font-body max-w-xl">Pistachos tostados, emulsión de cítricos y brotes orgánicos de nuestro huerto.</p>
+</div>
+<span class="text-4xl font-headline text-primary">24</span>
+</div>
+<!-- Menu Item 2 -->
+<div class="group flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-outline-variant/20 pb-12">
+<div class="flex-1">
+<h3 class="text-3xl font-headline mb-2 group-hover:italic transition-all">Lubina Salvaje a la Sal</h3>
+<p class="text-on-surface-variant font-body max-w-xl">Acompañada de hinojo confitado y una reducción de albariño infusionada con hierbabuena.</p>
+</div>
+<span class="text-4xl font-headline text-primary">38</span>
+</div>
+<!-- Menu Item 3 -->
+<div class="group flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-outline-variant/20 pb-12">
+<div class="flex-1">
+<h3 class="text-3xl font-headline mb-2 group-hover:italic transition-all">Texturas de Chocolate Blanco</h3>
+<p class="text-on-surface-variant font-body max-w-xl">Mousse de vainilla de Tahití, crujiente de macadamia y sorbete de maracuyá.</p>
+</div>
+<span class="text-4xl font-headline text-primary">16</span>
+</div>
+</div>
+<div class="mt-20 text-center">
+<button class="font-label text-xs uppercase tracking-[0.4em] border-b-2 border-primary pb-2 hover:opacity-60 transition-opacity">Ver Menú Completo</button>
+</div>
+</div>
+</section>
+<!-- Chef Story Block -->
+<section class="py-24 md:py-48 px-12 bg-background">
+<div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="order-2 md:order-1 relative">
+<img alt="Chef in kitchen" class="w-full aspect-[4/5] object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-700" data-alt="Close up of chef's hands plating a delicate dish with precision" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6SZY-1U0IWNg_OPZk6nbBzxaNQ2hmSIejATcvvofRZN-Hsujyim8DePbVPT4rzVScGUQYEdbUdvFzEt1Cg1TbSxlIfC1hUEZZWEcLdUugVY7PKqvtjf7nLrdQYeqE-2wa-95kcxW0SSah6MlX4NjlgcoxLZ23DvX9CavC6p7RR2VpynoGMtenrxwrjUCEbmsfyKzz9Zf2Hp68rC134rlxsUszwV0mxQpTPZlNwCr8Wy0_xi6sTwXObQ0xw2bZ65lWBra7vqWwy8w"/>
+<div class="absolute -bottom-10 -right-10 bg-surface-container-highest p-12 hidden lg:block">
+<p class="font-headline italic text-2xl text-on-surface max-w-[200px]">"La cocina es luz interpretada."</p>
+</div>
+</div>
+<div class="order-1 md:order-2 space-y-12">
+<h2 class="text-5xl md:text-8xl font-headline leading-none">Nuestra <br/><span class="italic">Historia</span></h2>
+<div class="space-y-6 text-lg text-on-surface-variant font-body leading-relaxed max-w-lg">
+<p>D4Lab nació de la obsesión por el producto local y la luz mediterránea. No somos solo un restaurante; somos un laboratorio de sensaciones donde el tiempo se detiene.</p>
+<p>Nuestra filosofía se basa en la honestidad radical. Trabajamos con productores que respetan la tierra, permitiendo que cada ingrediente cuente su propia crónica en el plato.</p>
+</div>
+<div class="pt-8">
+<a class="inline-flex items-center gap-4 text-on-surface font-label uppercase tracking-widest text-xs hover:gap-8 transition-all duration-300" href="#">
+                        Conoce al Equipo
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-32 md:py-64 px-12 bg-surface-container-low flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-12">format_quote</span>
+<blockquote class="max-w-4xl">
+<p class="text-4xl md:text-6xl font-headline italic leading-tight text-on-surface mb-12">
+                "D4Lab es, sin duda, la coreografía más elegante entre la sencillez del producto y la complejidad de la técnica que he probado en años."
+            </p>
+<cite class="not-italic font-label uppercase tracking-[0.3em] text-sm text-outline">— Crítica Gastronómica, El País</cite>
+</blockquote>
+</section>
+<!-- Contact & Map -->
+<section class="py-24 md:py-48 px-12 bg-background">
+<div class="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+<div class="lg:col-span-4 space-y-12">
+<h2 class="text-5xl font-headline">Visítanos</h2>
+<div class="space-y-8">
+<div>
+<h4 class="font-label uppercase tracking-widest text-xs text-outline mb-3">Ubicación</h4>
+<p class="text-xl font-body">Calle de la Luz, 45<br/>28004 Madrid, España</p>
+</div>
+<div>
+<h4 class="font-label uppercase tracking-widest text-xs text-outline mb-3">Horario</h4>
+<p class="text-xl font-body">Martes a Sábado<br/>13:00 — 17:00 / 20:00 — 00:00</p>
+<p class="text-xl font-body mt-2">Domingo<br/>11:00 — 18:00</p>
+</div>
+<div>
+<h4 class="font-label uppercase tracking-widest text-xs text-outline mb-3">Contacto</h4>
+<p class="text-xl font-body">+34 912 345 678<br/>hola@d4lab.com</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8 relative h-[500px] bg-surface-container overflow-hidden group">
+<div class="absolute inset-0 grayscale opacity-50 contrast-125 group-hover:opacity-70 transition-opacity">
+<img alt="Map location" class="w-full h-full object-cover" data-alt="Stylized light-toned architectural map of a city center" data-location="Madrid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzCiTscsl0LuWxOSvvYkk3w7w8rFSA5d-fFzY915qnyAr9hge1KqwiQvszbPK7EIp41VkQIbXMqvulwJZvnVOTtFVboNsi7u9tydd-RBnfgwZyZUmmlKMhGueCmLhuJjWkygtECNhadZh1evIpog3q0pG7RN6deTI8UiKeBTP7roaTLDLJavtWCtLgVJQhd9eTomw1ihik9J9Aywdl4EbYoTJZuLWk6JzooPQElzcnfEAYPtrj3Q-RN3oa9bogn9DNNKgI9klEfzI"/>
+</div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-4 h-4 bg-primary rounded-full animate-pulse shadow-xl shadow-primary/20"></div>
+</div>
+<div class="absolute bottom-8 right-8 bg-background p-6 shadow-sm">
+<button class="font-label text-[10px] uppercase tracking-widest flex items-center gap-3">
+                        Cómo Llegar <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full border-t border-stone-200/20 bg-[#f4f4ef] dark:bg-stone-950">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-20 gap-8 w-full max-w-screen-2xl mx-auto">
+<div class="flex flex-col gap-2">
+<span class="font-serif text-xl italic text-stone-800 dark:text-stone-100">D4Lab</span>
+<p class="font-sans text-[11px] uppercase tracking-widest text-stone-600 dark:text-stone-300">© 2024 D4Lab. Crónica de un sabor.</p>
+</div>
+<div class="flex gap-12">
+<a class="text-stone-400 dark:text-stone-500 font-sans text-[11px] uppercase tracking-widest hover:text-stone-700 dark:hover:text-stone-200 transition-all opacity-100 hover:opacity-70" href="#">Instagram</a>
+<a class="text-stone-400 dark:text-stone-500 font-sans text-[11px] uppercase tracking-widest hover:text-stone-700 dark:hover:text-stone-200 transition-all opacity-100 hover:opacity-70" href="#">Contacto</a>
+<a class="text-stone-400 dark:text-stone-500 font-sans text-[11px] uppercase tracking-widest hover:text-stone-700 dark:hover:text-stone-200 transition-all opacity-100 hover:opacity-70" href="#">Aviso Legal</a>
+</div>
+</div>
+</footer>
+<!-- Sticky Floating CTA (Only visible on scroll would require JS, so always present/fixed for mockup) -->
+<div class="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 pointer-events-none w-full max-w-md px-6">
+<div class="bg-primary/95 backdrop-blur-md text-on-primary px-8 py-4 rounded-full flex items-center justify-between pointer-events-auto shadow-2xl transition-transform hover:scale-105">
+<span class="font-serif italic text-sm">Reserva tu mesa hoy</span>
+<button class="flex items-center gap-2 group">
+<span class="font-label text-[10px] uppercase tracking-widest font-bold">Reservar Ahora</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>
