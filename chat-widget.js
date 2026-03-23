@@ -370,7 +370,7 @@
   }
 
   // ─── Abre / cierra el panel ───────────────────────────────────────────────────
-  function openChat() {
+  function openChat(autoMessage) {
     state.open = true;
     var panel = document.getElementById('d4chat-panel');
     var badge = document.querySelector('#d4chat-btn .d4chat-badge');
@@ -380,17 +380,24 @@
     if (badge) badge.style.display = 'none';
     if (icon) icon.textContent = 'close';
 
+    var isFirst = state.messages.length === 0;
+
     // Mostrar mensaje de bienvenida la primera vez
-    if (state.messages.length === 0) {
+    if (isFirst) {
       addMessage('assistant', CFG.welcomeMsg);
-      renderQuickActions();
+      // Solo mostrar quick actions si no hay mensaje automático de categoría
+      if (!autoMessage) renderQuickActions();
     }
 
-    // Focus en el input
-    setTimeout(function () {
-      var input = document.getElementById('d4chat-input');
-      if (input) input.focus();
-    }, 200);
+    // Si viene de una categoría, enviar el mensaje automático tras el saludo
+    if (autoMessage && isFirst) {
+      setTimeout(function () { sendMessage(autoMessage); }, 900);
+    } else {
+      setTimeout(function () {
+        var input = document.getElementById('d4chat-input');
+        if (input) input.focus();
+      }, 200);
+    }
   }
 
   function closeChat() {
@@ -485,7 +492,8 @@
       el.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
-        openChat();
+        var autoMsg = el.getAttribute('data-d4-automessage') || null;
+        openChat(autoMsg);
       });
     });
   }
