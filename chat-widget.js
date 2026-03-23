@@ -464,20 +464,27 @@
     }, 3000);
   }
 
-  // Exponer función para abrir el chat desde cualquier elemento de la página
-  window.d4ChatOpen = function () {
-    if (!document.getElementById('d4chat-btn')) {
-      init();
-      setTimeout(openChat, 100);
-    } else {
-      openChat();
-    }
-  };
-
   // Esperar a que el DOM esté listo
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', function () {
+      init();
+      wireOpenButtons();
+    });
   } else {
     init();
+    wireOpenButtons();
   }
+
+  // Conectar todos los elementos con data-d4-open para que abran el chat
+  function wireOpenButtons() {
+    document.querySelectorAll('[data-d4-open]').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        openChat();
+      });
+    });
+  }
+
+  // También exponer globalmente por si se usa desde otro script
+  window.d4ChatOpen = openChat;
 })();
