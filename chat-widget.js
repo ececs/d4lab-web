@@ -458,12 +458,12 @@
     }
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    // Auto-ocultar a los 8 s
+    // Auto-ocultar a los 60 s
     clearTimeout(tipAutoHideTimer);
     tipAutoHideTimer = setTimeout(function () {
       window.removeEventListener('scroll', onScroll);
       dismissTooltip(false);
-    }, 8000);
+    }, 60000);
   }
 
   function cancelTipTimers() {
@@ -539,14 +539,14 @@
     buildDOM();
     bindEvents();
 
-    // Mostrar badge + tooltip después de 60s
+    // Mostrar badge + tooltip después de 4s
     setTimeout(function () {
       if (!state.open) {
         var badge = document.querySelector('#d4chat-btn .d4chat-badge');
         if (badge) badge.style.display = 'block';
         showTooltip();
       }
-    }, 60000);
+    }, 4000);
   }
 
   // Esperar a que el DOM esté listo
