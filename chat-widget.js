@@ -276,9 +276,10 @@
     CFG.quickActions.forEach(function (action) {
       var btn = document.createElement('button');
       btn.textContent = action.label;
-      btn.addEventListener('click', function () {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation(); // evita que el click burbujee y cierre el panel
         sendMessage(action.msg);
-        container.innerHTML = ''; // ocultar chips tras primera selección
+        container.innerHTML = '';
       });
       container.appendChild(btn);
     });
