@@ -16,7 +16,7 @@ const baseConfig = {
 
 module.exports = {
   ...baseConfig,
-  content: ["./automatizacion-redes-sociales.html"],
+  content: ["./blog/automatizacion-redes-sociales.html"],
   plugins: [
     require("@tailwindcss/forms"),
     require("@tailwindcss/container-queries"),

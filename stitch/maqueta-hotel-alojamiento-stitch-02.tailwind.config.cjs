@@ -63,7 +63,7 @@ const baseConfig = {
 
 module.exports = {
   ...baseConfig,
-  content: ["./maqueta-hotel-alojamiento-stitch-02.html"],
+  content: ["./stitch/maqueta-hotel-alojamiento-stitch-02.html"],
   plugins: [
     require("@tailwindcss/forms"),
     require("@tailwindcss/container-queries"),

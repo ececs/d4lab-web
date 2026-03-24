@@ -16,7 +16,7 @@ const baseConfig = {
 
 module.exports = {
   ...baseConfig,
-  content: ["./ia-negocios.html"],
+  content: ["./blog/ia-negocios.html"],
   plugins: [
     require("@tailwindcss/forms"),
     require("@tailwindcss/container-queries"),

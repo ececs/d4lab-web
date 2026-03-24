@@ -63,7 +63,7 @@ const baseConfig = {
 
 module.exports = {
   ...baseConfig,
-  content: ["./maqueta-clinica-spa-stitch-02.html"],
+  content: ["./stitch/maqueta-clinica-spa-stitch-02.html"],
   plugins: [
     require("@tailwindcss/forms"),
     require("@tailwindcss/container-queries"),

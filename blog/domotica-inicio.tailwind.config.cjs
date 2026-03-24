@@ -16,7 +16,7 @@ const baseConfig = {
 
 module.exports = {
   ...baseConfig,
-  content: ["./domotica-inicio.html"],
+  content: ["./blog/domotica-inicio.html"],
   plugins: [
     require("@tailwindcss/forms"),
     require("@tailwindcss/container-queries"),

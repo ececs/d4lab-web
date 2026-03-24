@@ -63,7 +63,7 @@ const baseConfig = {
 
 module.exports = {
   ...baseConfig,
-  content: ["./maqueta-academia-formacion-stitch-03.html"],
+  content: ["./stitch/maqueta-academia-formacion-stitch-03.html"],
   plugins: [
     require("@tailwindcss/forms"),
     require("@tailwindcss/container-queries"),

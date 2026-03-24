@@ -116,8 +116,8 @@
   .float-badge { animation: float-badge 3.5s ease-in-out infinite; }
 
   /* ── Flecha bouncing ─────────────────────────────── */
-  @keyframes float-arrow { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(7px)} }
-  .float-arrow { animation: float-arrow 1.8s ease-in-out infinite; }
+  @keyframes float-arrow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(7px)} }
+  .float-arrow { display:inline-block; animation: float-arrow 1.8s ease-in-out infinite; }
 
   /* ── Scan line ───────────────────────────────────── */
   @keyframes scan { 0%{top:-2px;opacity:0} 5%{opacity:.5} 95%{opacity:.5} 100%{top:100%;opacity:0} }
@@ -169,7 +169,7 @@
         <div class="absolute inset-0 border border-primary/40 rounded-sm rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
         <span class="material-symbols-outlined text-primary text-lg">terminal</span>
       </div>
-      <span class="text-white text-xl font-headline font-bold tracking-tight"><span class="text-primary">D4</span>Lab</span>
+      <span class="text-white font-headline font-bold tracking-tight" style="font-size:1.9rem;line-height:1"><span class="text-primary">D4</span>Lab</span>
     </a>
     <nav class="hidden md:flex items-center gap-10">
       <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="servicios.html">Servicios</a>
@@ -236,8 +236,8 @@
     </div>
   </div>
 
-  <div class="absolute bottom-10 left-1/2 float-arrow z-20">
-    <span class="material-symbols-outlined text-primary/40 text-4xl">keyboard_double_arrow_down</span>
+  <div class="absolute bottom-10 left-1/2 z-20" style="transform:translateX(-50%)">
+    <span class="material-symbols-outlined text-primary/40 text-4xl float-arrow">keyboard_double_arrow_down</span>
   </div>
 </section>
 
@@ -401,8 +401,8 @@
 </section>
 
 <!-- ═══ CTA ═════════════════════════════════════════════ -->
-<section class="py-32 px-6">
-  <div class="max-w-4xl mx-auto glass p-12 md:p-24 rounded-sm border border-primary/20 text-center relative overflow-hidden reveal spotlight-card">
+<section class="px-6" style="padding-top:3rem;padding-bottom:3rem">
+  <div class="mx-auto text-center relative overflow-hidden" style="max-width:52rem;padding:2rem 2.25rem;background:rgba(17,34,64,0.7);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(100,255,218,0.2);border-radius:2px">
     <div class="absolute -top-24 -right-24 size-64 bg-primary/10 rounded-full blur-[120px]"></div>
     <div class="absolute -bottom-24 -left-24 size-64 bg-primary/10 rounded-full blur-[120px]"></div>
     <h2 class="text-4xl font-headline font-bold text-white mb-4 relative z-10 tracking-tight">¿Tienes un proyecto?</h2>

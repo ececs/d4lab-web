@@ -64,7 +64,7 @@ const baseConfig = {
 
 module.exports = {
   ...baseConfig,
-  content: ["./portfolio.html"],
+  content: ["./stitch/freelance-03/portfolio.html"],
   plugins: [
     require("@tailwindcss/forms"),
     require("@tailwindcss/container-queries"),

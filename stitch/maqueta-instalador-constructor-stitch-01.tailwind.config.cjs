@@ -63,7 +63,7 @@ const baseConfig = {
 
 module.exports = {
   ...baseConfig,
-  content: ["./maqueta-instalador-constructor-stitch-01.html"],
+  content: ["./stitch/maqueta-instalador-constructor-stitch-01.html"],
   plugins: [
     require("@tailwindcss/forms"),
     require("@tailwindcss/container-queries"),

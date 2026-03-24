@@ -68,7 +68,7 @@ const baseConfig = {
 
 module.exports = {
   ...baseConfig,
-  content: ["./landing.html"],
+  content: ["./stitch/freelance-02/landing.html"],
   plugins: [
     require("@tailwindcss/forms"),
     require("@tailwindcss/container-queries"),

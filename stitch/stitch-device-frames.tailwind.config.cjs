@@ -67,7 +67,7 @@ const baseConfig = {
 
 module.exports = {
   ...baseConfig,
-  content: ["./stitch-device-frames.html"],
+  content: ["./stitch/stitch-device-frames.html"],
   plugins: [
     require("@tailwindcss/forms"),
     require("@tailwindcss/container-queries"),

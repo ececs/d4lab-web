@@ -71,7 +71,7 @@ function extractConfigObject(scriptBody, filePath) {
 }
 
 function buildConfigFile(configObject, filePath) {
-  const relativeContentPath = `./${basename(filePath)}`;
+  const relativeContentPath = toTailwindContentPath(filePath);
 
   return `const baseConfig = ${configObject};
 
@@ -109,7 +109,7 @@ function buildCss(configPath, cssPath) {
 }
 
 function normalizeConfigFile(configPath, filePath) {
-  const relativeContentPath = `./${basename(filePath)}`;
+  const relativeContentPath = toTailwindContentPath(filePath);
   const configSource = readFileSync(configPath, "utf8");
   const normalizedSource = configSource.replace(
     /content:\s*\[[^\]]*\],/,
@@ -123,4 +123,9 @@ function normalizeConfigFile(configPath, filePath) {
 
 function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function toTailwindContentPath(filePath) {
+  const relativePath = relative(rootDir, filePath).split("\\").join("/");
+  return `./${relativePath}`;
 }
