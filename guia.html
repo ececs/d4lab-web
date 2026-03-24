@@ -68,7 +68,10 @@
   .cat-card h3 { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.05rem; color:#ccd6f6; margin-bottom:0.3rem; }
   .cat-card .price { font-family:'Space Grotesk',sans-serif; font-size:0.8rem; color:#64FFDA; font-weight:700; }
   .cat-card .savings { display:inline-flex; align-items:center; gap:4px; font-family:'Space Grotesk',sans-serif; font-size:0.75rem; color:#64FFDA; font-weight:700; background:rgba(100,255,218,0.08); border:1px solid rgba(100,255,218,0.2); border-radius:2px; padding:3px 10px; margin-bottom:0.5rem; }
-  .cat-cta { display:inline-flex; align-items:center; gap:6px; background:#64FFDA; color:#001a14; padding:10px 20px; border-radius:2px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.15em; cursor:pointer; border:none; transition:filter 0.2s; width:100%; justify-content:center; margin-top:1rem; }
+  .cat-actions { display:flex; flex-direction:column; gap:0.7rem; margin-top:1rem; }
+  .cat-link { display:inline-flex; align-items:center; gap:6px; min-height:42px; padding:10px 20px; border-radius:2px; border:1px solid rgba(100,255,218,0.28); color:#64FFDA; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.15em; justify-content:center; text-decoration:none; transition:background 0.2s, border-color 0.2s, color 0.2s; width:100%; }
+  .cat-link:hover { background:rgba(100,255,218,0.06); border-color:rgba(100,255,218,0.45); }
+  .cat-cta { display:inline-flex; align-items:center; gap:6px; background:#64FFDA; color:#001a14; padding:10px 20px; border-radius:2px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.15em; cursor:pointer; border:none; transition:filter 0.2s; width:100%; justify-content:center; margin-top:0; }
   .cat-cta:hover { filter:brightness(1.1); }
   .reveal { opacity:0; transform:translateY(20px); transition:opacity 0.6s ease, transform 0.6s ease; }
   .reveal.visible { opacity:1; transform:none; }
@@ -156,10 +159,16 @@
           <li>Enlace directo a WhatsApp para consultas rápidas</li>
         </ul>
         <p class="price">Desde 350 €</p>
-        <button class="cat-cta" data-d4-open data-d4-automessage="Tengo un restaurante/bar y estoy pensando en hacer una web. Me gustaría saber qué debería incluir y tener un presupuesto orientativo.">
-          <span class="material-symbols-outlined text-base">calculate</span>
-          Pedir presupuesto para este tipo
-        </button>
+        <div class="cat-actions">
+          <a class="cat-link" href="maquetas.html#restauracion">
+            <span class="material-symbols-outlined text-base">web</span>
+            Ver maquetas
+          </a>
+          <button class="cat-cta" data-d4-open data-d4-automessage="Tengo un restaurante/bar y estoy pensando en hacer una web. Me gustaría saber qué debería incluir y tener un presupuesto orientativo.">
+            <span class="material-symbols-outlined text-base">calculate</span>
+            Pedir presupuesto para este tipo
+          </button>
+        </div>
       </div>
 
       <!-- Tarjeta 2: Tienda / Comercio -->
@@ -180,10 +189,16 @@
           <li>Panel de administración intuitivo</li>
         </ul>
         <p class="price">Desde 800 €</p>
-        <button class="cat-cta" data-d4-open data-d4-automessage="Tengo una tienda y quiero empezar a vender online. ¿Qué tipo de tienda online me recomiendan y qué costaría montarla?">
-          <span class="material-symbols-outlined text-base">calculate</span>
-          Pedir presupuesto para este tipo
-        </button>
+        <div class="cat-actions">
+          <a class="cat-link" href="maquetas.html#comercio">
+            <span class="material-symbols-outlined text-base">web</span>
+            Ver maquetas
+          </a>
+          <button class="cat-cta" data-d4-open data-d4-automessage="Tengo una tienda y quiero empezar a vender online. ¿Qué tipo de tienda online me recomiendan y qué costaría montarla?">
+            <span class="material-symbols-outlined text-base">calculate</span>
+            Pedir presupuesto para este tipo
+          </button>
+        </div>
       </div>
 
       <!-- Tarjeta 3: Clínica / Spa / Estética -->
@@ -204,10 +219,16 @@
           <li>WhatsApp directo y formulario de contacto</li>
         </ul>
         <p class="price">Desde 600 €</p>
-        <button class="cat-cta" data-d4-open data-d4-automessage="Tengo una clínica/spa y necesito una web con reserva de citas online. ¿Qué debería incluir y cuánto costaría?">
-          <span class="material-symbols-outlined text-base">calculate</span>
-          Pedir presupuesto para este tipo
-        </button>
+        <div class="cat-actions">
+          <a class="cat-link" href="maquetas.html#clinica">
+            <span class="material-symbols-outlined text-base">web</span>
+            Ver maquetas
+          </a>
+          <button class="cat-cta" data-d4-open data-d4-automessage="Tengo una clínica/spa y necesito una web con reserva de citas online. ¿Qué debería incluir y cuánto costaría?">
+            <span class="material-symbols-outlined text-base">calculate</span>
+            Pedir presupuesto para este tipo
+          </button>
+        </div>
       </div>
 
       <!-- Tarjeta 4: Autónomo / Freelance / Consultor -->
@@ -228,10 +249,16 @@
           <li>Blog opcional para posicionamiento y autoridad</li>
         </ul>
         <p class="price">Desde 300 €</p>
-        <button class="cat-cta" data-d4-open data-d4-automessage="Soy autónomo/consultor y necesito una web para presentar mis servicios y captar clientes. ¿Qué me recomiendan?">
-          <span class="material-symbols-outlined text-base">calculate</span>
-          Pedir presupuesto para este tipo
-        </button>
+        <div class="cat-actions">
+          <a class="cat-link" href="maquetas.html#freelance">
+            <span class="material-symbols-outlined text-base">web</span>
+            Ver maquetas
+          </a>
+          <button class="cat-cta" data-d4-open data-d4-automessage="Soy autónomo/consultor y necesito una web para presentar mis servicios y captar clientes. ¿Qué me recomiendan?">
+            <span class="material-symbols-outlined text-base">calculate</span>
+            Pedir presupuesto para este tipo
+          </button>
+        </div>
       </div>
 
       <!-- Tarjeta 5: Constructor / Instalador / Técnico -->
@@ -252,10 +279,16 @@
           <li>Reseñas de clientes satisfechos</li>
         </ul>
         <p class="price">Desde 400 €</p>
-        <button class="cat-cta" data-d4-open data-d4-automessage="Soy instalador/técnico y quiero una web con mis trabajos realizados y un formulario para pedir presupuesto. ¿Qué necesito?">
-          <span class="material-symbols-outlined text-base">calculate</span>
-          Pedir presupuesto para este tipo
-        </button>
+        <div class="cat-actions">
+          <a class="cat-link" href="maquetas.html#instalador">
+            <span class="material-symbols-outlined text-base">web</span>
+            Ver maquetas
+          </a>
+          <button class="cat-cta" data-d4-open data-d4-automessage="Soy instalador/técnico y quiero una web con mis trabajos realizados y un formulario para pedir presupuesto. ¿Qué necesito?">
+            <span class="material-symbols-outlined text-base">calculate</span>
+            Pedir presupuesto para este tipo
+          </button>
+        </div>
       </div>
 
       <!-- Tarjeta 6: Academia / Centro de formación -->
@@ -276,10 +309,16 @@
           <li>Área privada para alumnos (opcional)</li>
         </ul>
         <p class="price">Desde 600 €</p>
-        <button class="cat-cta" data-d4-open data-d4-automessage="Tengo una academia y necesito web con catálogo de cursos e inscripciones online. ¿Qué tipo de web es la adecuada y qué costaría?">
-          <span class="material-symbols-outlined text-base">calculate</span>
-          Pedir presupuesto para este tipo
-        </button>
+        <div class="cat-actions">
+          <a class="cat-link" href="maquetas.html#academia">
+            <span class="material-symbols-outlined text-base">web</span>
+            Ver maquetas
+          </a>
+          <button class="cat-cta" data-d4-open data-d4-automessage="Tengo una academia y necesito web con catálogo de cursos e inscripciones online. ¿Qué tipo de web es la adecuada y qué costaría?">
+            <span class="material-symbols-outlined text-base">calculate</span>
+            Pedir presupuesto para este tipo
+          </button>
+        </div>
       </div>
 
       <!-- Tarjeta 7: Hotel / Alojamiento turístico -->
@@ -300,10 +339,16 @@
           <li>Reseñas y valoraciones verificadas</li>
         </ul>
         <p class="price">Desde 900 €</p>
-        <button class="cat-cta" data-d4-open data-d4-automessage="Tengo un hotel o alojamiento turístico y quiero una web con reservas directas para reducir las comisiones de las OTAs. ¿Qué opciones hay?">
-          <span class="material-symbols-outlined text-base">calculate</span>
-          Pedir presupuesto para este tipo
-        </button>
+        <div class="cat-actions">
+          <a class="cat-link" href="maquetas.html#hotel">
+            <span class="material-symbols-outlined text-base">web</span>
+            Ver maquetas
+          </a>
+          <button class="cat-cta" data-d4-open data-d4-automessage="Tengo un hotel o alojamiento turístico y quiero una web con reservas directas para reducir las comisiones de las OTAs. ¿Qué opciones hay?">
+            <span class="material-symbols-outlined text-base">calculate</span>
+            Pedir presupuesto para este tipo
+          </button>
+        </div>
       </div>
 
       <!-- Tarjeta 8: Empresa B2B / Servicios profesionales -->
@@ -324,10 +369,16 @@
           <li>Blog sectorial para posicionamiento y autoridad</li>
         </ul>
         <p class="price">Desde 700 €</p>
-        <button class="cat-cta" data-d4-open data-d4-automessage="Tengo una empresa de servicios para otras empresas y necesito una web corporativa profesional. ¿Qué debería incluir y cuánto costaría?">
-          <span class="material-symbols-outlined text-base">calculate</span>
-          Pedir presupuesto para este tipo
-        </button>
+        <div class="cat-actions">
+          <a class="cat-link" href="maquetas.html#b2b">
+            <span class="material-symbols-outlined text-base">web</span>
+            Ver maquetas
+          </a>
+          <button class="cat-cta" data-d4-open data-d4-automessage="Tengo una empresa de servicios para otras empresas y necesito una web corporativa profesional. ¿Qué debería incluir y cuánto costaría?">
+            <span class="material-symbols-outlined text-base">calculate</span>
+            Pedir presupuesto para este tipo
+          </button>
+        </div>
       </div>
 
     </div>
@@ -547,7 +598,7 @@
   // Click en toda la tarjeta abre el chatbot con el mensaje del botón
   document.querySelectorAll('.cat-card').forEach(function(card) {
     card.addEventListener('click', function(e) {
-      if (e.target.closest('.cat-cta')) return;
+      if (e.target.closest('.cat-cta, .cat-link')) return;
       var btn = card.querySelector('.cat-cta[data-d4-open]');
       if (btn) btn.click();
     });
