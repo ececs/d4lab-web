@@ -4,3 +4,5 @@ stitch_portfolio_tesla_sistemas_360 2/
 .env.local
 .env*.local
 node_modules/
+client_secrets.json
+.claude/settings.local.json

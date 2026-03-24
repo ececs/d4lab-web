@@ -28,26 +28,9 @@
   "publisher": {"@type": "Organization", "name": "D4Lab", "url": "https://www.d4lab.es"}
 }
 </script>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "primary": "#64FFDA", "on-primary": "#001a14",
-          "surface": "#0a192f", "surface-container": "#112240",
-          "surface-container-high": "#1d2d50", "surface-container-low": "#020c1b",
-          "on-surface": "#ccd6f6", "on-surface-variant": "#8892b0", "outline": "#233554",
-        },
-        fontFamily: { "headline":["Space Grotesk","sans-serif"], "body":["Inter","sans-serif"], "label":["Space Grotesk","sans-serif"] },
-        borderRadius: { "DEFAULT":"0.25rem","lg":"0.5rem","xl":"1rem","full":"9999px" },
-      },
-    },
-  }
-</script>
+<link href="seguridad-wifi.tailwind.css" rel="stylesheet"/>
 <style>
   .glass { background:rgba(17,34,64,0.7); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(100,255,218,0.1); }
   .nav-item::after { content:''; display:block; width:0; height:2px; background:#64FFDA; transition:width .3s; }
