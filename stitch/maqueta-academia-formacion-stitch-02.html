@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Impulso Campus | Acelera tu Carrera Profesional</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#3c475a",
+              "inverse-primary": "#b7c4ff",
+              "on-surface": "#131b2e",
+              "error-container": "#ffdad6",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed": "#d8e3fb",
+              "tertiary-fixed-dim": "#ffb59a",
+              "on-tertiary": "#ffffff",
+              "primary-fixed-dim": "#b7c4ff",
+              "tertiary-container": "#b43f00",
+              "surface-tint": "#004ced",
+              "inverse-surface": "#283044",
+              "tertiary-fixed": "#ffdbce",
+              "outline": "#737688",
+              "inverse-on-surface": "#eef0ff",
+              "surface": "#faf8ff",
+              "on-secondary-container": "#586377",
+              "surface-container": "#eaedff",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed": "#111c2d",
+              "primary": "#003ec7",
+              "surface-variant": "#dae2fd",
+              "on-primary-fixed": "#001452",
+              "on-tertiary-container": "#ffded2",
+              "on-background": "#131b2e",
+              "secondary": "#545f73",
+              "on-tertiary-fixed-variant": "#802a00",
+              "on-primary-container": "#dfe3ff",
+              "on-surface-variant": "#434656",
+              "surface-dim": "#d2d9f4",
+              "on-tertiary-fixed": "#370e00",
+              "surface-container-low": "#f2f3ff",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#e2e7ff",
+              "secondary-fixed-dim": "#bcc7de",
+              "surface-bright": "#faf8ff",
+              "error": "#ba1a1a",
+              "background": "#faf8ff",
+              "on-secondary": "#ffffff",
+              "primary-container": "#0052ff",
+              "on-primary-fixed-variant": "#0038b6",
+              "outline-variant": "#c3c5d9",
+              "surface-container-highest": "#dae2fd",
+              "secondary-container": "#d5e0f8",
+              "on-error": "#ffffff",
+              "tertiary": "#8c2f00",
+              "primary-fixed": "#dde1ff"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #003ec7 0%, #0052ff 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 w-full glass-nav shadow-sm">
+<nav class="flex justify-between items-center max-w-7xl mx-auto px-6 py-4">
+<div class="text-2xl font-black tracking-tighter text-blue-700">Impulso Campus</div>
+<div class="hidden md:flex items-center gap-8 font-headline font-semibold tracking-tight">
+<a class="text-blue-700 border-b-2 border-blue-700 pb-1" href="#programas">Programas</a>
+<a class="text-slate-600 hover:text-blue-600 transition-colors" href="#metodologia">Metodología</a>
+<a class="text-slate-600 hover:text-blue-600 transition-colors" href="#precios">Precios</a>
+<a class="text-slate-600 hover:text-blue-600 transition-colors" href="#testimonios">Testimonios</a>
+</div>
+<button class="kinetic-gradient text-on-primary px-6 py-2.5 rounded-lg font-bold hover:scale-105 transition-transform duration-200 active:scale-95">
+                ¡Matricúlate!
+            </button>
+</nav>
+<div class="bg-slate-200/20 h-[1px] w-full"></div>
+</header>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-20 pb-32">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="relative z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-container text-on-tertiary-container text-xs font-bold tracking-wider uppercase mb-6">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                    Convocatoria Abierta
+                </div>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
+                    Tu Carrera Profesional <span class="text-primary">Empieza Aquí</span>
+</h1>
+<p class="text-on-surface-variant text-xl mb-10 max-w-lg leading-relaxed">
+                    Programas prácticos con empleabilidad real. Bootcamps, cursos y preparación profesional de alto impacto para el mercado actual.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="kinetic-gradient text-on-primary px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:scale-105 transition-transform">
+                        Ver Catálogo
+                    </button>
+<button class="bg-surface-container-high text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-surface-container-highest transition-colors">
+                        Hablar con un Asesor
+                    </button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-20 -right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="relative rounded-3xl overflow-hidden shadow-2xl transform lg:rotate-3 hover:rotate-0 transition-transform duration-500">
+<img alt="Estudiantes colaborando" class="w-full aspect-[4/3] object-cover" data-alt="Modern collaborative workspace with young professionals working on laptops in a bright, sunlit office environment with plants" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwHIS9p7hnsVzO0t_lWs8fSC3BoxFnYSft9ZxaYV6mI7lcA72AiOBwNxW64fnRiGLdUVpaMkarwO8y4dUkXnuO4SwZ2qfSfTTNd9NevynrzIDbH7A_ZE6BDN2HfFQul-IW-ZSTKZR9_T8DcVvRG1Zfw1Bp3PjGcDCDvNsUac9oyxkXaAEXSXl68u2Z9dD0ylAWnFtjfZnf4nxGuUX2ctVYO6tuHqyvVh-uBKyAdtY3lPIU_mGyyH5DNUXl4jUsMq9wPRdKcrY51fe2"/>
+<div class="absolute bottom-6 left-6 right-6 glass-nav p-6 rounded-2xl border border-white/20">
+<div class="flex items-center gap-4">
+<div class="flex -space-x-3">
+<img class="w-10 h-10 rounded-full border-2 border-white object-cover" data-alt="Portrait of a smiling young professional woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBijPzyJdJMVQFA2O8jZBQQCPBw3RYfsjd3Q0ZBKB2jC-pkH3YSCTp48NeXjFOQhdAPhvU7ioUxVCzd0w-PZyu0MOSt3ITzedqtEpXemDHy3e64kTPT_FUox4dvojqkq2TMNzj9cmAiyq7dPv6ftlu23S2bltZ5jopYZpe98a07c3IzTiHJdvjtCc5WG3W_OLBq_N5UAUuLWvu4E1s7DCPLcfxQv1k9AuIrMxb6Fu9fe3XeRe5rXv19e4PfnVFnlCZm14T_2YRf3vy5"/>
+<img class="w-10 h-10 rounded-full border-2 border-white object-cover" data-alt="Portrait of a smiling young professional man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC976rErRpMh9kbVkInOqlx3AZ7lC07HxeMEjF5GGlLoCoRcFc_vHmVqk_hNcgrErpqAFU1EnmtB_Oqhd9hiPf0B0sPTE026U0-2XktsqxmMsI3G9f6ii3fDn_vAR_w_qo1qRl-Lq7gpmJQZakiGwDxlzswkLMjv3Kz3cOIXt0lzrmLP1Ob2irRKJ9aYKSPkR_lkJW9zOhnBuutA4AQ6SwGnlyQXMPd-jCi4DTbNueVLFzsvY6drBZtA5hUBRuUlNKq40sLa7Q24h5b"/>
+<img class="w-10 h-10 rounded-full border-2 border-white object-cover" data-alt="Portrait of a confident businessman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7NS7zoClUScj-NqnD8RrBmwDXl9gGN08HkUq0DwooM4RqrenwjtccHQ4iCQyVEmi5gK7k895sRq8LmyBnj4ABr1isseXCtzhgknoT7deL10BE35lKCgswRjAoG-u2HtFzDaOtu2SW3XIDIRHB82MQ5IkHn-cXpF5ZbORo8Wx_DX0pV1W15HO4wAhrXInQptEP7lWGyoJ2lRJtYpAEFwezgUOZ2dUa_lGA2_iAtefxzUvX9VsWJ-l8fI41npd2mlKZd4xbIehhDBGq"/>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">+5,000 Graduados</p>
+<p class="text-xs text-on-surface-variant italic">92% de empleabilidad en 6 meses</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Catálogo de Programas -->
+<section class="py-24 bg-surface-container-low" id="programas">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<h2 class="font-headline text-4xl font-extrabold tracking-tight mb-4">Catálogo de Programas</h2>
+<p class="text-on-surface-variant text-lg">Especialízate en las áreas con mayor demanda laboral del mundo tech y digital.</p>
+</div>
+<div class="flex gap-2">
+<button class="p-3 rounded-full bg-surface-container-highest text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="p-3 rounded-full bg-surface-container-highest text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Laptop screen showing complex code with neon light reflections in a dark room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDvHo7B4DADRjbYk5Zlsijs_r6FyI-RjA0Y-hteMF922qgklL4QXpYEzUIaOoVhMrj9bhA0YOOASus4I6opjpIWUhpvpwAfrOpIqqdTV7rnkT2p8wUc6BRZs_aYjUOmS0rHKyWtPkYZZXvVRfOxUBXSvDYFGdgl6iGV5PwV5iIDkTx3H6Yh-5iThT-uudnvCLRKCPKIqT4Bkd4kIqVXLs9AfzI7aGk3LTg_oTggV9lI-cNg8vCmThIlT8W5agEjm_mcFMQKmQNv7x6"/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 rounded-lg text-xs font-bold">BOOTCAMP</div>
+</div>
+<div class="p-8 flex-grow">
+<div class="flex justify-between items-start mb-4">
+<span class="text-tertiary font-bold text-sm">Inicio: 15 Oct</span>
+<div class="flex items-center gap-1 text-on-surface-variant text-sm font-medium">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">group</span>
+                                4/15 Plazas
+                            </div>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">Bootcamp Full Stack</h3>
+<p class="text-on-surface-variant mb-6 line-clamp-2">Domina MERN stack y conviértete en el perfil más buscado por las startups.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-2xl font-black text-primary">2.490€</span>
+<a class="text-primary font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">Saber más <span class="material-symbols-outlined">chevron_right</span></a>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Colorful business data charts and graphs on a computer screen with soft focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCie6TnRz52mThZ96nQVva2zd4mN3MRjXKbQPELnr8BRzxvk6v_nBiKU-Ug1SbzUk6Msyd45Fu-PRd6onTczwh5nX5JweWPXGP7GwzW0uxcyZAdT7CneU2oW6NB_HIbIEH84Evn_HdPwfzOA5PEHyvRaVUBOzd1HRNVruDqp_Imzgrp1qPRxL3N_25XzuuzbkAkprL8OmfO-6JY6JNiIYry6DJ900tJWelWuI_rblrJx0MuINjgoMrjqf7ByE-FMaR8tfUMFg6M4jy"/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 rounded-lg text-xs font-bold">ESPECIALIZACIÓN</div>
+</div>
+<div class="p-8 flex-grow">
+<div class="flex justify-between items-start mb-4">
+<span class="text-tertiary font-bold text-sm">Inicio: 22 Oct</span>
+<div class="flex items-center gap-1 text-on-surface-variant text-sm font-medium">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">group</span>
+                                7/20 Plazas
+                            </div>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">Growth Marketing</h3>
+<p class="text-on-surface-variant mb-6 line-clamp-2">Aprende estrategias de adquisición y retención para escalar productos digitales.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-2xl font-black text-primary">1.150€</span>
+<a class="text-primary font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">Saber más <span class="material-symbols-outlined">chevron_right</span></a>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Professional office meeting with sticky notes on a glass wall and people discussing strategy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo6Gyz-7Da2jiwxOQDV1JuvHSGDlWD82HPjIWTIYBtdlyu4F6ET1obrlk5tQCCNI5gy54-h24nvWxk5TNF3x7CaZqdokxafomvwT72qcc_Co_dVqFJYD1b5vA4STnoDoLREz6GpvrH7jKYPObk5f1gotVVt03J9n1S4yYxKT8VD_WpQcmku0X8YYxOOoBaJWWSXP0QFb3qjy2y3nhFzzeiJUBSuRvfeixNCzf9qqmYEi1IhsVNJvXblwUYmVuczs6nVpjPYJ3j0Rff"/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 rounded-lg text-xs font-bold">INTENSIVO</div>
+</div>
+<div class="p-8 flex-grow">
+<div class="flex justify-between items-start mb-4">
+<span class="text-tertiary font-bold text-sm">Inicio: 05 Nov</span>
+<div class="flex items-center gap-1 text-on-surface-variant text-sm font-medium">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">group</span>
+                                2/12 Plazas
+                            </div>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">Project Management</h3>
+<p class="text-on-surface-variant mb-6 line-clamp-2">Domina metodologías Agile y Scrum para liderar equipos de alto rendimiento.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-2xl font-black text-primary">890€</span>
+<a class="text-primary font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">Saber más <span class="material-symbols-outlined">chevron_right</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Metodología -->
+<section class="py-24" id="metodologia">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center max-w-3xl mx-auto mb-20">
+<h2 class="font-headline text-4xl font-extrabold tracking-tight mb-6">Nuestra Metodología: <span class="text-primary">Aprender Haciendo</span></h2>
+<p class="text-on-surface-variant text-lg">Olvídate de las clases teóricas interminables. En Impulso Campus, el 80% del tiempo estarás trabajando en proyectos reales.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="grid grid-cols-1 gap-8">
+<div class="flex gap-6 p-6 rounded-2xl bg-surface-container-low border border-outline-variant/15">
+<div class="w-14 h-14 shrink-0 rounded-xl kinetic-gradient flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-3xl">terminal</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2">Simulación Profesional</h4>
+<p class="text-on-surface-variant">Trabaja en un entorno que replica el día a día de una empresa tecnológica real con entregables semanales.</p>
+</div>
+</div>
+<div class="flex gap-6 p-6 rounded-2xl bg-surface-container-low border border-outline-variant/15">
+<div class="w-14 h-14 shrink-0 rounded-xl kinetic-gradient flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-3xl">psychology</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2">Mentores Activos</h4>
+<p class="text-on-surface-variant">Aprende de profesionales que trabajan actualmente en Google, Amazon, Stripe y otras empresas líderes.</p>
+</div>
+</div>
+<div class="flex gap-6 p-6 rounded-2xl bg-surface-container-low border border-outline-variant/15">
+<div class="w-14 h-14 shrink-0 rounded-xl kinetic-gradient flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-3xl">rocket_launch</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2">Acompañamiento 1 a 1</h4>
+<p class="text-on-surface-variant">Sesiones individuales de mentoría para resolver dudas y potenciar tu perfil profesional.</p>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute inset-0 kinetic-gradient opacity-10 blur-[100px] -z-10"></div>
+<img alt="Metodología práctica" class="rounded-[2rem] shadow-2xl" data-alt="Close up of a person's hands typing on a laptop with digital data overlays suggesting artificial intelligence and coding" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZKesiXcgfFzjN5n2ZKHUNEABuGrIpXv1L8ZxZ77t9QIlig31Cc2tRP0OxgVAKjUv6uCdOudImEnViLe1R1uUiHynTUZHkg5utku_97sgVxtYZ8-2B9oaET53PkkRPHqFsqD9rQ9Ny5e42hG2tTzpux1un7YRQIH5V2JQL_yHVvg_4E9W5IZf-g6iUjEjPAcMZKr9oJnoVGbGwQa4pdV3Hm2GrL9w0oAQ3M3K1cg1tUjgTtTGHHwvTFCKAlvVenD1n4MmPxNNY2zjP"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Comparativa de Modalidades -->
+<section class="py-24 bg-surface" id="precios">
+<div class="max-w-5xl mx-auto px-6">
+<h2 class="font-headline text-3xl font-extrabold tracking-tight mb-12 text-center">Elige cómo quieres aprender</h2>
+<div class="bg-surface-container-lowest rounded-[2.5rem] overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-primary text-on-primary">
+<th class="p-8 font-headline text-lg">Características</th>
+<th class="p-8 font-headline text-lg text-center">Online en Vivo</th>
+<th class="p-8 font-headline text-lg text-center">A tu ritmo</th>
+</tr>
+</thead>
+<tbody class="text-on-surface">
+<tr class="bg-surface-container-low">
+<td class="p-8 font-bold">Clases en directo con mentores</td>
+<td class="p-8 text-center"><span class="material-symbols-outlined text-primary font-bold">check_circle</span></td>
+<td class="p-8 text-center"><span class="material-symbols-outlined text-outline-variant">cancel</span></td>
+</tr>
+<tr class="bg-surface-container-lowest">
+<td class="p-8 font-bold">Networking con otros alumnos</td>
+<td class="p-8 text-center"><span class="material-symbols-outlined text-primary font-bold">check_circle</span></td>
+<td class="p-8 text-center"><span class="material-symbols-outlined text-primary font-bold">check_circle</span></td>
+</tr>
+<tr class="bg-surface-container-low">
+<td class="p-8 font-bold">Corrección de ejercicios personalizada</td>
+<td class="p-8 text-center"><span class="material-symbols-outlined text-primary font-bold">check_circle</span></td>
+<td class="p-8 text-center"><span class="material-symbols-outlined text-outline-variant">cancel</span></td>
+</tr>
+<tr class="bg-surface-container-lowest">
+<td class="p-8 font-bold">Acceso de por vida al contenido</td>
+<td class="p-8 text-center"><span class="material-symbols-outlined text-primary font-bold">check_circle</span></td>
+<td class="p-8 text-center"><span class="material-symbols-outlined text-primary font-bold">check_circle</span></td>
+</tr>
+<tr class="bg-surface-container-low">
+<td class="p-8 font-bold">Bolsa de empleo exclusiva</td>
+<td class="p-8 text-center"><span class="material-symbols-outlined text-primary font-bold">check_circle</span></td>
+<td class="p-8 text-center"><span class="material-symbols-outlined text-primary font-bold">check_circle</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<!-- Automatizaciones -->
+<section class="py-16 bg-primary text-on-primary overflow-hidden">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-md">
+<h3 class="font-headline text-3xl font-extrabold mb-4">Experiencia Fluida</h3>
+<p class="opacity-80 text-lg">Nos encargamos de la gestión para que tú solo te preocupes de aprender.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-8 w-full md:w-auto">
+<div class="flex flex-col items-center text-center p-6 rounded-2xl bg-white/10 backdrop-blur-md">
+<span class="material-symbols-outlined text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">chat</span>
+<p class="font-bold text-sm">Confirmación por WhatsApp</p>
+</div>
+<div class="flex flex-col items-center text-center p-6 rounded-2xl bg-white/10 backdrop-blur-md">
+<span class="material-symbols-outlined text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<p class="font-bold text-sm">Materiales tras cada sesión</p>
+</div>
+<div class="flex flex-col items-center text-center p-6 rounded-2xl bg-white/10 backdrop-blur-md">
+<span class="material-symbols-outlined text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<p class="font-bold text-sm">Recibos automáticos</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonios -->
+<section class="py-24 bg-surface-container-low overflow-hidden" id="testimonios">
+<div class="max-w-7xl mx-auto px-6">
+<h2 class="font-headline text-4xl font-extrabold text-center mb-16">Historias de Éxito</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Testimonio 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl shadow-sm border border-outline-variant/10">
+<div class="flex gap-1 text-tertiary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8">"Gracias al bootcamp Full Stack pude dar el salto de marketing a desarrollo. Hoy trabajo remotamente para una empresa en UK."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Close-up portrait of a professional woman looking thoughtful" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4zsvUi9Wp7uwLNylu0fEnzpZmaqGr2azlIEnR_D64qvG-qhYvO3OAy-T7ga7bOmqdsrCotRXcFDbZ2AKXlf9y2eJPFch9ZxNB1juJTJE9YWmrh5wMRkvLu8oapcUMrBqriwm_sn2qZGINfROYf-4snv0vk-PGyBaWh5JWp50AtM8q4xsRsyfHj39vYLBPpgrB3ETeHNzUf4S6zBJ3G36OozKXENKEx7mGJZ6_-BWc1Y9upwAu26rdojfyLObK5GBJon2Z4jJF1-YY"/>
+<div>
+<p class="font-bold">Elena Martínez</p>
+<p class="text-sm text-on-surface-variant">Frontend Developer @ TechNow</p>
+</div>
+</div>
+</div>
+<!-- Testimonio 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl shadow-sm border border-outline-variant/10">
+<div class="flex gap-1 text-tertiary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8">"La red de mentores es increíble. Te enseñan lo que realmente se usa en la industria, sin rellenos innecesarios."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of a young man with glasses and a friendly smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS87gAhtQBC3hELBZ7b-gjowY-APAe8NGmgaMew39-QQbZchR8EgRSXIjJEwPX69KxhSX2EDT0hCVFeq-GrcJpGgXMgslMcP5iV7hVnPG1VKG2c5Du_W5zewnXzCMJm8ROpKUC3pd74Aka8WJDEsRXZepG8E2Wm2zoJPJWqGgDZ94NmqXSXsXLi55YeQo6M6Kq2X7BBdBZcjIgj1eI4KYcwDhVo0u1-RtgzAS3IXTJRccGSPTpAnsKMvRNgMyBnK_ITFn3v2S6dWEo"/>
+<div>
+<p class="font-bold">Ricardo Soto</p>
+<p class="text-sm text-on-surface-variant">Growth Lead @ Finly</p>
+</div>
+</div>
+</div>
+<!-- Testimonio 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl shadow-sm border border-outline-variant/10">
+<div class="flex gap-1 text-tertiary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8">"Project Management me dio las herramientas para organizar mi equipo de una manera que nunca imaginé. Productividad X2."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of a professional woman with a bright background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEoo1GIWxata932AUDyQFwVJrcgQ3vzkFPsBjN-oyhQ4H-afpta0d3DnlCu7M7W_dsetcCbCTTwktkODh3-2GgfCwrGH0aKNwQ-FqjKfCLJ9u6-ktuJ5ZED4Wu_z7a6BLsl1EnXyCSXJpIUKjB2WZH_NG8IFj4tIT4p9L8ggABWMwk3rHg0MDDivmfViEBf1fiIUqdcJylqENYSWnfw1aaSI6jRH4r_j9lw-Jy0fs1BXtqY0rcYi_5-T97RG6PJMvispHFm1Ik_mrE"/>
+<div>
+<p class="font-bold">Ana Belén Ruiz</p>
+<p class="text-sm text-on-surface-variant">Product Manager @ Globant</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Inscripción & FAQ -->
+<section class="py-24 relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20">
+<div>
+<h2 class="font-headline text-4xl font-extrabold tracking-tight mb-8">Preguntas Frecuentes</h2>
+<div class="space-y-4">
+<details class="group bg-surface-container-low rounded-2xl p-6 open:bg-surface-container-high transition-colors">
+<summary class="font-bold list-none flex justify-between items-center cursor-pointer">
+                            ¿Necesito experiencia previa?
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant">Depende del programa. Para los Bootcamps empezamos desde cero, mientras que para los cursos de especialización recomendamos tener bases mínimas.</p>
+</details>
+<details class="group bg-surface-container-low rounded-2xl p-6 open:bg-surface-container-high transition-colors">
+<summary class="font-bold list-none flex justify-between items-center cursor-pointer">
+                            ¿Ofrecéis facilidades de pago?
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant">Sí, puedes financiar cualquiera de nuestros programas hasta en 12 cuotas sin intereses.</p>
+</details>
+<details class="group bg-surface-container-low rounded-2xl p-6 open:bg-surface-container-high transition-colors">
+<summary class="font-bold list-none flex justify-between items-center cursor-pointer">
+                            ¿Cómo funciona la bolsa de empleo?
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant">Tenemos convenios con más de 150 empresas que buscan activamente talento graduado en Impulso Campus.</p>
+</details>
+</div>
+<div class="mt-12 p-8 rounded-3xl bg-secondary-container text-on-secondary-container">
+<h4 class="font-bold mb-2">¿Tienes más dudas?</h4>
+<p class="mb-6 opacity-80">Nuestro equipo de admisiones está listo para ayudarte a elegir el mejor camino para tu futuro.</p>
+<button class="flex items-center gap-2 font-bold hover:underline">
+<span class="material-symbols-outlined">call</span>
+                        Agendar llamada gratuita
+                    </button>
+</div>
+</div>
+<div class="relative" id="inscripcion">
+<div class="absolute inset-0 kinetic-gradient rotate-3 rounded-[3rem] opacity-10"></div>
+<div class="relative bg-surface-container-lowest p-10 rounded-[2.5rem] shadow-2xl border border-outline-variant/20">
+<h3 class="font-headline text-3xl font-extrabold mb-2">Reserva tu plaza</h3>
+<p class="text-on-surface-variant mb-8">Completa tus datos y un asesor se pondrá en contacto contigo en menos de 24 horas.</p>
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="text-sm font-bold ml-1">Nombre Completo</label>
+<input class="w-full bg-surface-container px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-primary" placeholder="Tu nombre" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold ml-1">Correo Electrónico</label>
+<input class="w-full bg-surface-container px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-primary" placeholder="email@ejemplo.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold ml-1">Programa de Interés</label>
+<select class="w-full bg-surface-container px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-primary">
+<option>Bootcamp Full Stack</option>
+<option>Growth Marketing</option>
+<option>Project Management</option>
+</select>
+</div>
+<button class="w-full kinetic-gradient text-on-primary py-4 rounded-xl font-bold text-lg shadow-lg hover:scale-[1.02] transition-transform" type="submit">
+                            Reserva tu plaza
+                        </button>
+</form>
+<div class="mt-8 flex items-center justify-center gap-4 text-sm text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-green-600 text-lg">verified_user</span>
+                            Pago 100% seguro
+                        </div>
+<div class="w-1 h-1 bg-outline-variant rounded-full"></div>
+<p>Garantía de devolución 14 días</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-slate-200 bg-slate-50">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<span class="text-xl font-bold text-slate-900 mb-4 block">Impulso Campus</span>
+<p class="text-slate-500 text-sm leading-relaxed">Transformamos vidas a través de la educación práctica y el acompañamiento profesional real.</p>
+<div class="flex gap-4 mt-6">
+<a class="text-slate-400 hover:text-primary" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-slate-400 hover:text-primary" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-slate-400 hover:text-primary" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-slate-900">Programas</h5>
+<ul class="space-y-4 text-sm">
+<li><a class="text-slate-500 hover:text-blue-500 hover:underline transition-all" href="#">Desarrollo Web</a></li>
+<li><a class="text-slate-500 hover:text-blue-500 hover:underline transition-all" href="#">Data Science</a></li>
+<li><a class="text-slate-500 hover:text-blue-500 hover:underline transition-all" href="#">UX/UI Design</a></li>
+<li><a class="text-slate-500 hover:text-blue-500 hover:underline transition-all" href="#">Ciberseguridad</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-slate-900">Comunidad</h5>
+<ul class="space-y-4 text-sm">
+<li><a class="text-slate-500 hover:text-blue-500 hover:underline transition-all" href="#">Blog</a></li>
+<li><a class="text-slate-500 hover:text-blue-500 hover:underline transition-all" href="#">Eventos</a></li>
+<li><a class="text-slate-500 hover:text-blue-500 hover:underline transition-all" href="#">Alumni</a></li>
+<li><a class="text-slate-500 hover:text-blue-500 hover:underline transition-all" href="#">Empresas</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-slate-900">Legal</h5>
+<ul class="space-y-4 text-sm">
+<li><a class="text-slate-500 hover:text-blue-500 hover:underline transition-all" href="#">Política de Privacidad</a></li>
+<li><a class="text-slate-500 hover:text-blue-500 hover:underline transition-all" href="#">Términos</a></li>
+<li><a class="text-slate-500 hover:text-blue-500 hover:underline transition-all" href="#">Cookies</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-slate-200">
+<p class="text-sm text-slate-500 text-center md:text-left">© 2024 Impulso Campus. Todos los derechos reservados.</p>
+</div>
+</footer>
+</body></html>

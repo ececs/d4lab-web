@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atlas Norte Consulting | Arquitectura de la Claridad</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "tertiary-container": "#dae2fd",
+                "surface-container": "#e8eff3",
+                "outline-variant": "#a9b4b9",
+                "tertiary": "#575f75",
+                "on-tertiary": "#f9f8ff",
+                "surface-tint": "#455f88",
+                "on-error-container": "#752121",
+                "surface-variant": "#d9e4ea",
+                "on-surface-variant": "#566166",
+                "on-primary-container": "#38527b",
+                "on-error": "#fff7f6",
+                "background": "#f7f9fb",
+                "on-surface": "#2a3439",
+                "surface-dim": "#cfdce3",
+                "secondary-fixed": "#d3e4fe",
+                "surface-container-low": "#f0f4f7",
+                "on-primary": "#f6f7ff",
+                "error-dim": "#4e0309",
+                "secondary": "#506076",
+                "primary-fixed-dim": "#bfd5ff",
+                "surface": "#f7f9fb",
+                "secondary-container": "#d3e4fe",
+                "inverse-surface": "#0b0f10",
+                "primary-container": "#d6e3ff",
+                "primary": "#455f88",
+                "inverse-primary": "#b3cdfd",
+                "tertiary-fixed-dim": "#ccd4ee",
+                "secondary-dim": "#44546a",
+                "on-secondary-container": "#435368",
+                "tertiary-fixed": "#dae2fd",
+                "on-secondary-fixed-variant": "#4d5d73",
+                "on-primary-fixed": "#254067",
+                "primary-dim": "#39537c",
+                "on-tertiary-container": "#4a5167",
+                "outline": "#717c82",
+                "error": "#9f403d",
+                "surface-container-high": "#e1e9ee",
+                "surface-bright": "#f7f9fb",
+                "on-primary-fixed-variant": "#425c85",
+                "secondary-fixed-dim": "#c5d6f0",
+                "on-secondary-fixed": "#314055",
+                "inverse-on-surface": "#9a9d9f",
+                "on-tertiary-fixed-variant": "#535b71",
+                "on-tertiary-fixed": "#373f54",
+                "on-secondary": "#f7f9ff",
+                "primary-fixed": "#d6e3ff",
+                "on-background": "#2a3439",
+                "tertiary-dim": "#4b5369",
+                "surface-container-highest": "#d9e4ea",
+                "error-container": "#fe8983",
+                "surface-container-lowest": "#ffffff"
+              },
+              fontFamily: {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift-surface { background: linear-gradient(180deg, rgba(247, 249, 251, 0.8) 0%, rgba(247, 249, 251, 0.95) 100%); }
+        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="font-headline text-2xl font-bold tracking-tighter text-[#1A365D]">Atlas Norte</div>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center gap-8 font-label text-sm font-semibold tracking-wide">
+<a class="text-[#455f88] border-b-2 border-[#455f88] pb-1" href="#hero">Inicio</a>
+<a class="text-slate-600 hover:text-[#455f88] transition-colors" href="#servicios">Servicios</a>
+<a class="text-slate-600 hover:text-[#455f88] transition-colors" href="#casos">Casos</a>
+<a class="text-slate-600 hover:text-[#455f88] transition-colors" href="#insights">Insights</a>
+<a class="text-slate-600 hover:text-[#455f88] transition-colors" href="#faq">FAQ</a>
+<a class="ml-4 px-6 py-2 bg-primary text-on-primary rounded-lg hover:bg-primary-dim transition-all active:scale-95" href="#contacto">Contactar</a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center overflow-hidden px-8" id="hero">
+<div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-7 z-10">
+<span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-[0.2em] uppercase text-primary bg-primary-container/30 rounded-full">Consultoría Estratégica Premium</span>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold text-on-surface leading-[1.1] mb-8">
+                        Arquitectos del <br/>
+<span class="text-primary italic">Futuro Empresarial</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+                        Guiamos a las organizaciones líderes hacia la resiliencia operativa y la claridad estratégica en mercados de alta volatilidad.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<a class="px-8 py-4 bg-primary text-on-primary font-bold rounded-xl shadow-lg hover:translate-y-[-2px] transition-all" href="#contacto">Iniciar Transformación</a>
+<a class="px-8 py-4 bg-surface-container-highest text-primary font-bold rounded-xl hover:bg-surface-variant transition-all" href="#servicios">Ver Servicios</a>
+</div>
+</div>
+<div class="md:col-span-5 relative">
+<div class="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl rotate-3 scale-105">
+<img alt="Modern Skyscraper" class="w-full h-full object-cover" data-alt="Low angle shot of a sleek modern glass skyscraper reaching into a clear blue sky, symbolizing corporate growth and structural clarity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZFf6Lplm9_taVLh9WRHVUHnzCrgRSALBv_AzLOO46DVmc7O-TDZIeBGIUIXQlC9nsAxH34iiy5jKInw-6P3Y0XHid0CUC352qoZ5YQ6fjDTzZ4TZcpZ_HtoYx_Rx2fInPzGQJYAFQ7n3vsrQuYzneL0F8lU7umh7c-2Ciu1beZkX45jmv-s5x_F91xqUe66XjbLk-daZEkTjizTWBLStxCrgw77942HeIdE6sD3kOJ9-l7NuYS9lfUhW1VnrpfFbbAQPPt5no2hPj"/>
+</div>
+<div class="absolute -bottom-6 -left-6 glass-card p-6 rounded-2xl shadow-xl max-w-[240px]">
+<div class="flex items-center gap-4 mb-2">
+<span class="material-symbols-outlined text-primary text-3xl">verified</span>
+<span class="font-headline font-bold text-2xl">+150</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-tight">Casos de éxito transformados en resiliencia estratégica global.</p>
+</div>
+</div>
+</div>
+<div class="absolute top-1/4 right-0 w-1/3 h-2/3 bg-primary-container/10 blur-[120px] -z-10 rounded-full"></div>
+</section>
+<!-- Company Intro -->
+<section class="py-24 bg-surface-container-low px-8">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-start">
+<div class="md:w-1/2">
+<h2 class="font-headline text-4xl font-bold text-on-surface mb-6">Resiliencia y Claridad</h2>
+<div class="w-20 h-1.5 bg-primary mb-8"></div>
+</div>
+<div class="md:w-1/2">
+<p class="text-xl text-on-surface-variant leading-relaxed mb-8">
+                        En Atlas Norte, no solo resolvemos problemas puntuales; rediseñamos los cimientos de su organización para que la incertidumbre se convierta en su mayor ventaja competitiva. Nuestro enfoque combina rigor analítico con una visión humanista de la empresa.
+                    </p>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<p class="font-headline font-extrabold text-3xl text-primary mb-1">01</p>
+<p class="text-sm font-bold uppercase tracking-wider text-on-surface">Visión Integral</p>
+</div>
+<div>
+<p class="font-headline font-extrabold text-3xl text-primary mb-1">02</p>
+<p class="text-sm font-bold uppercase tracking-wider text-on-surface">Ejecución Ágil</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-32 px-8" id="servicios">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20 text-center max-w-2xl mx-auto">
+<h2 class="font-headline text-4xl font-extrabold mb-6">Especialización de Alto Impacto</h2>
+<p class="text-on-surface-variant">Soluciones diseñadas para la alta dirección y la eficiencia operativa.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="p-10 bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl transition-all border border-outline-variant/10 group">
+<span class="material-symbols-outlined text-primary text-5xl mb-8 group-hover:scale-110 transition-transform">strategy</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Estrategia</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">Definición de rutas críticas y posicionamiento de mercado para el largo plazo.</p>
+<ul class="space-y-3 text-sm font-medium text-secondary">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">check_circle</span> Planificación de Escenarios</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">check_circle</span> M&amp;A Advisory</li>
+</ul>
+</div>
+<!-- Card 2 -->
+<div class="p-10 bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl transition-all border border-outline-variant/10 group">
+<span class="material-symbols-outlined text-primary text-5xl mb-8 group-hover:scale-110 transition-transform">settings_suggest</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Operaciones</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">Optimización de procesos internos para maximizar la rentabilidad y el flujo.</p>
+<ul class="space-y-3 text-sm font-medium text-secondary">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">check_circle</span> Lean Management</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">check_circle</span> Cadena de Suministro</li>
+</ul>
+</div>
+<!-- Card 3 -->
+<div class="p-10 bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl transition-all border border-outline-variant/10 group">
+<span class="material-symbols-outlined text-primary text-5xl mb-8 group-hover:scale-110 transition-transform">monitoring</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Transformación</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">Integración de ecosistemas digitales y cultura de innovación continua.</p>
+<ul class="space-y-3 text-sm font-medium text-secondary">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">check_circle</span> Digital Roadmap</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">check_circle</span> IA aplicada a Procesos</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Industries Served -->
+<section class="py-24 bg-surface px-8">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-xl">
+<h2 class="font-headline text-3xl font-bold mb-4">Sectores de Influencia</h2>
+<p class="text-on-surface-variant">Experiencia profunda en las industrias que mueven la economía global.</p>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-px bg-outline-variant/20 rounded-2xl overflow-hidden shadow-inner">
+<div class="bg-surface p-8 flex flex-col items-center justify-center text-center gap-4 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary" data-weight="fill">account_balance</span>
+<span class="font-label text-xs font-bold uppercase tracking-widest">Banca</span>
+</div>
+<div class="bg-surface p-8 flex flex-col items-center justify-center text-center gap-4 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary" data-weight="fill">factory</span>
+<span class="font-label text-xs font-bold uppercase tracking-widest">Industria</span>
+</div>
+<div class="bg-surface p-8 flex flex-col items-center justify-center text-center gap-4 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary" data-weight="fill">medical_services</span>
+<span class="font-label text-xs font-bold uppercase tracking-widest">Salud</span>
+</div>
+<div class="bg-surface p-8 flex flex-col items-center justify-center text-center gap-4 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary" data-weight="fill">electric_bolt</span>
+<span class="font-label text-xs font-bold uppercase tracking-widest">Energía</span>
+</div>
+<div class="bg-surface p-8 flex flex-col items-center justify-center text-center gap-4 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary" data-weight="fill">devices</span>
+<span class="font-label text-xs font-bold uppercase tracking-widest">Tech</span>
+</div>
+<div class="bg-surface p-8 flex flex-col items-center justify-center text-center gap-4 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary" data-weight="fill">shopping_cart</span>
+<span class="font-label text-xs font-bold uppercase tracking-widest">Retail</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Case Studies (Bento-like Grid) -->
+<section class="py-32 px-8 bg-surface-container-lowest" id="casos">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-headline text-4xl font-extrabold mb-16 text-center">Impacto Medible</h2>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Case 1 -->
+<div class="md:col-span-8 bg-surface rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-sm hover:shadow-lg transition-shadow">
+<div class="md:w-1/2 aspect-square md:aspect-auto">
+<img alt="Tech Innovation" class="w-full h-full object-cover" data-alt="Modern high-tech workspace with professionals discussing analytics on large digital screens in a bright corporate office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6DZ17eqBL_Jdgd5iW_pIyqUV0Adh1mppdfE3sEmr3izjcrZobvU8d2Ul-7YaEsrZbDKAjdzd1_9u81co4saNiEAYtW83mjfgNZgo-mWbJH0lBD_aTA8wSO19M-GCufxyPlYCtQWt0PPkio78UbWfdW-QMvDp2Kusu4JU2vIiQmDruacPiKYb4bbJLxuxYcUmPxshZ0fXrNMPy4XKjnNoKHaHgNdxZ44fijeRpbGcp97JBrmtNZD03tDzuF6XyTHeMzeWDKEhK96Xt"/>
+</div>
+<div class="md:w-1/2 p-10 flex flex-col justify-center">
+<span class="text-primary font-bold text-xs uppercase tracking-widest mb-4">Retail Global</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Eficiencia Logística 4.0</h3>
+<p class="text-on-surface-variant mb-8 text-sm leading-relaxed">Rediseño del flujo de distribución para una multinacional, integrando modelos predictivos de demanda.</p>
+<div class="mt-auto">
+<span class="text-3xl font-extrabold text-primary">+22% ROI</span>
+<p class="text-xs text-secondary-dim font-bold mt-1">Primer año fiscal</p>
+</div>
+</div>
+</div>
+<!-- Case 2 -->
+<div class="md:col-span-4 bg-primary text-on-primary rounded-3xl p-10 flex flex-col shadow-lg">
+<span class="text-on-primary/60 font-bold text-xs uppercase tracking-widest mb-4">Fintech</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Expansión LatAm</h3>
+<p class="text-on-primary/80 mb-12 text-sm leading-relaxed">Consultoría de cumplimiento regulatorio y estrategia de entrada en 4 mercados nuevos.</p>
+<div class="mt-auto">
+<span class="text-3xl font-extrabold">+400k</span>
+<p class="text-xs font-bold mt-1">Nuevos usuarios activos</p>
+</div>
+</div>
+<!-- Case 3 -->
+<div class="md:col-span-12 bg-surface-container-high rounded-3xl p-10 md:p-16 flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1">
+<span class="text-primary font-bold text-xs uppercase tracking-widest mb-4">Manufactura</span>
+<h3 class="font-headline text-3xl font-bold mb-6">Optimización de Planta Industrial</h3>
+<p class="text-on-surface-variant text-lg max-w-xl leading-relaxed">Implementación de metodologías Lean en una planta de 500 empleados, reduciendo mermas drásticamente.</p>
+</div>
+<div class="grid grid-cols-2 gap-8 w-full md:w-auto">
+<div class="text-center">
+<span class="block text-4xl font-extrabold text-primary">-15%</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Costes Op.</span>
+</div>
+<div class="text-center">
+<span class="block text-4xl font-extrabold text-primary">Zero</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Accidentes</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-32 px-8 overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-headline text-4xl font-extrabold text-center mb-24">El Método Atlas</h2>
+<div class="relative grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="hidden md:block absolute top-12 left-0 w-full h-px bg-outline-variant/30 -z-10"></div>
+<!-- Step 1 -->
+<div class="bg-background relative">
+<div class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center font-bold text-xl mb-8 border-[6px] border-background">1</div>
+<h4 class="font-headline font-bold text-lg mb-4">Diagnóstico</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Auditoría profunda de la realidad actual y detección de fugas de valor.</p>
+</div>
+<!-- Step 2 -->
+<div class="bg-background relative">
+<div class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center font-bold text-xl mb-8 border-[6px] border-background">2</div>
+<h4 class="font-headline font-bold text-lg mb-4">Estrategia</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Diseño de la hoja de ruta personalizada y KPI de éxito definidos.</p>
+</div>
+<!-- Step 3 -->
+<div class="bg-background relative">
+<div class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center font-bold text-xl mb-8 border-[6px] border-background">3</div>
+<h4 class="font-headline font-bold text-lg mb-4">Ejecución</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Implementación táctica acompañada por nuestros consultores senior.</p>
+</div>
+<!-- Step 4 -->
+<div class="bg-background relative">
+<div class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center font-bold text-xl mb-8 border-[6px] border-background">4</div>
+<h4 class="font-headline font-bold text-lg mb-4">Optimización</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Ajuste fino basado en datos reales para garantizar la sostenibilidad.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Team -->
+<section class="py-32 px-8 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<h2 class="font-headline text-3xl font-bold">Liderazgo Senior</h2>
+<p class="text-on-surface-variant mt-2">Consultores con más de 20 años de trayectoria en el mercado.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<!-- Member 1 -->
+<div class="group">
+<div class="aspect-[3/4] rounded-2xl overflow-hidden mb-6 relative">
+<img alt="Executive Portrait" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Professional portrait of a male executive in a navy blue suit, sharp focus, minimalist white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1BfuMTubyYYypeMs4jhvoLgTFIPm-ZhzzEUCUpK23O60JTllzTIBWGtLmuEnB9eQa4Pj4VRqgUtwtHl1I84IIAjUtqKVTzJz28YpvRVeMnUGwjvPXnScl9bo0DeTVUHEMgkUQqh2eZN52KMVEtLfoGOEJwqnygC2Q2sW0ju5sa0XL-5Wscjwo9MivHotuRqbIQLlriE1s8nJRYEdJiz98f_vebpySVnMGWXmtK3wpzTIFcIRHPnDOnuX3jd8C-8KHxcH_OI6AnbPn"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h5 class="font-headline font-bold text-lg">Alejandro Nordeste</h5>
+<p class="text-sm text-primary font-semibold">Managing Partner</p>
+</div>
+<!-- Member 2 -->
+<div class="group">
+<div class="aspect-[3/4] rounded-2xl overflow-hidden mb-6 relative">
+<img alt="Executive Portrait" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Professional portrait of a female executive with confident expression, wearing a cream blazer, high-end corporate style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkHDpfrg4yMdnd38IAY641d7z7aCIqdeR178wJI-OCoMC3X2DmWfhNOCZj92QtaX3a1VpRTZ7-o5M48xPkbVpnIxVPPBJzpnFL_HrAFlccUpOZqpSF1KrTMy_DckLIBiRTHdx01cfda0XHsh_HONczS2odKfAO5LQOu_oDZGf0cc0bLKXZpZoz6b38agUhQBC2oaQemLoKJ4JaXqKU8G9D5jvBelT5R6AMkTXVzvi0YNJ21CQ2XTHB44dGBcc7QcPlI2THb29LbTUL"/>
+</div>
+<h5 class="font-headline font-bold text-lg">Lucía Castillo</h5>
+<p class="text-sm text-primary font-semibold">Director of Strategy</p>
+</div>
+<!-- More members follow same pattern -->
+</div>
+</div>
+</section>
+<!-- Insights -->
+<section class="py-32 px-8" id="insights">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-16">
+<h2 class="font-headline text-4xl font-extrabold">Insights</h2>
+<a class="text-primary font-bold text-sm underline underline-offset-4" href="#">Ver todos los artículos</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<article class="group cursor-pointer">
+<div class="aspect-video rounded-3xl overflow-hidden mb-8">
+<img alt="Meeting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Top down view of a professional meeting table with tablets, coffee, and notebooks, bright natural morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4Lc0xp3fBHuZmusvhD6CVGWUr5JOa0nYDSl_q2-kxszMbQV1jWvlThe9DAoLTsOwOgp063sIPFS8kaEjVJws-CLg99Vl7XksrcaHi4xw3XZEAgj7ZFLjhjfTZRdaeC4oy9OAiXUXEyOBb_3iw98x-I3Duaz6tHeoS1vUAFgBRxJzPo1gLMvgSn4GBZLKPkTc-zVe5bURb8TnBGZc92y9I8Yccf60DvlG4IHVR8b_e00bqghF30_K3Xq7iLKcXETr_8TAcRwkblrZx"/>
+</div>
+<div class="flex gap-4 mb-4">
+<span class="text-[10px] font-bold bg-primary-container text-on-primary-container px-3 py-1 rounded-full uppercase">Reporte 2024</span>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase pt-1">5 min lectura</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4 group-hover:text-primary transition-colors">La Resiliencia en la Era de la IA: ¿Está su Comité listo?</h3>
+<p class="text-on-surface-variant leading-relaxed line-clamp-2">Exploramos cómo la gobernanza corporativa debe adaptarse a los ciclos de cambio acelerados por la automatización inteligente.</p>
+</article>
+<article class="group cursor-pointer">
+<div class="aspect-video rounded-3xl overflow-hidden mb-8">
+<img alt="Professional" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up of a professional in a grey suit checking a luxury watch, focused on precision and time management" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8kxTxBhNwmnaAcL51v4hrCSV1rO42RViFdHwBxK_pEtnVW3gE6oBBibeSOcxbs7SasB_nXwfTRFoNQPoF-MJzIKnMbw9rCSu1xSgxkWBXH_Ixli6Z94g3c1Ls85S2WbXIL7jCbFdU-gLUrQ499u5_w5wRHI5FbgTpwc8cDP-nWgXsBaTpqzHBZQUN1xmxrCSiPtD3BrE3M-SiA-ICqHXC6o-wY0W0lOrb-3oeonJntLv4La2jxmoWTXJq0qDITzQaIJpm6g_OWyzm"/>
+</div>
+<div class="flex gap-4 mb-4">
+<span class="text-[10px] font-bold bg-primary-container text-on-primary-container px-3 py-1 rounded-full uppercase">Estrategia</span>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase pt-1">8 min lectura</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Capital Humano: El Activo Invisible en el Balance</h3>
+<p class="text-on-surface-variant leading-relaxed line-clamp-2">Por qué la cultura organizacional es el predictor número uno del éxito financiero a largo plazo en fusiones y adquisiciones.</p>
+</article>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 bg-primary text-on-primary px-8">
+<div class="max-w-4xl mx-auto text-center">
+<span class="material-symbols-outlined text-6xl opacity-30 mb-8" data-weight="fill">format_quote</span>
+<p class="text-2xl md:text-3xl font-medium leading-relaxed mb-10 italic">
+                    "Atlas Norte no solo nos dio un plan; nos dio una nueva forma de ver nuestro propio negocio. Su capacidad para simplificar la complejidad es inigualable."
+                </p>
+<div class="font-headline font-bold">
+<p class="text-xl">Robert J. McArthur</p>
+<p class="text-on-primary/60 text-sm tracking-widest uppercase">CEO, Continental Logistics Group</p>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section class="py-32 px-8 max-w-3xl mx-auto" id="faq">
+<h2 class="font-headline text-4xl font-extrabold text-center mb-16">Preguntas Frecuentes</h2>
+<div class="space-y-6">
+<details class="group bg-surface-container-low rounded-2xl p-6 cursor-pointer open:bg-surface-container-high transition-colors">
+<summary class="flex justify-between items-center font-bold text-lg list-none">
+                        ¿Qué diferencia a Atlas Norte de otras consultoras?
+                        <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant leading-relaxed">Nuestro enfoque es "hands-on". No entregamos diapositivas y nos vamos; nos integramos en la ejecución para asegurar que los resultados prometidos se materialicen en el balance.</p>
+</details>
+<details class="group bg-surface-container-low rounded-2xl p-6 cursor-pointer open:bg-surface-container-high transition-colors">
+<summary class="flex justify-between items-center font-bold text-lg list-none">
+                        ¿Trabajan con PYMES o solo con multinacionales?
+                        <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant leading-relaxed">Trabajamos con empresas en fase de escalado que facturan a partir de 5M€, donde la estructura empieza a necesitar procesos de alta gestión para no colapsar.</p>
+</details>
+<details class="group bg-surface-container-low rounded-2xl p-6 cursor-pointer open:bg-surface-container-high transition-colors">
+<summary class="flex justify-between items-center font-bold text-lg list-none">
+                        ¿Cuál es el tiempo medio de un proyecto?
+                        <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant leading-relaxed">Los diagnósticos iniciales duran 4 semanas. Los planes de transformación suelen implementarse en ciclos de 3 a 9 meses.</p>
+</details>
+</div>
+</section>
+<!-- Contact Form -->
+<section class="py-32 px-8 bg-surface-container-highest" id="contacto">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
+<div>
+<h2 class="font-headline text-5xl font-extrabold mb-8 leading-tight">Hablemos de su <br/><span class="text-primary">Próximo Hito</span></h2>
+<p class="text-on-surface-variant text-lg mb-12">Complete el formulario y un socio director se pondrá en contacto en menos de 24 horas para agendar una sesión de diagnóstico inicial.</p>
+<div class="space-y-8">
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-primary p-3 bg-white rounded-xl shadow-sm">mail</span>
+<div>
+<p class="font-bold text-sm uppercase tracking-widest text-secondary">Email</p>
+<p class="text-lg font-headline font-bold">contacto@atlasnorte.com</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-primary p-3 bg-white rounded-xl shadow-sm">location_on</span>
+<div>
+<p class="font-bold text-sm uppercase tracking-widest text-secondary">Ubicación</p>
+<p class="text-lg font-headline font-bold">Paseo de la Castellana, Madrid</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-[2rem] shadow-2xl">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Nombre</label>
+<input class="w-full bg-surface-container-high border-none rounded-xl focus:ring-2 focus:ring-primary/20 p-4" placeholder="Su nombre" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Empresa</label>
+<input class="w-full bg-surface-container-high border-none rounded-xl focus:ring-2 focus:ring-primary/20 p-4" placeholder="Nombre empresa" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Cargo</label>
+<input class="w-full bg-surface-container-high border-none rounded-xl focus:ring-2 focus:ring-primary/20 p-4" placeholder="Ej. Director General" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Tipo de Proyecto</label>
+<select class="w-full bg-surface-container-high border-none rounded-xl focus:ring-2 focus:ring-primary/20 p-4 appearance-none">
+<option>Consultoría Estratégica</option>
+<option>Optimización Operativa</option>
+<option>Transformación Digital</option>
+<option>M&amp;A / Fusiones</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Presupuesto Estimado</label>
+<input class="w-full bg-surface-container-high border-none rounded-xl focus:ring-2 focus:ring-primary/20 p-4" placeholder="Rango de inversión" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Mensaje</label>
+<textarea class="w-full bg-surface-container-high border-none rounded-xl focus:ring-2 focus:ring-primary/20 p-4" placeholder="Cuéntenos su reto principal..." rows="4"></textarea>
+</div>
+<button class="w-full py-5 bg-primary text-on-primary font-bold rounded-xl shadow-lg hover:bg-primary-dim transition-all active:scale-95 uppercase tracking-widest text-sm" type="submit">Enviar Solicitud</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200/15 bg-[#f7f9fb] dark:bg-slate-950">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-10 w-full max-w-7xl mx-auto">
+<div class="mb-6 md:mb-0">
+<div class="font-headline font-bold text-[#1A365D] dark:text-slate-200 text-xl mb-2">Atlas Norte</div>
+<p class="font-inter text-xs uppercase tracking-widest text-slate-500">© 2024 Atlas Norte Consulting. Arquitectura de la Claridad.</p>
+</div>
+<div class="flex gap-8 font-inter text-xs uppercase tracking-widest text-slate-500">
+<a class="hover:text-[#455f88] transition-transform hover:translate-y-[-1px]" href="#">Privacidad</a>
+<a class="hover:text-[#455f88] transition-transform hover:translate-y-[-1px]" href="#">Términos</a>
+<a class="hover:text-[#455f88] transition-transform hover:translate-y-[-1px]" href="#">LinkedIn</a>
+<a class="hover:text-[#455f88] transition-transform hover:translate-y-[-1px]" href="#">Contacto</a>
+</div>
+</div>
+</footer>
+</body></html>

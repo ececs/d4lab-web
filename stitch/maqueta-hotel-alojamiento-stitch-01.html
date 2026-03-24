@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Casa Marena | Mediterranean Curator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#e08359",
+              "primary-fixed-dim": "#a7c8ff",
+              "on-error": "#ffffff",
+              "on-error-container": "#93000a",
+              "surface-container-low": "#f6f3ee",
+              "on-background": "#1c1c19",
+              "secondary-fixed": "#ffddb9",
+              "primary-container": "#003366",
+              "outline": "#737780",
+              "surface-container-highest": "#e5e2dd",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed-variant": "#1f477b",
+              "surface-tint": "#3a5f94",
+              "error": "#ba1a1a",
+              "secondary": "#785833",
+              "on-tertiary-fixed-variant": "#77320e",
+              "on-surface": "#1c1c19",
+              "primary-fixed": "#d5e3ff",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed": "#2b1700",
+              "secondary-fixed-dim": "#e9bf91",
+              "secondary-container": "#fed2a3",
+              "on-primary-fixed": "#001b3c",
+              "inverse-primary": "#a7c8ff",
+              "tertiary-fixed": "#ffdbcd",
+              "surface-variant": "#e5e2dd",
+              "tertiary": "#3a1100",
+              "surface-bright": "#fcf9f4",
+              "primary": "#001e40",
+              "outline-variant": "#c3c6d1",
+              "inverse-on-surface": "#f3f0eb",
+              "surface-container": "#f0ede8",
+              "surface-dim": "#dcdad5",
+              "on-primary-container": "#799dd6",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-fixed": "#360f00",
+              "background": "#fcf9f4",
+              "surface": "#fcf9f4",
+              "on-surface-variant": "#43474f",
+              "on-secondary-fixed-variant": "#5e411e",
+              "tertiary-fixed-dim": "#ffb597",
+              "on-primary": "#ffffff",
+              "on-secondary-container": "#795933",
+              "surface-container-high": "#ebe8e3",
+              "inverse-surface": "#31302d",
+              "tertiary-container": "#5d1f00",
+              "error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-glass {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fcf9f4]/80 dark:bg-[#001e40]/80 backdrop-blur-md shadow-sm shadow-[#001e40]/5 flex justify-between items-center px-12 py-6">
+<div class="text-2xl font-serif uppercase tracking-widest text-[#001e40] dark:text-[#fcf9f4]">
+            Casa Marena
+        </div>
+<div class="hidden md:flex gap-10">
+<a class="font-serif italic text-lg tracking-wide text-[#001e40] dark:text-[#fcf9f4] opacity-80 hover:text-[#785833] transition-colors duration-300" href="#habitaciones">Habitaciones</a>
+<a class="font-serif italic text-lg tracking-wide text-[#001e40] dark:text-[#fcf9f4] opacity-80 hover:text-[#785833] transition-colors duration-300" href="#experiencias">Experiencias</a>
+<a class="font-serif italic text-lg tracking-wide text-[#001e40] dark:text-[#fcf9f4] opacity-80 hover:text-[#785833] transition-colors duration-300" href="#ubicacion">Ubicación</a>
+<a class="font-serif italic text-lg tracking-wide text-[#001e40] dark:text-[#fcf9f4] opacity-80 hover:text-[#785833] transition-colors duration-300" href="#faqs">FAQs</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-md font-semibold text-sm tracking-wide transition-transform active:scale-95 duration-200">
+            Reservar Ahora
+        </button>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<img alt="Luxury Mediterranean Suite" class="absolute inset-0 w-full h-full object-cover" data-alt="Luminous luxury hotel suite with white linens, soft natural light from large windows overlooking a turquoise Mediterranean sea at morning" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG377mNxBMh8gzNHNTEvI2ig1kj2hr4gj6hoMgbPhTCt-G6UmqlTVW_AgddAZTskoV4mMgOznSXhGqlOnxU9NVTLTgB8T65n2myeYlVBYBHvs8lo889Q27hFN72iCQ_U7MlzsPvP-JKjaeGfL1-uzM98gMhX2Cq1pvVZEJch8RV4VrLKyB18Di_AkltkQ5Bl5Ds5o-cMvyLnhnoIVIfy_QYek_ZZnumegvVuG6XAnd_M0_doJpEpE2qBUBoOou8fDGb3HktF-6rZoW"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40"></div>
+<div class="relative z-10 text-center px-6 max-w-4xl">
+<h1 class="font-headline text-5xl md:text-7xl lg:text-8xl text-white mb-8 tracking-tight leading-tight">
+                    Despierta en la calma del Mediterráneo
+                </h1>
+<a class="inline-block bg-primary text-on-primary px-10 py-5 rounded-md font-semibold text-lg tracking-wide hover:bg-primary-container transition-all" href="#booking">
+                    Reserva tu estancia
+                </a>
+</div>
+</section>
+<!-- Booking Bar -->
+<section class="relative z-20 -mt-16 px-6 max-w-6xl mx-auto" id="booking">
+<div class="bg-surface p-8 lg:p-10 rounded-xl shadow-xl shadow-on-surface/5 flex flex-col lg:flex-row gap-6 items-end border border-outline-variant/15">
+<div class="w-full grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="space-y-2">
+<label class="block text-xs font-semibold uppercase tracking-widest text-secondary">Entrada</label>
+<input class="w-full bg-transparent border-b border-outline-variant focus:border-primary focus:ring-0 py-2 outline-none transition-all" type="date"/>
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-semibold uppercase tracking-widest text-secondary">Salida</label>
+<input class="w-full bg-transparent border-b border-outline-variant focus:border-primary focus:ring-0 py-2 outline-none transition-all" type="date"/>
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-semibold uppercase tracking-widest text-secondary">Huéspedes</label>
+<select class="w-full bg-transparent border-b border-outline-variant focus:border-primary focus:ring-0 py-2 outline-none transition-all appearance-none">
+<option>2 Adultos</option>
+<option>1 Adulto</option>
+<option>3 Adultos</option>
+<option>Familia (2+2)</option>
+</select>
+</div>
+</div>
+<button class="w-full lg:w-auto whitespace-nowrap bg-secondary text-white px-12 py-4 rounded-md font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-all">
+                    Consultar disponibilidad
+                </button>
+</div>
+</section>
+<!-- Advantages -->
+<section class="py-24 px-12">
+<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
+<div class="text-center group">
+<div class="mb-6 inline-flex p-4 rounded-full bg-surface-container-high text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<h3 class="font-headline text-xl mb-3">Mejor precio garantizado</h3>
+<p class="text-on-surface-variant leading-relaxed">Reserva directamente con nosotros para obtener la tarifa más competitiva sin intermediarios.</p>
+</div>
+<div class="text-center group">
+<div class="mb-6 inline-flex p-4 rounded-full bg-surface-container-high text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-3xl">coffee</span>
+</div>
+<h3 class="font-headline text-xl mb-3">Desayuno gratuito incluido</h3>
+<p class="text-on-surface-variant leading-relaxed">Comienza el día con productos locales frescos y vistas inigualables a la costa.</p>
+</div>
+<div class="text-center group">
+<div class="mb-6 inline-flex p-4 rounded-full bg-surface-container-high text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-3xl">event_busy</span>
+</div>
+<h3 class="font-headline text-xl mb-3">Cancelación flexible hasta 48h</h3>
+<p class="text-on-surface-variant leading-relaxed">Entendemos los imprevistos. Cancela sin cargos adicionales hasta dos días antes.</p>
+</div>
+</div>
+</section>
+<!-- Room Gallery -->
+<section class="py-24 bg-surface-container-low" id="habitaciones">
+<div class="max-w-7xl mx-auto px-12">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<span class="text-secondary font-semibold uppercase tracking-widest text-sm">Nuestras Estancias</span>
+<h2 class="font-headline text-4xl md:text-5xl mt-4 leading-tight">Habitaciones diseñadas para el descanso absoluto</h2>
+</div>
+<div class="border-b border-secondary pb-1 text-secondary font-semibold tracking-wide cursor-pointer hover:opacity-70 transition-opacity">Ver todas las suites</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Room Card 1 -->
+<div class="group bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img alt="Suite Junior" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Interior of a luxury hotel junior suite with minimalist mediterranean decor, neutral tones, and warm afternoon light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVCX6GV-bWNJWlGvmHJXJSBHXXJ86Qjt5QojYMmm9cALHJpvjjJCkg8MZ0eXtqhbidtvXcA3SaLy6qIxSY4UWGQK_-AnlQ8ylAvRIqUN5jMjdObngbeVBQgA_1ujCqKTUNaATLWntqVMeik4gDEkmD6bfE0C5xhexkx-HKhhXB_cUDhSaOr2x3QHW5TEgkTcISj5UVQ-VIoEAJnlPc0kw5EQu7poBjfDkwM3p7OccmOELvnKM11LjQn8VWm0rnqEfPY9dyqqxdQ2ZF"/>
+<div class="absolute top-4 right-4 bg-white/90 px-4 py-2 rounded-full font-bold text-sm">Desde 240€</div>
+</div>
+<div class="p-8">
+<h3 class="font-headline text-2xl mb-4">Suite Junior</h3>
+<p class="text-on-surface-variant mb-6">45m² de elegancia con terraza privada y vistas directas al amanecer mediterráneo.</p>
+<div class="flex gap-4 text-outline">
+<span class="material-symbols-outlined" title="WiFi">wifi</span>
+<span class="material-symbols-outlined" title="AC">ac_unit</span>
+<span class="material-symbols-outlined" title="Bathtub">bathtub</span>
+</div>
+</div>
+</div>
+<!-- Room Card 2 -->
+<div class="group bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img alt="Habitación Premium" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Modern premium hotel room with large window, king size bed, soft textiles, and minimal wooden furniture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP9PM_3o7xFDMShEMgs5UGas5XwAu_vP7BjojYEh0umfBIeH8cSckh-6kSoGgJndOdWyZwtrMMF2xvBaW3K6lSAzeKS8RMpubLaHRNdGoK189e6yPqda2iybvCyzbdhLolCTEGLz9lgsTh7356xRuU93zcBa3S-xvSJPAmYW9vU3k8n4DZSXT_k_-xBri51lefY7EPgzwOKuuSGMeFy7ci1WOAddFO0DSQWa86OoGbojQntgoOfBGGKE9teQP6jUNS0FZ2EXMKZ_ol"/>
+<div class="absolute top-4 right-4 bg-white/90 px-4 py-2 rounded-full font-bold text-sm">Desde 190€</div>
+</div>
+<div class="p-8">
+<h3 class="font-headline text-2xl mb-4">Habitación Premium</h3>
+<p class="text-on-surface-variant mb-6">Equilibrio perfecto entre confort y diseño, ideal para parejas que buscan intimidad.</p>
+<div class="flex gap-4 text-outline">
+<span class="material-symbols-outlined" title="WiFi">wifi</span>
+<span class="material-symbols-outlined" title="TV">tv</span>
+<span class="material-symbols-outlined" title="Balcony">balcony</span>
+</div>
+</div>
+</div>
+<!-- Room Card 3 -->
+<div class="group bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img alt="Doble Superior" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Double superior hotel room with mediterranean tile floors, white walls, and bright natural lighting through shutters" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF1nyLopweAMK0-bgAhCBRl0umBYyfk6xAoirAYntax3GQEQJQ-DEjIHqVec8cf5sfXAlQpF86hX2tbhfmxsmb9xPX4i0N_-IYXonTPDoc1wqS2K2UYN_zglsSkZ-f-51QKwA1cnCtLMDaBH2e4X8JXLGSLtOTydW220un_JOoo0nW47u1u378iW0TkDnmytHB6tAuArMn-jLzPneMEp1UPNZmlMJj14E4F9jtaJt7ceogKnC7igbeoUPNUMjKxrXN7s2UAdc2iAQs"/>
+<div class="absolute top-4 right-4 bg-white/90 px-4 py-2 rounded-full font-bold text-sm">Desde 160€</div>
+</div>
+<div class="p-8">
+<h3 class="font-headline text-2xl mb-4">Doble Superior</h3>
+<p class="text-on-surface-variant mb-6">Luminosidad y frescura en un espacio acogedor con acabados en materiales naturales.</p>
+<div class="flex gap-4 text-outline">
+<span class="material-symbols-outlined" title="WiFi">wifi</span>
+<span class="material-symbols-outlined" title="Shower">shower</span>
+<span class="material-symbols-outlined" title="Mini bar">local_bar</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experiences -->
+<section class="py-24" id="experiencias">
+<div class="max-w-7xl mx-auto px-12">
+<div class="text-center mb-16">
+<h2 class="font-headline text-4xl md:text-5xl mb-6">Vive el espíritu de Casa Marena</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Mucho más que un alojamiento. Una colección de momentos curados para conectar con el entorno y contigo mismo.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+<div class="relative overflow-hidden rounded-xl aspect-square group">
+<img alt="Cata de vinos" class="w-full h-full object-cover" data-alt="Sunlit outdoor wine tasting setting with glasses of white wine and fresh grapes on a wooden table at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaBvaIFUofpt3cn6Ej61VRF3jlkgYk_y5tQExHvJ647Td5BWTEuK0_erOzTIGNA9Kb43kCjgIH_e8h_srpkv85TsT0YANG-QdkR_A4bhAvLZ_MqL11G2c66mX8fON2kKL5Nlf6ExVTcTx4fRoTLjo8dljyoNUhqL3EtFIYNBNEeJP_eUaPZ58W4EWEnwsqhAUMGOcsebrSnfbS9ELTCLZdoHNxyaoxdMS2Y_YRnjxQI02U0cdbtsNJOPJu1xtNVxidPXsi8_zMJO3-"/>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-500"></div>
+<div class="absolute bottom-8 left-8">
+<h4 class="text-white font-headline text-2xl mb-2">Cata de vinos locales</h4>
+<p class="text-white/80 text-sm">Descubre la esencia de los viñedos costeros.</p>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl aspect-square group">
+<img alt="Yoga al amanecer" class="w-full h-full object-cover" data-alt="Person practicing yoga on a wooden deck overlooking the ocean during a golden misty sunrise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD31VUuxXgMemBq57Pm25Nm7OFsV3r92BttGGb-uG2f_bM9GAAlNIbmidQlC6ylj2ReZptr3BjU1rEdWyW1THXLXU1Bc5beWRnKloCKLqZxzJMf_TcpXfKDM78kLY-W9MnNlWWZowrAakyCMDOJX9_gSOiuGh1ylo26Ec1MbkklxQgIrEiVmk2DCsNMZ1lDrj88a-_QQReAJ2vR8UDyzga0jPycNlnAr9vk1uU-EiFrdfV2D0XwuXOtnyZgZJFw_KT-m47hdl4mLFd2"/>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-500"></div>
+<div class="absolute bottom-8 left-8">
+<h4 class="text-white font-headline text-2xl mb-2">Yoga al amanecer</h4>
+<p class="text-white/80 text-sm">Energía y paz frente al infinito azul.</p>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl aspect-square group lg:col-span-1 md:col-span-2 lg:md:aspect-square">
+<img alt="Cenas frente al mar" class="w-full h-full object-cover" data-alt="Elegant dinner table set with candles and white flowers on a terrace overlooking the sea at twilight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD55LFDcV-f9r0uAYie-n0Dd0sOLKKajWafHAoGG0Kzgbu5p5DO4avPv9IDIhB6NzrJTWqNlCLEsRFIjy8QYi36deiNnvWjO6qk5vahILH8_3NUzMqFYoQyRBpT4ZvYFu6oRxVvmwEBPR1NvHAIq-rBzOB4wY0q_Pa9Z8AUcT1xGWgyMzQVIHEOJ5fBtIzlJ7jrtJ-PMjb1wv3szVnyL89XTnd6CPiD5YhGVRqKGQixpoib8usKKWRR596NfdURqg-wiROz6sthzYI4"/>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-500"></div>
+<div class="absolute bottom-8 left-8">
+<h4 class="text-white font-headline text-2xl mb-2">Cenas frente al mar</h4>
+<p class="text-white/80 text-sm">Gastronomía mediterránea bajo las estrellas.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof & FAQ -->
+<section class="py-24 bg-surface-container" id="faqs">
+<div class="max-w-7xl mx-auto px-12 grid grid-cols-1 lg:grid-cols-2 gap-24">
+<div>
+<span class="text-secondary font-semibold uppercase tracking-widest text-sm">Testimonios</span>
+<h2 class="font-headline text-4xl mt-4 mb-12">Lo que dicen nuestros huéspedes</h2>
+<div class="space-y-12">
+<blockquote class="border-l-2 border-secondary/30 pl-8 italic">
+<p class="text-xl mb-6 leading-relaxed">"Una experiencia transformadora. La luz de las habitaciones y la atención al detalle hacen de Casa Marena el refugio perfecto."</p>
+<footer class="font-bold not-italic text-sm uppercase tracking-widest">— Elena M., Madrid</footer>
+</blockquote>
+<blockquote class="border-l-2 border-secondary/30 pl-8 italic">
+<p class="text-xl mb-6 leading-relaxed">"El desayuno frente al mar es, sin duda, el mejor momento del día. Volveremos cada verano."</p>
+<footer class="font-bold not-italic text-sm uppercase tracking-widest">— Marc V., Barcelona</footer>
+</blockquote>
+</div>
+</div>
+<div>
+<h2 class="font-headline text-4xl mb-12">Preguntas Frecuentes</h2>
+<div class="space-y-6">
+<details class="group bg-surface rounded-xl p-6 cursor-pointer border border-outline-variant/10">
+<summary class="flex justify-between items-center font-bold tracking-tight">
+                                ¿Disponen de parking gratuito?
+                                <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant">Sí, contamos con parking privado y gratuito para todos nuestros clientes alojados dentro del recinto del hotel.</p>
+</details>
+<details class="group bg-surface rounded-xl p-6 cursor-pointer border border-outline-variant/10">
+<summary class="flex justify-between items-center font-bold tracking-tight">
+                                ¿Tienen flexibilidad en el check-in?
+                                <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant">Nuestro horario oficial es a partir de las 15:00h, pero si su habitación está lista antes, estaremos encantados de entregársela sin coste adicional.</p>
+</details>
+<details class="group bg-surface rounded-xl p-6 cursor-pointer border border-outline-variant/10">
+<summary class="flex justify-between items-center font-bold tracking-tight">
+                                ¿Cuál es la política de cancelación?
+                                <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant">Ofrecemos cancelación gratuita hasta 48 horas antes de la llegada. Pasado ese tiempo, se cargará la primera noche de estancia.</p>
+</details>
+</div>
+</div>
+</div>
+</section>
+<!-- Location -->
+<section class="py-24" id="ubicacion">
+<div class="max-w-7xl mx-auto px-12 grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+<div class="lg:col-span-1">
+<span class="text-secondary font-semibold uppercase tracking-widest text-sm">Ubicación</span>
+<h2 class="font-headline text-4xl mt-4 mb-6">En el corazón de la costa</h2>
+<p class="text-on-surface-variant mb-8 leading-relaxed">
+                        Carrer de la Mar, 12. 08397 Barcelona, España.<br/><br/>
+                        Acceso sencillo desde la autovía C-32. Disponemos de puntos de carga para vehículos eléctricos en nuestro parking privado.
+                    </p>
+<a class="inline-flex items-center gap-2 text-primary font-bold hover:underline" href="https://maps.google.com" target="_blank">
+                        Abrir en Google Maps
+                        <span class="material-symbols-outlined">north_east</span>
+</a>
+</div>
+<div class="lg:col-span-2 h-[500px] rounded-2xl overflow-hidden bg-surface-container relative">
+<img alt="Map" class="w-full h-full object-cover opacity-60 mix-blend-multiply" data-alt="Minimalist artistic map showing a coastal area with soft blue and beige tones and a marker on a beachfront location" data-location="Barcelona coast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQDw7L019662HWo7rDCqz0KMFkkRuoqgWS7UgkxUHLuKiHGpuQ-ROLyYJSNZt_JPGyBNqWWPsomhw2HcjA5fNswP7jFEHDmpUyrs6qe-GtmP-tpiSlvJwh07QQvoYvSRbtrz_kpr6lV6mhrN5_yTaGcf5PApiqmAFrNqNajEfNO0Mtc2bVlfUJRl7dj3NAJ9FBeFJrUwaf3P9bPontZqzM4oagkqpaOyEhmEEQBMVu3aIN5kqoHQrLSSlc7cPhf_gQ_ABG7WnmsPq7"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact -->
+<section class="py-24 bg-primary text-on-primary rounded-t-[3rem]">
+<div class="max-w-6xl mx-auto px-12 grid grid-cols-1 md:grid-cols-2 gap-24">
+<div>
+<h2 class="font-headline text-5xl mb-8">Contáctanos</h2>
+<p class="text-on-primary-container text-lg mb-12 max-w-md">¿Tienes alguna petición especial? Nuestro equipo de conserjería está a tu disposición para personalizar tu estancia.</p>
+<div class="space-y-6">
+<a class="flex items-center gap-4 text-xl hover:text-tertiary-fixed transition-colors" href="tel:+34900000000">
+<span class="material-symbols-outlined">call</span>
+                            +34 930 000 000
+                        </a>
+<a class="flex items-center gap-4 text-xl hover:text-tertiary-fixed transition-colors" href="https://wa.me/34000000000">
+<span class="material-symbols-outlined">chat</span>
+                            WhatsApp Concierge
+                        </a>
+<a class="flex items-center gap-4 text-xl hover:text-tertiary-fixed transition-colors" href="mailto:hola@casamarena.com">
+<span class="material-symbols-outlined">mail</span>
+                            hola@casamarena.com
+                        </a>
+</div>
+</div>
+<div class="bg-surface/5 p-8 rounded-2xl backdrop-blur-sm">
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="block text-sm uppercase tracking-widest font-bold">Nombre Completo</label>
+<input class="w-full bg-transparent border-b border-on-primary/30 focus:border-on-primary focus:ring-0 py-3 outline-none" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm uppercase tracking-widest font-bold">Email</label>
+<input class="w-full bg-transparent border-b border-on-primary/30 focus:border-on-primary focus:ring-0 py-3 outline-none" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm uppercase tracking-widest font-bold">Mensaje</label>
+<textarea class="w-full bg-transparent border-b border-on-primary/30 focus:border-on-primary focus:ring-0 py-3 outline-none resize-none" rows="4"></textarea>
+</div>
+<button class="w-full bg-white text-primary py-4 rounded-md font-bold uppercase tracking-widest text-sm hover:bg-tertiary-fixed transition-all">
+                            Enviar Mensaje
+                        </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#001e40] dark:bg-[#001e40] text-[#fcf9f4] w-full rounded-t-3xl mt-0">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-16 py-20 w-full">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-serif text-[#fcf9f4] mb-6">Casa Marena</div>
+<p class="font-sans text-sm tracking-tight leading-relaxed text-[#fcf9f4]/60">Mediterranean Curator. Una experiencia diseñada para los sentidos en el litoral más exclusivo.</p>
+</div>
+<div>
+<h4 class="font-bold text-sm uppercase tracking-widest mb-6">Navegación</h4>
+<ul class="space-y-4 font-sans text-sm">
+<li><a class="text-[#fcf9f4]/60 hover:text-[#ffdbcd] underline decoration-1 underline-offset-4 transition-opacity" href="#habitaciones">Habitaciones</a></li>
+<li><a class="text-[#fcf9f4]/60 hover:text-[#ffdbcd] underline decoration-1 underline-offset-4 transition-opacity" href="#experiencias">Experiencias</a></li>
+<li><a class="text-[#fcf9f4]/60 hover:text-[#ffdbcd] underline decoration-1 underline-offset-4 transition-opacity" href="#ubicacion">Ubicación</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-sm uppercase tracking-widest mb-6">Legal</h4>
+<ul class="space-y-4 font-sans text-sm">
+<li><a class="text-[#fcf9f4]/60 hover:text-[#ffdbcd] underline decoration-1 underline-offset-4 transition-opacity" href="#">Política de Cancelación</a></li>
+<li><a class="text-[#fcf9f4]/60 hover:text-[#ffdbcd] underline decoration-1 underline-offset-4 transition-opacity" href="#">Aviso Legal</a></li>
+<li><a class="text-[#fcf9f4]/60 hover:text-[#ffdbcd] underline decoration-1 underline-offset-4 transition-opacity" href="#">Cookies</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-sm uppercase tracking-widest mb-6">Newsletter</h4>
+<p class="font-sans text-sm text-[#fcf9f4]/60 mb-4">Recibe ofertas exclusivas y novedades.</p>
+<div class="flex">
+<input class="bg-white/10 border-none rounded-l-md px-4 py-2 text-sm w-full focus:ring-1 focus:ring-tertiary-fixed" placeholder="Tu email" type="email"/>
+<button class="bg-[#ffdbcd] text-primary px-4 py-2 rounded-r-md">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="px-16 py-8 border-t border-white/10 text-center font-sans text-xs tracking-tight text-[#fcf9f4]/40">
+            © 2024 Casa Marena Mediterranean Curator. Todos los derechos reservados.
+        </div>
+</footer>
+</body></html>

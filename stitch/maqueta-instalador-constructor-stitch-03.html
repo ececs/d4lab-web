@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TecnoMant | Control de Precisión Operacional</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#ffdbcb",
+              "primary-container": "#00235a",
+              "background": "#f4faff",
+              "inverse-surface": "#263238",
+              "tertiary": "#240900",
+              "on-background": "#111d23",
+              "outline": "#75777d",
+              "primary": "#000f30",
+              "surface-tint": "#2b5bb5",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed-variant": "#394951",
+              "secondary-fixed-dim": "#b8c9d3",
+              "inverse-on-surface": "#e6f3fb",
+              "on-tertiary-fixed-variant": "#7a3000",
+              "on-secondary-fixed": "#0d1e25",
+              "tertiary-fixed-dim": "#ffb692",
+              "on-error": "#ffffff",
+              "surface-dim": "#cfdce4",
+              "on-primary": "#ffffff",
+              "surface-variant": "#d7e4ec",
+              "surface-container-highest": "#d7e4ec",
+              "error": "#ba1a1a",
+              "primary-fixed-dim": "#b0c6ff",
+              "surface-container-lowest": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-secondary-container": "#55656d",
+              "primary-fixed": "#d9e2ff",
+              "on-surface-variant": "#45474d",
+              "tertiary-container": "#451800",
+              "surface-container-low": "#e9f6fd",
+              "on-error-container": "#93000a",
+              "surface-container-high": "#ddeaf2",
+              "on-primary-fixed-variant": "#00429c",
+              "surface-container": "#e3f0f8",
+              "on-primary-fixed": "#001945",
+              "on-primary-container": "#608ae8",
+              "surface": "#f4faff",
+              "on-tertiary-fixed": "#341100",
+              "secondary-container": "#d1e2ec",
+              "inverse-primary": "#b0c6ff",
+              "surface-bright": "#f4faff",
+              "on-secondary": "#ffffff",
+              "secondary": "#506169",
+              "on-surface": "#111d23",
+              "on-tertiary-container": "#ea6400",
+              "secondary-fixed": "#d4e5ef",
+              "outline-variant": "#c5c6cd"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(215, 228, 236, 0.7);
+            backdrop-filter: blur(24px);
+        }
+        .technical-glow {
+            box-shadow: 0 0 40px 0 rgba(17, 29, 35, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/90 dark:bg-slate-950/90 backdrop-blur-md shadow-sm dark:shadow-none transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold text-blue-950 dark:text-white uppercase tracking-tighter font-headline">TecnoMant</div>
+<div class="hidden md:flex space-x-8">
+<a class="text-blue-700 dark:text-blue-400 font-bold border-b-2 border-blue-700 font-['Space_Grotesk'] tracking-tight" href="#inicio">Inicio</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-900 dark:hover:text-blue-200 transition-colors font-['Space_Grotesk'] tracking-tight" href="#servicios">Servicios</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-900 dark:hover:text-blue-200 transition-colors font-['Space_Grotesk'] tracking-tight" href="#planes">Planes</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-900 dark:hover:text-blue-200 transition-colors font-['Space_Grotesk'] tracking-tight" href="#flujo">Flujo</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-900 dark:hover:text-blue-200 transition-colors font-['Space_Grotesk'] tracking-tight" href="#faq">FAQ</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-900 dark:hover:text-blue-200 transition-colors font-['Space_Grotesk'] tracking-tight" href="#contacto">Contacto</a>
+</div>
+<button class="bg-primary text-on-primary px-5 py-2 rounded-sm font-semibold hover:opacity-90 transition-opacity">Soporte</button>
+</div>
+<div class="bg-slate-200/50 dark:bg-slate-800/50 h-[1px] w-full"></div>
+</nav>
+<!-- Section 1: Hero -->
+<section class="pt-32 pb-20 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 min-h-[921px]" id="inicio">
+<div class="flex-1 space-y-6">
+<span class="inline-block bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-bold tracking-widest uppercase rounded-sm">MANTENIMIENTO PREVENTIVO 4.0</span>
+<h1 class="text-5xl md:text-7xl font-headline font-bold text-primary leading-tight tracking-tighter">
+                Control Operativo de Precisión.
+            </h1>
+<p class="text-lg text-secondary max-w-xl leading-relaxed">
+                Maximizamos la disponibilidad de sus activos críticos mediante protocolos de mantenimiento preventivo y respuesta técnica inmediata. Trazabilidad total en cada intervención.
+            </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<a class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 rounded-sm font-bold text-lg hover:scale-[1.02] transition-transform" href="#contacto">
+                    Solicitar Presupuesto
+                </a>
+<a class="border border-outline-variant text-primary px-8 py-4 rounded-sm font-bold text-lg hover:bg-surface-container transition-colors" href="#servicios">
+                    Ver Capacidades
+                </a>
+</div>
+</div>
+<div class="flex-1 w-full relative">
+<div class="aspect-square bg-surface-container-high rounded-xl overflow-hidden relative technical-glow">
+<img alt="Ingeniero revisando panel de control industrial" class="w-full h-full object-cover grayscale opacity-80" data-alt="Technical engineer in a high-tech facility inspecting a precise electrical control panel with blue digital overlays and industrial aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8tYbdfYWio253fFX2OoYCyEoCicWkyw4akVudqjRogbUL8SrGP2ARC2aN_Z8Jb4YsBCgFwNs8kLnnDDGkep9WTJKSLBW24U6JLzuCBQJkWqRb9l27ac0VyBrpROfVnhNdw5xWEmLfGtEeqvMxmF8YK_erpbZX9zAL92vHyOOXWyNTNYGfzL8BYv8sG88hjVrv3MZCtc72HWuDz6kbbYkSrGh-Z_RlJHFKmEgZ5EpUdKjwolTS8kVhTTvLB6TA8SB8KhtLxdqGmJb0"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+<!-- Status Overlay Card -->
+<div class="absolute bottom-6 left-6 right-6 glass-panel p-6 rounded-lg border border-white/20">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-[0.2em] mb-1">Estado del Sistema</p>
+<p class="text-2xl font-headline font-bold text-primary">OPERATIVO 99.9%</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-on-tertiary-container animate-pulse"></span>
+<span class="text-[0.6875rem] font-bold text-on-tertiary-container uppercase">Live Sync</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Dashboard Style Metrics -->
+<section class="py-20 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-surface-container-lowest p-8 rounded-lg technical-glow border-b-2 border-primary">
+<p class="text-label-sm font-bold text-secondary-container bg-primary px-2 py-1 inline-block mb-4 uppercase">KPI: Eficiencia</p>
+<h3 class="text-4xl font-headline font-bold text-primary mb-2">12.4k</h3>
+<p class="text-sm text-secondary">Incidencias resueltas este trimestre con protocolo de cierre digital.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-lg technical-glow">
+<p class="text-label-sm font-bold text-on-surface-variant mb-4 uppercase">Tiempo de Respuesta</p>
+<h3 class="text-4xl font-headline font-bold text-primary mb-2">42<span class="text-xl">min</span></h3>
+<p class="text-sm text-secondary">Media de llegada a planta tras aviso crítico en zona urbana.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-lg technical-glow">
+<p class="text-label-sm font-bold text-on-surface-variant mb-4 uppercase">Asignación IA</p>
+<h3 class="text-4xl font-headline font-bold text-primary mb-2">AUTO</h3>
+<p class="text-sm text-secondary">Despacho inteligente basado en geolocalización y stock de materiales.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-lg technical-glow border-b-2 border-on-tertiary-container">
+<p class="text-label-sm font-bold text-on-tertiary-container mb-4 uppercase">Ahorro Estimado</p>
+<h3 class="text-4xl font-headline font-bold text-primary mb-2">28%</h3>
+<p class="text-sm text-secondary">Reducción en costes operativos mediante mantenimiento predictivo.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Servicios y Planes -->
+<section class="py-24 px-6 max-w-7xl mx-auto" id="servicios">
+<div class="mb-16">
+<h2 class="text-3xl font-headline font-bold text-primary tracking-tight mb-4">Modalidades de Servicio Corporativo</h2>
+<p class="text-secondary max-w-2xl">Planes diseñados para garantizar la continuidad de negocio con total transparencia técnica.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+<!-- Plan 1 -->
+<div class="p-10 bg-surface-container border-r border-outline-variant/10" id="planes">
+<h4 class="text-xl font-headline font-bold text-primary mb-6">Mantenimiento Base</h4>
+<ul class="space-y-4 mb-10">
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                        Visita trimestral preventiva
+                    </li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                        Atención en 48h
+                    </li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                        Reporte digital básico
+                    </li>
+</ul>
+<div class="mt-auto">
+<p class="text-label-sm text-secondary mb-1 uppercase font-bold">Desde</p>
+<p class="text-3xl font-headline font-bold text-primary mb-6">250€<span class="text-sm font-normal">/mes</span></p>
+<button class="w-full py-3 border border-primary text-primary font-bold hover:bg-primary hover:text-on-primary transition-all">Seleccionar</button>
+</div>
+</div>
+<!-- Plan 2 (Featured) -->
+<div class="p-10 bg-primary text-on-primary relative overflow-hidden">
+<div class="absolute top-4 right-4 bg-on-tertiary-container text-primary px-3 py-1 text-[10px] font-bold tracking-widest uppercase">Popular</div>
+<h4 class="text-xl font-headline font-bold text-white mb-6">Empresa Pro</h4>
+<ul class="space-y-4 mb-10">
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-on-primary-container text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Visita mensual preventiva
+                    </li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-on-primary-container text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Respuesta prioritaria (12h)
+                    </li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-on-primary-container text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Control de materiales incluido
+                    </li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-on-primary-container text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Dashboard en tiempo real
+                    </li>
+</ul>
+<div class="mt-auto">
+<p class="text-label-sm text-on-primary-container mb-1 uppercase font-bold">Desde</p>
+<p class="text-3xl font-headline font-bold text-white mb-6">580€<span class="text-sm font-normal">/mes</span></p>
+<button class="w-full py-3 bg-white text-primary font-bold hover:bg-surface-container transition-all">Seleccionar</button>
+</div>
+</div>
+<!-- Plan 3 -->
+<div class="p-10 bg-surface-container">
+<h4 class="text-xl font-headline font-bold text-primary mb-6">Critical Control</h4>
+<ul class="space-y-4 mb-10">
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                        Soporte 24/7 presencial
+                    </li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                        Técnico residente parcial
+                    </li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                        Auditoría de rentabilidad semanal
+                    </li>
+</ul>
+<div class="mt-auto">
+<p class="text-label-sm text-secondary mb-1 uppercase font-bold">Consultar</p>
+<p class="text-3xl font-headline font-bold text-primary mb-6">Custom</p>
+<button class="w-full py-3 border border-primary text-primary font-bold hover:bg-primary hover:text-on-primary transition-all">Contactar</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Trazabilidad -->
+<section class="py-24 bg-surface-dim">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<img alt="Captura de pantalla de software de gestión técnica" class="rounded-lg shadow-2xl grayscale brightness-110" data-alt="Modern technical dashboard with clean charts and maintenance data visualization on a high-resolution display" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoUHGzi14sg0nZZ1hzl1nP1XG3AHrInkkFFX8t9qJK3nsnLxSHkbs3oi4L56RcNcGVxjSZVKlIuo02eTX3B0AgioQ2gOOv4pAqq8OLl4eTJg1bl6wCZI7ROtNgiY8yyT9C0mbWfkjyQLjfVlqPLqzzQgqPZZ10wOwgwLrYXIEPbW2LHZ54X8-8Nr668XNtDHGHzscTIYND7DnpD_yBm72Z6Fd7mdd0LGhQ8iZGAhMczQ_d7f4sfgqyCevtz00Ly3ph58oHDttNIOqL"/>
+</div>
+<div class="order-1 md:order-2 space-y-8">
+<h2 class="text-3xl font-headline font-bold text-primary tracking-tight">Trazabilidad Absoluta</h2>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="bg-primary p-3 rounded-sm h-fit">
+<span class="material-symbols-outlined text-white" data-icon="description">description</span>
+</div>
+<div>
+<h5 class="font-bold text-primary mb-1">Partes de Trabajo Digitales</h5>
+<p class="text-sm text-secondary leading-relaxed">Firma digital del técnico y el cliente en el lugar de intervención, con geolocalización de seguridad.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="bg-primary p-3 rounded-sm h-fit">
+<span class="material-symbols-outlined text-white" data-icon="send">send</span>
+</div>
+<div>
+<h5 class="font-bold text-primary mb-1">Omnicanalidad Automatizada</h5>
+<p class="text-sm text-secondary leading-relaxed">Envío instantáneo de presupuestos y facturas PDF por WhatsApp y Email corporativo.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="bg-primary p-3 rounded-sm h-fit">
+<span class="material-symbols-outlined text-white" data-icon="inventory_2">inventory_2</span>
+</div>
+<div>
+<h5 class="font-bold text-primary mb-1">Gestión de Costes y Stock</h5>
+<p class="text-sm text-secondary leading-relaxed">Registro milimétrico de materiales utilizados y cálculo automático de rentabilidad por activo.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Flujo de Trabajo -->
+<section class="py-24 px-6 max-w-7xl mx-auto text-center" id="flujo">
+<div class="mb-20">
+<h2 class="text-3xl font-headline font-bold text-primary mb-4">Ingeniería de Flujo Operativo</h2>
+<p class="text-secondary">Cómo garantizamos la eficiencia desde la detección hasta la resolución.</p>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-start gap-8 relative">
+<div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-outline-variant/30 -z-10"></div>
+<div class="flex-1 px-4 space-y-4">
+<div class="w-16 h-16 bg-surface-container-highest rounded-full flex items-center justify-center mx-auto border-4 border-surface shadow-lg">
+<span class="text-xl font-headline font-bold text-primary">01</span>
+</div>
+<h5 class="font-bold text-primary">Monitorización</h5>
+<p class="text-xs text-secondary">Nuestros sensores o su reporte activan la orden de trabajo encriptada.</p>
+</div>
+<div class="flex-1 px-4 space-y-4">
+<div class="w-16 h-16 bg-surface-container-highest rounded-full flex items-center justify-center mx-auto border-4 border-surface shadow-lg">
+<span class="text-xl font-headline font-bold text-primary">02</span>
+</div>
+<h5 class="font-bold text-primary">Asignación Smart</h5>
+<p class="text-xs text-secondary">El sistema elige al técnico con las herramientas adecuadas y menor distancia.</p>
+</div>
+<div class="flex-1 px-4 space-y-4">
+<div class="w-16 h-16 bg-surface-container-highest rounded-full flex items-center justify-center mx-auto border-4 border-surface shadow-lg">
+<span class="text-xl font-headline font-bold text-primary">03</span>
+</div>
+<h5 class="font-bold text-primary">Intervención</h5>
+<p class="text-xs text-secondary">Ejecución bajo protocolos ISO con check-list digital obligatorio.</p>
+</div>
+<div class="flex-1 px-4 space-y-4">
+<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto border-4 border-surface shadow-lg">
+<span class="text-xl font-headline font-bold text-white">04</span>
+</div>
+<h5 class="font-bold text-primary">BI &amp; Feedback</h5>
+<p class="text-xs text-secondary">Generamos informes de rentabilidad semanales analizando costes vs tiempo.</p>
+</div>
+</div>
+</section>
+<!-- Section 6: Testimonios -->
+<section class="py-24 bg-surface-container-lowest overflow-hidden">
+<div class="max-w-7xl mx-auto px-6">
+<h2 class="text-3xl font-headline font-bold text-primary mb-12">Avalado por el Sector Industrial</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface p-8 border-l-4 border-primary italic">
+<p class="text-lg text-primary mb-6">"TecnoMant ha transformado nuestra gestión de incidencias. La trazabilidad de los materiales y los informes semanales nos permiten prever fallos antes de que detengan la producción."</p>
+<div>
+<p class="font-bold not-italic">Roberto Martínez</p>
+<p class="text-sm text-secondary not-italic uppercase tracking-wider">Director de Planta, LogisGlobal</p>
+</div>
+</div>
+<div class="bg-surface p-8 border-l-4 border-primary italic">
+<p class="text-lg text-primary mb-6">"El soporte técnico es impecable. Los tiempos de respuesta se cumplen al minuto y el sistema de avisos por WhatsApp agiliza enormemente las aprobaciones internas."</p>
+<div>
+<p class="font-bold not-italic">Elena Valdés</p>
+<p class="text-sm text-secondary not-italic uppercase tracking-wider">Gestión de Infraestructuras, InnovaCorp</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: FAQ -->
+<section class="py-24 px-6 max-w-4xl mx-auto" id="faq">
+<h2 class="text-3xl font-headline font-bold text-primary mb-12 text-center">Protocolos y Consultas</h2>
+<div class="space-y-4">
+<details class="group bg-surface-container p-6 transition-all duration-300">
+<summary class="flex justify-between items-center font-bold text-primary cursor-pointer list-none">
+                    ¿Qué incluye el mantenimiento preventivo estándar?
+                    <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-4 text-sm text-secondary leading-relaxed">
+                    Incluye revisión sistemática de componentes críticos, lubricación, calibración de sensores y actualización de software operativo. Se emite un certificado de estado tras cada visita.
+                </p>
+</details>
+<details class="group bg-surface-container p-6 transition-all duration-300">
+<summary class="flex justify-between items-center font-bold text-primary cursor-pointer list-none">
+                    ¿Cómo garantizan el tiempo de respuesta de 12h?
+                    <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-4 text-sm text-secondary leading-relaxed">
+                    Mediante un sistema de retén técnico geolocalizado. El plan Pro garantiza un slot de intervención prioritaria que desplaza tareas no críticas automáticamente en nuestro ERP.
+                </p>
+</details>
+<details class="group bg-surface-container p-6 transition-all duration-300">
+<summary class="flex justify-between items-center font-bold text-primary cursor-pointer list-none">
+                    ¿Es posible integrar sus reportes en nuestro ERP propio?
+                    <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-4 text-sm text-secondary leading-relaxed">
+                    Sí, disponemos de una API REST para clientes con planes Custom que permite la sincronización automática de partes de trabajo y consumos de material directamente en su base de datos corporativa.
+                </p>
+</details>
+</div>
+</section>
+<!-- Section 8: Formulario de Solicitud -->
+<section class="py-24 bg-primary text-on-primary" id="contacto">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="space-y-6">
+<h2 class="text-4xl font-headline font-bold tracking-tight">Escale su Eficiencia Técnica</h2>
+<p class="text-on-primary-container text-lg leading-relaxed">
+                    Solicite una auditoría técnica gratuita para su empresa. Analizaremos su flujo actual y propondremos un plan de mantenimiento optimizado.
+                </p>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container">call</span>
+<span class="font-bold">+34 900 834 212</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container">mail</span>
+<span class="font-bold">operaciones@tecnomant.com</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-sm technical-glow">
+<form class="space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Nombre Completo</label>
+<input class="w-full bg-surface-container-low border-none border-b border-primary focus:ring-0 text-primary p-3" placeholder="Ej: Juan Pérez" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Empresa</label>
+<input class="w-full bg-surface-container-low border-none border-b border-primary focus:ring-0 text-primary p-3" placeholder="Nombre Corporativo" type="text"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Email Corporativo</label>
+<input class="w-full bg-surface-container-low border-none border-b border-primary focus:ring-0 text-primary p-3" placeholder="correo@empresa.com" type="email"/>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Tipo de Servicio</label>
+<select class="w-full bg-surface-container-low border-none border-b border-primary focus:ring-0 text-primary p-3 appearance-none">
+<option>Mantenimiento Preventivo</option>
+<option>Auditoría de Activos</option>
+<option>Soporte 24/7</option>
+<option>Consultoría ERP</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Mensaje</label>
+<textarea class="w-full bg-surface-container-low border-none border-b border-primary focus:ring-0 text-primary p-3 h-24 resize-none" placeholder="Describa sus necesidades técnicas..."></textarea>
+</div>
+<button class="w-full py-4 bg-gradient-to-r from-primary to-primary-container text-white font-bold uppercase tracking-widest text-sm hover:opacity-95 transition-opacity mt-4">
+                        Enviar Solicitud
+                    </button>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-900 w-full py-12 border-t border-slate-200 dark:border-slate-800">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-6 max-w-7xl mx-auto">
+<div class="space-y-4">
+<div class="text-lg font-bold text-slate-900 dark:text-slate-100 uppercase tracking-tighter font-headline">TecnoMant</div>
+<p class="text-slate-500 text-xs leading-relaxed">Control de precisión operativa para el sector industrial y corporativo. Tecnología al servicio del mantenimiento.</p>
+</div>
+<div>
+<h6 class="font-bold text-slate-900 dark:text-slate-100 mb-4 text-sm">Compañía</h6>
+<ul class="space-y-2">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 text-sm hover:underline transition-all" href="#">Sobre nosotros</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 text-sm hover:underline transition-all" href="#">Certificaciones</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 text-sm hover:underline transition-all" href="#">Carreras</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-bold text-slate-900 dark:text-slate-100 mb-4 text-sm">Recursos</h6>
+<ul class="space-y-2">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 text-sm hover:underline transition-all" href="#">Documentación</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 text-sm hover:underline transition-all" href="#">Soporte Técnico</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 text-sm hover:underline transition-all" href="#">Portal Cliente</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-bold text-slate-900 dark:text-slate-100 mb-4 text-sm">Legal</h6>
+<ul class="space-y-2">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 text-sm hover:underline transition-all" href="#">Privacidad</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 text-sm hover:underline transition-all" href="#">Términos</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 text-center">
+<p class="text-slate-500 text-xs">© 2024 TecnoMant Servicio Técnico. Control de Precisión Operacional.</p>
+</div>
+</footer>
+</body></html>

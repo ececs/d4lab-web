@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AulaNova Formación | Excelencia Editorial Académica</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Noto+Serif:wght@700&amp;family=Work+Sans:wght@400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-gradient {
+            background: linear-gradient(135deg, #000e27 0%, #00234e 100%);
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-secondary-container": "#2f6c64",
+                "secondary-fixed": "#b1eee4",
+                "surface-container-highest": "#e1e3e4",
+                "on-tertiary": "#ffffff",
+                "surface-container-low": "#f3f4f5",
+                "on-primary": "#ffffff",
+                "error": "#ba1a1a",
+                "primary": "#000e27",
+                "on-primary-container": "#728bbc",
+                "on-primary-fixed": "#001b3e",
+                "surface-container": "#edeeef",
+                "tertiary": "#160d00",
+                "on-surface": "#191c1d",
+                "surface-container-high": "#e7e8e9",
+                "background": "#f8f9fa",
+                "surface-dim": "#d9dadb",
+                "surface": "#f8f9fa",
+                "secondary-fixed-dim": "#95d2c8",
+                "on-secondary-fixed-variant": "#095049",
+                "outline-variant": "#c4c6d0",
+                "tertiary-fixed-dim": "#e9c176",
+                "on-surface-variant": "#44474f",
+                "primary-container": "#00234e",
+                "surface-bright": "#f8f9fa",
+                "primary-fixed-dim": "#adc7fb",
+                "error-container": "#ffdad6",
+                "surface-container-lowest": "#ffffff",
+                "on-error-container": "#93000a",
+                "tertiary-fixed": "#ffdea5",
+                "surface-tint": "#445f8c",
+                "on-error": "#ffffff",
+                "primary-fixed": "#d7e3ff",
+                "on-tertiary-container": "#a88642",
+                "tertiary-container": "#312100",
+                "secondary-container": "#aeece1",
+                "on-background": "#191c1d",
+                "inverse-on-surface": "#f0f1f2",
+                "on-tertiary-fixed": "#261900",
+                "surface-variant": "#e1e3e4",
+                "on-tertiary-fixed-variant": "#5d4201",
+                "inverse-primary": "#adc7fb",
+                "secondary": "#2b6860",
+                "inverse-surface": "#2e3132",
+                "on-primary-fixed-variant": "#2c4773",
+                "on-secondary-fixed": "#00201c",
+                "on-secondary": "#ffffff",
+                "outline": "#747780"
+              },
+              fontFamily: {
+                "headline": ["Noto Serif"],
+                "body": ["Inter"],
+                "label": ["Work Sans"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md shadow-sm dark:shadow-none transition-all duration-300">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<a class="text-xl font-bold tracking-tight text-blue-900 dark:text-blue-50 font-headline" href="#">AulaNova Formación</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-blue-900 dark:text-blue-200 border-b-2 border-amber-500 pb-1 font-label text-sm uppercase tracking-wider font-medium" href="#inicio">Inicio</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-200 transition-colors font-label text-sm uppercase tracking-wider font-medium" href="#cursos">Cursos</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-200 transition-colors font-label text-sm uppercase tracking-wider font-medium" href="#metodologia">Metodología</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-200 transition-colors font-label text-sm uppercase tracking-wider font-medium" href="#calendario">Calendario</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-200 transition-colors font-label text-sm uppercase tracking-wider font-medium" href="#contacto">Contacto</a>
+</div>
+<a class="bg-primary text-on-primary px-6 py-2.5 rounded-xl font-medium text-sm hover:scale-95 duration-150 transition-all shadow-md" href="#inscripcion">Matricúlate Ahora</a>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-24 overflow-hidden min-h-screen flex items-center" id="inicio">
+<div class="absolute inset-0 z-0 overflow-hidden">
+<div class="absolute inset-0 bg-primary/40 z-10"></div>
+<img alt="Aula Moderna" class="w-full h-full object-cover scale-105" data-alt="A bright modern classroom with floor-to-ceiling windows, professional students collaborating on laptops, soft warm sunlight and high-end editorial atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAHMGXNv6ogHjXBmo5BPpgBuYt0b6xeKHDF5ynovs_DSXllC63FV35Mz_frgb7wtldQw4Ftqv1CufmS1GsUPAera9OuFb6eDRbGnuNgYTYZXzTvooqwpB3gr95dQh8DLUjGgCu1AEVcUgGcn7ELPsv_0pJjzmqa0M9RLIZdP9dBTFkCoiYF4saMU52MtcUApTri7eigiXeuzl0Lq_Xo_TTplfGpqpVP8g_1rBZqq-SDfcd1mQZhLBMs6c9tiO71b4Yz7bCk8WpUfsa"/>
+</div>
+<div class="relative z-20 max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<h1 class="font-headline text-5xl md:text-7xl text-white leading-[1.1] tracking-tight">
+                    AulaNova Formación: <br/><span class="text-tertiary-fixed-dim">Excelencia en Educación Moderna</span>
+</h1>
+<p class="text-xl text-white/90 font-light leading-relaxed max-w-xl">
+                    Formación certificada con metodología 100% automatizada para tu comodidad: confirmación instantánea, avisos por WhatsApp y materiales inmediatos.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<a class="bg-tertiary-fixed text-on-tertiary-fixed px-8 py-4 rounded-xl font-semibold text-lg hover:bg-tertiary-fixed-dim transition-all text-center" href="#cursos">Ver Catálogo de Cursos</a>
+<a class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all text-center" href="#metodologia">Conoce nuestra Metodología</a>
+</div>
+</div>
+<div class="hidden lg:block relative">
+<div class="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl transform rotate-3 scale-95">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="verified">verified</span>
+</div>
+<div>
+<p class="text-white font-bold font-headline">Certificación Oficial</p>
+<p class="text-white/70 text-sm">Validada por Partners Académicos</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-3/4"></div>
+</div>
+<p class="text-white/60 text-xs font-label uppercase tracking-widest">Inscripciones abiertas para Mayo 2024</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Catálogo de Cursos (Asymmetric Bento Grid) -->
+<section class="py-24 px-8 bg-surface" id="cursos">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+<div class="max-w-2xl">
+<span class="text-primary-fixed-dim font-label text-sm font-bold uppercase tracking-widest bg-primary-container px-3 py-1 rounded">Oferta Académica</span>
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface mt-4">Programas de Especialización</h2>
+</div>
+<p class="text-on-surface-variant max-w-xs text-right border-r-4 border-tertiary-fixed pr-4 italic">Plazas limitadas para garantizar la máxima calidad educativa.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Course Card 1 -->
+<div class="md:col-span-8 group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-outline-variant/10">
+<div class="flex flex-col md:flex-row h-full">
+<div class="md:w-1/2 overflow-hidden">
+<img alt="Ciberseguridad" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Digital grid representing cybersecurity, glowing blue lines on dark background, professional and high-tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw523oKrBxNZqSGT1RuNsfo-LkNi23g5rcep7si59vTEDex4bbknB6F8GE7e8CYOUGZROJr-42b0XHdTdxHK3QXDUXHmxFrwKR-TIdD8WXYGn1bVrdUtEVWGsr9jUKH2JK9dcSTwwTQYGSWO7805Y9AG3k5Qq4nr8v61gjfzzYOt1tWcOV1eAsgmZ9g9VENpx0bzChnNzOe7d2WblfvOFeo-tc62OhJZ5uHDFe9_bsFUGuqL8FsPjhc1h7a4xhyahtzVecBJzV5jHE"/>
+</div>
+<div class="md:w-1/2 p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="bg-secondary-container text-on-secondary-container text-xs font-bold px-2 py-1 rounded">Nivel Experto</span>
+<span class="text-primary font-bold text-2xl">399€</span>
+</div>
+<h3 class="font-headline text-2xl text-on-surface mb-2">Ciberseguridad Avanzada</h3>
+<p class="text-on-surface-variant text-sm mb-6">Domina la defensa de infraestructuras críticas y gestión de incidentes en entornos corporativos modernos.</p>
+<div class="flex gap-4 mb-8">
+<div class="flex items-center gap-2 text-xs font-medium">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="calendar_today">calendar_today</span>
+                                        Inicio: 15 May
+                                    </div>
+<div class="flex items-center gap-2 text-xs font-medium">
+<span class="material-symbols-outlined text-error text-sm" data-icon="group">group</span>
+                                        8 plazas disponibles
+                                    </div>
+</div>
+</div>
+<a class="w-full bg-primary text-white py-3 rounded-lg text-center font-bold hover:bg-primary-container transition-colors" href="#inscripcion">Inscribirme ahora</a>
+</div>
+</div>
+</div>
+<!-- Course Card 2 -->
+<div class="md:col-span-4 group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-outline-variant/10 flex flex-col">
+<div class="h-48 overflow-hidden">
+<img alt="IA Negocios" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Conceptual visualization of artificial intelligence, glowing neurons and digital connections, clean and minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFX5avpf9ufzcPajw485eTSTNQXEbK8gUNJWRrLEjYuUlcK86zDD0DxImv0m8OXHoG2x9lw_9PxHRguGLr1O_M98_O_AkvILxHCigvdDOgWBZA_VVGKG3xJERt2Bh0W4AnZVpivLw5yshdXmNO-cwSEnNikm3OGOSIXyNeuVXy8CxRb36RbVvB27T-au0dXhI-ruOod91W4_9GuN5BpUIxDthGgKrmys-2ix_U3Eq2I3cK_Lcvw8LT4JxkVmiBuZFWexEPzn9enLCk"/>
+</div>
+<div class="p-8 flex-grow flex flex-col">
+<div class="flex justify-between items-center mb-4">
+<span class="text-primary font-bold text-xl">450€</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold px-2 py-0.5 rounded uppercase">Alta Demanda</span>
+</div>
+<h3 class="font-headline text-xl text-on-surface mb-2">IA para Negocios</h3>
+<p class="text-on-surface-variant text-sm mb-6">Integra herramientas de Inteligencia Artificial para optimizar procesos y toma de decisiones.</p>
+<div class="mt-auto">
+<div class="flex flex-col gap-2 mb-6">
+<span class="text-xs text-on-surface-variant flex items-center gap-2"><span class="material-symbols-outlined text-xs" data-icon="event">event</span> Inicio: 22 May</span>
+<span class="text-xs text-error font-bold flex items-center gap-2"><span class="material-symbols-outlined text-xs" data-icon="priority_high">priority_high</span> Solo quedan 5 plazas</span>
+</div>
+<a class="block w-full border-2 border-primary text-primary py-3 rounded-lg text-center font-bold hover:bg-primary hover:text-white transition-all" href="#inscripcion">Inscribirme ahora</a>
+</div>
+</div>
+</div>
+<!-- Course Card 3 -->
+<div class="md:col-span-4 group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-outline-variant/10 flex flex-col">
+<div class="h-48 overflow-hidden">
+<img alt="Scrum" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Modern workspace with post-it notes and project plan on wall, agile team collaboration tools, bright and organized atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiyrX-ouPxJYxCFlTEyXytd4yhwBJMJUqVsjVfLL8mNDvSveaMN6SIAwwOsN3aNDtXBqMG_w-mnYi8NlIjPjGckxaSiw3pvjcsQUsK0C8jFtd9qK2ycCOcLFEcRH5-IGajpcVHqB5lNcrM-QwKuEX3U6lqMDLpaWkzyqxsTZcUddBXLt_FlIEsLtQb5qE43IoPgzRewOwcs50jXzbfYPde4aKhIRTsv-cCeuUsdfiNsMTDsdG74kQJjtpmnpGg6h8QSc9Yj9JA5w9y"/>
+</div>
+<div class="p-8 flex-grow flex flex-col">
+<div class="flex justify-between items-center mb-4">
+<span class="text-primary font-bold text-xl">299€</span>
+</div>
+<h3 class="font-headline text-xl text-on-surface mb-2">Gestión Scrum</h3>
+<p class="text-on-surface-variant text-sm mb-6">Certifícate como Scrum Master y lidera equipos de alto rendimiento con metodologías ágiles.</p>
+<div class="mt-auto">
+<div class="flex flex-col gap-2 mb-6">
+<span class="text-xs text-on-surface-variant flex items-center gap-2"><span class="material-symbols-outlined text-xs" data-icon="event">event</span> Inicio: 01 Jun</span>
+<span class="text-xs text-on-surface-variant flex items-center gap-2"><span class="material-symbols-outlined text-xs" data-icon="group">group</span> 12 plazas</span>
+</div>
+<a class="block w-full border-2 border-primary text-primary py-3 rounded-lg text-center font-bold hover:bg-primary hover:text-white transition-all" href="#inscripcion">Inscribirme ahora</a>
+</div>
+</div>
+</div>
+<!-- Bento Extension: Info Block -->
+<div class="md:col-span-8 bg-primary-container rounded-xl p-8 flex items-center justify-between text-white overflow-hidden relative">
+<div class="relative z-10 max-w-md">
+<h3 class="font-headline text-2xl mb-2">¿No encuentras lo que buscas?</h3>
+<p class="text-primary-fixed-dim text-sm mb-6">Estamos constantemente actualizando nuestro catálogo con las últimas tendencias tecnológicas y de gestión.</p>
+<button class="text-white underline font-bold flex items-center gap-2 hover:gap-4 transition-all">Solicitar Información Personalizada <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span></button>
+</div>
+<div class="hidden lg:block absolute -right-10 top-0 h-full opacity-20">
+<span class="material-symbols-outlined text-[200px]" data-icon="school">school</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Metodología & Automatización -->
+<section class="py-24 bg-surface-container-low" id="metodologia">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface">Metodología 100% Automatizada</h2>
+<p class="text-on-surface-variant mt-6 text-lg max-w-2xl mx-auto">Diseñada para que te enfoques únicamente en aprender. Nosotros nos encargamos de la logística.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="group">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-lowest flex items-center justify-center mb-6 shadow-sm group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-2">
+<span class="material-symbols-outlined text-3xl text-secondary" data-icon="bolt">bolt</span>
+</div>
+<h4 class="font-bold text-lg mb-2">Confirmación Inmediata</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Recibe tu matrícula y credenciales de acceso al instante tras el pago. Sin esperas.</p>
+</div>
+<div class="group">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-lowest flex items-center justify-center mb-6 shadow-sm group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-2">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="chat">chat</span>
+</div>
+<h4 class="font-bold text-lg mb-2">Recordatorios Proactivos</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Avisos automáticos de tus clases vía WhatsApp y email para que nunca pierdas una sesión.</p>
+</div>
+<div class="group">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-lowest flex items-center justify-center mb-6 shadow-sm group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-2">
+<span class="material-symbols-outlined text-3xl text-tertiary-fixed-dim" data-icon="auto_stories">auto_stories</span>
+</div>
+<h4 class="font-bold text-lg mb-2">Material Didáctico</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Envío automático de presentaciones y ejercicios tras finalizar cada sesión en directo.</p>
+</div>
+<div class="group">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-lowest flex items-center justify-center mb-6 shadow-sm group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-2">
+<span class="material-symbols-outlined text-3xl text-secondary-fixed-dim" data-icon="workspace_premium" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<h4 class="font-bold text-lg mb-2">Certificación Garantizada</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Bloque de sellos de calidad y partners internacionales que avalan tu nueva formación.</p>
+</div>
+</div>
+<!-- Partners/Badges -->
+<div class="mt-24 pt-12 border-t border-outline-variant/20 flex flex-wrap justify-center items-center gap-12 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+<span class="font-headline text-2xl font-bold italic text-slate-400">ISO 9001</span>
+<span class="font-headline text-2xl font-bold italic text-slate-400">AWS Partner</span>
+<span class="font-headline text-2xl font-bold italic text-slate-400">Scrum.org</span>
+<span class="font-headline text-2xl font-bold italic text-slate-400">Google Cloud</span>
+<span class="font-headline text-2xl font-bold italic text-slate-400">Cisco Academy</span>
+</div>
+</div>
+</section>
+<!-- Formulario de Inscripción -->
+<section class="py-24 px-8" id="inscripcion">
+<div class="max-w-5xl mx-auto bg-surface-container-lowest rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
+<div class="lg:w-2/5 editorial-gradient p-12 text-white flex flex-col justify-between">
+<div>
+<h2 class="font-headline text-4xl mb-6">Tu plaza en un clic</h2>
+<p class="text-primary-fixed-dim text-lg leading-relaxed">Únete a nuestra próxima promoción y transforma tu carrera profesional con los líderes en formación técnica.</p>
+</div>
+<div class="space-y-6 mt-12 lg:mt-0">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary-container" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<p class="text-sm">Confirmación inmediata por email</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary-container" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<p class="text-sm">Acceso al aula virtual en 5 min</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary-container" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<p class="text-sm">Recibo automático deducible</p>
+</div>
+</div>
+</div>
+<div class="lg:w-3/5 p-12">
+<form action="#" class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block text-sm font-bold text-on-surface-variant font-label uppercase tracking-tighter">Nombre Completo</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary p-4 transition-all" placeholder="Juan Pérez" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-bold text-on-surface-variant font-label uppercase tracking-tighter">Correo Electrónico</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary p-4 transition-all" placeholder="juan@ejemplo.com" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block text-sm font-bold text-on-surface-variant font-label uppercase tracking-tighter">Teléfono (WhatsApp)</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary p-4 transition-all" placeholder="+34 000 000 000" type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-bold text-on-surface-variant font-label uppercase tracking-tighter">Curso a Seleccionar</label>
+<select class="w-full bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary p-4 transition-all">
+<option>Ciberseguridad Avanzada</option>
+<option>IA para Negocios</option>
+<option>Gestión de Proyectos Scrum</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-bold text-on-surface-variant font-label uppercase tracking-tighter">Método de Pago</label>
+<div class="grid grid-cols-2 gap-4">
+<label class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl cursor-pointer border-2 border-transparent has-[:checked]:border-primary transition-all">
+<input checked="" class="text-primary focus:ring-primary" name="payment" type="radio"/>
+<span class="font-medium">Tarjeta</span>
+</label>
+<label class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl cursor-pointer border-2 border-transparent has-[:checked]:border-primary transition-all">
+<input class="text-primary focus:ring-primary" name="payment" type="radio"/>
+<span class="font-medium">Transferencia</span>
+</label>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-5 rounded-xl font-bold text-xl hover:bg-primary-container shadow-xl transition-all transform hover:-translate-y-1" type="submit">Completar Inscripción</button>
+<p class="text-center text-xs text-on-surface-variant italic">Al completar, recibirás confirmación inmediata y recibo automático.</p>
+</form>
+</div>
+</div>
+</section>
+<!-- Calendario Académico -->
+<section class="py-24 bg-surface-container-low" id="calendario">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="font-headline text-4xl mb-12 text-center">Calendario Próximas Sesiones</h2>
+<div class="bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm p-8">
+<div class="grid grid-cols-7 gap-4 text-center mb-8 border-b border-outline-variant/20 pb-4">
+<div class="text-xs font-bold font-label text-on-surface-variant">LUN</div>
+<div class="text-xs font-bold font-label text-on-surface-variant">MAR</div>
+<div class="text-xs font-bold font-label text-on-surface-variant">MIÉ</div>
+<div class="text-xs font-bold font-label text-on-surface-variant">JUE</div>
+<div class="text-xs font-bold font-label text-on-surface-variant">VIE</div>
+<div class="text-xs font-bold font-label text-on-surface-variant">SÁB</div>
+<div class="text-xs font-bold font-label text-on-surface-variant">DOM</div>
+</div>
+<div class="grid grid-cols-7 gap-4">
+<!-- Week 1 empty slots -->
+<div class="aspect-square bg-surface-container-low/30 rounded-lg"></div>
+<div class="aspect-square bg-surface-container-low/30 rounded-lg"></div>
+<div class="aspect-square flex items-center justify-center font-bold text-on-surface-variant">1</div>
+<div class="aspect-square flex items-center justify-center font-bold text-on-surface-variant">2</div>
+<div class="aspect-square flex items-center justify-center font-bold text-on-surface-variant">3</div>
+<div class="aspect-square flex items-center justify-center font-bold text-on-surface-variant">4</div>
+<div class="aspect-square flex items-center justify-center font-bold text-on-surface-variant">5</div>
+<div class="aspect-square flex items-center justify-center font-bold text-on-surface-variant">12</div>
+<div class="aspect-square flex items-center justify-center font-bold text-on-surface-variant">13</div>
+<div class="aspect-square flex items-center justify-center font-bold text-on-surface-variant">14</div>
+<div class="aspect-square relative bg-primary-container text-white rounded-lg flex flex-col items-center justify-center">
+<span class="font-bold">15</span>
+<span class="text-[8px] absolute bottom-1 uppercase font-bold text-tertiary-fixed">Ciber</span>
+</div>
+<div class="aspect-square flex items-center justify-center font-bold text-on-surface-variant">16</div>
+<div class="aspect-square flex items-center justify-center font-bold text-on-surface-variant">17</div>
+<div class="aspect-square flex items-center justify-center font-bold text-on-surface-variant">18</div>
+<div class="aspect-square flex items-center justify-center font-bold text-on-surface-variant">19</div>
+<div class="aspect-square flex items-center justify-center font-bold text-on-surface-variant">20</div>
+<div class="aspect-square flex items-center justify-center font-bold text-on-surface-variant">21</div>
+<div class="aspect-square relative bg-secondary text-white rounded-lg flex flex-col items-center justify-center">
+<span class="font-bold">22</span>
+<span class="text-[8px] absolute bottom-1 uppercase font-bold">IA Neg</span>
+</div>
+<div class="aspect-square flex items-center justify-center font-bold text-on-surface-variant">23</div>
+<div class="aspect-square flex items-center justify-center font-bold text-on-surface-variant">24</div>
+<div class="aspect-square flex items-center justify-center font-bold text-on-surface-variant">25</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonios -->
+<section class="py-24 px-8 overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-headline text-4xl mb-16">Lo que dicen nuestros alumnos</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-highest p-8 rounded-2xl relative">
+<div class="flex gap-1 text-tertiary-fixed-dim mb-4">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface italic leading-relaxed mb-8">"La automatización me salvó la vida. Recibir los enlaces de WhatsApp 10 minutos antes de clase es justo lo que necesitaba para no despistarme."</p>
+<div class="flex items-center gap-4">
+<img alt="Alumno" class="w-12 h-12 rounded-full object-cover" data-alt="Professional man smiling for corporate headshot, warm studio lighting, modern and trustworthy appearance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5edRKynXSEJ0-0wO0yFzMbXJ9jSyPg10sBdQBkOEa0rxCs1bZxQC04qAa0nX-_b0yJlF13qyQded-H8erMVwasy-tmXfWDzb5FBi-giYxo-IMx8zufVcN54f7SzOA00KG4gjHC2hThPfO_UyGSj01vH1Iims_dze3f-CJq9sCqVe65wzBima_rtOruQi-jzkxK6aN77Uil_QuLjzQZ-lgxg9wZ5mhM9se87vwNsu-UVwOBhoWuHzFLyz8dd4ynJfmjI5C3F9ZBOAs"/>
+<div>
+<p class="font-bold text-sm">Carlos Ruiz</p>
+<p class="text-xs text-on-surface-variant">CTO en StartUp X</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-highest p-8 rounded-2xl relative">
+<div class="flex gap-1 text-tertiary-fixed-dim mb-4">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface italic leading-relaxed mb-8">"El curso de IA es muy práctico. Al terminar cada clase ya tenía el PDF con el resumen en mi correo. La excelencia es real en AulaNova."</p>
+<div class="flex items-center gap-4">
+<img alt="Alumna" class="w-12 h-12 rounded-full object-cover" data-alt="Professional woman smiling in office setting, natural lighting, high-end corporate portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBheqOaL2Cb-VLxjjKYgo9Tnc3VJRA0Q1-Umm0m3EyYBFU9nHMZd3V5pBRKTRx3tTq2avEYvEOJJPKn2RSjk9Atr98XRLSNLKaHY__Z845LI1gAaytD07NDVSAq2aA0qf4dMm0eUf3u0pJzopbD5NuPc81A_Z-uGE4gmnfiDpwJ8J0RTlIeB0kc2712OmX0vWOinG-fzPniNg4i1otByszbRVXfBYFkclsekRXetGuVANSRtePKTVI1C95lBxYn6pEzX-g09uexwJJ2"/>
+<div>
+<p class="font-bold text-sm">Elena Sanz</p>
+<p class="text-xs text-on-surface-variant">Analista de Datos</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-highest p-8 rounded-2xl relative">
+<div class="flex gap-1 text-tertiary-fixed-dim mb-4">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface italic leading-relaxed mb-8">"Contenido actualizado y profesores que saben de lo que hablan. El proceso de matriculación fue el más rápido que he visto jamás."</p>
+<div class="flex items-center gap-4">
+<img alt="Alumno" class="w-12 h-12 rounded-full object-cover" data-alt="Modern professional looking into camera, clean minimalist background, focused and academic vibe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCKdqu22Lim_7cyw1zlwvVAb_Klsyy-27v5yIxRc3LttI7jhG0hD9Y2J-SxKqjX44CTgh8huAaVNXTj1QpzcGyYm9eTkxNipL4q9D0EzqUwXtnnLeNBQ7X9ByBdEIq8AvyJUB-pIBNIyCcj5vad6mimu66TpNZ7HHR6SVVzz0yw4yW3TTW2t-N70j4FEb8JQUXgw6JDdrJCCCE2vuC1Y743bRG2dV15Mxw0QIHrvrgl1ygvBQC23RBbfoJwOzdqq4u67sMuPFp6C9G"/>
+<div>
+<p class="font-bold text-sm">Marc Font</p>
+<p class="text-xs text-on-surface-variant">Scrum Master Senior</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section class="py-24 bg-surface-container-low px-8">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-headline text-4xl mb-12 text-center">Preguntas Frecuentes</h2>
+<div class="space-y-4">
+<details class="group bg-surface-container-lowest rounded-2xl p-6 transition-all duration-300 open:shadow-md">
+<summary class="flex justify-between items-center font-bold cursor-pointer list-none">
+                        ¿Cómo funcionan los pagos y recibos?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant leading-relaxed">
+                        Aceptamos tarjetas de crédito/débito y transferencia bancaria. Una vez procesado el pago, nuestro sistema genera automáticamente una factura proforma que se envía a tu correo electrónico de inmediato.
+                    </p>
+</details>
+<details class="group bg-surface-container-lowest rounded-2xl p-6 transition-all duration-300 open:shadow-md">
+<summary class="flex justify-between items-center font-bold cursor-pointer list-none">
+                        ¿Qué pasa si no puedo asistir a una sesión en directo?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant leading-relaxed">
+                        Todas nuestras clases se graban y se suben automáticamente al aula virtual 30 minutos después de terminar. También recibirás el material didáctico vía email y WhatsApp.
+                    </p>
+</details>
+<details class="group bg-surface-container-lowest rounded-2xl p-6 transition-all duration-300 open:shadow-md">
+<summary class="flex justify-between items-center font-bold cursor-pointer list-none">
+                        ¿Los certificados tienen validez profesional?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant leading-relaxed">
+                        Sí, todos nuestros programas emiten un certificado de aprovechamiento digital con firma electrónica y código de verificación QR, avalado por nuestros partners institucionales.
+                    </p>
+</details>
+</div>
+</div>
+</section>
+<!-- Contacto -->
+<section class="py-24 px-8 max-w-7xl mx-auto" id="contacto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<div class="space-y-8">
+<div>
+<h2 class="font-headline text-4xl mb-4">Hablemos de tu futuro</h2>
+<p class="text-on-surface-variant">Nuestro equipo de admisiones está disponible para resolver cualquier duda técnica o administrativa.</p>
+</div>
+<div class="aspect-video rounded-3xl overflow-hidden bg-surface-container-high relative grayscale shadow-lg">
+<img alt="Mapa" class="w-full h-full object-cover" data-alt="Stylized map of a modern metropolitan city with clean lines and academic landmarks highlighted" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEx5XMRxshl5voxL4Ex3DSraze60sFrUb0Nc0FT3ur8SF2lS7RkxM_RTakSM26NTpfRZUr-y-W3s8l2H0FvnbxkhT_GhzuBr1CXxu2ZlQ-dwQRlGy26PsRHv25uGEOBOnPKEzwuw-WIcSdTKweAX9DeUHFi-cWUI_2hoC26cU36AdSdbBLctXEPXUb4csABP7MfnHX2Ry3DyuXF0NFFB0tT4_WglGqBQNu2pZGNkz_o4vOS9VZTDxwXdbwSj3cyK9SQBPibtVQDwkG"/>
+<div class="absolute inset-0 bg-primary/10"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="call">call</span>
+<div>
+<p class="font-bold text-sm">Atención Directa</p>
+<p class="text-on-surface-variant">+34 912 345 678</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
+<div>
+<p class="font-bold text-sm">Correo Académico</p>
+<p class="text-on-surface-variant">admisiones@aulanova.edu</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-10 rounded-3xl">
+<form action="#" class="space-y-6">
+<div class="space-y-2">
+<label class="text-sm font-bold uppercase tracking-widest text-on-surface-variant font-label">Nombre</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl p-4 focus:ring-2 focus:ring-primary" placeholder="Tu nombre" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold uppercase tracking-widest text-on-surface-variant font-label">Asunto</label>
+<select class="w-full bg-surface-container-lowest border-none rounded-xl p-4 focus:ring-2 focus:ring-primary">
+<option>Información sobre cursos</option>
+<option>Problemas técnicos</option>
+<option>Becas y Ayudas</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold uppercase tracking-widest text-on-surface-variant font-label">Mensaje</label>
+<textarea class="w-full bg-surface-container-lowest border-none rounded-xl p-4 focus:ring-2 focus:ring-primary" placeholder="¿En qué podemos ayudarte?" rows="5"></textarea>
+</div>
+<button class="bg-primary text-white w-full py-4 rounded-xl font-bold text-lg hover:shadow-lg transition-all">Enviar Mensaje</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-8 py-16 max-w-7xl mx-auto">
+<div class="space-y-6">
+<p class="text-lg font-bold text-blue-900 dark:text-blue-50 font-headline">AulaNova Formación</p>
+<p class="text-slate-500 text-sm leading-relaxed">Institución líder en formación técnica acelerada con metodología 100% automatizada. Comprometidos con la excelencia académica digital.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer" data-icon="share">share</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer" data-icon="hub">hub</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer" data-icon="language">language</span>
+</div>
+</div>
+<div class="space-y-6">
+<p class="font-bold text-blue-900 dark:text-blue-200">Explorar</p>
+<ul class="space-y-3">
+<li><a class="text-slate-500 hover:text-blue-700 dark:hover:text-blue-300 underline-offset-4 hover:underline transition-all" href="#cursos">Catálogo de Mayo</a></li>
+<li><a class="text-slate-500 hover:text-blue-700 dark:hover:text-blue-300 underline-offset-4 hover:underline transition-all" href="#metodologia">Por qué AulaNova</a></li>
+<li><a class="text-slate-500 hover:text-blue-700 dark:hover:text-blue-300 underline-offset-4 hover:underline transition-all" href="#calendario">Próximos Inicios</a></li>
+<li><a class="text-slate-500 hover:text-blue-700 dark:hover:text-blue-300 underline-offset-4 hover:underline transition-all" href="#">Becas Alumni</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<p class="font-bold text-blue-900 dark:text-blue-200">Legal</p>
+<div class="flex flex-wrap gap-x-6 gap-y-3">
+<a class="text-slate-500 hover:text-blue-700 transition-all text-sm" href="#">Privacidad</a>
+<a class="text-slate-500 hover:text-blue-700 transition-all text-sm" href="#">Términos</a>
+<a class="text-slate-500 hover:text-blue-700 transition-all text-sm" href="#">Mapa del Sitio</a>
+<a class="text-slate-500 hover:text-blue-700 transition-all text-sm" href="#">Cookies</a>
+</div>
+</div>
+</div>
+<div class="border-t border-slate-200 dark:border-slate-800 py-8 px-8 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-500 text-xs text-center md:text-left">© 2024 AulaNova Formación. Excelencia Editorial Académica.</p>
+<div class="flex gap-4 items-center">
+<div class="w-8 h-8 rounded bg-slate-200 flex items-center justify-center grayscale opacity-50">VISA</div>
+<div class="w-8 h-8 rounded bg-slate-200 flex items-center justify-center grayscale opacity-50">MC</div>
+<div class="w-8 h-8 rounded bg-slate-200 flex items-center justify-center grayscale opacity-50">PP</div>
+</div>
+</div>
+</footer>
+</body></html>

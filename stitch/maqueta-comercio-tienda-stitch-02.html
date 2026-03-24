@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DRIP STORE | URBAN KINETIC SYSTEMS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@300;400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#5e1700",
+              "tertiary-fixed": "#d4e3ff",
+              "on-surface-variant": "#e6beb2",
+              "inverse-on-surface": "#313030",
+              "error": "#ffb4ab",
+              "surface-container-low": "#1c1b1b",
+              "primary-container": "#ff571a",
+              "on-error": "#690005",
+              "surface-bright": "#3a3939",
+              "secondary-fixed": "#e2e1eb",
+              "primary": "#ffb59e",
+              "on-primary-fixed-variant": "#852400",
+              "surface": "#131313",
+              "inverse-primary": "#ae3200",
+              "secondary-container": "#45464e",
+              "outline-variant": "#5c4037",
+              "surface-container-high": "#2a2a2a",
+              "on-primary-fixed": "#3a0b00",
+              "primary-fixed-dim": "#ffb59e",
+              "primary-fixed": "#ffdbd0",
+              "secondary-fixed-dim": "#c6c6cf",
+              "outline": "#ad897e",
+              "secondary": "#c6c6cf",
+              "surface-container-lowest": "#0e0e0e",
+              "on-tertiary-fixed": "#001c3a",
+              "on-tertiary-container": "#002a53",
+              "surface-variant": "#353534",
+              "inverse-surface": "#e5e2e1",
+              "error-container": "#93000a",
+              "on-primary-container": "#521300",
+              "on-secondary": "#2f3037",
+              "on-background": "#e5e2e1",
+              "on-error-container": "#ffdad6",
+              "surface-tint": "#ffb59e",
+              "on-surface": "#e5e2e1",
+              "tertiary-container": "#2492ff",
+              "on-secondary-fixed": "#1a1b22",
+              "surface-container-highest": "#353534",
+              "on-secondary-fixed-variant": "#45464e",
+              "surface-container": "#201f1f",
+              "background": "#131313",
+              "on-secondary-container": "#b4b4bd",
+              "on-tertiary": "#00315e",
+              "tertiary": "#a5c8ff",
+              "tertiary-fixed-dim": "#a5c8ff",
+              "surface-dim": "#131313",
+              "on-tertiary-fixed-variant": "#004785"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .marquee { white-space: nowrap; overflow: hidden; }
+        .marquee-content { display: inline-block; animation: marquee 20s linear infinite; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-900/70 backdrop-blur-xl border-b border-orange-500/10 shadow-none">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-full mx-auto">
+<div class="text-2xl font-black tracking-tighter text-neutral-100 font-headline uppercase">DRIP STORE</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-headline uppercase tracking-tighter font-bold text-orange-500 border-b-2 border-orange-500 pb-1" href="#">Colección</a>
+<a class="font-headline uppercase tracking-tighter font-bold text-neutral-400 hover:text-neutral-100 transition-colors" href="#">Categorías</a>
+<a class="font-headline uppercase tracking-tighter font-bold text-neutral-400 hover:text-neutral-100 transition-colors" href="#">Drops</a>
+<a class="font-headline uppercase tracking-tighter font-bold text-neutral-400 hover:text-neutral-100 transition-colors" href="#">Nosotros</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-on-surface hover:text-primary-container transition-colors scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="text-on-surface hover:text-primary-container transition-colors scale-95 active:scale-90 transition-transform relative">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-primary-container text-[10px] w-4 h-4 flex items-center justify-center font-bold">2</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative h-[921px] flex items-center overflow-hidden bg-surface-container-lowest">
+<div class="absolute inset-0 z-0">
+<img alt="Urban Fashion Hero" class="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000" data-alt="Futuristic urban model wearing high-end techwear, standing in a dimly lit industrial alley with soft orange neon highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxuPTfE2A-G3wJbnEx1WrqfvfGe7aK_sKwqSdpzHIMHvQ-TXboCVB4hOMv0fDNiEzcoruQVj_31k_GmWjyMvT9ntDp37TQEcU8sW6kqZC7lO5C8CPzD0WtGx8UQpcw9cM05WhiOhK84agVlLV22dlxXh156fgHRBwpCL4YlAirpoUtxG6weowXtda5gn6Hi15Bwg2zu552bQTLiwsjT4pclTHwbLTSTIkeoGG9kG1m9yRlk4XCOyV2-ncD4ARmR8uzu0WwQ6RP14A"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 px-6 md:px-12 w-full">
+<div class="max-w-4xl">
+<span class="font-headline text-primary-container tracking-[0.3em] text-xs font-bold uppercase mb-4 block">PRIMAVERA 2025</span>
+<h1 class="font-headline text-6xl md:text-9xl font-black uppercase tracking-tighter leading-[0.85] text-on-surface mb-8">
+                        NUEVA<br/>COLECCIÓN
+                    </h1>
+<button class="bg-primary-container text-on-primary-fixed px-12 py-5 font-headline font-bold uppercase tracking-widest hover:bg-white transition-colors duration-300">
+                        VER COLECCIÓN
+                    </button>
+</div>
+</div>
+<div class="absolute bottom-12 right-12 hidden md:block">
+<div class="flex flex-col items-end border-r-2 border-primary-container pr-6">
+<p class="font-label text-xs uppercase tracking-widest opacity-50 mb-2">SYSTEM STATUS</p>
+<p class="font-headline text-2xl font-bold">OPERATIONAL_V.01</p>
+</div>
+</div>
+</section>
+<!-- Ticker Marquee -->
+<div class="bg-primary-container py-3 overflow-hidden border-y border-on-primary-container/20">
+<div class="marquee flex whitespace-nowrap">
+<div class="marquee-content flex gap-12 font-headline font-black text-on-primary-fixed text-sm uppercase tracking-widest italic">
+<span>ENVÍOS GRATIS A TODO EL MUNDO</span>
+<span>•</span>
+<span>DEVOLUCIONES EXTENDIDAS 30 DÍAS</span>
+<span>•</span>
+<span>NUEVO DROP 'VOID SERIES' PRÓXIMAMENTE</span>
+<span>•</span>
+<span>JOIN THE KINETIC MOVEMENT</span>
+<span>•</span>
+<span>ENVÍOS GRATIS A TODO EL MUNDO</span>
+<span>•</span>
+<span>DEVOLUCIONES EXTENDIDAS 30 DÍAS</span>
+<span>•</span>
+</div>
+</div>
+</div>
+<!-- Categories Grid -->
+<section class="py-24 px-6 bg-surface">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="group relative h-[400px] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover opacity-70 group-hover:scale-105 group-hover:opacity-100 transition-all duration-500" data-alt="Minimalist flat lay of a high-quality white streetwear t-shirt on a dark textured background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk7QJ20Ob7s3__wVbJRHiFGAiJHyw2DPq2roXw-zwEuG9NstejbAjX2Hy7F1SEefyNXZ4x5HlbsJxSU6_cIBAhVcPR4AIpihEhFpfOtKHkoPHxnGYzi1lC-deilA-dI7Oa2Z28TIOKfGhGFvEp5RjTud6_qMbLAUBH0Td4EjP-0rJ0D_nCfHxy_hpREvKComjawfIDfxkEoeRzmO8YuU00mfQPlOHXqhum4TG4ATady6jBs655lB3RC7QYE--ux1JfwK4vLjdmCz8"/>
+<div class="absolute bottom-6 left-6">
+<h3 class="font-headline text-2xl font-bold uppercase tracking-tighter">Camisetas</h3>
+<span class="text-xs font-label uppercase tracking-widest text-primary-container">Explorar →</span>
+</div>
+</div>
+<div class="group relative h-[400px] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover opacity-70 group-hover:scale-105 group-hover:opacity-100 transition-all duration-500" data-alt="Dark gray oversized hoodie detail with technical zippers and industrial fabric texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_iR8SJHHimySDflKKBH49k6UOnI7gjRiYgbyDgnNH_fjPljdil5s3vE3HfzayQoQQbjl93td07YvMdyXS3uWOMaukJl8H7SvqTMp4ZQIuqvKd171NIQDgRAQDFSnnUIjQVA7-0bYGam7CTqBJG8kTPneTV-l50HeQFlaCwaepbXIZDVa2ptZgyYIdRTLeefzzKPlWm8W22kjtB1bZ3CDqdQhF4bNBWLZ0JSkcAMreu_oiHopuoc4JR6VI_2ceFeyKuBmUpYCwP-I"/>
+<div class="absolute bottom-6 left-6">
+<h3 class="font-headline text-2xl font-bold uppercase tracking-tighter">Sudaderas</h3>
+<span class="text-xs font-label uppercase tracking-widest text-primary-container">Explorar →</span>
+</div>
+</div>
+<div class="group relative h-[400px] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover opacity-70 group-hover:scale-105 group-hover:opacity-100 transition-all duration-500" data-alt="Close-up of futuristic tactical belt and urban accessories on a dark metallic surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMqyP_WMCdEBHNXHV-9OklmKIXlXPY5x46hYQBBo7YHBejEYbW8pmYWQsXM6cua3UyXwuxX7NM_yUjL4CXx_LF_jzGttKECAwcFLFu4JiQa2rVulNIAh20_WwjWFMyV7QXdJcdTuTlSJQ4MuZaRFxCRDnMeaUhV1RWN2wVSmbBXOxhdpW_R8bvMCoPTmPXqbTSb3yAsLlwfnwulrfLO594FABmOux8I45za1SHjk1SDidE3zBdrm5j7dFwQRTDfQCsuZ8bF82EmiU"/>
+<div class="absolute bottom-6 left-6">
+<h3 class="font-headline text-2xl font-bold uppercase tracking-tighter">Accesorios</h3>
+<span class="text-xs font-label uppercase tracking-widest text-primary-container">Explorar →</span>
+</div>
+</div>
+<div class="group relative h-[400px] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover opacity-70 group-hover:scale-105 group-hover:opacity-100 transition-all duration-500" data-alt="Close-up of premium black technical sneakers with neon orange accents and rugged sole" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0ytA93Wn01daLDwgnfuAEwHYY7qPRds8_7UX3goLGFJFvCHr_91pANV0fxCvI5ruESzQ1q2FO8xx0Q3Me4PdBLqFtYkooENEa0hf7AAgGUM384aD9OwjvgntgPhYNLeuW5aDVDic1mnerHw0gAq0xioEItZaD9g_J6QHDWTtgCU3HGqjFCyGaNFQGqY43SzwW7wLiCeAJONoYFKHeHn_AUn7UnqUFxGDmgpYB_L2HNmDJjh1mQltdLNctqtDknFNkl-fagpXgJ9Q"/>
+<div class="absolute bottom-6 left-6">
+<h3 class="font-headline text-2xl font-bold uppercase tracking-tighter">Calzado</h3>
+<span class="text-xs font-label uppercase tracking-widest text-primary-container">Explorar →</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-16 border-b border-outline-variant/30 pb-8">
+<div>
+<h2 class="font-headline text-4xl font-black uppercase tracking-tighter">DESTACADOS</h2>
+<p class="text-neutral-500 text-sm uppercase tracking-widest mt-2">URBAN_EQUIPMENT_SYSTEMS_2025</p>
+</div>
+<a class="font-label text-sm uppercase tracking-widest text-primary-container border-b border-primary-container pb-1" href="#">Ver todos</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-y-16 gap-x-8">
+<!-- Product 1 -->
+<div class="group">
+<div class="aspect-[4/5] bg-surface-container-low mb-6 overflow-hidden relative">
+<img alt="Kinetic Shell V1" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="Technical black windbreaker jacket with reflective details on a studio model" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfZ0lthqEuGUZdWfgcPwY4wvDInWBeKSbh77kK-hBldixLivBBgKKIhc5ukiF3pQU5ul89RPF3ePiZgdeBBCM2-NSWjmQ7HprgRox-wefosXY7h8LcmcoKRFG6KA7tHbE_vPp83C8zSi4LWuuVEYaAB5rpWfytf09OnornTUfuAh7Q8hQtxE-aoJ140ItCajUeACyaXMxQniyQonNwByPeVRLyj3Ln-eZjj3eHGZMB3PfhzWZoO-gXRVFCvJEEpB8-TGYxHqOOaZE"/>
+<div class="absolute top-4 right-4 bg-primary-container text-on-primary-fixed text-[10px] font-bold px-3 py-1 uppercase tracking-widest">LIMITED</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[10px] font-label uppercase text-neutral-500 tracking-[0.2em] mb-1">OUTERWEAR</p>
+<h4 class="font-headline text-xl font-bold uppercase">Kinetic Shell V1</h4>
+</div>
+<span class="font-headline font-bold text-primary-container">249,00€</span>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group">
+<div class="aspect-[4/5] bg-surface-container-low mb-6 overflow-hidden relative">
+<img alt="Drip Logo Tee" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="Heavyweight black cotton t-shirt with large orange graphic logo on back" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgfgyH2YSgNLzOR9BwsQo8cvJ2M8fSX52Yrt5uZ7CV024P4ke1M0gwJeW7PNZQ5PF97wqRAEPBuTboqQuPM_WMphPDrDMTL0F5AAnszPfkoyKsxN3MMlEXtYRu1iBNe9Hi8BHdDgktvieosU5MhKBXY8jEd2gBSBoSh-Xi8gcb_Q2IrrBlDDZDVQqgDe09rxjffgPKRiXLQDddSC0flmLPKl7RHNFxx5YimanjAENXZYS-vSTybnA4geY5KY2DQfE9hsARtwFXPoM"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[10px] font-label uppercase text-neutral-500 tracking-[0.2em] mb-1">TOPS</p>
+<h4 class="font-headline text-xl font-bold uppercase">Drip Logo Tee</h4>
+</div>
+<span class="font-headline font-bold text-primary-container">45,00€</span>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group">
+<div class="aspect-[4/5] bg-surface-container-low mb-6 overflow-hidden relative">
+<img alt="Cargo Pants X-01" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="Wide leg tactical cargo pants in olive green with multiple pockets and straps" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWaPUGbBVa9BIfKOuIRdv9J0J2GQ0-mvku9LOcGuxIvHj-zzVinXxnQt6t4k-niROQYvCmaTl1M0bUwzoxOo3n7Y9O-VM8dRwx-JfEbzxAzqrstwFZDTMTBuIxRGvilGskexjc337LKQz2OvvLl1Sd4sLK_KwqnXJ0j1psISdn-iBB1_mT6zGdxQdKOUYW2PQj-96q5QUo74O_rrfPqGHnFZlniyrOhsMc82npZpzHcCN3SCvivdfdlGfJZ5rzKL0-8M-rgCBBNg4"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[10px] font-label uppercase text-neutral-500 tracking-[0.2em] mb-1">BOTTOMS</p>
+<h4 class="font-headline text-xl font-bold uppercase">Cargo Pants X-01</h4>
+</div>
+<span class="font-headline font-bold text-primary-container">120,00€</span>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="group">
+<div class="aspect-[4/5] bg-surface-container-low mb-6 overflow-hidden relative">
+<img alt="Cyber Hoodie" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="Black hoodie with intricate cyberpunk-style embroidery on sleeves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4aThxAqDRsN41LIUPhYc1N-EhhfozWQ3DJgeSmpBkjwYq0OFxicFX3eIKA8i5Epx67GLj3x_acJh-z6XVSXNqEUTKzZawrIXfa3z1DC_WGEpcr7ONK915fj7S6ZdsQlQDMUlnaBI7pkwRXBswPBVYYU_DlsoZQoWM-Pw8rN0o3uqj_wCEq3yDRuZ3xAHYgOHfh9Fjdg6ce0kwfnWVw7H06LpODPI0S3nSfGcZhDBz8_zXTcOjVAhLI3twJOLTqbEsjyEl48xly_A"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[10px] font-label uppercase text-neutral-500 tracking-[0.2em] mb-1">TOPS</p>
+<h4 class="font-headline text-xl font-bold uppercase">Cyber Hoodie</h4>
+</div>
+<span class="font-headline font-bold text-primary-container">89,00€</span>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="group">
+<div class="aspect-[4/5] bg-surface-container-low mb-6 overflow-hidden relative">
+<img alt="Urban Runner 2.0" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="Futuristic running shoes with transparent sole and neon mesh details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVW88HpFumGC-HSiuUd64xclh47aKU0AGf0beKp8ItuXu2oeSl1SuMWbxadesFHWytY3AwbCrKTNdf9BAaJwuNm0r2br8do0qj1R19ipceu0CoYLKbgLjdl6nnNYPx62w0HjiHuthsbxsHt7f6QH2NiphKLF8rvx3gGMVCGqnSFCSrS5kDWZeTf5kvfjHxTIpgeYHGjRI-FeoAvNnSW7hL66hIPn0Nzu79l7W4ucl2WJT_HVYyM1mOZWEfRq5j3lGIzQBXx_OYvtM"/>
+<div class="absolute top-4 right-4 bg-white text-black text-[10px] font-bold px-3 py-1 uppercase tracking-widest">BESTSELLER</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[10px] font-label uppercase text-neutral-500 tracking-[0.2em] mb-1">FOOTWEAR</p>
+<h4 class="font-headline text-xl font-bold uppercase">Urban Runner 2.0</h4>
+</div>
+<span class="font-headline font-bold text-primary-container">185,00€</span>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="group">
+<div class="aspect-[4/5] bg-surface-container-low mb-6 overflow-hidden relative">
+<img alt="Utility Vest" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="Multifunctional techwear vest with modular attachment points" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD75Dnf4WVGdR7_0N2EXzOsNfSK9kVmjolyzOHHrXO0wevYf-cN6rw_8A2WsCwNJlVlw0nUdAwPcOqKkkdfmq-mmSBJKLgctuc22qXoO2X6Ny1eUa7E8ALucVX4CQSV_MuY_2_9BKTXKd8KVRKfV_HujH88KPNe1OBAR4AjDey0p-RnXrlh4va6tp2BBNa5OOvLSk2rC6f9mSek3Sy-r59Z0ZB8PE_ZEdhKvWvUZNoSx2jacnZRn3e1ZNB3iMnBrks-UZ0TXqaYEjc"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[10px] font-label uppercase text-neutral-500 tracking-[0.2em] mb-1">EQUIPMENT</p>
+<h4 class="font-headline text-xl font-bold uppercase">Utility Vest</h4>
+</div>
+<span class="font-headline font-bold text-primary-container">110,00€</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Exclusive Drop Section -->
+<section class="py-32 bg-surface-container-lowest border-y border-outline-variant/20 relative overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-10 pointer-events-none">
+<span class="font-headline text-[20vw] font-black text-primary uppercase select-none">VOID</span>
+</div>
+<div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+<h2 class="font-headline text-6xl md:text-8xl font-black uppercase tracking-tighter mb-8">VOID SERIES</h2>
+<p class="text-neutral-400 font-label uppercase tracking-[0.4em] mb-12">NEXT GEN DROP ARRIVING IN</p>
+<div class="grid grid-cols-4 gap-4 mb-16 max-w-2xl mx-auto">
+<div class="bg-surface-container p-6 border-b-4 border-primary-container">
+<span class="block font-headline text-4xl font-bold">02</span>
+<span class="text-[10px] uppercase font-label text-neutral-500 tracking-widest">DÍAS</span>
+</div>
+<div class="bg-surface-container p-6 border-b-4 border-primary-container">
+<span class="block font-headline text-4xl font-bold">14</span>
+<span class="text-[10px] uppercase font-label text-neutral-500 tracking-widest">HORAS</span>
+</div>
+<div class="bg-surface-container p-6 border-b-4 border-primary-container">
+<span class="block font-headline text-4xl font-bold">55</span>
+<span class="text-[10px] uppercase font-label text-neutral-500 tracking-widest">MINS</span>
+</div>
+<div class="bg-surface-container p-6 border-b-4 border-primary-container">
+<span class="block font-headline text-4xl font-bold">08</span>
+<span class="text-[10px] uppercase font-label text-neutral-500 tracking-widest">SEGS</span>
+</div>
+</div>
+<button class="bg-white text-black px-12 py-5 font-headline font-black uppercase tracking-[0.2em] hover:bg-primary-container hover:text-white transition-all duration-300">
+                    ACCEDER AL DROP
+                </button>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 px-6 bg-surface">
+<div class="max-w-7xl mx-auto">
+<h3 class="font-headline text-3xl font-bold uppercase mb-16 tracking-tighter">LA TRIBU HABLA</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container p-10 border-l-2 border-primary-container">
+<div class="flex text-primary-container mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body text-on-surface mb-8 italic">"La calidad de la Kinetic Shell es de otro planeta. El tejido es súper técnico y el corte futurista es justo lo que buscaba."</p>
+<p class="font-headline font-bold uppercase text-xs tracking-widest">— MARCO V. <span class="text-neutral-500 ml-2">@MV_SYSTEMS</span></p>
+</div>
+<div class="bg-surface-container p-10 border-l-2 border-primary-container">
+<div class="flex text-primary-container mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body text-on-surface mb-8 italic">"Envío rapidísimo a Madrid. Las zapas Urban Runner son comodísimas y los detalles en naranja flúor destacan muchísimo."</p>
+<p class="font-headline font-bold uppercase text-xs tracking-widest">— LUCÍA G. <span class="text-neutral-500 ml-2">@LUCY_VOID</span></p>
+</div>
+<div class="bg-surface-container p-10 border-l-2 border-primary-container">
+<div class="flex text-primary-container mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body text-on-surface mb-8 italic">"Streetwear real. Nada de copias, diseño original y materiales premium. Drip Store es mi nueva tienda de confianza."</p>
+<p class="font-headline font-bold uppercase text-xs tracking-widest">— ADRIÁN R. <span class="text-neutral-500 ml-2">@ADRI_URBAN</span></p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter -->
+<section class="py-24 px-6 bg-surface-container-high border-t border-outline-variant/20">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="font-headline text-5xl font-black uppercase tracking-tighter mb-4">ÚNETE A LA TRIBU</h2>
+<p class="text-neutral-400 font-label uppercase tracking-widest mb-12">RECIBE ACCESO PRIORITARIO A TODOS LOS DROPS</p>
+<div class="flex flex-col md:flex-row gap-0 max-w-xl mx-auto border border-neutral-700">
+<input class="flex-grow bg-surface-container-lowest border-none px-6 py-5 font-headline uppercase tracking-widest focus:ring-0 text-white placeholder-neutral-600" placeholder="TU EMAIL AQUÍ" type="email"/>
+<button class="bg-primary-container text-on-primary-fixed px-10 py-5 font-headline font-black uppercase tracking-widest hover:bg-white transition-all duration-300">SUSCRIBIRSE</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-neutral-950 w-full py-12 px-6 border-t border-neutral-800">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
+<div>
+<div class="text-xl font-black text-neutral-100 font-headline uppercase mb-4">DRIP STORE</div>
+<p class="text-neutral-500 font-label uppercase text-[10px] tracking-widest">© 2025 DRIP STORE. URBAN KINETIC SYSTEMS.</p>
+</div>
+<div class="flex justify-center space-x-8">
+<a class="font-headline uppercase text-[10px] tracking-widest text-neutral-500 hover:text-orange-500 underline-offset-4 hover:underline transition-all duration-200" href="#">Privacidad</a>
+<a class="font-headline uppercase text-[10px] tracking-widest text-neutral-500 hover:text-orange-500 underline-offset-4 hover:underline transition-all duration-200" href="#">Términos</a>
+<a class="font-headline uppercase text-[10px] tracking-widest text-neutral-500 hover:text-orange-500 underline-offset-4 hover:underline transition-all duration-200" href="#">Envíos</a>
+<a class="font-headline uppercase text-[10px] tracking-widest text-neutral-500 hover:text-orange-500 underline-offset-4 hover:underline transition-all duration-200" href="#">Contacto</a>
+</div>
+<div class="flex justify-center md:justify-end space-x-6">
+<a class="text-neutral-500 hover:text-primary-container transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="text-neutral-500 hover:text-primary-container transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-neutral-500 hover:text-primary-container transition-colors" href="#"><span class="material-symbols-outlined">language</span></a>
+</div>
+</div>
+</footer>
+</body></html>

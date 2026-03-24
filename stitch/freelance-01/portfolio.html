@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MARC STUDIO | Diseño que impacta</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-secondary-fixed-variant": "#3c4d00",
+                "on-tertiary": "#2f3131",
+                "on-error": "#690005",
+                "tertiary-fixed-dim": "#c6c6c7",
+                "on-tertiary-fixed-variant": "#454747",
+                "on-secondary-fixed": "#161e00",
+                "inverse-on-surface": "#313030",
+                "secondary-fixed-dim": "#abd600",
+                "on-primary": "#570066",
+                "surface-dim": "#131313",
+                "surface-variant": "#353534",
+                "tertiary-fixed": "#e2e2e2",
+                "background": "#131313",
+                "primary-container": "#e446ff",
+                "tertiary": "#c6c6c7",
+                "inverse-surface": "#e5e2e1",
+                "surface-tint": "#faabff",
+                "outline": "#9f8a9e",
+                "primary": "#faabff",
+                "on-background": "#e5e2e1",
+                "on-tertiary-fixed": "#1a1c1c",
+                "surface": "#131313",
+                "on-primary-container": "#4c0059",
+                "surface-bright": "#3a3939",
+                "secondary-container": "#c3f400",
+                "inverse-primary": "#a200bb",
+                "on-surface": "#e5e2e1",
+                "on-tertiary-container": "#282a2a",
+                "on-secondary": "#283500",
+                "secondary": "#ffffff",
+                "outline-variant": "#524152",
+                "secondary-fixed": "#c3f400",
+                "surface-container-lowest": "#0e0e0e",
+                "error-container": "#93000a",
+                "primary-fixed-dim": "#faabff",
+                "error": "#ffb4ab",
+                "surface-container-highest": "#353534",
+                "primary-fixed": "#ffd6fe",
+                "on-secondary-container": "#556d00",
+                "surface-container-low": "#1c1b1b",
+                "on-error-container": "#ffdad6",
+                "on-surface-variant": "#d7c0d4",
+                "tertiary-container": "#909191",
+                "surface-container": "#201f1f",
+                "on-primary-fixed": "#35003f",
+                "surface-container-high": "#2a2a2a",
+                "on-primary-fixed-variant": "#7b008f"
+              },
+              fontFamily: {
+                "headline": ["Space Grotesk"],
+                "body": ["Inter"],
+                "label": ["Space Grotesk"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        body { background-color: #131313; color: #e5e2e1; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .electric-glow { text-shadow: 0 0 20px rgba(250, 171, 255, 0.4); }
+        .bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.5rem; }
+    </style>
+</head>
+<body class="selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopNavBar -->
+<nav class="bg-[#131313]/60 backdrop-blur-xl docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-[1440px] mx-auto">
+<div class="text-xl font-black tracking-tighter text-white dark:text-white uppercase font-headline">MARC STUDIO</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Space_Grotesk'] font-bold uppercase tracking-tighter text-sm text-[#faabff] border-b-2 border-[#c3f400] pb-1" href="#">Work</a>
+<a class="font-['Space_Grotesk'] font-bold uppercase tracking-tighter text-sm text-white/70 hover:text-[#c3f400] transition-all duration-300 ease-out" href="#">Services</a>
+<a class="font-['Space_Grotesk'] font-bold uppercase tracking-tighter text-sm text-white/70 hover:text-[#c3f400] transition-all duration-300 ease-out" href="#">About</a>
+<a class="font-['Space_Grotesk'] font-bold uppercase tracking-tighter text-sm text-white/70 hover:text-[#c3f400] transition-all duration-300 ease-out" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 font-headline font-bold uppercase tracking-tight text-sm rounded-lg hover:scale-105 active:scale-95 transition-all">
+                Hablemos
+            </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex flex-col justify-center items-start px-6 md:px-24 py-20 overflow-hidden">
+<div class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-primary/20 blur-[120px] -z-10 rounded-full"></div>
+<div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-secondary-fixed/10 blur-[100px] -z-10 rounded-full"></div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/30 mb-8 self-start">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span>
+<span class="text-xs font-label uppercase font-bold tracking-widest text-secondary-fixed">Disponible para proyectos</span>
+</div>
+<h1 class="text-5xl md:text-8xl lg:text-[10rem] font-black font-headline leading-[0.9] tracking-tighter mb-8 uppercase max-w-5xl">
+                DISEÑO QUE <span class="text-primary italic electric-glow">IMPACTA.</span> IDEAS QUE CONECTAN.
+            </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl mb-12 font-body font-light leading-relaxed">
+                Creando identidades visuales memorables y experiencias digitales potentes que elevan marcas al siguiente nivel.
+            </p>
+<div class="flex flex-wrap gap-6">
+<a class="px-8 py-4 bg-primary text-on-primary font-headline font-bold uppercase tracking-wider rounded-lg text-lg flex items-center gap-2 group" href="#work">
+                    Ver mi trabajo
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="px-8 py-4 border border-outline font-headline font-bold uppercase tracking-wider rounded-lg text-lg hover:bg-surface-container-high transition-colors" href="#contact">
+                    Contactar
+                </a>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-32 px-6 md:px-24 bg-surface-container-lowest" id="services">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+<h2 class="text-4xl md:text-6xl font-black font-headline uppercase leading-none tracking-tighter">
+                        Servicios <br/><span class="text-secondary-fixed">Creativos</span>
+</h2>
+<p class="text-on-surface-variant max-w-md font-body">Soluciones integrales de diseño enfocadas en la excelencia visual y la funcionalidad estratégica.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Service Card 1 -->
+<div class="group p-8 bg-surface border-b-4 border-transparent hover:border-primary transition-all duration-500 flex flex-col h-full">
+<span class="material-symbols-outlined text-primary text-5xl mb-8" data-icon="fingerprint">fingerprint</span>
+<h3 class="text-2xl font-black font-headline uppercase mb-4 tracking-tight">Identidad Visual</h3>
+<p class="text-on-surface-variant mb-8 font-body">Logotipos, manuales de marca y sistemas visuales cohesivos que cuentan historias únicas.</p>
+<div class="mt-auto pt-8 border-t border-white/5 flex justify-between items-center">
+<span class="font-headline font-bold text-secondary-fixed text-lg">Desde $1,200</span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">add_circle</span>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="group p-8 bg-surface border-b-4 border-transparent hover:border-secondary-fixed transition-all duration-500 flex flex-col h-full">
+<span class="material-symbols-outlined text-secondary-fixed text-5xl mb-8" data-icon="terminal">terminal</span>
+<h3 class="text-2xl font-black font-headline uppercase mb-4 tracking-tight">Diseño Web</h3>
+<p class="text-on-surface-variant mb-8 font-body">Experiencias digitales intuitivas y responsivas desarrolladas para convertir y cautivar.</p>
+<div class="mt-auto pt-8 border-t border-white/5 flex justify-between items-center">
+<span class="font-headline font-bold text-secondary-fixed text-lg">Desde $2,500</span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">add_circle</span>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="group p-8 bg-surface border-b-4 border-transparent hover:border-primary transition-all duration-500 flex flex-col h-full">
+<span class="material-symbols-outlined text-primary text-5xl mb-8" data-icon="auto_awesome">auto_awesome</span>
+<h3 class="text-2xl font-black font-headline uppercase mb-4 tracking-tight">Dirección de Arte</h3>
+<p class="text-on-surface-variant mb-8 font-body">Conceptualización estética de alto nivel para campañas, fotografía y contenido editorial.</p>
+<div class="mt-auto pt-8 border-t border-white/5 flex justify-between items-center">
+<span class="font-headline font-bold text-secondary-fixed text-lg">Desde $1,800</span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">add_circle</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio/Work Section -->
+<section class="py-32 px-6 md:px-24" id="work">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20 text-right">
+<h2 class="text-4xl md:text-8xl font-black font-headline uppercase leading-none tracking-tighter">
+                        Proyectos <br/><span class="text-primary">Seleccionados</span>
+</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
+<!-- Project 1 -->
+<div class="lg:col-span-7 group cursor-pointer">
+<div class="relative overflow-hidden aspect-[16/10] bg-surface-container-high rounded-lg mb-6">
+<img alt="Proyecto NEO" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="Modern minimalist branding design with neon magenta accents on high-contrast black and grey industrial backgrounds" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnxTnPAu8cfjhA9hv2pY2z8gYIHpBjkYNUUPVN_jsIrTjfb_leodAsjo2dViZaxRziL2dBnwyDQbJecgb3flz6kVXvbrMyrWBosWfX508RHTy8fnUXj-DJsD6crpS76UZXjXqrHN8uBMFSUepuisMbL4hJxVA5hu3yjgBQWtrP4ELBOP2kbMz5j6PCuzWAP_yuHfBbIbFKev7uYO9ewBvxaYJmWJFV1xXumJEJ_lHXUbGmyiRL_JFDCvE9n7ZvUbktTOubno2mcGU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-2xl font-black font-headline uppercase tracking-tight">Proyecto NEO</h4>
+<p class="text-on-surface-variant font-body">Branding, 2024</p>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed text-4xl" data-icon="north_east">north_east</span>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="lg:col-span-5 group cursor-pointer mt-12 md:mt-24">
+<div class="relative overflow-hidden aspect-[4/5] bg-surface-container-high rounded-lg mb-6">
+<img alt="Lumina Web" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="Sleek mobile app interface mockup with dark mode design and lime green highlights for high-tech company" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf0oDUgUQpltFg58hrzHrhZ4TSf8MTL6iEN_tyCWPIiea_UVjvc-_Zmup-z3ZYz-S4x7XL0dJgGndEpGmyORN6aSz2eXuPU2luvkZW6Y-PhPf3EQLXabF6oTraYGVJZ4zfeKjlmIEAq7jkRTlUH0Us-ta6g8nvTvqiaqU79KNvw2VymZacogChIQyGwy6UAGWqrS2ol5PS0f0k-ibV486VWaNP2OKZ2BcJNN8iIIMaufJNSFNHXqznZ1A4fRIw6Cg8QJn7DrH34SE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-2xl font-black font-headline uppercase tracking-tight">Lumina Web</h4>
+<p class="text-on-surface-variant font-body">Web Design, 2023</p>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed text-4xl" data-icon="north_east">north_east</span>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="lg:col-span-5 group cursor-pointer">
+<div class="relative overflow-hidden aspect-[4/5] bg-surface-container-high rounded-lg mb-6">
+<img alt="Revista ART" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="Editorial magazine layout spread with bold typography and abstract artistic photography in black and white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5TDTeo6695ZEGoCHP4stT_UxhUl_OUD5Jn4OCo2kA2-wF4M46_XF9xZDVPXNeWmApNYJMcikugfvnaCOxWtzXOL6zwt7u3mXWm_ObDqvCYVoHaOCbFYLR2wEVKG01LF9eDjH9WHEJkpyFbzmE3i8xEGy0RTJ9_6pi72_jbGrnmKQ-w__GwMpTnB4QhkYtVsHylbDp9iZRS0s6OOrgd0AsY3Pn8xWVq_NKplVLQQ8bcnEn_nxaiP9tSvg4fQYHlmgeJvqPk4vbUag"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-2xl font-black font-headline uppercase tracking-tight">Revista ART</h4>
+<p class="text-on-surface-variant font-body">Layout, 2024</p>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed text-4xl" data-icon="north_east">north_east</span>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="lg:col-span-7 group cursor-pointer mt-0 md:-mt-12">
+<div class="relative overflow-hidden aspect-[16/10] bg-surface-container-high rounded-lg mb-6">
+<img alt="Studio 99" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="Corporate office environment with premium interior design and minimalist brand identity signage for a creative studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh2gjYdazCCOm_Dncrh_XFuIwEC6xW3BFqxJWGvFcwbxuVV06yzkQtlePzRcGXntTx10I6MbnYeOTjbew6oxWpe0VyC0Fb6Y1zS2CggUHGMIqKXk8I5_GyToQBMMABAUTUKSNB8E-R6cs0Ja7_nGkyLpshlztDpxMb4i22l66xS6VrQh1lK9FOVegRtmwilwW95vXVR6rqCKla2Gi4bi4qLrWKufZtUN47Z9xGnH162VH7oddbf5wn5PG6lmdvJCRYo23jJ8Tk7nQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-2xl font-black font-headline uppercase tracking-tight">Studio 99</h4>
+<p class="text-on-surface-variant font-body">Visual ID, 2023</p>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed text-4xl" data-icon="north_east">north_east</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-32 px-6 md:px-24 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto">
+<h2 class="text-4xl md:text-6xl font-black font-headline uppercase mb-24 tracking-tighter">Cómo <span class="text-secondary-fixed">trabajamos</span></h2>
+<div class="grid md:grid-cols-4 gap-12">
+<div class="relative">
+<span class="text-8xl font-black font-headline text-surface-container-highest opacity-30 absolute -top-12 -left-4">01</span>
+<div class="relative z-10 pt-4">
+<h4 class="text-xl font-bold font-headline uppercase mb-4 text-primary">Briefing</h4>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">Entendemos tus objetivos, audiencia y la esencia de tu proyecto para trazar una hoja de ruta ganadora.</p>
+</div>
+</div>
+<div class="relative">
+<span class="text-8xl font-black font-headline text-surface-container-highest opacity-30 absolute -top-12 -left-4">02</span>
+<div class="relative z-10 pt-4">
+<h4 class="text-xl font-bold font-headline uppercase mb-4 text-primary">Concepto</h4>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">Exploramos rutas creativas y destilamos la idea central que hará que tu marca destaque.</p>
+</div>
+</div>
+<div class="relative">
+<span class="text-8xl font-black font-headline text-surface-container-highest opacity-30 absolute -top-12 -left-4">03</span>
+<div class="relative z-10 pt-4">
+<h4 class="text-xl font-bold font-headline uppercase mb-4 text-primary">Diseño</h4>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">Damos vida a la visión con precisión técnica y una estética eléctrica de alto impacto.</p>
+</div>
+</div>
+<div class="relative">
+<span class="text-8xl font-black font-headline text-surface-container-highest opacity-30 absolute -top-12 -left-4">04</span>
+<div class="relative z-10 pt-4">
+<h4 class="text-xl font-bold font-headline uppercase mb-4 text-primary">Entrega</h4>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">Finalizamos cada detalle y te entregamos todas las herramientas para que tu marca brille.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Me Section -->
+<section class="py-32 px-6 md:px-24" id="about">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-20">
+<div class="w-full md:w-1/2 relative group">
+<div class="absolute inset-0 bg-primary/20 rounded-full blur-3xl group-hover:bg-secondary-fixed/20 transition-all duration-700"></div>
+<div class="aspect-square rounded-full overflow-hidden border-4 border-surface-container-high relative z-10">
+<img alt="Marc Studio Profile" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Close-up portrait of a male graphic designer with stylish spectacles, looking confident in a moody, dimly lit studio environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNApmZ5P91KnTy_Cwd8DNI8DHgGp490g8kQXfUpUXnOVkQmcCJw9-7QBIZTqfPTQ1QXxfXBgdmamY-p-eFaossrjFQzm2O87G9ooFnynLGvjzdaFHdx49IjcoX1-dEM9nbR49ZtIE2LU5E1UL2jpRpbV-XC21fA70dennS2sPzfDxiy1A5CxXGto3q8bN2A0c3a3blc3UHQtrULv1Y-ikZ522zNi9qg7HBsgTJo0eNEiciRBXOeFEPWjg8S0awYyzSsDm5woZaQU4"/>
+</div>
+<div class="absolute -bottom-6 -right-6 bg-secondary-fixed text-on-secondary-fixed p-6 rounded-lg font-headline font-black text-3xl uppercase rotate-6 hidden md:block">
+                        MARC <br/>STUDIO
+                    </div>
+</div>
+<div class="w-full md:w-1/2">
+<h2 class="text-4xl md:text-6xl font-black font-headline uppercase mb-8 tracking-tighter">Sobre <span class="text-primary">mí</span></h2>
+<p class="text-xl text-on-surface leading-relaxed mb-8 font-body font-light">
+                        Soy Marc, diseñador con más de 8 años de experiencia transformando ideas en realidades visuales. Mi enfoque combina la precisión del diseño suizo con la energía del brutalismo digital contemporáneo.
+                    </p>
+<div class="flex flex-wrap gap-3 mb-12">
+<span class="px-4 py-2 bg-surface-container-high text-xs font-label font-bold uppercase tracking-widest text-on-surface-variant rounded">Photoshop</span>
+<span class="px-4 py-2 bg-surface-container-high text-xs font-label font-bold uppercase tracking-widest text-on-surface-variant rounded">Figma</span>
+<span class="px-4 py-2 bg-surface-container-high text-xs font-label font-bold uppercase tracking-widest text-on-surface-variant rounded">Webflow</span>
+<span class="px-4 py-2 bg-surface-container-high text-xs font-label font-bold uppercase tracking-widest text-on-surface-variant rounded">After Effects</span>
+<span class="px-4 py-2 bg-surface-container-high text-xs font-label font-bold uppercase tracking-widest text-on-surface-variant rounded">Branding</span>
+</div>
+<a class="inline-flex items-center gap-4 text-secondary-fixed font-headline font-bold uppercase tracking-widest group" href="#contact">
+                        Más de mi historia
+                        <span class="w-12 h-[2px] bg-secondary-fixed group-hover:w-16 transition-all"></span>
+</a>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-32 px-6 md:px-24 bg-surface-container-lowest overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-surface p-10 border-l border-primary/20">
+<div class="flex gap-1 text-secondary-fixed mb-6">
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-xl font-body italic mb-10 text-on-surface">"Impresionante trabajo. Logró capturar la esencia de nuestra marca tecnológica con un estilo futurista que no habíamos visto antes."</p>
+<div>
+<p class="font-headline font-bold uppercase tracking-tight text-primary">Client A</p>
+<p class="text-xs font-label uppercase text-on-surface-variant">TechCorp</p>
+</div>
+</div>
+<div class="bg-surface p-10 border-l border-secondary-fixed/20">
+<div class="flex gap-1 text-secondary-fixed mb-6">
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-xl font-body italic mb-10 text-on-surface">"Visión artística pura. Marc no solo diseña, crea piezas de arte digital que elevan cualquier plataforma donde se presenten."</p>
+<div>
+<p class="font-headline font-bold uppercase tracking-tight text-primary">Client B</p>
+<p class="text-xs font-label uppercase text-on-surface-variant">Arthouse</p>
+</div>
+</div>
+<div class="bg-surface p-10 border-l border-primary/20">
+<div class="flex gap-1 text-secondary-fixed mb-6">
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-xl font-body italic mb-10 text-on-surface">"Profesional y rápido. Superó todas las expectativas en el rediseño de nuestra identidad en tiempo récord."</p>
+<div>
+<p class="font-headline font-bold uppercase tracking-tight text-primary">Client C</p>
+<p class="text-xs font-label uppercase text-on-surface-variant">StartUp</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-32 px-6 md:px-24" id="contact">
+<div class="max-w-4xl mx-auto text-center mb-20">
+<h2 class="text-4xl md:text-7xl font-black font-headline uppercase leading-none tracking-tighter mb-8">
+                    ¿Tienes un proyecto <br/><span class="text-secondary-fixed">en mente?</span>
+</h2>
+<p class="text-on-surface-variant text-lg">Hagamos algo extraordinario juntos.</p>
+</div>
+<div class="max-w-3xl mx-auto">
+<form class="space-y-6">
+<div class="grid md:grid-cols-2 gap-6">
+<div>
+<label class="block text-xs font-label font-bold uppercase tracking-widest text-on-surface-variant mb-2">Nombre</label>
+<input class="w-full bg-surface-container-lowest border-none focus:ring-2 focus:ring-secondary-fixed p-4 font-body text-on-surface rounded-none" placeholder="Tu nombre" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-label font-bold uppercase tracking-widest text-on-surface-variant mb-2">Email</label>
+<input class="w-full bg-surface-container-lowest border-none focus:ring-2 focus:ring-secondary-fixed p-4 font-body text-on-surface rounded-none" placeholder="tu@email.com" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-xs font-label font-bold uppercase tracking-widest text-on-surface-variant mb-2">Mensaje</label>
+<textarea class="w-full bg-surface-container-lowest border-none focus:ring-2 focus:ring-secondary-fixed p-4 font-body text-on-surface rounded-none" placeholder="Cuéntame sobre tu proyecto..." rows="6"></textarea>
+</div>
+<button class="w-full py-5 bg-primary text-on-primary font-headline font-black uppercase tracking-[0.2em] text-lg hover:bg-primary-container transition-all active:scale-95">
+                        Enviar mensaje
+                    </button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0e0e0e] full-width py-12 border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-8 max-w-7xl mx-auto gap-8">
+<div class="text-lg font-black text-white font-headline uppercase">MARC STUDIO</div>
+<div class="flex gap-8">
+<a class="font-['Space_Grotesk'] font-bold uppercase text-xs tracking-widest text-white/40 hover:text-[#faabff] transition-colors duration-300" href="#">Instagram</a>
+<a class="font-['Space_Grotesk'] font-bold uppercase text-xs tracking-widest text-white/40 hover:text-[#faabff] transition-colors duration-300" href="#">Behance</a>
+<a class="font-['Space_Grotesk'] font-bold uppercase text-xs tracking-widest text-white/40 hover:text-[#faabff] transition-colors duration-300" href="#">Dribbble</a>
+<a class="font-['Space_Grotesk'] font-bold uppercase text-xs tracking-widest text-white/40 hover:text-[#faabff] transition-colors duration-300" href="#">LinkedIn</a>
+</div>
+<div class="font-['Space_Grotesk'] font-bold uppercase text-xs tracking-widest text-white/40">
+                © 2024 MARC STUDIO. TODOS LOS DERECHOS RESERVADOS.
+            </div>
+</div>
+</footer>
+</body></html>

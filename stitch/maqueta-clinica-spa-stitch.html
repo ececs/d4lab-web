@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURORA SPA &amp; CLÍNICA | Ethereal Sanctuary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&amp;family=Inter:wght@300;400;600&amp;family=Noto+Serif:wght@300;400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-background": "#1d1b16",
+                "secondary": "#705953",
+                "on-tertiary-container": "#372c20",
+                "primary": "#44664a",
+                "surface-variant": "#e7e2d9",
+                "on-primary-fixed": "#00210b",
+                "on-secondary-fixed": "#281813",
+                "on-error-container": "#93000a",
+                "on-secondary-container": "#765f58",
+                "surface": "#fff9ef",
+                "inverse-on-surface": "#f6f0e7",
+                "surface-container": "#f3ede4",
+                "inverse-surface": "#32302a",
+                "surface-tint": "#44664a",
+                "tertiary-fixed": "#f3dfce",
+                "outline": "#727971",
+                "tertiary-container": "#a39283",
+                "primary-fixed-dim": "#aad0ad",
+                "tertiary-fixed-dim": "#d6c3b3",
+                "on-tertiary": "#ffffff",
+                "secondary-fixed": "#fbdcd3",
+                "error-container": "#ffdad6",
+                "on-surface": "#1d1b16",
+                "surface-container-lowest": "#ffffff",
+                "inverse-primary": "#aad0ad",
+                "on-secondary-fixed-variant": "#57423c",
+                "tertiary": "#6a5c4e",
+                "primary-fixed": "#c6ecc8",
+                "secondary-container": "#fbdcd3",
+                "on-error": "#ffffff",
+                "outline-variant": "#c2c8bf",
+                "surface-container-highest": "#e7e2d9",
+                "on-secondary": "#ffffff",
+                "primary-container": "#7a9e7e",
+                "on-primary-fixed-variant": "#2d4e33",
+                "surface-bright": "#fff9ef",
+                "error": "#ba1a1a",
+                "background": "#fff9ef",
+                "secondary-fixed-dim": "#dec0b8",
+                "surface-container-high": "#ede7de",
+                "surface-container-low": "#f9f3ea",
+                "on-primary": "#ffffff",
+                "on-surface-variant": "#424842",
+                "surface-dim": "#dfd9d1",
+                "on-tertiary-fixed": "#231a0f",
+                "on-tertiary-fixed-variant": "#514538",
+                "on-primary-container": "#13341c"
+              },
+              fontFamily: {
+                "headline": ["Cormorant Garamond", "serif"],
+                "body": ["Inter", "sans-serif"],
+                "label": ["Inter", "sans-serif"],
+                "serif": ["Noto Serif", "serif"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-offset {
+            transform: translateX(-5%);
+        }
+        @media (min-width: 768px) {
+            .editorial-offset {
+                transform: translateX(-15%);
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fff9ef]/80 dark:bg-[#1d1b16]/80 backdrop-blur-md">
+<div class="flex justify-between items-center px-12 py-6 max-w-[1920px] mx-auto">
+<span class="text-2xl font-serif tracking-widest text-[#44664a] dark:text-[#f9f3ea]">AURORA</span>
+<div class="hidden md:flex space-x-10 items-center">
+<a class="font-['Noto_Serif'] font-light tracking-tight text-sm text-[#44664a] dark:text-[#7a9e7e] border-b border-[#44664a]/20 pb-1 hover:text-[#44664a] transition-colors duration-300" href="#">Tratamientos</a>
+<a class="font-['Noto_Serif'] font-light tracking-tight text-sm text-[#1d1b16]/70 dark:text-[#f9f3ea]/70 hover:text-[#44664a] transition-colors duration-300" href="#">Reservas</a>
+<a class="font-['Noto_Serif'] font-light tracking-tight text-sm text-[#1d1b16]/70 dark:text-[#f9f3ea]/70 hover:text-[#44664a] transition-colors duration-300" href="#">Sobre nosotras</a>
+<a class="font-['Noto_Serif'] font-light tracking-tight text-sm text-[#1d1b16]/70 dark:text-[#f9f3ea]/70 hover:text-[#44664a] transition-colors duration-300" href="#">Contacto</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 text-xs uppercase tracking-widest rounded-sm hover:bg-on-primary-fixed-variant transition-all duration-300 transform active:scale-95">
+                Reservar cita
+            </button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center px-6 md:px-24 overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-12 w-full gap-12 items-center">
+<div class="md:col-span-6 z-10 space-y-8">
+<div class="inline-flex items-center space-x-3 bg-surface-container-high px-4 py-1 rounded-full">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] uppercase tracking-[0.2em] font-medium text-on-surface-variant">Citas disponibles hoy</span>
+</div>
+<h1 class="text-6xl md:text-8xl font-headline leading-[0.9] text-on-background italic editorial-offset">
+                        Redescubre tu <br/> <span class="not-italic font-light">bienestar</span>
+</h1>
+<p class="max-w-md text-on-surface-variant font-light text-lg leading-relaxed">
+                        Un refugio etéreo donde la ciencia estética se encuentra con la serenidad absoluta. Experiencias diseñadas para restaurar tu esencia.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-6 pt-4">
+<button class="bg-primary text-on-primary px-10 py-5 text-sm uppercase tracking-widest rounded-sm">Reservar ahora</button>
+<button class="text-secondary font-medium text-sm uppercase tracking-widest border-b border-outline-variant/30 pb-1 self-start sm:self-center hover:border-secondary transition-all">Ver tratamientos</button>
+</div>
+</div>
+<div class="md:col-span-6 relative h-[600px] w-full">
+<div class="absolute inset-0 bg-surface-container-low rounded-sm transform translate-x-6 translate-y-6 -z-10"></div>
+<img alt="Aurora Spa Sanctuary" class="w-full h-full object-cover rounded-sm grayscale-[20%] hover:grayscale-0 transition-all duration-700 shadow-2xl" data-alt="luxury spa treatment room with soft warm lighting neutral tones stone textures and botanical accents minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLUvoJULShqQiSVh9Bas1_f58_RAyadXVxQqEVzVOt-8CFdYMA6KBJBpT-ZgIKLCsohNdoqwKwOYaRf-nIL3iCt7a6eeXEgUBGBhlI5L8kqAm761cbBm17ZnkmESgcpT8kdInIcTsCwbwDHnjb4J7Ohoa1wqiPaj-1jLeqVRM5fIfWikD6X3F9zd-s6rprKGLLm3pBJTWYQTQQixa1JMahkQQ49FoZ172OIJw-XRTBHYotmvyOgOxQ5h3KYvMmcvY9GAigw0UGzdrd"/>
+</div>
+</div>
+</section>
+<!-- Featured Treatments -->
+<section class="py-32 px-6 md:px-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20 text-center space-y-4">
+<span class="text-[10px] uppercase tracking-[0.4em] text-secondary font-semibold">Experiencias Exclusivas</span>
+<h2 class="text-5xl font-headline text-on-surface">Tratamientos Destacados</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Card 1 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 aspect-[4/5]">
+<img alt="Facial Premium" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="close up of woman receiving facial treatment in a luxury clinical setting soft focused lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_bWph8zgs1eatVz3qpuvP7fbXjJSvY9caY7EQDJj4dlrjdi4ILPruOefF3oJjPD_a5eFppHR8nB40c4Ozj09_fbYH11eaNY0w-8YC4gpNmaNiPIMQxYSlfcIi3aD1foxFgWxoRFZMfUiMug1f8owXqy3J4giRL_1hpSF9TqnARAHGXs0twEJo30pONxvA7xr89c1gRa_JAqfo26H1L9Tx1GeuVN1EXPAIF6BD_AwfAwvm1KOzmHTRkP4F7vTiRgmIQUwUW25Iii0F"/>
+<div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/40 to-transparent w-full">
+<span class="text-white text-xs uppercase tracking-widest">60 min | desde 85€</span>
+</div>
+</div>
+<h3 class="text-2xl font-headline mb-3 text-on-surface">Facial Premium</h3>
+<p class="text-on-surface-variant font-light text-sm leading-relaxed mb-4">Hidratación profunda con activos botánicos y terapia de luz LED para un brillo instantáneo.</p>
+<a class="inline-block text-xs uppercase tracking-widest border-b border-outline-variant pb-1 group-hover:border-primary transition-colors" href="#">Saber más</a>
+</div>
+<!-- Card 2 -->
+<div class="group cursor-pointer translate-y-8">
+<div class="relative overflow-hidden mb-6 aspect-[4/5]">
+<img alt="Masaje Relajante" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="massage therapy with warm smooth stones and aromatic oils in a dim lit serene environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-2phS-f2xxFlxy1DNNAf28dNbRukLuF3FH3oHC2aFY-eN8rISCIOkcKqybRkAa3S_W58PaD3ZfELFQTbz2Tb7LKVKG-C5OG6c6GWYslMGOg6sz1e44RzdzFCQL9n24ri2jGXVDbYR_pJiXv8OK83eyIdTsho8dSvWXaB6qGiblkq2CDTbEm5cUhAcy-BUDfroD4Ddx4hi3in31GqFsLdKQUS6aZ9LrVxDrJHmU22L7wBjM4WycxXCcMIqKoN2X9v6dtxC9lkIUyrm"/>
+<div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/40 to-transparent w-full">
+<span class="text-white text-xs uppercase tracking-widest">90 min | desde 75€</span>
+</div>
+</div>
+<h3 class="text-2xl font-headline mb-3 text-on-surface">Masaje Relajante</h3>
+<p class="text-on-surface-variant font-light text-sm leading-relaxed mb-4">Técnica sueca combinada con aromaterapia personalizada para liberar tensiones profundas.</p>
+<a class="inline-block text-xs uppercase tracking-widest border-b border-outline-variant pb-1 group-hover:border-primary transition-colors" href="#">Saber más</a>
+</div>
+<!-- Card 3 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 aspect-[4/5]">
+<img alt="Peeling Químico" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="aesthetic medicine clinic procedure clinical precision soft skin detail professional tools" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw-5O-8QxRvs1hIFyctKM5qGzYqgLtkRftZvNbw3iVXsFidptyJVuLP9MT2qO4-z1Xinzg5B8JTxgtbVNwfiLpvtvHcVyw-Dj1PtvdBIbbKeHZwt8uPAgFeBA9YM8Pk1dub1X9kRr5XX4IuTRkI_nHZFZZV-Xy7p6wSgKpbwsKssaQKdEOztvs7LMoEQTiu5cXu6pBKAElvE80GkveoBLgahMHdqMkjibdPO4QoerhaYUQBCQcVsRpnPVw0LCrFLEY5JSTECdS1Fhc"/>
+<div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/40 to-transparent w-full">
+<span class="text-white text-xs uppercase tracking-widest">45 min | desde 110€</span>
+</div>
+</div>
+<h3 class="text-2xl font-headline mb-3 text-on-surface">Peeling Químico</h3>
+<p class="text-on-surface-variant font-light text-sm leading-relaxed mb-4">Renovación celular controlada para corregir imperfecciones y unificar el tono de la piel.</p>
+<a class="inline-block text-xs uppercase tracking-widest border-b border-outline-variant pb-1 group-hover:border-primary transition-colors" href="#">Saber más</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Booking Form Section -->
+<section class="py-32 px-6 bg-background relative overflow-hidden">
+<div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-20 items-start">
+<div class="w-full md:w-1/3 sticky top-32">
+<h2 class="text-5xl font-headline leading-tight mb-8">Agenda tu momento de paz</h2>
+<p class="text-on-surface-variant font-light leading-relaxed mb-12">Selecciona el tratamiento y el horario que mejor se adapte a tu ritmo de vida.</p>
+<div class="space-y-6">
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+<span class="text-xs uppercase tracking-widest">Pago seguro garantizado</span>
+</div>
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-primary text-xl">event_available</span>
+<span class="text-xs uppercase tracking-widest">Confirmación inmediata</span>
+</div>
+</div>
+</div>
+<div class="w-full md:w-2/3 bg-surface-container-lowest p-12 shadow-[0px_20px_40px_rgba(118,95,88,0.06)]">
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-bold">Tratamiento</label>
+<select class="w-full border-0 border-b border-outline-variant bg-transparent py-3 focus:ring-0 focus:border-secondary transition-all">
+<option>Facial Premium</option>
+<option>Masaje Relajante</option>
+<option>Peeling Químico</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-bold">Fecha</label>
+<input class="w-full border-0 border-b border-outline-variant bg-transparent py-3 focus:ring-0 focus:border-secondary transition-all" type="date"/>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-bold">Hora</label>
+<select class="w-full border-0 border-b border-outline-variant bg-transparent py-3 focus:ring-0 focus:border-secondary transition-all">
+<option>09:00 AM</option>
+<option>11:30 AM</option>
+<option>16:00 PM</option>
+<option>18:30 PM</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-bold">Nombre Completo</label>
+<input class="w-full border-0 border-b border-outline-variant bg-transparent py-3 focus:ring-0 focus:border-secondary transition-all placeholder:text-outline-variant" placeholder="Tu nombre" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-bold">Teléfono de contacto</label>
+<input class="w-full border-0 border-b border-outline-variant bg-transparent py-3 focus:ring-0 focus:border-secondary transition-all placeholder:text-outline-variant" placeholder="+34 000 000 000" type="tel"/>
+</div>
+<button class="w-full bg-primary text-on-primary py-5 uppercase tracking-[0.2em] text-sm font-medium hover:bg-on-primary-fixed-variant transition-colors mt-8">Confirmar reserva</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Gallery Antes/Después -->
+<section class="py-32 px-6 md:px-24 bg-surface-container-high">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20">
+<h2 class="text-5xl font-headline mb-4">Resultados que inspiran</h2>
+<p class="text-on-surface-variant font-light">Casos reales de transformación y salud cutánea.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Case 1 -->
+<div class="bg-surface p-4 rounded-sm shadow-sm">
+<div class="grid grid-cols-2 gap-2 mb-4">
+<div class="relative">
+<img alt="Antes" class="w-full h-48 object-cover grayscale" data-alt="close up of skin texture with minor blemishes clinical photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzl2RScysx3kFWZzHoGAow_EaJ1E3Vwx8Bc3PoK__PuxtOhBHIc0OABlPPdzd5e4fR1ge2WLrH_O4wkVyZ3x4w2zys5oNcQ8NU4dFKQN9afFyCZpHYOEIW3YvTSEl9PDRk2wMjCaQSwF-74_sPjbglg--lXrJqdOQjt_883s5CFurceI3XUQFrM8xOZu30MWh6xUdz61eizKZc1vNZnqUwamC0G-1qwmNGmmtVYy3bV4Fe1rv6lxYF-rPp3F4RUpCrJTGMk7x5RiXU"/>
+<span class="absolute top-2 left-2 bg-black/50 text-[8px] text-white px-2 py-0.5 rounded-full uppercase tracking-tighter">Antes</span>
+</div>
+<div class="relative">
+<img alt="Después" class="w-full h-48 object-cover" data-alt="close up of smooth glowing skin after cosmetic treatment clinical photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcxSvKdoE00z07FWbb7UrgKLIxPjJszVIufeZo5NC0IV7tviio94YkERnkwj4z4ELbKWAmP_h74dGNPzMpocAcTNlDLBts1UYSVZxDuulVBi_GlWu_RdCGAmYufcE1dKXeoqn0A33ooL-455EVXukkK1uFY-8wmse6hv0Hx_eivKd9x03ZL4TAmozjeZ8TbFGwoau_4_1NaWLn4joCOl5R1sd9vTBkOR_3_MqB9qA4F1iAmmKGpTcVbZammmHQMFOIxjIrfDk7GjcP"/>
+<span class="absolute top-2 left-2 bg-primary/80 text-[8px] text-white px-2 py-0.5 rounded-full uppercase tracking-tighter">Después</span>
+</div>
+</div>
+<p class="text-[10px] uppercase tracking-widest text-secondary font-bold">Peeling Químico - 3 Sesiones</p>
+</div>
+<!-- Case 2 -->
+<div class="bg-surface p-4 rounded-sm shadow-sm translate-y-4">
+<div class="grid grid-cols-2 gap-2 mb-4">
+<div class="relative">
+<img alt="Antes" class="w-full h-48 object-cover grayscale" data-alt="eyelash and brow detail before enhancement" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASdpkEZ2xj8aJEKZkpIUfNcHQJJBHfCTSDew-9jdGJmL8MEX7__8w3HUv6JCSSbX21F4g1qOkZNnfegx7etH_v5ixVeoOtUgetkrrgc_fRcoUpO_hmwRnqHcj7neiDiJe77yKIbMRgUE80AbOqGUP3STahkIKIcE6jU6kpn6_8RqszGhUAuzo9In6tNVif23iXYF9nL9NPWtYUq8U9Vdb7epuiQFMLHzA4pFU5VPalLa1OfEMEbeygMy6PbCkU5C9HDlUxdeu6_9qz"/>
+<span class="absolute top-2 left-2 bg-black/50 text-[8px] text-white px-2 py-0.5 rounded-full uppercase tracking-tighter">Antes</span>
+</div>
+<div class="relative">
+<img alt="Después" class="w-full h-48 object-cover" data-alt="perfectly shaped brows and enhanced eyelashes high end aesthetic result" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADa0kryEJhA4jMIQTWbUjaaSG9iyGgMc3jWZvGNsa20FpkL0Bwrq0dP1BXyPGQRHY2ou-loCU_6qeXS4vgPwWu7XMhuWr3SVCHM4CLDv51WXsj0Z60Xh5y85s-KLAs4eyCXcVPeDouG0sZyIm8_JA-O01WgdKGQZuCM97vngVmF1l3kWzxo8et5kYI1JwVAgwjHOMT9Dx77hZMKuRD8l69vKD5lpbzoxngcAgyYNBfPggjg_OONK7GO_nD6CqVSA_hflRRyihIqBPa"/>
+<span class="absolute top-2 left-2 bg-primary/80 text-[8px] text-white px-2 py-0.5 rounded-full uppercase tracking-tighter">Después</span>
+</div>
+</div>
+<p class="text-[10px] uppercase tracking-widest text-secondary font-bold">Diseño de Mirada - 1 Sesión</p>
+</div>
+<!-- Case 3 -->
+<div class="bg-surface p-4 rounded-sm shadow-sm">
+<div class="grid grid-cols-2 gap-2 mb-4">
+<div class="relative">
+<img alt="Antes" class="w-full h-48 object-cover grayscale" data-alt="facial profile before hydration treatment dull skin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7UK93ukVDGe9fedZz31V5KAon-hB6Pkndntgv5pPRZ5dEsgapPI22rdg4Q9G-goiShcQ-zez0Y4zJjwp7LrZBfgJnxDKP0ed5Ak17aq1lWThIBh4weCt64sibKKeiPZxXJJznXzdu0Sll8YO1ax3PWeiFfdAlqoY01LfUu-4VgKz2SOf6-kp0cpte7XdHjTM-IrIkPZLuFmzpRAfU-kv-uksGVthZCALEnHyQ_JeTzEwRjO0l0aHOyfW2FuIL65yFSr_DIKew7tgb"/>
+<span class="absolute top-2 left-2 bg-black/50 text-[8px] text-white px-2 py-0.5 rounded-full uppercase tracking-tighter">Antes</span>
+</div>
+<div class="relative">
+<img alt="Después" class="w-full h-48 object-cover" data-alt="facial profile after premium hydration treatment radiant skin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmD8PeIo5pCed3OLIZCOYrs-u3qxix-H4bV-vJsT0GBB9wxcc8gmRxYEjiMEaU6ebUMzbztlH54I5by_26u08IYWqNURGS5bwumP_GM1HMTyVjXk-5IPwwKi9vJTPjtk4iHaiUKvhDMi7g6CADVtycaMJy51uu-mWzGvTIoRhIu9294j8cx-GcOG4JhKCWJ7qwSAZjl8ad_pc1SaOUrsrxrj8ypq5Yj7trKmlrDWPCpBSPVPlcucTM7vhDBTdfcG42l9KZS8UZ0C2X"/>
+<span class="absolute top-2 left-2 bg-primary/80 text-[8px] text-white px-2 py-0.5 rounded-full uppercase tracking-tighter">Después</span>
+</div>
+</div>
+<p class="text-[10px] uppercase tracking-widest text-secondary font-bold">Hidratación Aurora - 2 Sesiones</p>
+</div>
+</div>
+</div>
+</section>
+<!-- About Us Section -->
+<section class="py-32 px-6 md:px-24 bg-background">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-24 items-center">
+<div class="w-full md:w-1/2 order-2 md:order-1">
+<div class="grid grid-cols-2 gap-4">
+<img alt="Nuestro Equipo" class="w-full aspect-[3/4] object-cover rounded-sm" data-alt="professional female aesthetic doctor in a minimalist white medical coat serene expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv3vcQtfEqwWcHrVRgtPbgrfXtUAq4PSXyAjhOaKr6zKqmVKNa4JybGcqYlnVrk2-4fbbEuWFDniiDSLCHQboefSXqXGms4BWcE9qRxYXe8CfVsRKyG8Xr9d1vybm5j71vAEYjTu8GUOXfmbkua98LCg58MJ1fxXfnBGrn_45Ht2bwuByAtj9NmeW7WaglBGqLePGk8kxRpfEzvUh99sE-Mz4C8OiSzzJeEByICsDIX7dA8pQRQ8bklysaSWNsPWL9k60NrmdOavyP"/>
+<img alt="Clínica Interior" class="w-full aspect-[3/4] object-cover rounded-sm mt-12" data-alt="minimalist white clinical interior with soft organic shapes and lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMQEf5hEga5fef4-fSj_NDJW1NeWt5_NwSxcRA8b-RGrpcQl2MnCMHzYzmFCkK_jBX8tXs37wFh4fWbp_kd8-zpV3Sr6RD6bl7XPVndMzo4ArCX9cAbMFC1cJDo-WPXe56V9eYV4YImMGXDxqavu3mySEHlf0p2uEjfP4a72wwyBK1rqwS1XToVakw6JJmbPcwPFAbWTSAApXvE8uHhtc89VBCRRaw51RBvVma7nn3uNjfbtUQWs_0S3vJyxyQ1OzhewqF-Y1kN5Bt"/>
+</div>
+</div>
+<div class="w-full md:w-1/2 order-1 md:order-2 space-y-8">
+<span class="text-[10px] uppercase tracking-[0.4em] text-secondary font-semibold">Nuestra Esencia</span>
+<h2 class="text-6xl font-headline leading-[0.9]">Más que una clínica, tu refugio.</h2>
+<p class="text-on-surface-variant font-light text-lg leading-relaxed">
+                        En Aurora, creemos que la belleza es la manifestación externa de un equilibrio interno. Fundada bajo los pilares de la excelencia médica y la hospitalidad de lujo, nuestra clínica ofrece un espacio donde el tiempo se detiene.
+                    </p>
+<div class="grid grid-cols-1 gap-6 pt-6">
+<div class="flex items-start gap-4">
+<span class="text-primary font-headline text-3xl italic">01.</span>
+<div>
+<h4 class="text-xs uppercase tracking-widest font-bold mb-1">Experiencia Humana</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">Cada tratamiento es personalizado, escuchando las necesidades reales de tu piel y tu mente.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="text-primary font-headline text-3xl italic">02.</span>
+<div>
+<h4 class="text-xs uppercase tracking-widest font-bold mb-1">Confianza Médica</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">Utilizamos tecnología de vanguardia y productos con certificación dermatológica global.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="text-primary font-headline text-3xl italic">03.</span>
+<div>
+<h4 class="text-xs uppercase tracking-widest font-bold mb-1">Resultados Visibles</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">Buscamos la naturalidad, realzando tu propia belleza sin transformaciones artificiales.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-32 bg-surface-container-low px-6 overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20 text-center">
+<h2 class="text-5xl font-headline italic">Voces de calma</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Opinion 1 -->
+<div class="space-y-6">
+<div class="flex text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-lg text-on-surface leading-relaxed">"La experiencia en Aurora superó todas mis expectativas. No solo por el tratamiento, sino por la paz que se respira desde que entras."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-0.5 bg-outline-variant"></div>
+<span class="text-[10px] uppercase tracking-widest font-bold">Elena R.</span>
+</div>
+</div>
+<!-- Opinion 2 -->
+<div class="space-y-6 bg-surface-container-lowest p-8 shadow-sm">
+<div class="flex text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-lg text-on-surface leading-relaxed">"El peeling químico cambió la textura de mi piel por completo. Las doctoras son extremadamente profesionales y delicadas."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-0.5 bg-outline-variant"></div>
+<span class="text-[10px] uppercase tracking-widest font-bold">Clara M.</span>
+</div>
+</div>
+<!-- Opinion 3 -->
+<div class="space-y-6">
+<div class="flex text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-lg text-on-surface leading-relaxed">"Un regalo para los sentidos. El masaje relajante es obligatorio al menos una vez al mes para desconectar del mundo."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-0.5 bg-outline-variant"></div>
+<span class="text-[10px] uppercase tracking-widest font-bold">Lucía G.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- WhatsApp Banner -->
+<section class="py-24 px-6 md:px-24">
+<div class="max-w-7xl mx-auto bg-primary py-20 px-12 md:px-24 flex flex-col md:flex-row justify-between items-center gap-12 text-center md:text-left">
+<div class="space-y-4">
+<h2 class="text-4xl font-headline text-on-primary">¿Tienes dudas? Hablamos</h2>
+<p class="text-primary-fixed-dim font-light">Nuestro equipo está disponible para resolver tus consultas personalizadas.</p>
+</div>
+<a class="flex items-center gap-4 bg-surface-container-lowest text-primary px-10 py-5 text-sm uppercase tracking-[0.2em] font-medium rounded-sm hover:bg-secondary-container transition-all" href="https://wa.me/34000000000" target="_blank">
+<span class="material-symbols-outlined">chat</span>
+                    WhatsApp
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-none bg-[#f9f3ea] dark:bg-[#1d1b16] border-t border-[#44664a]/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 w-full max-w-[1920px] mx-auto">
+<div class="col-span-1 md:col-span-1">
+<span class="font-serif text-3xl text-[#44664a] dark:text-[#f9f3ea] mb-4 block">AURORA</span>
+<p class="font-['Inter'] text-xs uppercase tracking-widest text-[#1d1b16]/60 dark:text-[#f9f3ea]/60 leading-loose">
+                    Estética Avanzada <br/>
+                    &amp; Bienestar Holístico
+                </p>
+</div>
+<div class="flex flex-col space-y-4">
+<h4 class="font-['Inter'] text-xs uppercase tracking-widest text-[#44664a] font-bold">Enlaces</h4>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-[#1d1b16]/60 dark:text-[#f9f3ea]/60 hover:underline decoration-[#7a9e7e] underline-offset-4" href="#">Tratamientos</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-[#1d1b16]/60 dark:text-[#f9f3ea]/60 hover:underline decoration-[#7a9e7e] underline-offset-4" href="#">Reservas</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-[#1d1b16]/60 dark:text-[#f9f3ea]/60 hover:underline decoration-[#7a9e7e] underline-offset-4" href="#">Sobre nosotras</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-[#1d1b16]/60 dark:text-[#f9f3ea]/60 hover:underline decoration-[#7a9e7e] underline-offset-4" href="#">Contacto</a>
+</div>
+<div class="flex flex-col space-y-4">
+<h4 class="font-['Inter'] text-xs uppercase tracking-widest text-[#44664a] font-bold">Horario</h4>
+<p class="font-['Inter'] text-xs uppercase tracking-widest text-[#1d1b16]/60 dark:text-[#f9f3ea]/60">Lunes - Viernes: 10:00 - 20:00</p>
+<p class="font-['Inter'] text-xs uppercase tracking-widest text-[#1d1b16]/60 dark:text-[#f9f3ea]/60">Sábado: 10:00 - 14:00</p>
+<p class="font-['Inter'] text-xs uppercase tracking-widest text-[#1d1b16]/60 dark:text-[#f9f3ea]/60">Domingo: Cerrado</p>
+</div>
+<div class="flex flex-col space-y-4">
+<h4 class="font-['Inter'] text-xs uppercase tracking-widest text-[#44664a] font-bold">Ubicación</h4>
+<p class="font-['Inter'] text-xs uppercase tracking-widest text-[#1d1b16]/60 dark:text-[#f9f3ea]/60">Calle de la Serenidad, 24 <br/> 28001 Madrid, España</p>
+<div class="flex gap-4 pt-4">
+<a class="text-[#44664a] opacity-80 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="text-[#44664a] opacity-80 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</a>
+</div>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-[#44664a]/5 text-center">
+<p class="font-['Inter'] text-[10px] uppercase tracking-widest text-[#1d1b16]/40 dark:text-[#f9f3ea]/40">
+                © 2024 AURORA SPA &amp; CLÍNICA. Todos los derechos reservados.
+            </p>
+</div>
+</footer>
+</body></html>

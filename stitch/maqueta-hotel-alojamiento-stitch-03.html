@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Distrito Stay | Urban Sanctuary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface": "#f9f9fc",
+              "secondary-fixed-dim": "#c6c6c9",
+              "on-secondary-fixed-variant": "#454749",
+              "surface-dim": "#dadadc",
+              "tertiary-fixed-dim": "#e9c349",
+              "on-surface-variant": "#434656",
+              "outline-variant": "#c3c5d9",
+              "on-primary": "#ffffff",
+              "error": "#ba1a1a",
+              "primary": "#0040cb",
+              "on-secondary-container": "#636467",
+              "secondary-fixed": "#e2e2e5",
+              "surface-container-highest": "#e2e2e5",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f3f3f6",
+              "tertiary": "#735c00",
+              "on-surface": "#1a1c1e",
+              "surface-container-high": "#e8e8ea",
+              "background": "#f9f9fc",
+              "on-primary-container": "#e3e6ff",
+              "on-primary-fixed": "#001452",
+              "surface-container": "#eeeef0",
+              "inverse-primary": "#b7c4ff",
+              "secondary": "#5d5e61",
+              "inverse-surface": "#2f3133",
+              "inverse-on-surface": "#f0f0f3",
+              "on-tertiary-fixed": "#241a00",
+              "surface-variant": "#e2e2e5",
+              "on-tertiary-fixed-variant": "#574500",
+              "outline": "#737688",
+              "on-primary-fixed-variant": "#0038b6",
+              "on-secondary-fixed": "#1a1c1e",
+              "on-secondary": "#ffffff",
+              "surface-tint": "#004ced",
+              "on-error": "#ffffff",
+              "primary-container": "#0c54ff",
+              "surface-bright": "#f9f9fc",
+              "error-container": "#ffdad6",
+              "primary-fixed-dim": "#b7c4ff",
+              "surface-container-lowest": "#ffffff",
+              "on-error-container": "#93000a",
+              "tertiary-fixed": "#ffe088",
+              "tertiary-container": "#cca730",
+              "secondary-container": "#e2e2e5",
+              "on-background": "#1a1c1e",
+              "primary-fixed": "#dde1ff",
+              "on-tertiary-container": "#4e3d00"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      body { font-family: 'Inter', sans-serif; background-color: #f9f9fc; }
+      h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+      .glass-nav { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- Top Navigation (Shared Component) -->
+<nav class="sticky top-0 w-full z-50 bg-surface/80 backdrop-blur-lg shadow-sm">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-on-surface">Distrito Stay</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-manrope font-semibold tracking-tight text-sm text-on-surface/70 hover:text-primary transition-colors" href="#habitaciones">Habitaciones</a>
+<a class="font-manrope font-semibold tracking-tight text-sm text-on-surface/70 hover:text-primary transition-colors" href="#ventajas">Ventajas</a>
+<a class="font-manrope font-semibold tracking-tight text-sm text-on-surface/70 hover:text-primary transition-colors" href="#ubicacion">Ubicación</a>
+<a class="font-manrope font-semibold tracking-tight text-sm text-on-surface/70 hover:text-primary transition-colors" href="#faqs">FAQs</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-md font-semibold text-sm hover:opacity-80 transition-all duration-300 active:scale-95">Reservar Ahora</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-[870px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Luxury urban hotel room" class="w-full h-full object-cover" data-alt="Modern high-end hotel room interior with large windows overlooking a city skyline at dusk, moody elegant lighting and neutral tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDucWuC73VwYHbg71T2Gx8X69HMvTHeMv_CeRuuevBNY9nv0j913340VxagkOxaViyKX5ure06opBptSCREkaPej8WJ_xFV5NZpxEPe6rIoM00ZkqHORrrFjZRyptEe-teQvDTxFcTPLNVOCbMVbIBp0miz8mZcaJHgdW5IOFd8178vL4TvXdSIsXeLvY6cIRsPCnmrSCpw8jo0XGD8AhIwZuB_zUPmCHPIMnABQ8aeo0-hK8ipRv63ZMKivgS-B2b8nTsPb5wwnAHL"/>
+<div class="absolute inset-0 bg-gradient-to-r from-on-surface/60 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 w-full py-20">
+<div class="max-w-2xl text-on-primary">
+<span class="inline-block py-1 px-3 bg-tertiary-container text-on-tertiary-container rounded-sm text-xs font-bold tracking-widest uppercase mb-6">Experience Centrality</span>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight mb-6">Tu Refugio en el Centro. Directo, Rápido, Mejor Precio.</h1>
+</div>
+</div>
+</header>
+<!-- Integrated Booking Bar (Shared Component Strategy) -->
+<div class="relative z-20 max-w-5xl mx-auto -mt-16 px-4">
+<div class="bg-white shadow-xl rounded-md flex flex-col md:flex-row items-stretch divide-y md:divide-y-0 md:divide-x divide-slate-100 p-2 border border-slate-200">
+<div class="flex-1 flex items-center p-4 hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-primary mr-3" data-icon="calendar_today">calendar_today</span>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-widest font-bold text-slate-400">Check-in</span>
+<span class="font-bold text-sm">12 Oct 2024</span>
+</div>
+</div>
+<div class="flex-1 flex items-center p-4 hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-primary mr-3" data-icon="event_busy">event_busy</span>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-widest font-bold text-slate-400">Check-out</span>
+<span class="font-bold text-sm">15 Oct 2024</span>
+</div>
+</div>
+<div class="flex-1 flex items-center p-4 hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-primary mr-3" data-icon="group">group</span>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-widest font-bold text-slate-400">Huéspedes</span>
+<span class="font-bold text-sm">2 Adultos</span>
+</div>
+</div>
+<div class="flex-none flex items-center p-2">
+<button class="w-full h-full bg-primary text-on-primary px-8 py-4 rounded-md font-bold text-xs uppercase tracking-widest hover:bg-primary-container transition-colors shadow-lg shadow-primary/20">
+                    Consultar Disponibilidad
+                </button>
+</div>
+</div>
+</div>
+<!-- Direct Benefits Banner -->
+<section class="pt-24 pb-12 bg-surface" id="ventajas">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="flex items-start gap-4 p-6 bg-surface-container-lowest rounded-xl border-l-4 border-tertiary">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="verified">verified</span>
+<div>
+<h4 class="font-bold text-lg mb-1">Mejor Precio Garantizado</h4>
+<p class="text-sm text-on-surface-variant">Reserva directa sin comisiones ocultas ni sorpresas.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-6 bg-surface-container-lowest rounded-xl border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="sync">sync</span>
+<div>
+<h4 class="font-bold text-lg mb-1">Cancelación Flexible</h4>
+<p class="text-sm text-on-surface-variant">Cambia tus planes sin estrés hasta 24h antes del check-in.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-6 bg-surface-container-lowest rounded-xl border-l-4 border-primary-container">
+<span class="material-symbols-outlined text-primary-container text-3xl" data-icon="coffee">coffee</span>
+<div>
+<h4 class="font-bold text-lg mb-1">Desayuno Incluido</h4>
+<p class="text-sm text-on-surface-variant">Comienza el día con productos locales de alta calidad.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Habitaciones Section (Editorial Layout) -->
+<section class="py-24" id="habitaciones">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="text-xs font-bold text-primary uppercase tracking-[0.2em] block mb-2">Our Spaces</span>
+<h2 class="text-4xl font-extrabold tracking-tight">Estancias Diseñadas para el Confort.</h2>
+</div>
+<div class="hidden md:block">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:opacity-70 transition-opacity" href="#">Ver todas las opciones</a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<!-- Room Card 1 -->
+<div class="group relative flex flex-col">
+<div class="aspect-[4/5] overflow-hidden rounded-xl mb-6 relative">
+<img alt="Standard Room" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Elegant standard hotel room with minimalist decor, crisp white bedding and soft ambient morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLt4vsixD13H0s16bAedz0LYSkE323o9j7sj9K2TnuKILuOC_GAfSRHPGOg0BJuIhhznPyuuMLmCQ2WuU7a07ET2KlcqrgOka999aqNf67Na9GZzYXGJfwbjj88TOL36wpMku2dCUinv-HEfgaqdSHyYsIBidU5WHl9kLpfgOR8YpFBCDDfqEpkNoHsuSbDSe4TX2zeuQU0ak86xfEz4kpC5wKb4yRuu9J6WLPX0eEr1fm1b0oaqtzxsZ38yEDqteOjv4VmqVWw8sQ"/>
+<div class="absolute bottom-4 left-4">
+<span class="bg-surface-container-lowest px-4 py-2 text-sm font-bold shadow-sm rounded-sm">Standard</span>
+</div>
+</div>
+<div class="flex items-center gap-4 mb-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined text-sm" data-icon="ac_unit">ac_unit</span>
+<span class="material-symbols-outlined text-sm" data-icon="tv">tv</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Doble Estándar</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Espacio funcional con escritorio y cama Queen Size, ideal para viajeros de negocios.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/20 pt-6">
+<div>
+<span class="text-xs text-on-surface-variant block uppercase font-bold">Desde</span>
+<span class="text-2xl font-extrabold text-primary">85€<span class="text-sm text-on-surface-variant font-medium">/noche</span></span>
+</div>
+<button class="bg-on-surface text-surface px-6 py-3 font-bold text-xs uppercase tracking-widest hover:bg-primary transition-colors">Reservar</button>
+</div>
+</div>
+<!-- Room Card 2 -->
+<div class="group relative flex flex-col">
+<div class="aspect-[4/5] overflow-hidden rounded-xl mb-6 relative">
+<img alt="Executive Room" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Upscale executive suite with a dedicated workstation, leather chair and large windows showing city buildings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClu8r_p0uBQV734pCKuDzj-eFlxdV2eK8bhkhwrx8nRuykD2Mw3g_GpqCeVbPnhXibgKxQxJO71Y8ahMHn6_oRI2JhLAcnJPesGsiWnAZELEo3a7_FtlcKGXYUJZp_cLSO1d-pvC_0tvs2yYvBuON7KMczTXM4D6mcYRdGf3y3E7tKsBEmHvfE8srTPAIgso7ahGR_BvnOQmXOmAd6-OgJWVikocfzWCrjifTqZVGw7GqrMTRxmw-Xvp2OQvS4SgC5oo9N1ynduDK5"/>
+<div class="absolute bottom-4 left-4">
+<span class="bg-surface-container-lowest px-4 py-2 text-sm font-bold shadow-sm rounded-sm">Executive</span>
+</div>
+<div class="absolute top-4 right-4 bg-tertiary text-on-tertiary px-3 py-1 text-[10px] font-black uppercase tracking-widest">Most Popular</div>
+</div>
+<div class="flex items-center gap-4 mb-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined text-sm" data-icon="ac_unit">ac_unit</span>
+<span class="material-symbols-outlined text-sm" data-icon="coffee_maker">coffee_maker</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Executive Urban</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Vistas panorámicas a la ciudad y cafetera premium integrada en la habitación.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/20 pt-6">
+<div>
+<span class="text-xs text-on-surface-variant block uppercase font-bold">Desde</span>
+<span class="text-2xl font-extrabold text-primary">120€<span class="text-sm text-on-surface-variant font-medium">/noche</span></span>
+</div>
+<button class="bg-on-surface text-surface px-6 py-3 font-bold text-xs uppercase tracking-widest hover:bg-primary transition-colors">Reservar</button>
+</div>
+</div>
+<!-- Room Card 3 -->
+<div class="group relative flex flex-col">
+<div class="aspect-[4/5] overflow-hidden rounded-xl mb-6 relative">
+<img alt="Suite" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Ultra-luxury hotel suite with a private balcony, contemporary furniture and expansive layout in warm sunset light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADlBVIwT3W8FrCVxZsN_bo7_bbrIzm5Jd_V19BwUbmYfsShkPak4ucTJY6HGhXx0_GKQ0sUAQ5FsUr8kLkpXLgxb41qRlnc7CS-NG2IIhG3mqwYAi-dyFEo0gCIiqlERGuIKQ_fD7GvwRJz6JjFQO0jRS84eGKI4_fVVOao6qGRLDVqBChICOX6L3l2jHgnzytKdkfDqZwKKWEPkvC8ql5Y9okZWS22H7D919TYpBnzoRxsN-ac3WZbbbJaavHgNf-hSknFChS1cki"/>
+<div class="absolute bottom-4 left-4">
+<span class="bg-surface-container-lowest px-4 py-2 text-sm font-bold shadow-sm rounded-sm">Suite</span>
+</div>
+</div>
+<div class="flex items-center gap-4 mb-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined text-sm" data-icon="ac_unit">ac_unit</span>
+<span class="material-symbols-outlined text-sm" data-icon="bathtub">bathtub</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Panoramic Suite</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Nuestra mejor experiencia. Balcón privado y baño de mármol con bañera exenta.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/20 pt-6">
+<div>
+<span class="text-xs text-on-surface-variant block uppercase font-bold">Desde</span>
+<span class="text-2xl font-extrabold text-primary">210€<span class="text-sm text-on-surface-variant font-medium">/noche</span></span>
+</div>
+<button class="bg-on-surface text-surface px-6 py-3 font-bold text-xs uppercase tracking-widest hover:bg-primary transition-colors">Reservar</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Location Section (Asymmetric) -->
+<section class="py-24 bg-surface-container-low overflow-hidden" id="ubicacion">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="order-2 lg:order-1">
+<span class="text-xs font-bold text-primary uppercase tracking-[0.2em] block mb-2">Location</span>
+<h2 class="text-4xl font-extrabold tracking-tight mb-8">En el Latido de la Ciudad.</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="bg-surface-container-highest w-12 h-12 flex items-center justify-center rounded-full shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="train">train</span>
+</div>
+<div>
+<h4 class="font-bold mb-2">Conectividad Total</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">A solo 2 minutos de la estación central. Conexiones directas con el aeropuerto y los principales centros financieros.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="bg-surface-container-highest w-12 h-12 flex items-center justify-center rounded-full shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="local_parking">local_parking</span>
+</div>
+<div>
+<h4 class="font-bold mb-2">Parking Exclusivo</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Aparcamiento privado y seguro con cargadores para vehículos eléctricos disponible para nuestros huéspedes.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="bg-surface-container-highest w-12 h-12 flex items-center justify-center rounded-full shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="theater_comedy">theater_comedy</span>
+</div>
+<div>
+<h4 class="font-bold mb-2">Cultura y Ocio</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Rodeado de los mejores museos, teatros y la zona gastronómica más vibrante de la ciudad.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2 relative">
+<div class="w-full aspect-square rounded-2xl overflow-hidden shadow-2xl relative z-10 border-8 border-surface-container-lowest">
+<!-- Map Placeholder -->
+<div class="w-full h-full bg-slate-200 relative overflow-hidden">
+<img alt="City map" class="w-full h-full object-cover grayscale opacity-50" data-alt="Clean minimal city map layout with highlighted points of interest and soft neutral tones" data-location="Madrid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfwc3GPhTIqCF7Qw_oMpE1Lmk6I0JuLT9wPYwuC1gtd8YLm_-oEyBsxcUiTy3VMvXI4CT0vTs0cvO2yuH-jvhyExVNPj7tanSmF44DCkOUYy2B-xgmGsu46EzFACZE8i0WEaenMSEChbq0H3VzJc03Yda0Fo6HbgwwBsgN-NO8AaVQnrQf49pdAHWEyR2OUwhnFX524WEbbaubot3ZNths3D145YBXXL4ONPC0pwLGBm1eQCanAMGZXRFR7CJx8CFA1TxUljU7p4Zy"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="relative">
+<span class="material-symbols-outlined text-primary text-5xl drop-shadow-lg" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div class="absolute top-12 left-1/2 -translate-x-1/2 bg-on-surface text-surface text-[10px] font-bold py-1 px-3 rounded-full whitespace-nowrap">Distrito Stay</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative element -->
+<div class="absolute -bottom-10 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+</div>
+</div>
+</section>
+<!-- Reviews Section -->
+<section class="py-24">
+<div class="max-w-5xl mx-auto px-6">
+<div class="text-center mb-16">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="format_quote" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<h2 class="text-3xl font-extrabold tracking-tight">Lo que dicen nuestros huéspedes</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface-container p-8 rounded-2xl">
+<div class="flex gap-1 mb-4">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-lg italic text-on-surface mb-6">"La ubicación es inmejorable, pero lo que realmente destaca es la calidad del descanso. Camas increíbles y un servicio muy eficiente."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-slate-300"></div>
+<div>
+<p class="font-bold text-sm">Elena Rodríguez</p>
+<p class="text-xs text-on-surface-variant">Viaje de Negocios</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-8 rounded-2xl">
+<div class="flex gap-1 mb-4">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-lg italic text-on-surface mb-6">"Reservar directamente en su web fue facilísimo y el precio fue el mejor que encontré. Sin duda volveré en mi próxima visita."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-slate-300"></div>
+<div>
+<p class="font-bold text-sm">Marc Soler</p>
+<p class="text-xs text-on-surface-variant">Escapada en Pareja</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 flex justify-center">
+<div class="bg-primary/5 px-6 py-3 rounded-full flex items-center gap-3 border border-primary/10">
+<span class="material-symbols-outlined text-primary" data-icon="info">info</span>
+<span class="text-sm font-semibold text-primary">Cancelación gratuita hasta 24h antes de tu llegada.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ & Contact -->
+<section class="py-24 bg-surface-container-lowest" id="faqs">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
+<div class="lg:col-span-5">
+<h2 class="text-3xl font-extrabold mb-8">Preguntas Frecuentes</h2>
+<div class="space-y-4">
+<details class="group p-4 bg-surface-container rounded-lg cursor-pointer open:bg-primary-fixed">
+<summary class="font-bold flex justify-between items-center list-none">
+<span>¿A qué hora es el check-in y check-out?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="mt-3 text-sm text-on-surface-variant group-open:text-on-primary-fixed">Check-in a partir de las 14:00h y check-out hasta las 11:00h. Ofrecemos servicio de consigna gratuito.</p>
+</details>
+<details class="group p-4 bg-surface-container rounded-lg cursor-pointer open:bg-primary-fixed">
+<summary class="font-bold flex justify-between items-center list-none">
+<span>¿Aceptáis mascotas?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="mt-3 text-sm text-on-surface-variant group-open:text-on-primary-fixed">Sí, somos pet-friendly. Aceptamos perros de hasta 15kg con un pequeño suplemento por limpieza.</p>
+</details>
+<details class="group p-4 bg-surface-container rounded-lg cursor-pointer open:bg-primary-fixed">
+<summary class="font-bold flex justify-between items-center list-none">
+<span>¿Cómo funciona el parking?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="mt-3 text-sm text-on-surface-variant group-open:text-on-primary-fixed">Disponemos de plazas limitadas en el edificio contiguo. Recomendamos reservar con antelación.</p>
+</details>
+</div>
+<div class="mt-12 p-6 bg-tertiary-container/20 rounded-xl border border-tertiary-container/30">
+<h4 class="font-bold mb-2">¿Necesitas ayuda inmediata?</h4>
+<p class="text-sm text-on-surface-variant mb-6">Estamos disponibles 24/7 para resolver cualquier duda sobre tu estancia.</p>
+<a class="inline-flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded-md font-bold text-sm" href="https://wa.me/#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                        Contactar por WhatsApp
+                    </a>
+</div>
+</div>
+<div class="lg:col-span-7 bg-surface-container-high p-10 rounded-2xl">
+<h3 class="text-2xl font-bold mb-6">Envíanos un mensaje</h3>
+<form class="space-y-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Nombre Completo</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-md p-3 focus:ring-2 focus:ring-primary transition-all" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Email</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-md p-3 focus:ring-2 focus:ring-primary transition-all" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Asunto</label>
+<select class="w-full bg-surface-container-lowest border-none rounded-md p-3 focus:ring-2 focus:ring-primary transition-all">
+<option>Información sobre reservas</option>
+<option>Eventos y Grupos</option>
+<option>Otros</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Mensaje</label>
+<textarea class="w-full bg-surface-container-lowest border-none rounded-md p-3 focus:ring-2 focus:ring-primary transition-all" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-md font-bold uppercase tracking-widest text-xs hover:opacity-90" type="submit">Enviar Mensaje</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer (Shared Component) -->
+<footer class="w-full pt-16 pb-8 bg-surface_container_highest border-t border-slate-200">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-1">
+<span class="text-lg font-black text-on-surface mb-4 block">Distrito Stay</span>
+<p class="text-slate-600 text-sm leading-relaxed mb-6">Urban Sanctuary for the modern traveler. Comfort, efficiency and style in the heart of the city.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-500 cursor-pointer" data-icon="share">share</span>
+<span class="material-symbols-outlined text-slate-500 cursor-pointer" data-icon="language">language</span>
+</div>
+</div>
+<div class="col-span-1">
+<h4 class="font-bold text-sm uppercase tracking-widest mb-6 text-on-surface">Explorar</h4>
+<div class="flex flex-col gap-4">
+<a class="text-slate-500 hover:text-primary hover:underline transition-all text-sm" href="#">Habitaciones</a>
+<a class="text-slate-500 hover:text-primary hover:underline transition-all text-sm" href="#">Ventajas</a>
+<a class="text-slate-500 hover:text-primary hover:underline transition-all text-sm" href="#">Ubicación</a>
+<a class="text-slate-500 hover:text-primary hover:underline transition-all text-sm" href="#">Ofertas</a>
+</div>
+</div>
+<div class="col-span-1">
+<h4 class="font-bold text-sm uppercase tracking-widest mb-6 text-on-surface">Legal</h4>
+<div class="flex flex-col gap-4">
+<a class="text-slate-500 hover:text-primary hover:underline transition-all text-sm" href="#">Contacto</a>
+<a class="text-slate-500 hover:text-primary hover:underline transition-all text-sm" href="#">Privacidad</a>
+<a class="text-slate-500 hover:text-primary hover:underline transition-all text-sm" href="#">Términos</a>
+<a class="text-slate-500 hover:text-primary hover:underline transition-all text-sm" href="#">Soporte</a>
+</div>
+</div>
+<div class="col-span-1">
+<h4 class="font-bold text-sm uppercase tracking-widest mb-6 text-on-surface">Newsletter</h4>
+<p class="text-xs text-slate-500 mb-4">Recibe ofertas exclusivas directamente en tu email.</p>
+<div class="flex">
+<input class="bg-surface-container text-sm border-none rounded-l-md w-full focus:ring-1 focus:ring-primary" placeholder="Tu email" type="email"/>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-r-md">
+<span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-slate-200">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-600 text-sm">© 2024 Distrito Stay. Urban Sanctuary.</p>
+<div class="flex gap-8 opacity-40 grayscale">
+<span class="material-symbols-outlined" data-icon="credit_card">credit_card</span>
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span class="material-symbols-outlined" data-icon="contactless">contactless</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

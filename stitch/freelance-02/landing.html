@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#f9f9f9",
+                        "on-tertiary-fixed": "#291800",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#8aa4cf",
+                        "surface-dim": "#dadada",
+                        "surface-container": "#eeeeee",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#edbf7f",
+                        "on-secondary-fixed-variant": "#2c4f15",
+                        "surface": "#f9f9f9",
+                        "on-surface-variant": "#43474e",
+                        "tertiary-container": "#503300",
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-surface": "#2f3131",
+                        "on-secondary-container": "#476c2f",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#001c3b",
+                        "inverse-primary": "#adc8f5",
+                        "secondary-fixed-dim": "#a8d38a",
+                        "secondary-container": "#c1eca1",
+                        "on-secondary-fixed": "#0a2100",
+                        "tertiary": "#341f00",
+                        "tertiary-fixed": "#ffddb2",
+                        "surface-variant": "#e2e2e2",
+                        "primary": "#022448",
+                        "outline-variant": "#c4c6cf",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-bright": "#f9f9f9",
+                        "secondary": "#43682b",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#455f87",
+                        "on-primary-fixed-variant": "#2d486d",
+                        "on-tertiary-fixed-variant": "#60410c",
+                        "on-surface": "#1a1c1c",
+                        "primary-fixed": "#d5e3ff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#adc8f5",
+                        "on-tertiary-container": "#c69b5f",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "outline": "#74777f",
+                        "secondary-fixed": "#c4efa3",
+                        "primary-container": "#1e3a5f",
+                        "on-background": "#1a1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e2e2e2"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .serif-anchor { font-family: 'Noto Serif', serif; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-sm">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-primary serif-anchor">
+                ELENA VEGA | CONSULTORÍA
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-slate-600 hover:text-primary transition-colors font-label text-sm uppercase tracking-widest" href="#servicios">Servicios</a>
+<a class="text-slate-600 hover:text-primary transition-colors font-label text-sm uppercase tracking-widest" href="#exitos">Casos de Éxito</a>
+<a class="text-slate-600 hover:text-primary transition-colors font-label text-sm uppercase tracking-widest" href="#sobre-mi">Sobre Mí</a>
+<a class="text-slate-600 hover:text-primary transition-colors font-label text-sm uppercase tracking-widest" href="#faq">FAQ</a>
+</div>
+<a class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label font-semibold text-sm hover:bg-primary-container transition-all hover:-translate-y-0.5" href="#contacto">
+                Primera consulta gratis
+            </a>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex items-center px-8 max-w-7xl mx-auto overflow-hidden">
+<div class="w-full grid md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-7 z-10">
+<span class="inline-block text-secondary font-label font-bold uppercase tracking-[0.2em] mb-4 text-sm">Estrategia &amp; Resultados</span>
+<h1 class="text-6xl md:text-7xl font-headline text-primary leading-tight tracking-tighter mb-8">
+                        Arquitectura de <br/> <span class="italic">Crecimiento Sostenible</span>
+</h1>
+<p class="text-lg text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+                        Consultoría estratégica de alto nivel para empresas que buscan trascender. Transformamos la complejidad operativa en ventajas competitivas medibles.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-primary text-on-primary px-8 py-4 rounded-lg font-semibold hover:bg-primary-container transition-all" href="#contacto">
+                            Primera consulta gratis
+                        </a>
+<a class="bg-surface-container-lowest border border-outline-variant/30 text-primary px-8 py-4 rounded-lg font-semibold hover:bg-surface-container-low transition-all" href="#exitos">
+                            Ver metodología
+                        </a>
+</div>
+</div>
+<div class="md:col-span-5 relative hidden md:block">
+<div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl rotate-3">
+<img class="w-full h-full object-cover" data-alt="Professional portrait of Elena Vega, a modern consultant in a minimalist office setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD9BaVa8xGkQXJYiTUtMmZfgg2o9SCTGvMgkStLx58kbxbLpWZOQ8wnh_fTu2VGYZEqMWhgSXqp9yPY8ThrifNu_68722ydqHZq8GkVRMJCqIqC7AlwuYvSUrjNIJbljlCPYmoYK5qWB4mgfu5Iri4RblqFwHRpdClffHQRjt7DOO4Azzs9Fpv6ZomWyi-td4Lo9gO-SX1TWzOvPI_MJuPpQ9D9AvqmOcX7iNCyuSCfyKIt4yjiZrluJhX7dhH50Wp66MRWysAjnE"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-surface-container-lowest p-6 rounded-lg shadow-xl max-w-[200px]">
+<p class="text-secondary font-headline text-3xl font-bold">+150%</p>
+<p class="text-xs uppercase tracking-widest text-on-surface-variant font-semibold">Eficiencia promedio en el primer año</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Value Proposition (Asymmetric Bento Grid) -->
+<section class="py-24 px-8 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<h2 class="text-sm font-label uppercase tracking-widest text-on-surface-variant mb-2">Por qué trabajar conmigo</h2>
+<p class="text-3xl md:text-4xl font-headline text-primary">El rigor del análisis. <br/>La agilidad de la ejecución.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-surface-container-lowest p-10 rounded-xl flex flex-col justify-between min-h-[300px]">
+<span class="material-symbols-outlined text-4xl text-secondary">analytics</span>
+<div>
+<h3 class="text-2xl font-headline text-primary mb-4">Diagnóstico 360°</h3>
+<p class="text-on-surface-variant leading-relaxed">Analizamos cada capa de su estructura operativa para identificar cuellos de botella invisibles al ojo interno.</p>
+</div>
+</div>
+<div class="bg-primary text-on-primary p-10 rounded-xl flex flex-col justify-between">
+<span class="material-symbols-outlined text-4xl text-on-primary-container">speed</span>
+<div>
+<h3 class="text-2xl font-headline mb-4">Implementación Ágil</h3>
+<p class="text-on-primary-container leading-relaxed">Sin informes infinitos. Solo acciones directas con impacto inmediato.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-24 px-8 bg-background" id="servicios">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-headline text-primary mb-4">Servicios Estratégicos</h2>
+<p class="text-on-surface-variant">Soluciones diseñadas para cada etapa de su visión corporativa.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Service 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow group border border-outline-variant/10">
+<h3 class="text-xl font-headline text-primary mb-2">Auditoría Operativa</h3>
+<p class="text-sm text-on-surface-variant mb-8 h-20">Análisis profundo de procesos internos y detección de ineficiencias críticas.</p>
+<div class="mb-8">
+<span class="text-3xl font-headline text-secondary">€1.200</span>
+<span class="text-xs uppercase tracking-widest text-outline ml-2">/ proyecto base</span>
+</div>
+<ul class="space-y-3 mb-10 text-sm">
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+                                Reporte de Diagnóstico
+                            </li>
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+                                Mapa de Calor de Procesos
+                            </li>
+</ul>
+<button class="w-full py-3 rounded-lg border border-primary text-primary font-semibold hover:bg-primary hover:text-on-primary transition-all">Solicitar Información</button>
+</div>
+<!-- Service 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-md border-t-4 border-primary group relative overflow-hidden">
+<div class="absolute top-4 right-4 bg-secondary text-on-secondary text-[10px] px-2 py-1 rounded font-bold uppercase tracking-tighter">Más Solicitado</div>
+<h3 class="text-xl font-headline text-primary mb-2">Estrategia de Escalamiento</h3>
+<p class="text-sm text-on-surface-variant mb-8 h-20">Acompañamiento trimestral para duplicar la capacidad operativa sin comprometer la calidad.</p>
+<div class="mb-8">
+<span class="text-3xl font-headline text-secondary">€3.500</span>
+<span class="text-xs uppercase tracking-widest text-outline ml-2">/ trimestre</span>
+</div>
+<ul class="space-y-3 mb-10 text-sm">
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+                                Sesiones bi-semanales
+                            </li>
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+                                Plan de Acción de 90 días
+                            </li>
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+                                Optimización de CRM
+                            </li>
+</ul>
+<button class="w-full py-3 rounded-lg bg-primary text-on-primary font-semibold hover:bg-primary-container transition-all">Comenzar Ahora</button>
+</div>
+<!-- Service 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow group border border-outline-variant/10">
+<h3 class="text-xl font-headline text-primary mb-2">Mentoría Ejecutiva</h3>
+<p class="text-sm text-on-surface-variant mb-8 h-20">Asesoría directa para CEOs y directores que enfrentan procesos de cambio radical.</p>
+<div class="mb-8">
+<span class="text-3xl font-headline text-secondary">€800</span>
+<span class="text-xs uppercase tracking-widest text-outline ml-2">/ sesión</span>
+</div>
+<ul class="space-y-3 mb-10 text-sm">
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+                                Foco en Toma de Decisiones
+                            </li>
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+                                Liderazgo Estratégico
+                            </li>
+</ul>
+<button class="w-full py-3 rounded-lg border border-primary text-primary font-semibold hover:bg-primary hover:text-on-primary transition-all">Solicitar Información</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Case Studies (High Data Visibility) -->
+<section class="py-24 px-8 bg-surface-container-low" id="exitos">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16 text-center">
+<h2 class="text-sm font-label uppercase tracking-widest text-secondary font-bold mb-4">Evidencia de éxito</h2>
+<h3 class="text-4xl font-headline text-primary">Resultados Tangibles</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="flex flex-col gap-6">
+<div class="bg-surface-container-lowest p-10 rounded-xl">
+<div class="text-6xl font-headline text-secondary mb-4">40%</div>
+<h4 class="text-xl font-headline text-primary mb-2">Optimización en Sector Logístico</h4>
+<p class="text-on-surface-variant leading-relaxed">Reducción del tiempo de entrega y un incremento del 22% en el margen de beneficio neto tras 6 meses de intervención.</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-xl">
+<div class="text-6xl font-headline text-secondary mb-4">x2.5</div>
+<h4 class="text-xl font-headline text-primary mb-2">Crecimiento en Tech Startups</h4>
+<p class="text-on-surface-variant leading-relaxed">Reestructuración del equipo de ventas y diseño de nuevos KPIs de rendimiento escalable.</p>
+</div>
+</div>
+<div class="relative h-full min-h-[400px] rounded-xl overflow-hidden shadow-xl">
+<img class="w-full h-full object-cover" data-alt="A clean business dashboard showing growth charts and financial data on a large screen in a modern office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxcYW1N-kgXdmIdLigLIA5BCqkHdXcbsmosDO6ccytY5WR6d4HVeVlSAOBg8mfhWKQjIfq2kt94WczFgm_1r1zC3sEK0PZUGzyVlrQ4ficXPgMqUXVDjjf-ZgNexf9zynnmUGeh8_EWFygrf6QqQtGdQ_TLb__VTvsDOiqMByCyP1FMKNHw4AIWxwgbAJJAVZYz6Dr6N5vNrqRDPxpZkxwRA0lBhIARQcItS6xAWFxwon1WNdwzfUlyTcHIUSR0BoouN7tzhvBkUs"/>
+<div class="absolute inset-0 bg-primary/20 backdrop-overlay"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Me Section -->
+<section class="py-24 px-8 bg-background" id="sobre-mi">
+<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<h2 class="text-sm font-label uppercase tracking-widest text-on-surface-variant mb-4">Sobre Elena Vega</h2>
+<h3 class="text-4xl font-headline text-primary mb-6 italic">"La consultoría no es dar consejos, es diseñar estructuras de éxito."</h3>
+<div class="space-y-6 text-on-surface-variant leading-relaxed">
+<p>Con más de 12 años de experiencia en alta dirección, he dedicado mi carrera a desmitificar la eficiencia corporativa. Mi enfoque combina el análisis cuantitativo con un entendimiento profundo del comportamiento organizacional.</p>
+<p>No creo en soluciones genéricas. Cada empresa es un organismo único que requiere un diseño arquitectónico propio para sostener su crecimiento.</p>
+</div>
+<div class="mt-10 flex gap-4">
+<div class="text-center p-4 border-r border-outline-variant/30">
+<p class="text-2xl font-headline text-primary">12+</p>
+<p class="text-[10px] uppercase tracking-widest font-bold">Años</p>
+</div>
+<div class="text-center p-4 border-r border-outline-variant/30">
+<p class="text-2xl font-headline text-primary">80+</p>
+<p class="text-[10px] uppercase tracking-widest font-bold">Proyectos</p>
+</div>
+<div class="text-center p-4">
+<p class="text-2xl font-headline text-primary">94%</p>
+<p class="text-[10px] uppercase tracking-widest font-bold">Retención</p>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<div class="bg-surface-container-low p-2 rounded-xl">
+<img class="rounded-lg grayscale hover:grayscale-0 transition-all duration-500 w-full object-cover aspect-square" data-alt="Elena Vega working on a whiteboard with strategic diagrams in a minimalist office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByElBHjeW8DF65Evo2vqPuPV4HxgvUg93i57arL5Uc71Ln9-g2SiAVNwCA5F7F7C03hgAEX5TfDUr6BCJWeyqPY17p2kFhSnFXwCTdhjRx3dzJ3etSg_xBV7h9s_wpljvdtgPrH23ofVM7sKZo6jbDGWYPVj08h0cGUAwN-NrxTKDtj7wpiJLMD1pQamg5a6UT_wiIJmuJjIhNZSfDhLOpUowTHyQ23odZrpud6zmMCrpdziBn_CEHXTmm7v9pPPlL1Cm0ykvDxbU"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 px-8 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="grid md:grid-cols-3 gap-8">
+<div class="md:col-span-1">
+<h2 class="text-4xl font-headline text-primary">Confianza que <br/> genera valor</h2>
+<p class="mt-4 text-on-surface-variant">Lo que dicen los líderes que han transformado sus organizaciones.</p>
+</div>
+<div class="md:col-span-2 grid md:grid-cols-2 gap-6">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm italic">
+<p class="mb-6 text-on-surface-variant">"Elena no solo nos dio una estrategia, nos dio una nueva mentalidad operativa. Los resultados superaron nuestras expectativas en menos de un semestre."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container text-primary flex items-center justify-center font-bold">RM</div>
+<div>
+<p class="text-sm font-bold text-primary">Ricardo Martos</p>
+<p class="text-[10px] uppercase text-outline">CEO, Logistica Global</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm italic">
+<p class="mb-6 text-on-surface-variant">"Su capacidad para identificar redundancias en procesos de IT nos ahorró miles de euros y, lo más importante, meses de frustración del equipo."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container text-primary flex items-center justify-center font-bold">SC</div>
+<div>
+<p class="text-sm font-bold text-primary">Sofía Castell</p>
+<p class="text-[10px] uppercase text-outline">Directora de Operaciones</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section (Accordion Style blocks) -->
+<section class="py-24 px-8 bg-background" id="faq">
+<div class="max-w-3xl mx-auto">
+<h2 class="text-3xl font-headline text-primary text-center mb-12">Preguntas Frecuentes</h2>
+<div class="space-y-4">
+<details class="group bg-surface-container-low rounded-lg overflow-hidden" open="">
+<summary class="flex justify-between items-center p-6 cursor-pointer font-semibold text-primary list-none">
+<span>¿Cómo funciona la primera consulta gratuita?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant bg-surface-container-lowest leading-relaxed">
+                            Es una sesión de 30 minutos donde evaluamos su situación actual y determinamos si mi metodología es la adecuada para sus objetivos específicos. No hay compromiso de contratación.
+                        </div>
+</details>
+<details class="group bg-surface-container-low rounded-lg overflow-hidden">
+<summary class="flex justify-between items-center p-6 cursor-pointer font-semibold text-primary list-none">
+<span>¿Trabajas con empresas fuera de España?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant bg-surface-container-lowest leading-relaxed">
+                            Sí, ofrezco servicios de consultoría remota para clientes internacionales, adaptándome a diferentes husos horarios y contextos de mercado.
+                        </div>
+</details>
+<details class="group bg-surface-container-low rounded-lg overflow-hidden">
+<summary class="flex justify-between items-center p-6 cursor-pointer font-semibold text-primary list-none">
+<span>¿Cuál es la duración media de un proyecto?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant bg-surface-container-lowest leading-relaxed">
+                            Depende de la complejidad, pero la mayoría de los proyectos de transformación operativa tienen una fase intensiva de 3 a 6 meses.
+                        </div>
+</details>
+</div>
+</div>
+</section>
+<!-- Contact Form -->
+<section class="py-24 px-8 bg-surface-container-low" id="contacto">
+<div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16">
+<div>
+<h2 class="text-4xl font-headline text-primary mb-6">Inicie su <br/> Transformación</h2>
+<p class="text-on-surface-variant mb-10">Complete el formulario y me pondré en contacto en menos de 24 horas laborables.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary">mail</span>
+<span class="text-sm font-semibold">contacto@elenavega.com</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+<span class="text-sm font-semibold">Madrid, España | Consultoría Global</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-xl">
+<form class="space-y-6">
+<div>
+<label class="block text-[10px] uppercase tracking-widest font-bold text-outline mb-1">Nombre Completo</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 transition-all py-2" placeholder="Ej. Juan Pérez" type="text"/>
+</div>
+<div>
+<label class="block text-[10px] uppercase tracking-widest font-bold text-outline mb-1">Email Corporativo</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 transition-all py-2" placeholder="juan@empresa.com" type="email"/>
+</div>
+<div>
+<label class="block text-[10px] uppercase tracking-widest font-bold text-outline mb-1">Interés</label>
+<select class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 transition-all py-2">
+<option>Auditoría Operativa</option>
+<option>Estrategia de Escalamiento</option>
+<option>Mentoría Ejecutiva</option>
+<option>Otros</option>
+</select>
+</div>
+<div>
+<label class="block text-[10px] uppercase tracking-widest font-bold text-outline mb-1">Mensaje</label>
+<textarea class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 transition-all py-2 resize-none" placeholder="Cuénteme brevemente su reto actual..." rows="3"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-bold hover:bg-primary-container transition-all hover:shadow-lg" type="submit">
+                            Enviar Solicitud
+                        </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-slate-200 bg-[#F3F3F3]">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-7xl mx-auto gap-6">
+<div class="text-lg font-serif italic text-[#022448]">ELENA VEGA | CONSULTORÍA</div>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-[#022448] font-sans text-sm uppercase tracking-widest transition-all hover:underline underline-offset-4 decoration-[#43682b]" href="#">LinkedIn</a>
+<a class="text-slate-500 hover:text-[#022448] font-sans text-sm uppercase tracking-widest transition-all hover:underline underline-offset-4 decoration-[#43682b]" href="#">Privacidad</a>
+<a class="text-slate-500 hover:text-[#022448] font-sans text-sm uppercase tracking-widest transition-all hover:underline underline-offset-4 decoration-[#43682b]" href="#">Términos</a>
+</div>
+<div class="text-slate-500 font-sans text-[10px] uppercase tracking-widest">
+                © 2024 ELENA VEGA | CONSULTORÍA. Todos los derechos reservados.
+            </div>
+</div>
+</footer>
+</body></html>

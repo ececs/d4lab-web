@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LUMIS CLINIC | Excelencia en Medicina Estética</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;family=Noto+Serif:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary": "#222f51",
+              "on-surface-variant": "#d0c5b5",
+              "error": "#ffb4ab",
+              "on-secondary-fixed-variant": "#454747",
+              "on-tertiary-fixed-variant": "#394669",
+              "on-surface": "#e5e2e1",
+              "tertiary-fixed-dim": "#b8c5f0",
+              "secondary-fixed-dim": "#c6c6c6",
+              "tertiary-container": "#9facd5",
+              "on-error": "#690005",
+              "primary-fixed-dim": "#e3c285",
+              "tertiary-fixed": "#dae2ff",
+              "surface-container": "#201f1f",
+              "background": "#131313",
+              "inverse-primary": "#735b28",
+              "surface-container-highest": "#353534",
+              "error-container": "#93000a",
+              "outline-variant": "#4d463a",
+              "surface-variant": "#353534",
+              "surface-container-low": "#1c1b1b",
+              "inverse-surface": "#e5e2e1",
+              "on-primary-container": "#533d0c",
+              "on-secondary-fixed": "#1a1c1c",
+              "surface-bright": "#3a3939",
+              "secondary": "#c6c6c6",
+              "surface": "#131313",
+              "inverse-on-surface": "#313030",
+              "on-error-container": "#ffdad6",
+              "on-secondary-container": "#b5b5b5",
+              "on-primary-fixed": "#261900",
+              "primary-container": "#c8a96e",
+              "surface-tint": "#e3c285",
+              "primary": "#e5c487",
+              "surface-dim": "#131313",
+              "on-secondary": "#2f3131",
+              "outline": "#998f81",
+              "on-primary": "#402d00",
+              "on-primary-fixed-variant": "#594312",
+              "secondary-container": "#454747",
+              "on-tertiary-fixed": "#0b1a3b",
+              "surface-container-high": "#2a2a2a",
+              "primary-fixed": "#ffdea3",
+              "surface-container-lowest": "#0e0e0e",
+              "on-tertiary-container": "#334063",
+              "tertiary": "#bac7f2",
+              "secondary-fixed": "#e2e2e2",
+              "on-background": "#e5e2e1"
+            },
+            fontFamily: {
+              "headline": ["Playfair Display", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .champagne-gradient {
+        background: linear-gradient(135deg, #e5c487 0%, #c8a96e 100%);
+      }
+      .lumis-blur {
+        background: radial-gradient(circle at top right, rgba(229, 196, 135, 0.05) 0%, transparent 50%);
+      }
+      body {
+        background-color: #131313;
+        color: #e5e2e1;
+      }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-zinc-900/60 backdrop-blur-xl">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif italic text-[#E5C487] tracking-tight font-['Playfair_Display']">
+                LUMIS CLINIC
+            </div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-[#E5C487] border-b border-[#C8A96E] pb-1 font-['Playfair_Display'] tracking-tight" href="#tratamientos">Tratamientos</a>
+<a class="text-zinc-400 hover:text-[#E5C487] transition-colors font-['Playfair_Display'] tracking-tight" href="#doctores">Doctores</a>
+<a class="text-zinc-400 hover:text-[#E5C487] transition-colors font-['Playfair_Display'] tracking-tight" href="#reservas">Reservas</a>
+<a class="text-zinc-400 hover:text-[#E5C487] transition-colors font-['Playfair_Display'] tracking-tight" href="#contacto">Contacto</a>
+</div>
+<button class="champagne-gradient text-on-primary px-6 py-2 rounded-md font-medium text-sm transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-primary/10">
+                Reservar consulta
+            </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 lumis-blur">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/80 to-background"></div>
+<img class="w-full h-full object-cover opacity-40" data-alt="luxury medical spa interior with soft gold ambient lighting and modern minimalist equipment in a deep dark setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAucugnlvVkJPWXsOBSgxdIqGLG_n0Q9Wmq0GLBomcbj8wUWtC3V9WuOO53Zt_WfMhtBl3cxrPO-z9eT4aWHS_GZBQ8bDpKW1ruZxWnBtiCUsgCFcvhD2f7A9ZLBmdsbaawd2AHk_M6YpzZWFNmzBMvTItVTz_ldJW17hmCB0YOQdWgNqL_N8awaADTwSGRppDFh8FRdCYEmlYz6m99Oi4l6Q_rCWobsbIS6_-fLzTl_VeT2L7A6pm6czOCrJvOcVJZteF4ixnqhw0"/>
+</div>
+<div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-highest/40 backdrop-blur-md border border-outline-variant/15 mb-8">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-xs font-label uppercase tracking-[0.2em] text-on-surface-variant">Clínica certificada</span>
+</div>
+<h1 class="text-5xl md:text-7xl lg:text-8xl font-headline text-on-surface mb-8 leading-[1.1] -tracking-[0.02em]">
+                    La excelencia en <br/>
+<span class="italic text-primary">medicina estética</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto mb-12 font-light leading-relaxed">
+                    Descubra un enfoque exclusivo donde la precisión clínica y el arte de la belleza se fusionan para revelar su mejor versión.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<button class="champagne-gradient text-on-primary px-10 py-4 rounded-md font-semibold text-lg hover:scale-105 transition-transform shadow-2xl">
+                        Reservar consulta
+                    </button>
+<button class="px-10 py-4 rounded-md font-semibold text-lg text-primary border border-outline-variant/30 hover:bg-surface-container-high transition-colors">
+                        Ver tratamientos
+                    </button>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+<span class="material-symbols-outlined text-primary">keyboard_double_arrow_down</span>
+</div>
+</section>
+<!-- Especialidades / Tratamientos -->
+<section class="py-24 bg-surface-container-low" id="tratamientos">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-20">
+<span class="text-primary font-label text-xs uppercase tracking-[0.3em] block mb-4">Servicios Exclusivos</span>
+<h2 class="text-4xl md:text-5xl font-headline text-on-surface">Especialidades Médicas</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Botox -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl transition-all duration-500 hover:bg-surface-container-high relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-0 bg-primary group-hover:h-full transition-all duration-500"></div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6">face</span>
+<h3 class="text-2xl font-headline text-on-surface mb-3">Bótox</h3>
+<p class="text-on-surface-variant mb-6 text-sm leading-relaxed">Suaviza líneas de expresión con resultados naturales y duraderos.</p>
+<div class="flex items-baseline gap-2">
+<span class="text-primary-fixed-dim text-xs font-label">Desde</span>
+<span class="text-2xl font-headline text-primary">200€</span>
+</div>
+</div>
+<!-- Rellenos -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl transition-all duration-500 hover:bg-surface-container-high relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-0 bg-primary group-hover:h-full transition-all duration-500"></div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6">water_drop</span>
+<h3 class="text-2xl font-headline text-on-surface mb-3">Rellenos Dérmicos</h3>
+<p class="text-on-surface-variant mb-6 text-sm leading-relaxed">Volumen y definición facial con ácido hialurónico de alta pureza.</p>
+<div class="flex items-baseline gap-2">
+<span class="text-primary-fixed-dim text-xs font-label">Desde</span>
+<span class="text-2xl font-headline text-primary">350€</span>
+</div>
+</div>
+<!-- Láser -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl transition-all duration-500 hover:bg-surface-container-high relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-0 bg-primary group-hover:h-full transition-all duration-500"></div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6">bolt</span>
+<h3 class="text-2xl font-headline text-on-surface mb-3">Láser</h3>
+<p class="text-on-surface-variant mb-6 text-sm leading-relaxed">Rejuvenecimiento avanzado para una piel radiante y uniforme.</p>
+<div class="flex items-baseline gap-2">
+<span class="text-primary-fixed-dim text-xs font-label">Desde</span>
+<span class="text-2xl font-headline text-primary">450€</span>
+</div>
+</div>
+<!-- Peeling -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl transition-all duration-500 hover:bg-surface-container-high relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-0 bg-primary group-hover:h-full transition-all duration-500"></div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6">flare</span>
+<h3 class="text-2xl font-headline text-on-surface mb-3">Peeling Médico</h3>
+<p class="text-on-surface-variant mb-6 text-sm leading-relaxed">Renovación celular profunda para tratar imperfecciones y textura.</p>
+<div class="flex items-baseline gap-2">
+<span class="text-primary-fixed-dim text-xs font-label">Desde</span>
+<span class="text-2xl font-headline text-primary">180€</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Por qué elegirnos -->
+<section class="py-24 bg-background">
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+<div class="relative">
+<div class="absolute -top-10 -left-10 w-40 h-40 bg-primary/5 blur-3xl rounded-full"></div>
+<img class="rounded-xl object-cover aspect-[4/5] shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="professional medical consultation with a specialist doctor and patient in a modern luxury clinic setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr-vr62ImXEGi_YVSVRzdz-56ia1gqM07XvHjQ9OG9qs2-UAyL91Q-qDsPVWEi1mSb-L9iOHiOmHo_nb_DzZ7U55Mla1xakikqESoaOADQbGMkMWeqvvtRCON8SSTVFp47Gqgdzs5DB9zpgBs138wumwduAMH8UzCIHz8ob6qPLeJcWAXaDawII1TPzfqCwgX_zPViP3xL8-jdQXFu48si7H1EB3E1TemJGqyc0kC-eQ3SufbdaY2RSvcOa42FbfDuCU4ZSSK1MlQ"/>
+</div>
+<div>
+<span class="text-primary font-label text-xs uppercase tracking-[0.3em] block mb-4">Nuestra Diferencia</span>
+<h2 class="text-4xl md:text-5xl font-headline text-on-surface mb-12">Compromiso con su bienestar</h2>
+<div class="space-y-10">
+<div class="flex gap-6">
+<div class="w-12 h-12 shrink-0 rounded-full border border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">medical_services</span>
+</div>
+<div>
+<h4 class="text-xl font-headline text-on-surface mb-2">Médicos especializados</h4>
+<p class="text-on-surface-variant font-light">Equipo de doctores colegiados con amplia trayectoria internacional en estética.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 shrink-0 rounded-full border border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">biotech</span>
+</div>
+<div>
+<h4 class="text-xl font-headline text-on-surface mb-2">Tecnología de última generación</h4>
+<p class="text-on-surface-variant font-light">Equipamiento médico avanzado de grado hospitalario y máxima seguridad.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 shrink-0 rounded-full border border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">eco</span>
+</div>
+<div>
+<h4 class="text-xl font-headline text-on-surface mb-2">Resultados naturales</h4>
+<p class="text-on-surface-variant font-light">Priorizamos la armonía y la elegancia, evitando resultados artificiales.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 shrink-0 rounded-full border border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">monitoring</span>
+</div>
+<div>
+<h4 class="text-xl font-headline text-on-surface mb-2">Seguimiento personalizado</h4>
+<p class="text-on-surface-variant font-light">Acompañamiento continuo post-tratamiento para asegurar su satisfacción.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Antes / Después -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-6 text-center mb-20">
+<span class="text-primary font-label text-xs uppercase tracking-[0.3em] block mb-4">Resultados Reales</span>
+<h2 class="text-4xl md:text-5xl font-headline text-on-surface">Transformaciones Lumis</h2>
+</div>
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="space-y-4">
+<div class="grid grid-cols-2 gap-2 overflow-hidden rounded-lg group">
+<img class="aspect-[3/4] object-cover" data-alt="close up profile of woman's chin and jawline before aesthetic treatment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc5AbEOTuvv-XI59WtPgEVUEQJau7KsVHSOtUcarJhOu1o304RF9oL9ziVnS7bc0EycP_EB-DDJDDXXn5vWGUM70YrzKohW4R3OsIClGuLZ2Y2836irnfs2t3QhXjsktf6rdG2TO60348XGFE7z1Dz4KTjhvAPq86lYV2DqAcr6Xgm1dFQt-LYFOpoDwO0_iOe5Cx0a4VtMgRIJc6toEm0iT68wBRGb_kLweTlvmhQ58Mk0pasT2U_jltJMC1fGQvUqmgaXgYu04Q"/>
+<img class="aspect-[3/4] object-cover" data-alt="close up profile of woman's chin and jawline after aesthetic filler treatment showing definition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXOEk9r0c5pWqm2IU8BxhurkXB6UL9U7hMbVPk1I0ca9RvIiX6i1cs64qPI9qZrqFaysr5OYWykDahzTxBnmFP4uA-DdQbn2vJ5Bc_gN8lEF7vxpl3rjodSQn1MwL32TMAbOORpIEiLS3c70cxWpa2Sj9cJYXXsI10ih3jGuCSa7-D0e5xqESCKd5BPframFRAQrI5tLFZxA5brFBjY76b1bXEnybJmnUjICpJe_sCPEj_rVV0OazyhWoLlj44K4c_5awhz3EOlg4"/>
+</div>
+<p class="text-sm font-label text-primary text-center">Armonización Facial</p>
+</div>
+<div class="space-y-4">
+<div class="grid grid-cols-2 gap-2 overflow-hidden rounded-lg">
+<img class="aspect-[3/4] object-cover" data-alt="woman's forehead with visible expression lines before botox" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0CNq2HJCD3kzYbOc3oFAjrQzAN8mobw2IrFDiTS0hQBms5WyMTL9cfhdWGk_kdQ4LFWKlGEVd44-in_BuNl38EGrkAkauU6ISkBYVbIl1aTVNzGxc8Xw0zEkczk45dDL_faSssmCKFSuA8PsjSJCiqPWLr23CAygvwOIim538V90yAg4ZvZfsAXZj-S6oefq5QiabbRkQQfsqOjSSodVcx45T6bknaX-nY-cyh-0GLqBlu25L60Zrr8dT82N3EzZUNybiZG520e4"/>
+<img class="aspect-[3/4] object-cover" data-alt="woman's forehead smooth and relaxed after botox treatment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAe6yRG5KBh0xGrn21MZi2_pySRWPf7JXJW06LQdjQOThZ8gw3dFZ2WEdDYry79t3KR0O2_74TkY9bVvGR5BwTzriexZDcjrO9r3t7kZTd-Yh7Yjsx9NPiEQgfAXL3PVy55k4uMUVrX5KIhhh8BUFG6sF9fMDy6_B4woPNeAZPhOmfZ0NQbM0PQeSv8Tq4roB0hJbnxb4aVPmGWhS4rdTilw4XqlesmetRw5AwaCiYXTcOOtOuMHMocCrbtTkvEJheOirfyfeO5Wo"/>
+</div>
+<p class="text-sm font-label text-primary text-center">Tratamiento de Arrugas</p>
+</div>
+<div class="space-y-4">
+<div class="grid grid-cols-2 gap-2 overflow-hidden rounded-lg">
+<img class="aspect-[3/4] object-cover" data-alt="natural lips before volume treatment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBREGKvfbwAWNNzmlbgd4jGUGte5E9LcMH55FPyQ47QfiI2Y54ydKYuzdwdn8ioeLrzMFu7Vo6lgmXJaS10lZQ-7xrOqwqzutcMSFv_QZMFW_BAIx67gVTD8yY5-iKzYuJY5CFZbg50QlndwM-3hWarFH5hSSAiaD-3c4ZO107g0KEpLT6PdTve5zWv2lTpANWDxjv9s57TncuN6SBh0f6qJdgCE__sXDjt9XNGGmT7QN3DMLgcvcf1pWPtK4GJVb9mqGEAVPCWOrI"/>
+<img class="aspect-[3/4] object-cover" data-alt="lips with subtle and elegant volume after hyaluronic acid treatment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2MGk0TA3hxgFLF-9hO9tj4fWbziIDAqBktVzzJza31t59YNnV4Jntp3UsXHWvTXhhsJJ7KUKVj9kekmDKlnWHykCNqA8M2CegH29nhFZcB2d6ISG4oCq_NuCMQWMiw_lDcAzhGYw0rLPlUdwnSLlPXoAUYqCVKTVCDtH-gJAxQCwQ3jyTmoZ40gyNSDSzQnlBxAIFrpYKg-lFge9vgZF4L0JuWX8J_pxZwVG7N7Fbu_PRZXzh-0CrL8rNG2jdyR63E-Zl9HWqO-s"/>
+</div>
+<p class="text-sm font-label text-primary text-center">Volumen de Labios</p>
+</div>
+</div>
+</section>
+<!-- Equipo Médico -->
+<section class="py-24 bg-background" id="doctores">
+<div class="max-w-7xl mx-auto px-6 text-center mb-20">
+<span class="text-primary font-label text-xs uppercase tracking-[0.3em] block mb-4">Nuestro Talento</span>
+<h2 class="text-4xl md:text-5xl font-headline text-on-surface">Equipo Médico Especializado</h2>
+</div>
+<div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-16">
+<div class="text-center group">
+<div class="relative w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-2 border-primary/20 p-2">
+<img class="w-full h-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="portrait of a professional female medical doctor specializing in aesthetic medicine with a warm smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZSKV_xHAxwxix3SUArmvKwESpXW9a_-liIpaFDyt0HwBznJUhizdnJJ2LKa78MDGiEOxQx0b30Pf0c0x0GA6Jxt33hND4pjeG9LKefRUpGuI9kIs-iSLQ2rIB6o1owPql2pUtRA6c5F5DJRRY3EgD-Cb4L06cFdcjGxyMGBQ6mm8X16UPwx5F_TNXo6Wq8dVFY0mBgHgAyt6uHqkK-6Yat3yvpvoi_kyeoaVnGRH4XtAVdFalqLAvTdOEPB3TUhg_LjahMyqehYw"/>
+</div>
+<h4 class="text-2xl font-headline text-on-surface mb-1">Dra. Isabel Moreno</h4>
+<p class="text-primary text-sm font-label uppercase tracking-widest">Medicina Estética</p>
+</div>
+<div class="text-center group">
+<div class="relative w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-2 border-primary/20 p-2">
+<img class="w-full h-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="portrait of a professional male physician specialist in dermatology and aesthetic treatments" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl0NevxUl9gSts2OAwQ93rEfJvLi3qg_Ri1n-yCDQXGEYM4px_cqN1qqtFbUzyLAjY0TUR8RwpIq-BThURQZsGEnV0U9K39eNqEXwDzacZu9iMjmOsqmTGZFaMIZB48vpJgo6KsUQUgnlnLTVZhRpdhKe7vpnELbRHdLzMyF4CRkIP75Cn7n2A8zgyt4kb-x-6aOsHFCx1RLGpw4SP_oH5JSnTItddxwANPHVwOgnUnIABGO7pF7vcaTfA9lwf2KZW2AvjrN1iG1A"/>
+</div>
+<h4 class="text-2xl font-headline text-on-surface mb-1">Dr. Alejandro Ruiz</h4>
+<p class="text-primary text-sm font-label uppercase tracking-widest">Dermatología</p>
+</div>
+<div class="text-center group">
+<div class="relative w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-2 border-primary/20 p-2">
+<img class="w-full h-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="portrait of a professional female doctor specialized in anti-aging treatments" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFleslja6I8W5W9VffKsL16lNlpHGKrFzHGAdNmHqxUW0WZvve81C3960QcRMEABIKvi9MAj81E1o73vsQdWZfg790emlBlD7dNHOlvO-b-oMNRsF0bJHgZ-rIuctZkkMrqEq3PGGtMzjlmEOyfs4rZXIs83BTSd0x14V7UvdM0_XV20q6UAH3tJpjg0FaU3_TSiDxg_0w8h_vvTCwIYvEEF4hTU_IXdkGCfetdZZuHAWNtXZjMpQvC--fy2l4438tvq9H6ebimcs"/>
+</div>
+<h4 class="text-2xl font-headline text-on-surface mb-1">Dra. Elena Santos</h4>
+<p class="text-primary text-sm font-label uppercase tracking-widest">Medicina Antiaging</p>
+</div>
+</div>
+</section>
+<!-- Testimonios -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-3 gap-12">
+<div class="bg-surface-container p-10 rounded-lg border-l-4 border-primary">
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface leading-relaxed italic mb-8">"La atención de la Dra. Moreno es excepcional. Los resultados del bótox fueron tan naturales que nadie notó el tratamiento, solo que me veía descansada."</p>
+<p class="text-primary font-label text-sm uppercase tracking-widest">— Carmen V.</p>
+</div>
+<div class="bg-surface-container p-10 rounded-lg border-l-4 border-primary">
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface leading-relaxed italic mb-8">"Buscaba definición en la mandíbula y el resultado con hialurónico superó mis expectativas. La clínica es un oasis de calma y profesionalidad."</p>
+<p class="text-primary font-label text-sm uppercase tracking-widest">— Jorge M.</p>
+</div>
+<div class="bg-surface-container p-10 rounded-lg border-l-4 border-primary">
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface leading-relaxed italic mb-8">"El peeling médico ha cambiado la textura de mi piel por completo. Un equipo increíble que se nota que ama lo que hace."</p>
+<p class="text-primary font-label text-sm uppercase tracking-widest">— Lucía G.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Reserva Cita / Formulario -->
+<section class="py-24 bg-background relative overflow-hidden" id="reservas">
+<div class="absolute right-0 top-0 w-1/3 h-full lumis-blur opacity-50"></div>
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20">
+<div>
+<span class="text-primary font-label text-xs uppercase tracking-[0.3em] block mb-4">Agenda tu Consulta</span>
+<h2 class="text-4xl md:text-5xl font-headline text-on-surface mb-8">Comience su viaje hoy mismo</h2>
+<p class="text-on-surface-variant text-lg mb-12 font-light">Solicite una valoración personalizada con nuestros expertos. Estudiaremos su caso para ofrecerle el tratamiento que mejor se adapte a sus necesidades.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-primary">phone_in_talk</span>
+<span class="font-medium">+34 912 345 678</span>
+</div>
+<div class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span class="font-medium">hola@lumisclinic.com</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-8 md:p-12 rounded-xl border border-outline-variant/10 shadow-2xl">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Nombre completo</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-md focus:ring-1 focus:ring-primary text-on-surface placeholder:text-zinc-600" placeholder="Ej. Ana García" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Email</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-md focus:ring-1 focus:ring-primary text-on-surface placeholder:text-zinc-600" placeholder="ana@ejemplo.com" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Teléfono</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-md focus:ring-1 focus:ring-primary text-on-surface placeholder:text-zinc-600" placeholder="+34 600 000 000" type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Tratamiento de interés</label>
+<select class="w-full bg-surface-container-lowest border-none rounded-md focus:ring-1 focus:ring-primary text-on-surface">
+<option>Bótox</option>
+<option>Rellenos Dérmicos</option>
+<option>Láser</option>
+<option>Peeling Médico</option>
+<option>Otro / Valoración</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Mensaje</label>
+<textarea class="w-full bg-surface-container-lowest border-none rounded-md focus:ring-1 focus:ring-primary text-on-surface placeholder:text-zinc-600" placeholder="¿Cómo podemos ayudarte?" rows="4"></textarea>
+</div>
+<button class="w-full champagne-gradient text-on-primary py-4 rounded-md font-semibold text-lg hover:brightness-110 transition-all" type="submit">
+                            Solicitar consulta
+                        </button>
+</form>
+</div>
+</div>
+</section>
+<!-- Contacto Final / Mapa -->
+<section class="py-24 bg-surface-container-low" id="contacto">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-3 gap-12 mb-20">
+<div class="text-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">location_on</span>
+<h4 class="text-xl font-headline text-on-surface mb-2">Dirección</h4>
+<p class="text-on-surface-variant font-light">Calle de Serrano, 45<br/>28001 Madrid, España</p>
+</div>
+<div class="text-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">schedule</span>
+<h4 class="text-xl font-headline text-on-surface mb-2">Horario</h4>
+<p class="text-on-surface-variant font-light">Lunes a Viernes: 10:00 - 20:00<br/>Sábados: 10:00 - 14:00</p>
+</div>
+<div class="text-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">chat</span>
+<h4 class="text-xl font-headline text-on-surface mb-2">WhatsApp</h4>
+<p class="text-on-surface-variant font-light mb-6">Atención inmediata vía chat</p>
+<a class="inline-flex items-center gap-2 px-6 py-2 border border-primary/30 rounded-full text-primary hover:bg-primary/5 transition-colors" href="#">
+                            Contactar por WhatsApp
+                        </a>
+</div>
+</div>
+<div class="h-96 rounded-2xl overflow-hidden grayscale brightness-50 contrast-125 border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="abstract stylized dark map of central madrid area focused on serrano street" data-location="Madrid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI9C6Vxf0bmKKOwK7TWoPQiASZxjxsJkAnkH7cPX7lCpxMNuxRsKVsqUz7l-BGuBADBoEsz5QsR9aohmhftZ8iBYAjKUpMd6N7YIV9I-bD12m_q9qsV-OqCz9EjpLi9bsnP9tJh0XAEm0NgIBTQRVvYTC50h9EkAEUXkI7qtfNFkTAWsis8diYvX2o1b0FucrivVZ5lt0QHiSwmI50He3goZn6d0Dg5ThN9rj-j0B3f50As8OMR2qcpsA8SAIMgDWh7vifJBYyy5o"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#4D463A]/15 bg-[#131313]">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-10 gap-6">
+<div class="text-xl font-serif text-[#C8A96E] font-['Playfair_Display']">
+                LUMIS CLINIC
+            </div>
+<div class="flex gap-8 text-zinc-500 font-['Inter'] text-sm tracking-wide">
+<a class="hover:text-[#E5C487] transition-colors" href="#">Aviso Legal</a>
+<a class="hover:text-[#E5C487] transition-colors" href="#">Privacidad</a>
+<a class="hover:text-[#E5C487] transition-colors" href="#">Cookies</a>
+<a class="hover:text-[#E5C487] transition-colors" href="#">Contacto</a>
+</div>
+<div class="text-zinc-500 font-['Inter'] text-sm tracking-wide">
+                © 2024 LUMIS CLINIC. Todos los derechos reservados.
+            </div>
+</div>
+</footer>
+<!-- FAB WhatsApp -->
+<a class="fixed bottom-8 right-8 w-16 h-16 bg-zinc-800 rounded-full flex items-center justify-center text-primary shadow-2xl z-40 border border-primary/20 hover:scale-110 transition-transform md:hidden" href="#">
+<span class="material-symbols-outlined text-3xl">chat</span>
+</a>
+</body></html>

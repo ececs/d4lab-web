@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prisma Advisory Group | Estrategia con Propósito</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#5d4201",
+              "tertiary": "#00595a",
+              "surface-tint": "#9a442a",
+              "surface-container-highest": "#e4e2dd",
+              "on-tertiary-fixed": "#002020",
+              "on-secondary-fixed": "#261900",
+              "outline-variant": "#dcc1ba",
+              "surface-container-low": "#f5f3ee",
+              "secondary-container": "#fed488",
+              "surface-bright": "#fbf9f4",
+              "error-container": "#ffdad6",
+              "on-primary-fixed": "#3a0a00",
+              "on-surface-variant": "#55423d",
+              "tertiary-container": "#007375",
+              "primary-fixed-dim": "#ffb59f",
+              "outline": "#88726c",
+              "on-error": "#ffffff",
+              "inverse-surface": "#30312e",
+              "on-tertiary-fixed-variant": "#004f51",
+              "on-secondary-container": "#785a1a",
+              "primary-container": "#a64d32",
+              "tertiary-fixed-dim": "#7fd5d6",
+              "surface-container-high": "#eae8e3",
+              "on-secondary": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "surface": "#fbf9f4",
+              "secondary-fixed-dim": "#e9c176",
+              "tertiary-fixed": "#9bf1f3",
+              "primary": "#87361d",
+              "on-surface": "#1b1c19",
+              "on-primary-fixed-variant": "#7c2e15",
+              "surface-variant": "#e4e2dd",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed": "#ffdbd1",
+              "on-tertiary-container": "#9ff5f7",
+              "inverse-primary": "#ffb59f",
+              "on-error-container": "#93000a",
+              "surface-dim": "#dbdad5",
+              "secondary": "#775a19",
+              "error": "#ba1a1a",
+              "surface-container": "#f0eee9",
+              "inverse-on-surface": "#f2f1ec",
+              "secondary-fixed": "#ffdea5",
+              "background": "#fbf9f4",
+              "on-background": "#1b1c19",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#ffe0d8"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Manrope", "sans-serif"],
+              "label": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .serif-italic { font-family: 'Newsreader'; font-style: italic; }
+        .bg-editorial-gradient {
+            background: linear-gradient(135deg, #87361d 0%, #a64d32 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fbf9f4]/80 dark:bg-stone-950/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-10 py-6 max-w-[1440px] mx-auto">
+<a class="text-2xl font-serif italic text-[#1b1c19] dark:text-stone-100" href="#">Prisma Advisory Group</a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-sm font-medium tracking-wide text-[#1b1c19]/70 dark:text-stone-400 hover:text-[#87361d] transition-opacity duration-300" href="#servicios">Servicios</a>
+<a class="text-sm font-medium tracking-wide text-[#1b1c19]/70 dark:text-stone-400 hover:text-[#87361d] transition-opacity duration-300" href="#diferenciadores">Diferenciadores</a>
+<a class="text-sm font-medium tracking-wide text-[#1b1c19]/70 dark:text-stone-400 hover:text-[#87361d] transition-opacity duration-300" href="#resultados">Resultados</a>
+<a class="text-sm font-medium tracking-wide text-[#1b1c19]/70 dark:text-stone-400 hover:text-[#87361d] transition-opacity duration-300" href="#equipo">Equipo</a>
+<a class="text-sm font-medium tracking-wide text-[#1b1c19]/70 dark:text-stone-400 hover:text-[#87361d] transition-opacity duration-300" href="#blog">Blog</a>
+<a class="text-sm font-medium tracking-wide text-[#1b1c19]/70 dark:text-stone-400 hover:text-[#87361d] transition-opacity duration-300" href="#faq">FAQ</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="hidden lg:block text-sm font-semibold text-primary underline underline-offset-4 decoration-primary hover:opacity-80 transition-opacity">Descargar Guía</button>
+<button class="bg-editorial-gradient text-on-primary px-6 py-2.5 rounded-lg text-sm font-semibold active:scale-95 transition-all duration-200">Agendar Consultoría</button>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative px-10 py-32 md:py-48 max-w-[1440px] mx-auto overflow-hidden">
+<div class="grid md:grid-cols-12 gap-10 items-center">
+<div class="md:col-span-7 z-10">
+<span class="inline-block font-label text-xs uppercase tracking-[0.2em] text-secondary mb-6">Estrategia Boutique para Líderes Globales</span>
+<h1 class="font-headline text-6xl md:text-8xl leading-[1.05] tracking-tight text-on-surface mb-8">
+                        Estrategia que <span class="serif-italic text-primary">Transforma</span> el Crecimiento Corporate
+                    </h1>
+<p class="font-body text-xl text-on-surface-variant max-w-xl mb-12 leading-relaxed">
+                        Elevamos el potencial de su organización mediante un enfoque curado de inteligencia estratégica y ejecución impecable.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-editorial-gradient text-on-primary px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all active:scale-95">Agendar Consultoría</button>
+<button class="bg-surface-container text-on-surface-variant px-8 py-4 rounded-lg font-semibold hover:bg-surface-container-high transition-all">Nuestra Metodología</button>
+</div>
+</div>
+<div class="md:col-span-5 relative">
+<div class="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-low relative">
+<img class="w-full h-full object-cover grayscale-[20%] contrast-[1.1]" data-alt="Modern high-end office interior with minimalist furniture, large windows, and warm sunlight creating professional atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHUCBsj_xx2QSW7mjqQIS7c6kTaQvn1jpwdqQZG1gdzbmO6lvS394s2oHggdqYAkyfihnDeZaL_Eo_ys8DS-iZSPiSzdHmhXWJWLFu9OJH_nnpbpu0DQCgDICcrOFWIJOYmJToCqnBaG_2qDMuliJ5lWs66vt2vmg8lLPWZrznMVRBgCByZ6eA8b6O2UlJT2R44N0LKrO-ufi7v1y6nMaZUYNTViLRDiZqYjVjP-8t573WDOoKy430m5CIAGtvYT-txuHJdCqOKfhS"/>
+<div class="absolute inset-0 bg-primary/5 mix-blend-multiply"></div>
+</div>
+<!-- Stat Overlap -->
+<div class="absolute -bottom-10 -left-10 bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10 max-w-[200px]">
+<span class="block font-headline text-5xl text-primary font-bold -mb-2">15+</span>
+<span class="font-label text-xs uppercase tracking-wider text-on-surface-variant">Años de Excelencia</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Servicios -->
+<section class="bg-surface-container-low py-32 px-10" id="servicios">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl">
+<span class="font-label text-xs uppercase tracking-[0.2em] text-secondary mb-4 block">Nuestras Capacidades</span>
+<h2 class="font-headline text-5xl md:text-6xl text-on-surface leading-tight">Soluciones diseñadas para la <span class="serif-italic">complejidad</span> actual.</h2>
+</div>
+<p class="font-body text-lg text-on-surface-variant max-w-sm">No ofrecemos plantillas, creamos rutas críticas personalizadas para cada desafío organizacional.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-10 rounded-xl transition-all hover:-translate-y-2 duration-300 group">
+<div class="w-12 h-12 rounded-full bg-primary-fixed mb-8 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">settings_suggest</span>
+</div>
+<h3 class="font-headline text-2xl mb-4">Optimización Operativa</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8">Refinamos sus procesos internos para maximizar la eficiencia sin comprometer la cultura ni la agilidad.</p>
+<a class="text-primary font-semibold flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                            Saber más <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-10 rounded-xl transition-all hover:-translate-y-2 duration-300 group">
+<div class="w-12 h-12 rounded-full bg-primary-fixed mb-8 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">insights</span>
+</div>
+<h3 class="font-headline text-2xl mb-4">Estrategia de Mercado</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8">Análisis profundo y prospectiva estratégica para conquistar nuevos segmentos y fortalecer el posicionamiento.</p>
+<a class="text-primary font-semibold flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                            Saber más <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-10 rounded-xl transition-all hover:-translate-y-2 duration-300 group">
+<div class="w-12 h-12 rounded-full bg-primary-fixed mb-8 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<h3 class="font-headline text-2xl mb-4">Transformación Digital</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8">Integración inteligente de tecnologías emergentes para convertir la digitalización en una ventaja competitiva.</p>
+<a class="text-primary font-semibold flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                            Saber más <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Diferenciadores -->
+<section class="py-32 px-10 max-w-[1440px] mx-auto" id="diferenciadores">
+<div class="grid md:grid-cols-2 gap-20 items-center">
+<div class="relative">
+<div class="aspect-square bg-surface-container rounded-2xl overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Strategic meeting in a minimalist boardroom with glass walls and professional atmosphere, showing focus and collaboration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHxL57z7SeAfYCZX01_u6eeysc6pRggnvZq08RVSjHPS6s_4IYDnd1q-bQ_MYtNcBUfqZFkOj1wxtD2M4a9KWS5xYNRnf2CiH4pdd6AXaraHqOeSzpboc_rW2n6ebAxyaNE9ubTixff3o9FUQdzfUsBOZC2pZTNG_uxiUG-YeF5p1dQ9FtrnjaIEB8KV1DPNfFBTF9pWEvQftUffXIWcyVHKN52oKeI_qPvJuBMpjrEVz4ymLGxbH24jPMdFVgQkieUK2pYkyK8CiN"/>
+</div>
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl -z-10"></div>
+</div>
+<div>
+<h2 class="font-headline text-5xl mb-12">Por qué <span class="serif-italic">Prisma</span> es diferente</h2>
+<div class="space-y-10">
+<div class="flex gap-6">
+<span class="text-primary font-headline text-2xl">01</span>
+<div>
+<h4 class="font-bold text-lg mb-2">Mentalidad de Socio, no de Consultor</h4>
+<p class="text-on-surface-variant">Nos involucramos en los resultados finales, compartiendo el riesgo y la ambición de su empresa.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="text-primary font-headline text-2xl">02</span>
+<div>
+<h4 class="font-bold text-lg mb-2">Inteligencia de Datos Propietaria</h4>
+<p class="text-on-surface-variant">Utilizamos modelos analíticos avanzados y bases de datos exclusivas del sector.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="text-primary font-headline text-2xl">03</span>
+<div>
+<h4 class="font-bold text-lg mb-2">Red Global de Expertos</h4>
+<p class="text-on-surface-variant">Acceso a una red de especialistas en 12 países para visiones globales integradas.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Resultados -->
+<section class="bg-surface-dim py-32 px-10" id="resultados">
+<div class="max-w-[1440px] mx-auto">
+<div class="text-center mb-20">
+<h2 class="font-headline text-5xl mb-6 italic">Impacto Real en Números</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">Casos de estudio que demuestran nuestra capacidad de ejecución y generación de valor tangible.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-10">
+<div class="bg-surface-container-lowest flex flex-col md:flex-row rounded-xl overflow-hidden h-full">
+<div class="md:w-1/3 bg-stone-200">
+<img class="w-full h-full object-cover" data-alt="Digital dashboard on a sleek tablet showing growth charts and financial data in high resolution" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo-RG8n9LLoAClpQb8GJ1W2yACY0rh0OaIDlii05C2SPswKq6lvE_IXniyDjxbVYrAKWSTvZmUGMMdjFMzuvS8vQ2oaOownUdeDEun6LXflmKp2QjAYV7MdvQeqnvIv3DFjNbKfeKLqv3oUhrEvBY6fshzwGBHwY4iidBYTEslpv31NK7HK4yewJAxumcRqKNHYqOP6gEUgIMsr1AMuX9o6kowMBhSf4smHcyPfq6LxWjbSEH9SQZL85kXUgz7ou_-N8AsVKCgBemd"/>
+</div>
+<div class="p-10 md:w-2/3 flex flex-col justify-center">
+<span class="font-label text-xs tracking-widest text-primary mb-4 block">SECTOR FINANCIERO</span>
+<h3 class="font-headline text-2xl mb-4">Expansión Multimercado</h3>
+<p class="text-on-surface-variant mb-6 text-sm">Rediseño del modelo operativo que resultó en un ahorro del 22% anual.</p>
+<div class="mt-auto pt-6 border-t border-outline-variant/30">
+<span class="text-3xl font-headline font-bold text-on-surface">+34%</span>
+<span class="text-xs uppercase ml-2 text-on-surface-variant">ROI primer año</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest flex flex-col md:flex-row rounded-xl overflow-hidden h-full">
+<div class="md:w-1/3 bg-stone-200">
+<img class="w-full h-full object-cover" data-alt="Professional office environment with soft focus on employees collaborating on a large project board" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVejotygT2p2AnhgWYb-JFw0GkgSiYJP0B2WhCMbTzCmRb9CRx1haPFg63djjnu0mKFv5n064kHwmHW21MgjNSjOdX-JDhPuW--rXi-MbQrg0Q6S0ficKW8j_oOd2wDGyifU9EqG_-zlCF8_Wfd6vzkbKV6dHVXzzzUdnMEDADsOZihtqErbCbiGQq-2yixv8vobHGE9HytFlRl7fZuXpu0Ex_n0z9dxDsKC9LtS1SmIJaDUsafGjRnmaLzzm4WQOlRilSNLBIn0WP"/>
+</div>
+<div class="p-10 md:w-2/3 flex flex-col justify-center">
+<span class="font-label text-xs tracking-widest text-primary mb-4 block">TECNOLOGÍA</span>
+<h3 class="font-headline text-2xl mb-4">Escalamiento Operativo</h3>
+<p class="text-on-surface-variant mb-6 text-sm">Optimización de procesos para unicornio tecnológico previo a su salida a bolsa.</p>
+<div class="mt-auto pt-6 border-t border-outline-variant/30">
+<span class="text-3xl font-headline font-bold text-on-surface">3.5x</span>
+<span class="text-xs uppercase ml-2 text-on-surface-variant">Capacidad Instalada</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Proceso -->
+<section class="py-32 px-10 max-w-[1440px] mx-auto">
+<h2 class="font-headline text-5xl mb-20 text-center">Nuestra <span class="serif-italic">Ruta Crítica</span></h2>
+<div class="grid md:grid-cols-4 gap-12 relative">
+<div class="absolute top-1/2 left-0 w-full h-px bg-outline-variant hidden md:block -z-10"></div>
+<div class="bg-surface p-8 text-center relative">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center mx-auto mb-6 text-sm font-bold ring-8 ring-background">1</div>
+<h4 class="font-bold mb-3">Diagnóstico</h4>
+<p class="text-sm text-on-surface-variant">Inmersión profunda en sus desafíos y estructura actual.</p>
+</div>
+<div class="bg-surface p-8 text-center relative">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center mx-auto mb-6 text-sm font-bold ring-8 ring-background">2</div>
+<h4 class="font-bold mb-3">Diseño</h4>
+<p class="text-sm text-on-surface-variant">Arquitectura de la solución y validación de hipótesis.</p>
+</div>
+<div class="bg-surface p-8 text-center relative">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center mx-auto mb-6 text-sm font-bold ring-8 ring-background">3</div>
+<h4 class="font-bold mb-3">Ejecución</h4>
+<p class="text-sm text-on-surface-variant">Implementación táctica asistida y gestión del cambio.</p>
+</div>
+<div class="bg-surface p-8 text-center relative">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center mx-auto mb-6 text-sm font-bold ring-8 ring-background">4</div>
+<h4 class="font-bold mb-3">Legado</h4>
+<p class="text-sm text-on-surface-variant">Transferencia de capacidades y monitoreo de impacto.</p>
+</div>
+</div>
+</section>
+<!-- Equipo -->
+<section class="bg-surface-container-low py-32 px-10" id="equipo">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex justify-between items-center mb-16">
+<h2 class="font-headline text-5xl">Liderazgo <span class="serif-italic">Sénior</span></h2>
+<button class="text-primary font-semibold flex items-center gap-2">Ver todo el equipo <span class="material-symbols-outlined">north_east</span></button>
+</div>
+<div class="grid md:grid-cols-3 gap-12">
+<div class="group">
+<div class="aspect-[3/4] rounded-xl overflow-hidden mb-6 bg-surface-container-highest grayscale hover:grayscale-0 transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="Professional portrait of a male executive in a tailored suit, neutral background, editorial style lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjVl1nbP8aigx9C-xefgG4TOjOedOoYhGkorptmJ2CbE0yodz0phoVAFEi9NtTYEGgy45zYRF3snSRc665UBxEfCOUbJUXoWsbeFJvlj7Ys3ewjbCMzrD4u_BFmyKe_UIMPlDTnvLkxdPnLHTW2b3EPi0vtj1DOMZnkMqDpeRWOgQo0CEBku62o3u4izNmabLWg6X95Pcs3yA4_domO8BTkYklHWiNW-c6yNX-QYex-HoJDmbR1GjHr75NifoA55Ya_cDF1GFQrEXz"/>
+</div>
+<h4 class="font-headline text-2xl mb-1">Alejandro Vance</h4>
+<span class="font-label text-xs uppercase tracking-widest text-primary block mb-4">Managing Partner</span>
+<p class="text-on-surface-variant text-sm">Ex-Director Regional en McKinsey. 20 años optimizando corporaciones Fortune 500.</p>
+</div>
+<div class="group">
+<div class="aspect-[3/4] rounded-xl overflow-hidden mb-6 bg-surface-container-highest grayscale hover:grayscale-0 transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="Professional portrait of a female executive with confident expression, minimalist attire, clean studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkSCHerVA9xuaCxwUvzBftaD2ewgPvqMORbnXPZ-lJSZn10UYa7Z5Wst2cjsZEJ5BObl2SBz4zDxmJ_E9ocrQm_oOTLp4gOI9ggOeND01Iyf7NzHY7I9AVxssn7STZsazzU8dJwbg6uCC0tOfisWN0NHIfkPiF8Fav-EKtrbLKin-dTUYzaw7aPlUg__4qnQL3u1__iJmS5pshYQWAVivOz8Hn_VSrLVSezgwMqsMwyUk9gP75bCYgwh49oFJeSQLTBJpWFXy0xMV2"/>
+</div>
+<h4 class="font-headline text-2xl mb-1">Elena Costa</h4>
+<span class="font-label text-xs uppercase tracking-widest text-primary block mb-4">Head of Strategy</span>
+<p class="text-on-surface-variant text-sm">Especialista en M&amp;A y transformación digital con experiencia en Wall Street.</p>
+</div>
+<div class="group">
+<div class="aspect-[3/4] rounded-xl overflow-hidden mb-6 bg-surface-container-highest grayscale hover:grayscale-0 transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="Male business leader in professional attire leaning slightly, soft warm lighting, editorial corporate photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKy_gyXKIS8YaKAUhuqMQgPd6-5002Ro_mpU8RgjPuxbfUAlcj5Y-o-7yqrEbvXqVNPwnDar_pcVrVXIl_BlUYszGjkQiE2-Ae_YhS1rY44S4ny8euRlgYXT42i0EzHeHB4yDxijmlXlzs-RsfWyqklwW6QXsYyX_oxkX1zS7ibVLQaqolyWf64n70RK9cnE9UH4kGYyJBLV10z-v3y-L1jllPZjPbvxMUwTT-99UY4TN5PiQ7iHqczT37xX2CBQzZwhQOMCyhFaKx"/>
+</div>
+<h4 class="font-headline text-2xl mb-1">Ricardo Miró</h4>
+<span class="font-label text-xs uppercase tracking-widest text-primary block mb-4">Director of Operations</span>
+<p class="text-on-surface-variant text-sm">Líder en eficiencia de procesos con enfoque en manufactura 4.0.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Lead Magnet -->
+<section class="py-20 px-10">
+<div class="max-w-[1200px] mx-auto bg-primary rounded-3xl overflow-hidden flex flex-col md:flex-row items-center relative shadow-2xl">
+<div class="p-16 md:w-3/5 text-on-primary z-10">
+<h2 class="font-headline text-4xl mb-6 leading-tight">Prepare su organización para 2024.</h2>
+<p class="mb-10 text-on-primary/80 max-w-md">Descargue nuestra Guía de Estrategia Anual: Tendencias, riesgos y oportunidades para el mercado iberoamericano.</p>
+<button class="bg-surface-container-lowest text-primary px-10 py-4 rounded-lg font-bold hover:bg-on-primary-container transition-all">Descargar Guía Gratis</button>
+</div>
+<div class="md:w-2/5 relative h-[400px] w-full md:h-auto self-stretch">
+<img class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-60" data-alt="Close up of a premium physical printed strategic guide with elegant typography on a dark desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC1ZQ4g7WY-2mLjQiAdz41eGxNehXoB9dSo2XRX4G3udUY8f_RAXX5jFJ_lF_bUWqpkejWcmDuVC7un6unpO4T3M6ttbbAYAEv4LyaV5LtOhcjy6nok6buQjXjSX9dvETBWGq1RzKnTFSCeYczGDDY-KRxhYkOd0CR8YAQIp_spZKA860z5rP99jT5P_O4Iw9Be59POUf49m5KnDHXHrUBQvMUVKtI87AMNL0vXtkNYMm-75biLr_CTHnpEqoJCtNtpyBgRWdAPY5G"/>
+</div>
+</div>
+</section>
+<!-- Blog Preview -->
+<section class="py-32 px-10 max-w-[1440px] mx-auto" id="blog">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-headline text-5xl mb-4">Perspectiva <span class="serif-italic">Prisma</span></h2>
+<p class="text-on-surface-variant">Análisis profundo sobre el futuro de los negocios.</p>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-16">
+<article class="group cursor-pointer">
+<div class="mb-8 overflow-hidden rounded-xl bg-surface-container">
+<img class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Conceptual image of data connectivity and global network with soft glowing lines on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDittfvBMXEq-XWOJk-rLWJfwp9ldn-QcclhQOaRGRUtD5HyuEl0pfZ3UHyTmPFecos-YlBkAgKFiAWqEF6Hi9w2oG63TMlS0Jv5M8yPF3O86YvvJpOfwK1zOdIeYMl7IP_FAdqlWYF_voMK-VGAXCX7WL04Z0m8Q-ydXh4YE-hIorirWVRPUJ_PLnsyA7ZCLPRN-tqgKS7c5dNXldH2R2EfoGKzDQP13PAVzZC5wd-JjAtvxdoKUwOG1OUARiX9mEltZKKrk5zhBT"/>
+</div>
+<span class="font-label text-xs uppercase tracking-widest text-primary mb-4 block">Estrategia Global</span>
+<h3 class="font-headline text-3xl mb-4 group-hover:underline underline-offset-4">La resiliencia en la cadena de suministro post-2023.</h3>
+<p class="text-on-surface-variant mb-6 line-clamp-2">Analizamos cómo las empresas líderes están diversificando sus proveedores para mitigar riesgos geopolíticos...</p>
+<span class="text-sm font-bold border-b border-primary pb-1">Leer artículo</span>
+</article>
+<article class="group cursor-pointer">
+<div class="mb-8 overflow-hidden rounded-xl bg-surface-container">
+<img class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Group of diverse professionals in a high-lighted boardroom brainstorming session" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDakFJxr8qz2-MsG5bXiuJh8YFhaq3AYO46B8lBm7zSmmYjdjWEn8HaVvKVbNoGiFBP4FebN02PuLHg0B8j8uou72eOWTn2wclFZfqmLiOt8084edYr5z7OwSdbCOnQ0aGWlUFfDTas8rSDNLI1V5It9SboJEUMudqScCJX1-0EI-j1xoD8eBAgVwIQ5VfbHFpjZRWhD4qxF4U7KpUFMIaSZ8FgJWNa5nzvsloUalbJvst3_g7YPQTpktnjwif1mKpMDA23_BgqWyKO"/>
+</div>
+<span class="font-label text-xs uppercase tracking-widest text-primary mb-4 block">Liderazgo</span>
+<h3 class="font-headline text-3xl mb-4 group-hover:underline underline-offset-4">Gestión del talento en la era de la IA generativa.</h3>
+<p class="text-on-surface-variant mb-6 line-clamp-2">Nuevas competencias requeridas para directivos que buscan integrar la IA en sus flujos estratégicos...</p>
+<span class="text-sm font-bold border-b border-primary pb-1">Leer artículo</span>
+</article>
+</div>
+</section>
+<!-- FAQ -->
+<section class="bg-surface-container-low py-32 px-10" id="faq">
+<div class="max-w-[800px] mx-auto">
+<h2 class="font-headline text-5xl mb-16 text-center">Preguntas Frecuentes</h2>
+<div class="space-y-4">
+<details class="group bg-surface-container-lowest rounded-xl p-6 cursor-pointer" open="">
+<summary class="list-none flex justify-between items-center font-bold text-lg">
+                            ¿Cómo se estructura una consultoría típica?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant leading-relaxed">Nuestros proyectos suelen durar entre 12 y 24 semanas, divididos en fases de diagnóstico, diseño táctico y acompañamiento en la ejecución.</p>
+</details>
+<details class="group bg-surface-container-lowest rounded-xl p-6 cursor-pointer">
+<summary class="list-none flex justify-between items-center font-bold text-lg">
+                            ¿Trabajan con empresas de cualquier tamaño?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant leading-relaxed">Nos enfocamos en empresas medianas y grandes (Mid-market &amp; Enterprise) que enfrentan desafíos de escalabilidad o transformación estructural.</p>
+</details>
+<details class="group bg-surface-container-lowest rounded-xl p-6 cursor-pointer">
+<summary class="list-none flex justify-between items-center font-bold text-lg">
+                            ¿Cuál es su esquema de honorarios?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant leading-relaxed">Operamos bajo un modelo híbrido de Retainer Base y Success Fee, alineando nuestros incentivos directamente con los resultados obtenidos por el cliente.</p>
+</details>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-32 px-10 max-w-[1440px] mx-auto" id="contacto">
+<div class="grid md:grid-cols-2 gap-24 items-start">
+<div>
+<h2 class="font-headline text-6xl mb-8 leading-tight">Iniciemos una <span class="serif-italic">Conversación</span></h2>
+<p class="text-xl text-on-surface-variant mb-12">Cuéntenos sobre su visión y los desafíos que enfrenta. Un socio sénior se pondrá en contacto en menos de 24 horas.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span class="font-medium">contacto@prisma-advisory.com</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="font-medium">Madrid, CDMX, Miami</span>
+</div>
+</div>
+</div>
+<form class="bg-surface-container-lowest p-12 rounded-2xl shadow-sm border border-outline-variant/20">
+<div class="space-y-8">
+<div>
+<label class="block text-xs font-label uppercase tracking-widest text-on-surface-variant mb-2">Nombre Completo</label>
+<input class="w-full bg-surface-container-low border-b border-outline-variant focus:border-primary border-t-0 border-x-0 outline-none py-3 transition-all placeholder:text-stone-400" placeholder="Ej. Javier Hernández" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-label uppercase tracking-widest text-on-surface-variant mb-2">Correo Corporativo</label>
+<input class="w-full bg-surface-container-low border-b border-outline-variant focus:border-primary border-t-0 border-x-0 outline-none py-3 transition-all placeholder:text-stone-400" placeholder="j.hernandez@empresa.com" type="email"/>
+</div>
+<div>
+<label class="block text-xs font-label uppercase tracking-widest text-on-surface-variant mb-2">Asunto de interés</label>
+<select class="w-full bg-surface-container-low border-b border-outline-variant focus:border-primary border-t-0 border-x-0 outline-none py-3 transition-all">
+<option>Optimización Operativa</option>
+<option>Estrategia de Mercado</option>
+<option>Transformación Digital</option>
+<option>Otros</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-label uppercase tracking-widest text-on-surface-variant mb-2">Mensaje</label>
+<textarea class="w-full bg-surface-container-low border-b border-outline-variant focus:border-primary border-t-0 border-x-0 outline-none py-3 transition-all placeholder:text-stone-400" placeholder="Breve descripción de su necesidad..." rows="4"></textarea>
+</div>
+<button class="w-full bg-editorial-gradient text-on-primary py-4 rounded-lg font-bold text-lg active:scale-95 transition-all">Enviar Solicitud</button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-900 w-full py-16 px-10">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 border-t border-stone-200 dark:border-stone-800 pt-16 max-w-[1440px] mx-auto">
+<div>
+<a class="text-xl font-serif text-[#1b1c19] dark:text-stone-100 block mb-4" href="#">Prisma Advisory Group</a>
+<p class="font-body text-sm text-[#1b1c19]/60 dark:text-stone-500">© 2024 Prisma Advisory Group. Estrategia con Propósito.</p>
+</div>
+<div class="flex flex-wrap gap-8">
+<a class="text-sm text-[#1b1c19]/60 dark:text-stone-500 hover:text-[#87361d] transition-colors" href="#">Privacidad</a>
+<a class="text-sm text-[#1b1c19]/60 dark:text-stone-500 hover:text-[#87361d] transition-colors" href="#">Términos</a>
+<a class="text-sm text-[#1b1c19]/60 dark:text-stone-500 hover:text-[#87361d] transition-colors" href="#">Contacto</a>
+<a class="text-sm text-[#1b1c19]/60 dark:text-stone-500 hover:text-[#87361d] transition-colors" href="#">LinkedIn</a>
+</div>
+</div>
+</footer>
+</body></html>

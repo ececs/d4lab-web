@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ALEX.DEV // Fullstack Freelance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;700;800&amp;family=Space+Grotesk:wght@500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#5bf06c",
+                "surface": "#10141a",
+                "surface-variant": "#31353c",
+                "on-tertiary-container": "#454951",
+                "inverse-surface": "#dfe2eb",
+                "on-secondary-fixed": "#001c38",
+                "on-primary-container": "#005517",
+                "primary-fixed": "#6fff7b",
+                "error": "#ffb4ab",
+                "on-tertiary-fixed-variant": "#42474f",
+                "primary-fixed-dim": "#4be260",
+                "surface-container": "#1c2026",
+                "secondary": "#a2c9ff",
+                "secondary-container": "#0071c7",
+                "outline-variant": "#3d4a3b",
+                "secondary-fixed-dim": "#a2c9ff",
+                "tertiary-container": "#b4b9c2",
+                "surface-bright": "#353940",
+                "tertiary-fixed-dim": "#c2c7d0",
+                "surface-container-lowest": "#0a0e14",
+                "on-background": "#dfe2eb",
+                "on-tertiary": "#2c3138",
+                "error-container": "#93000a",
+                "surface-container-low": "#181c22",
+                "surface-dim": "#10141a",
+                "on-secondary": "#00315c",
+                "on-surface": "#dfe2eb",
+                "background": "#10141a",
+                "inverse-primary": "#006e20",
+                "on-primary-fixed": "#002205",
+                "tertiary-fixed": "#dee2ec",
+                "on-tertiary-fixed": "#171c23",
+                "on-error-container": "#ffdad6",
+                "surface-container-high": "#262a31",
+                "inverse-on-surface": "#2d3137",
+                "on-surface-variant": "#bccbb6",
+                "on-error": "#690005",
+                "on-secondary-container": "#f0f4ff",
+                "tertiary": "#d0d4de",
+                "outline": "#869582",
+                "surface-container-highest": "#31353c",
+                "secondary-fixed": "#d3e4ff",
+                "on-primary-fixed-variant": "#005316",
+                "primary-container": "#39d353",
+                "on-primary": "#00390c",
+                "surface-tint": "#4be260",
+                "on-secondary-fixed-variant": "#004882"
+              },
+              fontFamily: {
+                "headline": ["JetBrains Mono"],
+                "body": ["Inter"],
+                "label": ["JetBrains Mono"]
+              },
+              borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "0px"},
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .cursor-blink { animation: blink 1s step-end infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+        body { background-color: #10141a; font-family: 'Inter', sans-serif; color: #dfe2eb; }
+        .grid-bg { background-image: radial-gradient(#ffffff05 1px, transparent 1px); background-size: 24px 24px; }
+      </style>
+</head>
+<body class="grid-bg">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-6 py-4 bg-[#10141a] z-50">
+<div class="text-xl font-bold text-[#39d353] font-['JetBrains_Mono']">ALEX.DEV</div>
+<div class="hidden md:flex gap-8 font-['JetBrains_Mono'] lowercase tracking-tight">
+<a class="text-[#a2c9ff] hover:bg-[#31353c] hover:text-[#5bf06c] transition-colors duration-150 px-2 py-1" href="#proyectos">Services</a>
+<a class="text-[#a2c9ff] hover:bg-[#31353c] hover:text-[#5bf06c] transition-colors duration-150 px-2 py-1" href="#proyectos">Projects</a>
+<a class="text-[#a2c9ff] hover:bg-[#31353c] hover:text-[#5bf06c] transition-colors duration-150 px-2 py-1" href="#sobre-mi">About</a>
+<a class="text-[#a2c9ff] hover:bg-[#31353c] hover:text-[#5bf06c] transition-colors duration-150 px-2 py-1" href="#proceso">Process</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-2 px-3 py-1 bg-surface-container-highest text-primary font-label text-[11px] uppercase tracking-widest border border-outline-variant/30">
+<span class="w-2 h-2 bg-primary animate-pulse"></span>
+                Available
+            </span>
+</div>
+</nav>
+<main class="pt-24 pb-12">
+<!-- Hero Section -->
+<section class="max-w-6xl mx-auto px-6 py-24 flex flex-col items-start gap-8">
+<div class="font-label text-secondary mb-2">root@alex-dev:~$ whoami</div>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold text-on-surface leading-tight tracking-tighter">
+<span class="text-primary">&gt; </span>Desarrollo web que funciona<span class="text-primary cursor-blink">_</span>
+</h1>
+<p class="max-w-2xl text-lg text-on-surface-variant font-body">
+                Freelance Fullstack Developer especializado en crear infraestructuras digitales escalables, seguras y optimizadas para el rendimiento. Transformo requerimientos complejos en soluciones técnicas elegantes.
+            </p>
+<div class="flex flex-wrap gap-4 mt-4">
+<span class="px-3 py-1 bg-surface-container-low border border-outline-variant/20 font-label text-xs">React.js</span>
+<span class="px-3 py-1 bg-surface-container-low border border-outline-variant/20 font-label text-xs">Node.js</span>
+<span class="px-3 py-1 bg-surface-container-low border border-outline-variant/20 font-label text-xs">TypeScript</span>
+<span class="px-3 py-1 bg-surface-container-low border border-outline-variant/20 font-label text-xs">PostgreSQL</span>
+<span class="px-3 py-1 bg-surface-container-low border border-outline-variant/20 font-label text-xs">Docker</span>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 mt-8">
+<button class="bg-primary-container text-on-primary-container px-8 py-4 font-label font-bold flex items-center gap-2 hover:brightness-110 active:scale-95 transition-all">
+                    Ver proyectos <span class="material-symbols-outlined">arrow_outward</span>
+</button>
+<button class="border border-outline-variant/50 text-secondary px-8 py-4 font-label flex items-center gap-2 hover:bg-surface-container-highest transition-all">
+                    Contactar <span class="material-symbols-outlined">mail</span>
+</button>
+</div>
+</section>
+<!-- Tech Stack Grid -->
+<section class="max-w-6xl mx-auto px-6 py-24">
+<div class="mb-12">
+<h2 class="font-headline text-3xl font-bold text-on-surface">// Tech_Stack</h2>
+<div class="h-1 w-24 bg-primary mt-2"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Frontend -->
+<div class="p-8 bg-surface-container-low border-l-2 border-secondary">
+<span class="material-symbols-outlined text-secondary mb-4" style="font-size: 32px;">terminal</span>
+<h3 class="font-headline text-xl mb-4">Frontend</h3>
+<ul class="space-y-2 font-label text-sm text-on-surface-variant">
+<li>01. Next.js / React</li>
+<li>02. Tailwind CSS</li>
+<li>03. Redux / Zustand</li>
+<li>04. Framer Motion</li>
+</ul>
+</div>
+<!-- Backend -->
+<div class="p-8 bg-surface-container-low border-l-2 border-primary">
+<span class="material-symbols-outlined text-primary mb-4" style="font-size: 32px;">database</span>
+<h3 class="font-headline text-xl mb-4">Backend</h3>
+<ul class="space-y-2 font-label text-sm text-on-surface-variant">
+<li>01. Node.js / Express</li>
+<li>02. NestJS</li>
+<li>03. Python / FastAPI</li>
+<li>04. GraphQL / REST</li>
+</ul>
+</div>
+<!-- Databases -->
+<div class="p-8 bg-surface-container-low border-l-2 border-secondary">
+<span class="material-symbols-outlined text-secondary mb-4" style="font-size: 32px;">storage</span>
+<h3 class="font-headline text-xl mb-4">Data</h3>
+<ul class="space-y-2 font-label text-sm text-on-surface-variant">
+<li>01. PostgreSQL</li>
+<li>02. Redis</li>
+<li>03. MongoDB</li>
+<li>04. Prisma ORM</li>
+</ul>
+</div>
+<!-- DevOps -->
+<div class="p-8 bg-surface-container-low border-l-2 border-primary">
+<span class="material-symbols-outlined text-primary mb-4" style="font-size: 32px;">cloud</span>
+<h3 class="font-headline text-xl mb-4">DevOps</h3>
+<ul class="space-y-2 font-label text-sm text-on-surface-variant">
+<li>01. Docker / K8s</li>
+<li>02. GitHub Actions</li>
+<li>03. AWS / Vercel</li>
+<li>04. Linux Admin</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="bg-surface-container-lowest py-24">
+<div class="max-w-6xl mx-auto px-6">
+<div class="mb-12">
+<h2 class="font-headline text-3xl font-bold text-on-surface">// Servicios</h2>
+<div class="h-1 w-24 bg-secondary mt-2"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Service 1 -->
+<div class="bg-surface-dim border border-outline-variant/30 flex flex-col">
+<div class="bg-surface-container px-4 py-2 flex justify-between items-center border-b border-outline-variant/30">
+<span class="font-label text-xs text-secondary">service_01.sh</span>
+<div class="flex gap-1">
+<div class="w-2 h-2 rounded-full bg-error/40"></div>
+<div class="w-2 h-2 rounded-full bg-primary/40"></div>
+</div>
+</div>
+<div class="p-8 flex-grow">
+<h3 class="font-headline text-xl mb-2 text-primary">Web Corporativa</h3>
+<p class="text-on-surface-variant text-sm mb-6">Landing pages de alto rendimiento enfocadas en conversión y SEO técnico.</p>
+<div class="font-headline text-3xl font-bold mb-8">800€ <span class="text-sm font-normal text-on-surface-variant">/ base</span></div>
+<ul class="space-y-3 font-label text-xs text-on-surface-variant mb-8">
+<li class="flex items-center gap-2"><span class="text-primary">&gt;</span> Diseño responsivo</li>
+<li class="flex items-center gap-2"><span class="text-primary">&gt;</span> CMS integrado</li>
+<li class="flex items-center gap-2"><span class="text-primary">&gt;</span> Optimización Core Web Vitals</li>
+</ul>
+</div>
+<button class="w-full py-4 bg-surface-container-highest text-secondary font-label hover:text-primary transition-colors">Solicitar</button>
+</div>
+<!-- Service 2 -->
+<div class="bg-surface-dim border border-primary/40 flex flex-col shadow-[0_0_30px_-10px_rgba(91,240,108,0.2)]">
+<div class="bg-surface-container px-4 py-2 flex justify-between items-center border-b border-primary/40">
+<span class="font-label text-xs text-primary">service_02.ts</span>
+<div class="flex gap-1">
+<div class="w-2 h-2 rounded-full bg-error/40"></div>
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+</div>
+<div class="p-8 flex-grow">
+<h3 class="font-headline text-xl mb-2 text-primary">App Web / SaaS</h3>
+<p class="text-on-surface-variant text-sm mb-6">Sistemas complejos con autenticación, bases de datos y paneles de control.</p>
+<div class="font-headline text-3xl font-bold mb-8">1500€ <span class="text-sm font-normal text-on-surface-variant">/ base</span></div>
+<ul class="space-y-3 font-label text-xs text-on-surface-variant mb-8">
+<li class="flex items-center gap-2"><span class="text-primary">&gt;</span> Backend escalable</li>
+<li class="flex items-center gap-2"><span class="text-primary">&gt;</span> Gestión de usuarios</li>
+<li class="flex items-center gap-2"><span class="text-primary">&gt;</span> Integración APIs terceros</li>
+</ul>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary-container font-label font-bold">Solicitar</button>
+</div>
+<!-- Service 3 -->
+<div class="bg-surface-dim border border-outline-variant/30 flex flex-col">
+<div class="bg-surface-container px-4 py-2 flex justify-between items-center border-b border-outline-variant/30">
+<span class="font-label text-xs text-secondary">service_03.config</span>
+<div class="flex gap-1">
+<div class="w-2 h-2 rounded-full bg-error/40"></div>
+<div class="w-2 h-2 rounded-full bg-primary/40"></div>
+</div>
+</div>
+<div class="p-8 flex-grow">
+<h3 class="font-headline text-xl mb-2 text-primary">Mantenimiento</h3>
+<p class="text-on-surface-variant text-sm mb-6">Soporte técnico contínuo, actualizaciones de seguridad y backups.</p>
+<div class="font-headline text-3xl font-bold mb-8">150€ <span class="text-sm font-normal text-on-surface-variant">/ mes</span></div>
+<ul class="space-y-3 font-label text-xs text-on-surface-variant mb-8">
+<li class="flex items-center gap-2"><span class="text-primary">&gt;</span> Backups semanales</li>
+<li class="flex items-center gap-2"><span class="text-primary">&gt;</span> Monitoreo 24/7</li>
+<li class="flex items-center gap-2"><span class="text-primary">&gt;</span> Tiempo de respuesta &lt; 4h</li>
+</ul>
+</div>
+<button class="w-full py-4 bg-surface-container-highest text-secondary font-label hover:text-primary transition-colors">Solicitar</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Grid -->
+<section class="max-w-6xl mx-auto px-6 py-24" id="proyectos">
+<div class="mb-12 flex justify-between items-end">
+<div>
+<h2 class="font-headline text-3xl font-bold text-on-surface">// Proyectos_Recientes</h2>
+<div class="h-1 w-24 bg-primary mt-2"></div>
+</div>
+<a class="font-label text-secondary text-sm hover:underline decoration-dotted transition-all" href="#">Ver_todos()</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Project Card 1 -->
+<div class="group relative bg-surface-container-low overflow-hidden">
+<img alt="Dashboard Data Visualization" class="w-full aspect-video object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-500" data-alt="Technical dashboard interface with dark mode aesthetics, glowing charts in green and blue, minimalist data visualization design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN_dbXC-fGhdprFR0ptUMPHKgYMckbXezdG9QchZup2hQmaDFv2HAwFZ5U_2UCcWX3BYWI04h_gxou_FgFiuQPxQDrhKT5IqfHmg3a3tXZ0HQ9f1pF8Nc3kJMyZdztbJ72H0PWEXg-PQDqsFjLRWPhBtY9QQHRz24X8lcnNHmeHwonZO0BXdhxXGQDKI-lhoPQJLZgMTi9N-eXxt3P67CoaVUto4uZJBchY6V2b61tDXXj4DkXCwvLUNw6UA5wM4cXMknHPB_WqLM"/>
+<div class="p-8 bg-surface-container-low border-b border-outline-variant/30">
+<div class="flex gap-2 mb-4">
+<span class="text-[10px] font-label text-secondary px-2 py-0.5 border border-secondary/30">NEXTJS</span>
+<span class="text-[10px] font-label text-secondary px-2 py-0.5 border border-secondary/30">D3.JS</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-2">NEO_STATS ANALYTICS</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Plataforma de análisis en tiempo real para flujos de datos encriptados.</p>
+<a class="inline-flex items-center gap-2 text-primary font-label text-sm hover:translate-x-2 transition-transform" href="#">
+                            → ver proyecto
+                        </a>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="group relative bg-surface-container-low overflow-hidden">
+<img alt="Cyberpunk E-commerce" class="w-full aspect-video object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-500" data-alt="Futuristic e-commerce website interface with neon accents, sharp corners, and high-quality product photography of hardware" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv6cedQKnRDLKQbAPyrbY8n5Xxt_4pT5spx7ijjYmJ65BRmjmC6RBkZmQSkq-ZVFY6nsLI4OA-qAmIqgQ6s5cLIU-nWEcuDq9A7gLPsotxneLqrK8KQ8Z0ObSS9KDalE7GjcsWiY3YcVWl_hvUtEfRTxvgqdVcI40KgdlYr2dEhOlNX_tHE0YMGsKGdVeQX_CjpEMIyVfuuVfNP3vIiWeAYL5mp3hJJpCe6O_mhhr1YaeBW7_dDNowsWTfSCAxh0oNxPVsWHA1wdE"/>
+<div class="p-8 bg-surface-container-low border-b border-outline-variant/30">
+<div class="flex gap-2 mb-4">
+<span class="text-[10px] font-label text-secondary px-2 py-0.5 border border-secondary/30">NESTJS</span>
+<span class="text-[10px] font-label text-secondary px-2 py-0.5 border border-secondary/30">STRIPE</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-2">VOID_MARKET ENGINE</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Infraestructura headless commerce optimizada para productos digitales.</p>
+<a class="inline-flex items-center gap-2 text-primary font-label text-sm hover:translate-x-2 transition-transform" href="#">
+                            → ver proyecto
+                        </a>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="group relative bg-surface-container-low overflow-hidden">
+<img alt="Code editor interface" class="w-full aspect-video object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-500" data-alt="Extreme close up of code editor with syntax highlighting in green and blue, dark theme, monospaced font focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzc6n95UNzUIWxO__733J8HsQh2rwHIW6arZr_kX27aTOyF_2oyyzxB-D2qhNL9B_-tKsgU-JL5mYp80ovYs36nBZAgnE6c1-5b8_2AgmWlMXPdqY5F0TxKJ_sgE2jHxK5X03-_vzYFSqaA7YiHIOkt8Esi2KdDoihIGPLubSiuiFQPB7cKhM_DclhSmprl5Y0k-kWfWSKLjrMPiv_SFgRwtJV33Eb8XjtfLKkst3WNSn2NAR6G3fg9LUYQbU9Ge39ASssm7rprdY"/>
+<div class="p-8 bg-surface-container-low border-b border-outline-variant/30">
+<div class="flex gap-2 mb-4">
+<span class="text-[10px] font-label text-secondary px-2 py-0.5 border border-secondary/30">RUST</span>
+<span class="text-[10px] font-label text-secondary px-2 py-0.5 border border-secondary/30">WASM</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-2">SYNTAX_CORE TOOLS</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Parser de lenguajes de alto rendimiento ejecutándose en el navegador.</p>
+<a class="inline-flex items-center gap-2 text-primary font-label text-sm hover:translate-x-2 transition-transform" href="#">
+                            → ver proyecto
+                        </a>
+</div>
+</div>
+<!-- Project Card 4 -->
+<div class="group relative bg-surface-container-low overflow-hidden">
+<img alt="Global network visualization" class="w-full aspect-video object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-500" data-alt="Digital globe with glowing connection lines and data points in deep blue and neon green against black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxtzg7SrD1e5IzyynbRykJU8JhWWW313G61RP7F-bhRaMUY0OftOjXL9sSHHm0bWthJ_ZpXb9QB4GLwpyk-Ioe3hny-thpSUPd0PdWRfA06jTHKrOh7Vm8RyX3Px_3VjE-76XxDps4dcDngdessN2J6gAt3XJ0taYwn6-_mcMzykwBvomYEgMwp7k8zWfgbw89FRPIEmWvqcD-6ZGmS_hNp_jIo6H_hwVDe213W34zCenn09t_YB3JmzXMmUWyL9cNUph2xEzqiqU"/>
+<div class="p-8 bg-surface-container-low border-b border-outline-variant/30">
+<div class="flex gap-2 mb-4">
+<span class="text-[10px] font-label text-secondary px-2 py-0.5 border border-secondary/30">TYPESCRIPT</span>
+<span class="text-[10px] font-label text-secondary px-2 py-0.5 border border-secondary/30">GRPC</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-2">OVERSIGHT_MONITOR</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Sistema de monitoreo de microservicios distribuídos con latencia cero.</p>
+<a class="inline-flex items-center gap-2 text-primary font-label text-sm hover:translate-x-2 transition-transform" href="#">
+                            → ver proyecto
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="bg-surface-container py-24" id="proceso">
+<div class="max-w-6xl mx-auto px-6">
+<div class="mb-16 text-center">
+<h2 class="font-headline text-3xl font-bold text-on-surface inline-block">
+                        // pipeline.process()
+                    </h2>
+</div>
+<div class="relative grid grid-cols-1 md:grid-cols-4 gap-4">
+<!-- Phase 1 -->
+<div class="p-6 bg-surface-dim border border-outline-variant/20 relative">
+<span class="font-headline text-4xl font-black text-surface-container-highest absolute -top-4 -left-2 select-none">01</span>
+<h4 class="font-headline text-primary mb-4 mt-2">Análisis</h4>
+<p class="text-on-surface-variant text-sm">Entiendo tus necesidades, objetivos de negocio y limitaciones técnicas.</p>
+</div>
+<!-- Phase 2 -->
+<div class="p-6 bg-surface-dim border border-outline-variant/20 relative">
+<span class="font-headline text-4xl font-black text-surface-container-highest absolute -top-4 -left-2 select-none">02</span>
+<h4 class="font-headline text-primary mb-4 mt-2">Arquitectura</h4>
+<p class="text-on-surface-variant text-sm">Defino el stack tecnológico óptimo y el modelado de datos escalable.</p>
+</div>
+<!-- Phase 3 -->
+<div class="p-6 bg-surface-dim border border-outline-variant/20 relative">
+<span class="font-headline text-4xl font-black text-surface-container-highest absolute -top-4 -left-2 select-none">03</span>
+<h4 class="font-headline text-primary mb-4 mt-2">Desarrollo</h4>
+<p class="text-on-surface-variant text-sm">Construcción modular siguiendo las mejores prácticas y TDD.</p>
+</div>
+<!-- Phase 4 -->
+<div class="p-6 bg-surface-dim border border-outline-variant/20 relative">
+<span class="font-headline text-4xl font-black text-surface-container-highest absolute -top-4 -left-2 select-none">04</span>
+<h4 class="font-headline text-primary mb-4 mt-2">Deploy</h4>
+<p class="text-on-surface-variant text-sm">Lanzamiento, optimización de servidor y soporte post-entrega.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- About / Resume Section -->
+<section class="max-w-6xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-16" id="sobre-mi">
+<div>
+<h2 class="font-headline text-3xl font-bold text-on-surface mb-8">// Bio_Kernel</h2>
+<div class="space-y-6 text-on-surface-variant leading-relaxed">
+<p>Llevo más de 8 años convirtiendo código en soluciones de negocio. Mi enfoque no es solo escribir "software que funcione", sino construir activos digitales que sean mantenibles y que crezcan con tu empresa.</p>
+<p>He trabajado con startups en fase semilla y empresas consolidadas, ayudándolas a optimizar sus procesos técnicos y a mejorar la experiencia de sus usuarios finales.</p>
+</div>
+<div class="mt-12 space-y-4">
+<div class="flex justify-between border-b border-outline-variant/10 py-2">
+<span class="font-label text-sm text-secondary">Años Experiencia</span>
+<span class="font-label text-sm text-on-surface">08_YEARS</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 py-2">
+<span class="font-label text-sm text-secondary">Proyectos Completados</span>
+<span class="font-label text-sm text-on-surface">54_NODES</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 py-2">
+<span class="font-label text-sm text-secondary">Disponibilidad</span>
+<span class="font-label text-sm text-primary">REMOTE_OK</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 border border-outline-variant/30">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-16 h-16 bg-primary/20 border border-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">terminal</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-xl">System Status</h3>
+<span class="text-xs font-label text-secondary">UPTIME: 99.9%</span>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-label text-xs uppercase text-on-surface-variant mb-4">LOGS_RECIENTES:</h4>
+<div class="font-label text-[11px] text-primary/80 space-y-2">
+<p>&gt; [2024-05-12] Updated core infrastructure for Fintech Client.</p>
+<p>&gt; [2024-04-20] Successfully deployed SaaS platform #42.</p>
+<p>&gt; [2024-03-05] Achieved 100/100 Lighthouse score on Vitals.</p>
+<p>&gt; [2024-01-15] Open Source contribution to Node.js security.</p>
+</div>
+<button class="mt-8 w-full border border-secondary text-secondary py-3 font-label text-sm hover:bg-secondary hover:text-surface transition-all">
+                        Descargar CV.pdf
+                    </button>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="bg-surface-container-lowest py-24">
+<div class="max-w-6xl mx-auto px-6">
+<h2 class="font-headline text-3xl font-bold text-on-surface mb-12 text-center">// Feedbacks</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-8 bg-surface-dim border border-outline-variant/10">
+<div class="text-secondary mb-4">
+<span class="material-symbols-outlined">format_quote</span>
+</div>
+<p class="text-on-surface-variant italic mb-6">"Alex no solo desarrolla, propone. Su visión técnica ahorró meses de desarrollo en nuestro MVP."</p>
+<div>
+<p class="font-bold text-sm text-on-surface">MARC ROVIRA</p>
+<p class="text-[10px] font-label text-primary">CEO @ DATASTORM</p>
+</div>
+</div>
+<div class="p-8 bg-surface-dim border border-outline-variant/10">
+<div class="text-secondary mb-4">
+<span class="material-symbols-outlined">format_quote</span>
+</div>
+<p class="text-on-surface-variant italic mb-6">"Velocidad de ejecución impresionante y código limpio. Es un placer trabajar con alguien tan profesional."</p>
+<div>
+<p class="font-bold text-sm text-on-surface">SARA LÓPEZ</p>
+<p class="text-[10px] font-label text-primary">CTO @ FINNTECH</p>
+</div>
+</div>
+<div class="p-8 bg-surface-dim border border-outline-variant/10">
+<div class="text-secondary mb-4">
+<span class="material-symbols-outlined">format_quote</span>
+</div>
+<p class="text-on-surface-variant italic mb-6">"Nuestra web pasó de cargar en 5s a menos de 1s tras su optimización. Los resultados hablan solos."</p>
+<div>
+<p class="font-bold text-sm text-on-surface">JULIO SANZ</p>
+<p class="text-[10px] font-label text-primary">FOUNDER @ AGENCY_B</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="max-w-4xl mx-auto px-6 py-24" id="contacto">
+<div class="bg-surface-container-low border border-outline-variant/40 shadow-2xl">
+<div class="bg-surface-container-highest px-6 py-3 flex items-center justify-between">
+<span class="font-label text-xs">contact_terminal.sh</span>
+<div class="flex gap-2">
+<div class="w-3 h-3 rounded-full bg-error"></div>
+<div class="w-3 h-3 rounded-full bg-primary/50"></div>
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+</div>
+</div>
+<div class="p-8 md:p-12">
+<h2 class="font-headline text-3xl font-bold mb-8">Inicia una sesión<span class="text-primary">.</span></h2>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label text-xs text-secondary uppercase tracking-widest">Nombre</label>
+<input class="w-full bg-surface-dim border-b border-outline-variant text-on-surface p-3 focus:outline-none focus:border-primary transition-colors" placeholder="user_name" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs text-secondary uppercase tracking-widest">Email</label>
+<input class="w-full bg-surface-dim border-b border-outline-variant text-on-surface p-3 focus:outline-none focus:border-primary transition-colors" placeholder="email@address.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs text-secondary uppercase tracking-widest">Proyecto / Asunto</label>
+<input class="w-full bg-surface-dim border-b border-outline-variant text-on-surface p-3 focus:outline-none focus:border-primary transition-colors" placeholder="saas_mvp / optimization" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs text-secondary uppercase tracking-widest">Mensaje</label>
+<textarea class="w-full bg-surface-dim border-b border-outline-variant text-on-surface p-3 focus:outline-none focus:border-primary transition-colors" placeholder="Escribe aquí tu requerimiento..." rows="4"></textarea>
+</div>
+<div class="pt-4">
+<button class="bg-primary text-on-primary-container px-10 py-4 font-label font-bold flex items-center gap-2 hover:brightness-110 active:scale-95 transition-all" type="submit">
+                                Enviar Mensaje <span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-8 border-t border-[#3d4a3b]/20 bg-[#0a0e14]">
+<div class="flex flex-col gap-2">
+<div class="text-sm font-bold text-[#39d353] font-['JetBrains_Mono']">ALEX.DEV</div>
+<p class="font-['JetBrains_Mono'] text-[11px] uppercase tracking-widest text-[#31353c]">© 2024 ALEX.DEV // TERMINAL_READY</p>
+</div>
+<div class="flex gap-8 font-['JetBrains_Mono'] text-[11px] uppercase tracking-widest">
+<a class="text-[#31353c] hover:text-[#5bf06c] underline decoration-dotted" href="#">Github</a>
+<a class="text-[#31353c] hover:text-[#5bf06c] underline decoration-dotted" href="#">Linkedin</a>
+<a class="text-[#31353c] hover:text-[#5bf06c] underline decoration-dotted" href="#">Twitter</a>
+<a class="text-[#31353c] hover:text-[#5bf06c] underline decoration-dotted" href="#">Source</a>
+</div>
+<div class="text-[#31353c] font-['JetBrains_Mono'] text-[11px]">
+            BUILD_VER: 2.4.0-STABLE
+        </div>
+</footer>
+</body></html>

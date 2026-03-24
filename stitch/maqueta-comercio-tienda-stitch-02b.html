@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DRIP STORE | THE KINETIC MONOLITH</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Space+Grotesk:wght@700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#131313",
+                        "on-primary-container": "#521300",
+                        "on-tertiary-fixed": "#001c3a",
+                        "surface-bright": "#3a3939",
+                        "secondary-container": "#45464e",
+                        "inverse-primary": "#ae3200",
+                        "secondary": "#c6c6cf",
+                        "on-secondary": "#2f3037",
+                        "on-tertiary-container": "#002a53",
+                        "on-surface": "#e5e2e1",
+                        "secondary-fixed": "#e2e1eb",
+                        "outline-variant": "#5c4037",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#353534",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#ffb59e",
+                        "primary-fixed": "#ffdbd0",
+                        "on-secondary-container": "#b4b4bd",
+                        "tertiary-container": "#2492ff",
+                        "on-surface-variant": "#e6beb2",
+                        "surface-container-low": "#1c1b1b",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2a",
+                        "on-primary-fixed-variant": "#852400",
+                        "surface-container": "#201f1f",
+                        "on-primary-fixed": "#3a0b00",
+                        "on-tertiary": "#00315e",
+                        "on-secondary-fixed-variant": "#45464e",
+                        "inverse-on-surface": "#313030",
+                        "secondary-fixed-dim": "#c6c6cf",
+                        "tertiary-fixed-dim": "#a5c8ff",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#004785",
+                        "on-secondary-fixed": "#1a1b22",
+                        "on-primary": "#5e1700",
+                        "surface-dim": "#131313",
+                        "surface-variant": "#353534",
+                        "tertiary-fixed": "#d4e3ff",
+                        "primary-container": "#ff571a",
+                        "background": "#131313",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary": "#a5c8ff",
+                        "primary": "#ffb59e",
+                        "outline": "#ad897e",
+                        "on-background": "#e5e2e1",
+                        "surface-tint": "#ffb59e"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .text-stroke { -webkit-text-stroke: 1px #ff571a; color: transparent; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body overflow-x-hidden selection:bg-primary-container selection:text-on-primary-fixed">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-6 py-4 max-w-[1920px] mx-auto bg-[#0a0a0a]/70 backdrop-blur-xl border-b border-[#ff571a]/10 z-50">
+<div class="text-2xl font-black tracking-tighter text-[#e5e2e1] font-headline uppercase">DRIP STORE</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#FF4D00] border-b-2 border-[#FF4D00] pb-1 font-headline uppercase tracking-tighter font-bold" href="#">Colección</a>
+<a class="text-[#e5e2e1] hover:text-[#FF4D00] transition-colors font-headline uppercase tracking-tighter font-bold" href="#">Categorías</a>
+<a class="text-[#e5e2e1] hover:text-[#FF4D00] transition-colors font-headline uppercase tracking-tighter font-bold" href="#">Drops</a>
+<a class="text-[#e5e2e1] hover:text-[#FF4D00] transition-colors font-headline uppercase tracking-tighter font-bold" href="#">Nosotros</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-[#e5e2e1] hover:text-[#FF4D00] cursor-pointer transition-transform scale-95 active:scale-90">shopping_cart</span>
+<span class="material-symbols-outlined text-[#e5e2e1] md:hidden">menu</span>
+</div>
+</nav>
+<main class="pt-16">
+<!-- Status Marquee -->
+<div class="bg-primary-container text-on-primary-fixed py-2 overflow-hidden whitespace-nowrap border-y border-on-primary-container/20">
+<div class="inline-block animate-marquee font-headline font-bold text-[10px] tracking-[0.2em] uppercase">
+                LATEST DROP / STOCK LOW  •  ENVÍO GRATUITO EN PEDIDOS SUPERIORES A 150€  •  LATEST DROP / STOCK LOW  •  ENVÍO GRATUITO EN PEDIDOS SUPERIORES A 150€  •  LATEST DROP / STOCK LOW  • 
+            </div>
+</div>
+<!-- Hero Section -->
+<section class="relative h-[921px] w-full bg-surface-container-lowest overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Streetwear model in neon urban setting" class="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000" data-alt="Cinematic shot of a model wearing techwear in a cyberpunk Tokyo alley at night with glowing orange neon reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHznVXRNQQv_5_Ch2nfmpkh9pItCzZf7lh8ABluB24DFxAOxs1TnH0Gq8vIURkhKw9R7hUFkebyR-nYLpkeBVFN__-ZcpRg58NlP5bElmaVpLMxvRNnxdB3w58X7Le7qgJ2ghZklCZwSeI6eTAh-u9WYr1Z2-EyAqyNAFJRreOlXabl9HYb-2aNcEA942SLQs2R4zNlOo55Rj2WjmDz0dqO3XDbeeT7z-k-TqzOFw3mHJBAaLCIC3PWSUYZ8yxLm_Eznu6BDFwEN8"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+<div class="relative z-10 h-full flex flex-col justify-end p-8 md:p-24 max-w-[1440px] mx-auto">
+<div class="max-w-4xl">
+<h1 class="font-headline font-black text-6xl md:text-9xl tracking-tighter leading-[0.85] uppercase mb-8">
+                        NUEVA COLECCIÓN <br/>
+<span class="text-primary-container">PRIMAVERA 2025</span>
+</h1>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary-container text-on-primary-fixed px-12 py-5 font-headline font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-black transition-all active:scale-95">
+                            VER COLECCIÓN
+                        </button>
+<button class="border border-outline-variant text-on-surface px-12 py-5 font-headline font-bold uppercase tracking-widest text-sm hover:bg-surface-container transition-all">
+                            CATÁLOGO COMPLETO
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Categories Grid -->
+<section class="py-24 px-6 md:px-12 bg-surface">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<!-- Cami -->
+<div class="group relative h-[600px] overflow-hidden bg-surface-container">
+<img alt="T-shirt model" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" data-alt="Studio photography of a premium heavy cotton oversized t-shirt with minimalist branding in a high-fashion urban style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc7oP9y-Y3lhG0d1HxwqYpstib3n8zP-PdXekNwQpkWkxuBbiGTG_dvFjrRRvmBLpmc4zt_ELY4MUdywlmGOT0dzSn8ccccxfjgPBR5RZnENNAyFmXqV9uh5MDBo0u6PdnUeA895GM322hyEFC6Bo4Y3aGbWhX9OM9tHqdea5Pmm13PHukuQCksKNI7dGg6uDTbjxXRd_o6n0iKRLBscYivHuTHSAFFdjek2u8lW3bKiU-M8rORZb83UcF7D-L-6F0n-1z7jVl-SQ"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline text-3xl font-black uppercase tracking-tighter group-hover:text-primary-container transition-colors">CAMISETAS</h3>
+<p class="font-body text-xs text-on-surface-variant uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Explorar 24 items</p>
+</div>
+</div>
+<!-- Sudaderas -->
+<div class="group relative h-[600px] overflow-hidden bg-surface-container md:translate-y-12">
+<img alt="Hoodie model" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" data-alt="Close-up of a high-quality textured black hoodie on a model in a misty urban environment with industrial background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4ysnsjtGJyck25faXAdSuoYWdGNlOMMuDqfa--ZlsYK52JGBtSbh1mBUI_TIGUFvnJOqueAl3zIv8Z07J8CZTHgRD_aKB48Yime3_H4xB_f78Yv2eBKWJDPD6wdx-sp2EBpRW_IqYc4bVx65mw9Ea-nngUun4-xOpZ-PX47kaAZmUs73JISyZL1qCqujUmEIpLiT84mO4NAbjXHNh-Mm9J3yUHULSHye1E_YdTK3QmdVxdyxpqqiVT1qM4C6wXvdsTOgYrdTStrY"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline text-3xl font-black uppercase tracking-tighter group-hover:text-primary-container transition-colors">SUDADERAS</h3>
+<p class="font-body text-xs text-on-surface-variant uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Explorar 18 items</p>
+</div>
+</div>
+<!-- Accesorios -->
+<div class="group relative h-[600px] overflow-hidden bg-surface-container">
+<img alt="Accessories" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" data-alt="Detailed view of technical urban accessories including a tactical bag and metallic jewelry on dark stone surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_PeWJ_xYSQTp4gWliSRVBCtrA-qonX8__YNhxYQzSovM7g3l7ojm1OvB9Jh4MAqwsGwFlXUR0-r8sD68zlLIo0UI1bDDTnVQ4FdT8EeDtn1_mlhFEKGyhgzHDNc_iIr2cZ4ut80rzIRJ8KgTBnutS_xvflDVuept9SsyPzFYij-wuNfd4pli68i94zVYBRZZEx_jGWSDtmfiipe-JtUWSe0iGEYUwRMllyvAEIXi1jpqnIYzVhzctFrD4Cd4BfEOn_kDYJcz407k"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline text-3xl font-black uppercase tracking-tighter group-hover:text-primary-container transition-colors">ACCESORIOS</h3>
+<p class="font-body text-xs text-on-surface-variant uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Explorar 42 items</p>
+</div>
+</div>
+<!-- Calzado -->
+<div class="group relative h-[600px] overflow-hidden bg-surface-container md:translate-y-12">
+<img alt="Sneakers" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" data-alt="Editorial shot of futuristic chunky sneakers in a concrete architectural setting with sharp shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIVmuFcwLo3fO2UJxqq0DIA2hjr0O6MvFjRDCpsz935Qc81ey0D6y0Ag4F3YceHz7f1DcXvMorhGyr9LqTd0LO1067slu66H9JzevfOvpXYuNll8kF9EyTD60Cc2lmGSAQzwOrrMllGztfL7eZ9sbOdnDTzNTss3hZBBf3RyK7pYTLZ64QQDHlCq1_rBxy6n9I0cFqQ7Y9ZOFMjecs36ecZeIKhdEmjHoKehtkAT-sbcV4EtKkAhEWOYST4g_2tTeZKeYyYoOv9p4"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline text-3xl font-black uppercase tracking-tighter group-hover:text-primary-container transition-colors">CALZADO</h3>
+<p class="font-body text-xs text-on-surface-variant uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Explorar 12 items</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products -->
+<section class="py-32 px-6 md:px-12 bg-surface-container-lowest">
+<div class="flex justify-between items-end mb-16">
+<div>
+<span class="text-primary-container font-headline text-xs tracking-[0.3em] uppercase">Curated Selection</span>
+<h2 class="font-headline font-black text-5xl md:text-7xl tracking-tighter uppercase mt-2">DESTACADOS</h2>
+</div>
+<div class="hidden md:block">
+<a class="font-headline text-sm uppercase tracking-widest border-b border-primary-container pb-1 hover:text-primary-container transition-colors" href="#">Ver todos los productos</a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-8">
+<!-- Product 1 -->
+<div class="group">
+<div class="aspect-[3/4] bg-surface-container overflow-hidden mb-6 relative">
+<img alt="Technical Tee" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Front view of a minimalist black t-shirt with technical fabric details and high collar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmNYfDzZid3e9RpKwuBY5a22aJQECAPwwR4cI_gpIOcVoI7RgEfinrRY-ZOpTFUfzQiInKoX3-e_6mtg4yhaW-Mf8rJaF5ukCB09PIBWNN2kwjP5r4PgZZC8-JLLiYAfvGcT1VqfxUKSeHavwDLPpiz3AfJcATQY_gGWyaeS0pqp3vOW_NXwQfS251s3c7OsgQ2yP_BtHr0rl-vN1aXBGk1WmGSotTpvn8WqwfnUqI0YWAg5DcnY1gGQ0naavobExJY5JGgnIV1VE"/>
+<div class="absolute bottom-0 left-0 bg-surface-dim px-4 py-2 font-headline text-[10px] tracking-widest font-bold uppercase z-10">CORE COLLECTION</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">CAMISETAS / TECH-01</p>
+<h4 class="font-headline text-xl font-bold uppercase tracking-tighter group-hover:text-primary-container transition-colors">MODULAR HEAVY TEE</h4>
+</div>
+<span class="font-headline text-xl font-bold">€75.00</span>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group">
+<div class="aspect-[3/4] bg-surface-container overflow-hidden mb-6 relative">
+<img alt="Hoodie" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Editorial look at a high-end white hoodie with distressed edges and heavy fabric weight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiXT2d89y9oPjOCs05FBdPGMf0AmdCTBbVfXLrgue7RaxENq2iJvj7efyI2JrOXnS-a1oJSEubPAiC8NeXvlIeTTiSWvo5o7DQRpOpAanMlIdHSRyxmZ5CgPyyaQgpZPN8TF1T7951M0e_6a_cRxvAdaq89tOMUCOqfU0T5p1B9GJIDTwAOfbal10ROY8WyVBu-OILqwaZVJ42K6ub0QIgaLVJkA7pXGZ2GCWsQb0mlU1tB7gyIzxgCi5ShYhWKQ1ayh_YhdQZfe0"/>
+<div class="absolute bottom-0 left-0 bg-surface-dim px-4 py-2 font-headline text-[10px] tracking-widest font-bold uppercase z-10">DROP 25.1</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">SUDADERAS / OVER-04</p>
+<h4 class="font-headline text-xl font-bold uppercase tracking-tighter group-hover:text-primary-container transition-colors">DISTRESSED HOODIE</h4>
+</div>
+<span class="font-headline text-xl font-bold">€130.00</span>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group">
+<div class="aspect-[3/4] bg-surface-container overflow-hidden mb-6 relative">
+<img alt="Sneakers" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Bright orange futuristic running shoes showcased against a dark industrial background with dynamic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtz-JP_6FisnRB3R20dCrril722Zp8M6E71WeTRza9l3rPVki48hg8ZvOwqsflkcR1sAC9WO1rAJYVM_UDND9ncs6S1hZxOsaEqqA1OYugwe-7FJtJuYrsst4tIEgGgs2aQUeymmplRzy_juVb--VTbFsSR7590APNZhLW-y5JDgVFaDdq6Td6P6yB1MT_qiCL_hFNj9Agvuk6ywVDPZl2340amaEdCxCwu7QW1u77vDPxestnGlR_XZ8WWdNHgkqP3R8xPSvj8rs"/>
+<div class="absolute bottom-0 left-0 bg-surface-dim px-4 py-2 font-headline text-[10px] tracking-widest font-bold uppercase z-10">LIMITED EDITION</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">CALZADO / KINETIC</p>
+<h4 class="font-headline text-xl font-bold uppercase tracking-tighter group-hover:text-primary-container transition-colors">FLARE RUNNER V2</h4>
+</div>
+<span class="font-headline text-xl font-bold">€210.00</span>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="group">
+<div class="aspect-[3/4] bg-surface-container overflow-hidden mb-6 relative">
+<img alt="Graphic Tee" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Premium white t-shirt with large back graphic in architectural urban style on model" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoF1UKZ5FSx5tiQVeddeCnPq_4PZPLIOeDIrSj3wFcyqnSLSzD25OJApaR3I-7o3l58HrS9FJtajknAIa9dMNHdF9mN4aW3cJonCGJZX8HGWODdeNcMH3hCBC1jLPcJGnDlBJXVlJ6bJeOPrHfaGTC8t7xwT3X34B8lM-bmMNGhTPphoAWO9E7k5JExmgAmLqS9iLbisPZLUz87AFkBden-8VEC5N1gkub7-AB3DHCkArd_7tPXpCmXL-5Vp31os0hSEWtxnl1zHw"/>
+<div class="absolute bottom-0 left-0 bg-surface-dim px-4 py-2 font-headline text-[10px] tracking-widest font-bold uppercase z-10">ARCHIVE SERIES</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">CAMISETAS / GRAPH-09</p>
+<h4 class="font-headline text-xl font-bold uppercase tracking-tighter group-hover:text-primary-container transition-colors">MONOLITH GRAPHIC</h4>
+</div>
+<span class="font-headline text-xl font-bold">€65.00</span>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="group">
+<div class="aspect-[3/4] bg-surface-container overflow-hidden mb-6 relative">
+<img alt="Polo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Dark navy high-performance knit polo shirt with seamless construction and sharp silhouette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc_Nl53wOaEEf7WkJFACAfLnAjlnQ8zPd40kyUmJLxrmmBWoQ__OiiMoJH2RfMNVlFQmTGyA6r5gBprjUFzTed1zqubM642b1wSUbv9DGdwAvAgYtDQRBVY3LrLHumap_7J9TUlHzA6AcS_-BkvU-MVi2cbmwdWkQkfAu0UOR2EbR3HOSNub-fGJdsqvoLHZV3rX05IvsmFipRfASZJAMD9GabrAyNoL1NdMS2UVIituIg83x1sH6R6AFE7XG1wA5R2bPQKgPGAJQ"/>
+<div class="absolute bottom-0 left-0 bg-surface-dim px-4 py-2 font-headline text-[10px] tracking-widest font-bold uppercase z-10">SMART UTILITY</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">CAMISETAS / KNIT-02</p>
+<h4 class="font-headline text-xl font-bold uppercase tracking-tighter group-hover:text-primary-container transition-colors">URBAN KNIT POLO</h4>
+</div>
+<span class="font-headline text-xl font-bold">€95.00</span>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="group">
+<div class="aspect-[3/4] bg-surface-container overflow-hidden mb-6 relative">
+<img alt="Bag" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Technical crossbody bag with multiple straps and matte black metal hardware in streetwear style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMukcW9izewtcDMA38pC4K-2oF8REyGcp6_lcgLUE2JUWQY2sHrXnRex8JURn4lYOal9LlKY59KeCfxvo8Xi1pDqaB7KBQzSq2wGJakhFqd6APp3f4P6rye-0rDWEwTulLiImsSfGbRI-0sYnSioL6knG9URl0y3pE1wzgWtoxJLB9T-IMJmVnws1eLDj2Av6BmV_ORbDmDY6YKuJ9Pulo2Nj7V_1ISMzeW_NdPjBncHCdhDg7sDYB7tPwumhyj6T-9iqKCyG-j_A"/>
+<div class="absolute bottom-0 left-0 bg-surface-dim px-4 py-2 font-headline text-[10px] tracking-widest font-bold uppercase z-10">ACCESSORIES</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">ACCESORIOS / PACK-01</p>
+<h4 class="font-headline text-xl font-bold uppercase tracking-tighter group-hover:text-primary-container transition-colors">TACTICAL SLING</h4>
+</div>
+<span class="font-headline text-xl font-bold">€115.00</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Promotional Banner -->
+<section class="relative h-[600px] w-full flex items-center justify-center overflow-hidden bg-primary-container group">
+<div class="absolute inset-0 z-0">
+<img alt="Limited drop background" class="w-full h-full object-cover mix-blend-multiply opacity-50 group-hover:scale-110 transition-transform duration-1000" data-alt="Abstract cinematic dark smoke with orange sparks and high-contrast light beams in a dark void" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf6GeJJovbAqPCpgLTmXydS3_BMVYScjSa7C6bl9jLQufAS7il49ZDUPSDWG_ijVjj03hWiiBmJUK_T5cTEMLh5NpT9d8kjZA2E2ayII9wLLqxE2FuNbtGmo4AwbH8DAWVXbxJcAwxnU0d0tbaQ6lX-3HQt__UZEOUdX-ND-XHmBFXFLl56VAAdUbgdwuxWToMe4yUhkz44v8vL2nCksMxRFR4Uxai49TE7jqMWHVRZrlgvV0oPPuvUZA1HXWK1CnuSRHrfziojXc"/>
+</div>
+<div class="relative z-10 text-center px-6">
+<p class="font-headline text-sm tracking-[0.5em] font-bold mb-4">EDICIÓN LIMITADA</p>
+<h2 class="font-headline font-black text-6xl md:text-9xl tracking-tighter uppercase leading-none mb-8">VOID SERIES</h2>
+<div class="flex justify-center gap-8 mb-12">
+<div class="flex flex-col">
+<span class="font-headline text-4xl md:text-6xl font-black">02</span>
+<span class="font-label text-[10px] tracking-widest uppercase">Días</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline text-4xl md:text-6xl font-black">14</span>
+<span class="font-label text-[10px] tracking-widest uppercase">Horas</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline text-4xl md:text-6xl font-black">52</span>
+<span class="font-label text-[10px] tracking-widest uppercase">Min</span>
+</div>
+</div>
+<button class="bg-white text-black px-16 py-6 font-headline font-bold uppercase tracking-widest text-sm hover:bg-black hover:text-white transition-all transform group-active:scale-95">
+                    ACCEDER AL DROP
+                </button>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-32 px-6 md:px-12 bg-surface">
+<div class="max-w-[1440px] mx-auto">
+<h2 class="font-headline font-black text-4xl md:text-6xl tracking-tighter uppercase mb-20 text-center">LA TRIBU HABLA</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="border-l border-primary-container pl-8 py-4">
+<p class="font-body text-xl italic mb-6">"La calidad del tejido es superior a cualquier otra marca de streetwear que haya probado. El fit es exactamente lo que buscaba."</p>
+<p class="font-headline font-bold text-sm tracking-widest uppercase">Marc V.</p>
+<p class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Barcelona, ES</p>
+</div>
+<div class="border-l border-primary-container pl-8 py-4">
+<p class="font-body text-xl italic mb-6">"Void Series es arte puro. Recibí el paquete en 24 horas y el packaging es una experiencia en sí misma."</p>
+<p class="font-headline font-bold text-sm tracking-widest uppercase">Elena K.</p>
+<p class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Berlín, DE</p>
+</div>
+<div class="border-l border-primary-container pl-8 py-4">
+<p class="font-body text-xl italic mb-6">"Impecable. La atención al detalle en las costuras y los materiales técnicos justifica cada euro. Volveré sin duda."</p>
+<p class="font-headline font-bold text-sm tracking-widest uppercase">Julian S.</p>
+<p class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Madrid, ES</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter -->
+<section class="py-32 px-6 md:px-12 bg-surface-container-low border-t border-outline-variant/10">
+<div class="max-w-4xl mx-auto text-center">
+<span class="material-symbols-outlined text-5xl text-primary-container mb-6">mail</span>
+<h2 class="font-headline font-black text-5xl md:text-7xl tracking-tighter uppercase mb-4">ÚNETE A LA TRIBU</h2>
+<p class="font-body text-on-surface-variant mb-12 max-w-xl mx-auto uppercase tracking-widest text-sm">Recibe acceso anticipado a los drops exclusivos y eventos privados.</p>
+<form class="flex flex-col md:flex-row gap-4">
+<input class="flex-1 bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 text-on-surface font-headline tracking-widest uppercase py-5 px-6 placeholder:text-on-surface/30" placeholder="TU EMAIL AQUÍ" type="email"/>
+<button class="bg-primary-container text-on-primary-fixed px-12 py-5 font-headline font-bold uppercase tracking-widest text-sm hover:bg-white transition-all active:scale-95" type="submit">
+                        REGISTRARSE
+                    </button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0e0e0e] w-full flex flex-col md:flex-row justify-between items-center px-10 py-12 gap-6 border-t border-[#131313]">
+<div class="text-lg font-bold text-[#e5e2e1] font-headline tracking-tighter uppercase">DRIP STORE</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest text-[#e5e2e1]/50 hover:text-[#e5e2e1] hover:underline decoration-[#FF4D00] underline-offset-4 transition-opacity" href="#">Privacidad</a>
+<a class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest text-[#e5e2e1]/50 hover:text-[#e5e2e1] hover:underline decoration-[#FF4D00] underline-offset-4 transition-opacity" href="#">Términos</a>
+<a class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest text-[#e5e2e1]/50 hover:text-[#e5e2e1] hover:underline decoration-[#FF4D00] underline-offset-4 transition-opacity" href="#">Envíos</a>
+<a class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest text-[#e5e2e1]/50 hover:text-[#e5e2e1] hover:underline decoration-[#FF4D00] underline-offset-4 transition-opacity" href="#">Instagram</a>
+<a class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest text-[#e5e2e1]/50 hover:text-[#e5e2e1] hover:underline decoration-[#FF4D00] underline-offset-4 transition-opacity" href="#">TikTok</a>
+</div>
+<div class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest text-[#e5e2e1]/30">
+            © 2024 DRIP STORE. KINETIC MONOLITH CORP.
+        </div>
+</footer>
+<!-- Mobile Bottom Nav -->
+<div class="md:hidden fixed bottom-0 w-full bg-[#0a0a0a]/90 backdrop-blur-xl flex justify-around items-center py-4 z-50 border-t border-[#ff571a]/10">
+<div class="flex flex-col items-center text-[#FF4D00]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label text-[8px] uppercase font-bold mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center text-[#e5e2e1]/50">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label text-[8px] uppercase font-bold mt-1">Explorar</span>
+</div>
+<div class="flex flex-col items-center text-[#e5e2e1]/50">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label text-[8px] uppercase font-bold mt-1">Cesta</span>
+</div>
+<div class="flex flex-col items-center text-[#e5e2e1]/50">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label text-[8px] uppercase font-bold mt-1">Perfil</span>
+</div>
+</div>
+</body></html>
