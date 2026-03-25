@@ -393,6 +393,11 @@
     .mockup-tab .text-on-surface-variant {
       font-size: 10px !important;
     }
+    /* En mobile: ocultar toggle, tablet; solo frame móvil proporcional */
+    .controls-bar > div:has(.view-toggle) { display: none; }
+    .device-shell.tablet-shell { display: none; }
+    .devices-grid { grid-template-columns: 1fr !important; justify-items: center; }
+    .mockup-embed.mobile { height: auto !important; aspect-ratio: 390/844; }
     .view-toggle {
       padding: 4px;
       gap: 0.35rem;
@@ -1496,7 +1501,7 @@
     mockupTabs.forEach((tab) => tab.addEventListener('click', () => activateMockup(tab.dataset.target)));
     viewToggles.forEach((toggle) => toggle.addEventListener('click', () => activateView(toggle.dataset.viewToggle)));
     activateMockup(config.defaultMockup);
-    activateView('desktop');
+    activateView(window.innerWidth <= 640 ? 'devices' : 'desktop');
   };
 
   const previewViewportMap = {
