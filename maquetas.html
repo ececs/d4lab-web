@@ -196,6 +196,23 @@
   .book-page [data-mockup-badge] {
     display: none;
   }
+  /* Quitar marco interior en desktop: eliminar padding del div envoltorio y borde del embed */
+  .book-page > div:last-child {
+    padding: 0 !important;
+  }
+  .book-page .mockup-embed.desktop {
+    border: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    aspect-ratio: 1440 / 960;
+    border-radius: 0 0 22px 22px;
+    background: none;
+    box-shadow: none;
+    clip-path: none;
+  }
+  .book-page .mockup-embed.desktop iframe {
+    border-radius: 0 0 22px 22px;
+  }
   .book-page > div:first-child > :last-child {
     display: none !important;
   }
