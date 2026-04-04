@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080x1920">
+    <title>Social Card Story - d4lab.es</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #0a192f; --accent: #64ffda; --dim: #8892b1; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { width: 1080px; height: 1920px; background-color: var(--bg); font-family: 'Inter', sans-serif; color: #fff; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .container { width: 100%; height: 100%; padding: 120px 80px; display: flex; flex-direction: column; justify-content: space-between; background-image: radial-gradient(circle at 10% 10%, rgba(100, 255, 218, 0.15) 0%, transparent 50%), radial-gradient(circle at 90% 90%, rgba(99, 102, 241, 0.2) 0%, transparent 50%); position: relative; }
+        .header { display: flex; justify-content: space-between; align-items: center; z-index: 10; }
+        .badge { background: rgba(100, 255, 218, 0.1); color: var(--accent); border: 2px solid rgba(100, 255, 218, 0.3); padding: 16px 40px; border-radius: 30px; font-family: 'Space Grotesk', sans-serif; font-size: 36px; font-weight: 600; text-transform: uppercase; }
+        .content-card { margin: auto 0; padding: 60px 0; border-radius: 40px; z-index: 10; }
+        .title { font-family: 'Space Grotesk', sans-serif; font-size: 110px; font-weight: 800; line-height: 1.05; margin-bottom: 80px; text-shadow: 0 10px 40px rgba(0,0,0,0.4); }
+        .summary { font-size: 52px; line-height: 1.5; color: var(--dim); border-left: 8px solid var(--accent); padding-left: 50px; background: rgba(100,255,218,0.03); padding-top: 20px; padding-bottom: 20px; border-radius: 0 20px 20px 0; }
+        .footer { display: flex; flex-direction: column; align-items: center; gap: 60px; z-index: 10; }
+        .cta-btn { background: var(--accent); color: var(--bg); padding: 40px 80px; border-radius: 60px; font-family: 'Space Grotesk', sans-serif; font-size: 50px; font-weight: 800; text-transform: uppercase; box-shadow: 0 30px 60px rgba(100, 255, 218, 0.4); }
+        .logo-footer { font-family: 'Space Grotesk', sans-serif; font-size: 54px; font-weight: 800; color: #fff; opacity: 0.9; }
+        .deco-circle { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.1; z-index: 1; }
+        .c1 { width: 600px; height: 600px; background: var(--accent); top: 15%; left: -10%; }
+        .c2 { width: 500px; height: 500px; background: #6366f1; bottom: 15%; right: -10%; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="deco-circle c1"></div>
+        <div class="deco-circle c2"></div>
+        <div class="header">
+            <div class="badge">{{TYPE}}</div>
+            <div class="logo-footer">d4lab<span style="color:var(--accent)">.</span>es</div>
+        </div>
+        <div class="content-card">
+            <h1 class="title">{{TITLE}}</h1>
+            <p class="summary">{{SUMMARY}}</p>
+        </div>
+        <div class="footer">
+            <div class="cta-btn">Ver enlace en post</div>
+            <div style="font-size:38px; color:var(--dim)">Nuevo contenido disponible 🚀</div>
+        </div>
+    </div>
+</body>
+</html>

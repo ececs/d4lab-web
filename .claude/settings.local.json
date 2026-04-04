@@ -58,7 +58,20 @@
       "Bash(node -e \"require\\(''canvas''\\)\")",
       "Bash(qlmanage -t --help)",
       "Bash(qlmanage -t -s 512 -o /tmp/ favicon.svg)",
-      "Read(//private/tmp/**)"
+      "Read(//private/tmp/**)",
+      "Bash(npm run:*)",
+      "mcp__gscServer__list_properties",
+      "mcp__gscServer__get_performance_overview",
+      "mcp__gscServer__check_indexing_issues",
+      "mcp__gscServer__get_sitemaps",
+      "mcp__gscServer__get_search_analytics",
+      "Bash(npx vercel:*)",
+      "mcp__gscServer__batch_url_inspection",
+      "Bash(ls ~/.nvm/versions/node/*/bin/vercel)",
+      "Read(//usr/local/bin/**)",
+      "Bash(/usr/local/bin/vercel deploy:*)",
+      "Read(//usr/local/lib/node_modules/vercel/dist/**)",
+      "Bash(PATH=\"/usr/local/bin:$PATH\" vercel deploy --prod)"
     ]
   }
 }

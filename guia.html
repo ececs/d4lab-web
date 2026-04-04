@@ -5,6 +5,13 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Guía: qué web o automatizaciones necesita tu negocio | D4Lab</title>
 <meta name="description" content="Descubre qué tipo de web y qué automatizaciones necesita tu negocio según tu sector. Pide presupuesto personalizado en segundos."/>
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
 <link rel="canonical" href="https://www.d4lab.es/guia.html"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="D4Lab"/>
@@ -43,7 +50,8 @@
   .prose-article .callout { background:rgba(100,255,218,0.05); border-left:3px solid #64FFDA; padding:1rem 1.2rem; border-radius:0 4px 4px 0; margin:1.5rem 0; }
   .prose-article .callout p { margin:0; color:#8892b0; }
   /* Category cards */
-  .cat-card { background:rgba(17,34,64,0.5); border:1px solid rgba(100,255,218,0.1); border-radius:4px; padding:1.5rem; transition:border-color 0.3s, background 0.3s; cursor:pointer; }
+  .cat-card { background:rgba(17,34,64,0.5); border:1px solid rgba(100,255,218,0.1); border-radius:4px; padding:1.5rem; transition:border-color 0.3s, background 0.3s; cursor:pointer; display:flex; flex-direction:column; }
+  .cat-bottom { margin-top:auto; padding-top:1rem; }
   .cat-card:hover { border-color:rgba(100,255,218,0.4); background:rgba(100,255,218,0.03); }
   .cat-card ul { list-style:none; padding:0; margin:0.8rem 0 1.2rem; }
   .cat-card ul li { color:#8892b0; padding-left:1.2rem; position:relative; margin-bottom:0.35rem; font-size:0.88rem; line-height:1.6; }
@@ -65,7 +73,7 @@
 
 <header id="nav-header" class="fixed top-0 left-0 right-0 z-50 glass border-b border-outline/30">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 flex h-20 items-center justify-between">
-    <a href="index.html" class="flex items-center gap-3 group cursor-pointer">
+    <a href="/" class="flex items-center gap-3 group cursor-pointer">
       <div class="relative size-10 flex items-center justify-center">
         <div class="absolute inset-0 border border-primary/40 rounded-sm rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
         <span class="material-symbols-outlined text-primary text-lg">terminal</span>
@@ -402,10 +410,19 @@
           <li>Notificación interna cuando llega una reserva o cancelación</li>
           <li>Recopilación de reseñas automática tras la visita</li>
         </ul>
-        <button class="cat-cta" data-d4-open data-d4-automessage="Hola, tengo un restaurante y me interesa automatizar: respuestas automáticas a clientes por WhatsApp, gestión de reservas con confirmaciones y recordatorios, publicación del menú en redes sociales, y recopilación de reseñas. ¿Puedes ayudarme a calcular un presupuesto?">
-          <span class="material-symbols-outlined text-sm">smart_toy</span>
-          Calcular mi presupuesto
-        </button>
+        <div class="cat-bottom">
+          <div style="background:rgba(100,255,218,0.04);border:1px solid rgba(100,255,218,0.2);border-radius:4px;padding:0.75rem 1rem;margin-bottom:0.75rem;display:flex;align-items:flex-start;gap:0.6rem;">
+            <span class="material-symbols-outlined" style="color:#64FFDA;font-size:1rem;margin-top:1px;flex-shrink:0;">share</span>
+            <div>
+              <p style="color:#64FFDA;font-size:0.78rem;font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin:0 0 0.2rem;">Pack Tridente Digital</p>
+              <p style="color:#8892b0;font-size:0.82rem;line-height:1.5;margin:0;">Publica el menú del día en Facebook, Instagram y Google Maps automáticamente con una foto. <a href="/blog/automatizacion-contenido-redes.html" style="color:#64FFDA;">150 € setup + 1er mes gratis →</a></p>
+            </div>
+          </div>
+          <button class="cat-cta" data-d4-open data-d4-automessage="Hola, tengo un restaurante y me interesa automatizar: respuestas automáticas a clientes por WhatsApp, gestión de reservas con confirmaciones y recordatorios, publicación del menú en redes sociales, y recopilación de reseñas. ¿Puedes ayudarme a calcular un presupuesto?">
+            <span class="material-symbols-outlined text-sm">smart_toy</span>
+            Calcular mi presupuesto
+          </button>
+        </div>
       </div>
 
       <div class="cat-card reveal">
@@ -422,10 +439,19 @@
           <li>Publicación automática de nuevos productos en redes sociales</li>
           <li>Informe semanal de ventas y productos más vendidos</li>
         </ul>
-        <button class="cat-cta" data-d4-open data-d4-automessage="Hola, tengo una tienda online y me interesa automatizar: la gestión de pedidos y stock, los emails automáticos a clientes, las publicaciones de productos en redes sociales, y recibir informes de ventas. ¿Puedes calcularme un presupuesto?">
-          <span class="material-symbols-outlined text-sm">smart_toy</span>
-          Calcular mi presupuesto
-        </button>
+        <div class="cat-bottom">
+          <div style="background:rgba(100,255,218,0.04);border:1px solid rgba(100,255,218,0.2);border-radius:4px;padding:0.75rem 1rem;margin-bottom:0.75rem;display:flex;align-items:flex-start;gap:0.6rem;">
+            <span class="material-symbols-outlined" style="color:#64FFDA;font-size:1rem;margin-top:1px;flex-shrink:0;">share</span>
+            <div>
+              <p style="color:#64FFDA;font-size:0.78rem;font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin:0 0 0.2rem;">Pack Tridente Digital</p>
+              <p style="color:#8892b0;font-size:0.82rem;line-height:1.5;margin:0;">Publica productos y ofertas en Facebook, Instagram y Google Business automáticamente. <a href="/blog/automatizacion-contenido-redes.html" style="color:#64FFDA;">150 € setup + 1er mes gratis →</a></p>
+            </div>
+          </div>
+          <button class="cat-cta" data-d4-open data-d4-automessage="Hola, tengo una tienda online y me interesa automatizar: la gestión de pedidos y stock, los emails automáticos a clientes, las publicaciones de productos en redes sociales, y recibir informes de ventas. ¿Puedes calcularme un presupuesto?">
+            <span class="material-symbols-outlined text-sm">smart_toy</span>
+            Calcular mi presupuesto
+          </button>
+        </div>
       </div>
 
       <div class="cat-card reveal">
@@ -442,10 +468,19 @@
           <li>Seguimiento post-tratamiento y solicitud de reseña</li>
           <li>Informe mensual de ocupación y servicios más solicitados</li>
         </ul>
-        <button class="cat-cta" data-d4-open data-d4-automessage="Hola, tengo una clínica o centro de estética y me interesa automatizar: la gestión de citas con confirmaciones y recordatorios automáticos, lista de espera en cancelaciones, seguimiento post-tratamiento y reseñas. ¿Puedes calcularme un presupuesto?">
-          <span class="material-symbols-outlined text-sm">smart_toy</span>
-          Calcular mi presupuesto
-        </button>
+        <div class="cat-bottom">
+          <div style="background:rgba(100,255,218,0.04);border:1px solid rgba(100,255,218,0.2);border-radius:4px;padding:0.75rem 1rem;margin-bottom:0.75rem;display:flex;align-items:flex-start;gap:0.6rem;">
+            <span class="material-symbols-outlined" style="color:#64FFDA;font-size:1rem;margin-top:1px;flex-shrink:0;">share</span>
+            <div>
+              <p style="color:#64FFDA;font-size:0.78rem;font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin:0 0 0.2rem;">Pack Tridente Digital</p>
+              <p style="color:#8892b0;font-size:0.82rem;line-height:1.5;margin:0;">Publica tratamientos y promociones en Facebook, Instagram y Google Maps de forma automática. <a href="/blog/automatizacion-contenido-redes.html" style="color:#64FFDA;">150 € setup + 1er mes gratis →</a></p>
+            </div>
+          </div>
+          <button class="cat-cta" data-d4-open data-d4-automessage="Hola, tengo una clínica o centro de estética y me interesa automatizar: la gestión de citas con confirmaciones y recordatorios automáticos, lista de espera en cancelaciones, seguimiento post-tratamiento y reseñas. ¿Puedes calcularme un presupuesto?">
+            <span class="material-symbols-outlined text-sm">smart_toy</span>
+            Calcular mi presupuesto
+          </button>
+        </div>
       </div>
 
       <div class="cat-card reveal">
@@ -462,10 +497,12 @@
           <li>Informe mensual de ingresos y proyectos activos</li>
           <li>Respuesta automática a consultas frecuentes por email o formulario</li>
         </ul>
-        <button class="cat-cta" data-d4-open data-d4-automessage="Hola, soy autónomo o freelance y me interesa automatizar: la facturación y cobros, el onboarding de nuevos clientes, los recordatorios de presupuestos pendientes, y los informes de ingresos. ¿Puedes calcularme un presupuesto?">
-          <span class="material-symbols-outlined text-sm">smart_toy</span>
-          Calcular mi presupuesto
-        </button>
+        <div class="cat-bottom">
+          <button class="cat-cta" data-d4-open data-d4-automessage="Hola, soy autónomo o freelance y me interesa automatizar: la facturación y cobros, el onboarding de nuevos clientes, los recordatorios de presupuestos pendientes, y los informes de ingresos. ¿Puedes calcularme un presupuesto?">
+            <span class="material-symbols-outlined text-sm">smart_toy</span>
+            Calcular mi presupuesto
+          </button>
+        </div>
       </div>
 
       <div class="cat-card reveal">
@@ -482,10 +519,19 @@
           <li>Registro de materiales usados por trabajo para control de costes</li>
           <li>Informe semanal de horas por técnico y rentabilidad por trabajo</li>
         </ul>
-        <button class="cat-cta" data-d4-open data-d4-automessage="Hola, tengo una empresa de instalaciones o mantenimiento y me interesa automatizar: los partes de trabajo digitales, la asignación de técnicos, el envío de presupuestos por WhatsApp o email, el control de materiales y los informes de rentabilidad. ¿Puedes calcularme un presupuesto?">
-          <span class="material-symbols-outlined text-sm">smart_toy</span>
-          Calcular mi presupuesto
-        </button>
+        <div class="cat-bottom">
+          <div style="background:rgba(100,255,218,0.04);border:1px solid rgba(100,255,218,0.2);border-radius:4px;padding:0.75rem 1rem;margin-bottom:0.75rem;display:flex;align-items:flex-start;gap:0.6rem;">
+            <span class="material-symbols-outlined" style="color:#64FFDA;font-size:1rem;margin-top:1px;flex-shrink:0;">share</span>
+            <div>
+              <p style="color:#64FFDA;font-size:0.78rem;font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin:0 0 0.2rem;">Pack Tridente Digital</p>
+              <p style="color:#8892b0;font-size:0.82rem;line-height:1.5;margin:0;">Publica fotos de tus trabajos terminados en Facebook, Instagram y Google Maps automáticamente. El portfolio visual que vende sin esfuerzo. <a href="/blog/automatizacion-contenido-redes.html" style="color:#64FFDA;">150 € setup + 1er mes gratis →</a></p>
+            </div>
+          </div>
+          <button class="cat-cta" data-d4-open data-d4-automessage="Hola, tengo una empresa de instalaciones o mantenimiento y me interesa automatizar: los partes de trabajo digitales, la asignación de técnicos, el envío de presupuestos por WhatsApp o email, el control de materiales y los informes de rentabilidad. ¿Puedes calcularme un presupuesto?">
+            <span class="material-symbols-outlined text-sm">smart_toy</span>
+            Calcular mi presupuesto
+          </button>
+        </div>
       </div>
 
       <div class="cat-card reveal">
@@ -502,10 +548,12 @@
           <li>Envío de material didáctico y recursos tras cada sesión</li>
           <li>Encuesta de satisfacción automática al finalizar el curso</li>
         </ul>
-        <button class="cat-cta" data-d4-open data-d4-automessage="Hola, tengo una academia o centro de formación y me interesa automatizar: el proceso de inscripción y pago, los recordatorios a alumnos, la emisión de recibos, el envío de materiales y las encuestas de satisfacción. ¿Puedes calcularme un presupuesto?">
-          <span class="material-symbols-outlined text-sm">smart_toy</span>
-          Calcular mi presupuesto
-        </button>
+        <div class="cat-bottom">
+          <button class="cat-cta" data-d4-open data-d4-automessage="Hola, tengo una academia o centro de formación y me interesa automatizar: el proceso de inscripción y pago, los recordatorios a alumnos, la emisión de recibos, el envío de materiales y las encuestas de satisfacción. ¿Puedes calcularme un presupuesto?">
+            <span class="material-symbols-outlined text-sm">smart_toy</span>
+            Calcular mi presupuesto
+          </button>
+        </div>
       </div>
 
       <div class="cat-card reveal md:col-span-2">
@@ -523,10 +571,12 @@
           <li>Dashboard unificado con KPIs actualizados en tiempo real (ventas, tráfico, campañas)</li>
           <li>Integración entre CRM, facturación y herramientas del equipo</li>
         </ul>
-        <button class="cat-cta" data-d4-open data-d4-automessage="Hola, tenemos una empresa y nos interesa automatizar procesos internos: captura y seguimiento de leads, notificaciones al equipo, flujos de aprobación, publicación de contenido en redes sociales e integración entre nuestro CRM y herramientas de facturación. ¿Puedes calcularme un presupuesto?">
-          <span class="material-symbols-outlined text-sm">smart_toy</span>
-          Calcular mi presupuesto
-        </button>
+        <div class="cat-bottom">
+          <button class="cat-cta" data-d4-open data-d4-automessage="Hola, tenemos una empresa y nos interesa automatizar procesos internos: captura y seguimiento de leads, notificaciones al equipo, flujos de aprobación, publicación de contenido en redes sociales e integración entre nuestro CRM y herramientas de facturación. ¿Puedes calcularme un presupuesto?">
+            <span class="material-symbols-outlined text-sm">smart_toy</span>
+            Calcular mi presupuesto
+          </button>
+        </div>
       </div>
 
     </div>

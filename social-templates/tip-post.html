@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080x1350">
+    <title>Social Card Tip - d4lab.es</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a192f;
+            --primary-accent: #64ffda; 
+            --secondary-accent: #112240; 
+            --text-main: #ccd6f6;
+            --text-dim: #8892b1;
+            --glass: rgba(17, 34, 64, 0.4);
+            --glass-border: rgba(100, 255, 218, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 1080px;
+            height: 1350px;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 100% 0%, rgba(16, 185, 129, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 0% 100%, rgba(59, 130, 246, 0.1) 0%, transparent 40%);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .card {
+            width: 950px;
+            height: 1200px;
+            background: var(--glass);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 80px;
+            padding: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            text-align: center;
+        }
+
+        .icon-box {
+            width: 160px;
+            height: 160px;
+            background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 60px;
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
+        }
+
+        .icon-box svg {
+            width: 80px;
+            height: 80px;
+            fill: white;
+        }
+
+        .badge {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 32px;
+            color: var(--primary-accent);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+        }
+
+        .tip-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 800;
+            font-size: 72px;
+            line-height: 1.25;
+            margin-bottom: 60px;
+            color: #fff;
+            text-shadow: 0 0 25px rgba(100, 255, 218, 0.3);
+        }
+
+        .category {
+            font-size: 36px;
+            color: var(--text-dim);
+            font-weight: 400;
+            border-top: 1px solid var(--glass-border);
+            padding-top: 40px;
+            width: 100%;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 60px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            color: #fff;
+            opacity: 0.8;
+        }
+
+        .dot { color: var(--primary-accent); }
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="icon-box">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+        </div>
+        
+        <div class="badge">Tip del Día</div>
+        
+        <h1 class="tip-text">{{TIP_CONTENT}}</h1>
+        
+        <div class="category">#{{CATEGORY}}</div>
+
+        <div class="footer">
+            d4lab<span class="dot">.</span>es
+        </div>
+    </div>
+</body>
+</html>

@@ -26,8 +26,23 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://www.d4lab.es/guia.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://www.d4lab.es/contacto.html</loc>
     <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.d4lab.es/blog/automatizacion-redes-sociales.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.d4lab.es/blog/automatizacion-contenido-redes.html</loc>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 </urlset>
