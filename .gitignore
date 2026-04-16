@@ -6,3 +6,10 @@ stitch_portfolio_tesla_sistemas_360 2/
 node_modules/
 client_secrets.json
 .claude/settings.local.json
+
+# Recursos Personales & Logos
+Logo*
+canarias-paisajes/
+curriculum*
+extract_linkedin.py
+linkedin.pdf
