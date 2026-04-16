@@ -1,5 +1,12 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /stitch/
+Disallow: /social-mockups/
+Disallow: /social-templates/
+Disallow: /canarias-paisajes/
+Disallow: /scripts/
+Disallow: /styles/
+Disallow: /preview-logo.html
 
 Sitemap: https://www.d4lab.es/sitemap.xml
