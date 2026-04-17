@@ -6,17 +6,95 @@
 (function () {
   'use strict';
 
+  var lang = (function () {
+    var docLang = String((document.documentElement && document.documentElement.lang) || '').toLowerCase();
+    if (docLang.indexOf('en') === 0) return 'en';
+    if (window.location && window.location.pathname && window.location.pathname.indexOf('/en/') === 0) return 'en';
+    return 'es';
+  })();
+
+  var I18N = {
+    es: {
+      welcomeMsg: '¡Hola! Soy el asistente de **D4Lab**.\n\nPuedo ayudarte a resolver dudas sobre nuestros servicios y calcular un presupuesto estimado.\n\n¿En qué puedo ayudarte hoy?',
+      quickActions: [
+        { label: '💻 Solicitar presupuesto', msg: 'Hola, me gustaría solicitar un presupuesto para un proyecto.' },
+        { label: '🔧 Soporte IT', msg: 'Necesito ayuda con soporte técnico.' },
+        { label: '❓ Dudas sobre servicios', msg: 'Me gustaría saber más sobre los servicios que ofrecéis.' },
+      ],
+      contextLabel: 'Maqueta elegida',
+      contextFallback: 'Se enviará junto al presupuesto',
+      contextClear: 'Cambiar',
+      templateCategoryPrefix: 'categoría ',
+      templateStylePrefix: 'estilo ',
+      templateLineStart: 'Quiero pedir presupuesto tomando como base la maqueta "',
+      templateLineEnd: '".',
+      templateReference: ' Referencia: ',
+      templateGreeting: 'Hola, ',
+      openChatAria: 'Abrir chat de D4Lab',
+      dialogAria: 'Chat de asistencia D4Lab',
+      assistantName: 'Asistente D4Lab',
+      online: 'En línea',
+      continueWhatsApp: 'Continuar por WhatsApp',
+      closeChatAria: 'Cerrar chat',
+      budgetSent: 'Resumen enviado a Eudaldo · ',
+      inputPlaceholder: 'Escribe tu pregunta...',
+      sendMessageAria: 'Enviar mensaje',
+      sendBudgetLink: 'Continúa por WhatsApp',
+      errorPrefix: '⚠️ ',
+      connectionError: '⚠️ No se pudo conectar con el asistente. Puedes escribirnos directamente por WhatsApp.',
+      tooltip: '👋 ¿Tienes dudas o quieres un <strong>presupuesto gratis</strong>? ¡Pregúntame!',
+      tooltipCloseAria: 'Cerrar',
+      whatsappBase: 'Hola D4Lab, vengo del chat de la web y me interesa',
+      whatsappUsingTemplate: ' usando la maqueta "',
+      whatsappDefaultInterest: 'vuestros servicios',
+    },
+    en: {
+      welcomeMsg: 'Hi! I am the **D4Lab** assistant.\n\nI can help you understand our services and give you an estimated quote.\n\nHow can I help you today?',
+      quickActions: [
+        { label: '💻 Request a quote', msg: 'Hi, I would like to request a quote for a project.' },
+        { label: '🔧 IT support', msg: 'I need help with technical support.' },
+        { label: '❓ Questions about services', msg: 'I would like to know more about your services.' },
+      ],
+      contextLabel: 'Selected mockup',
+      contextFallback: 'It will be included with your quote',
+      contextClear: 'Change',
+      templateCategoryPrefix: 'category ',
+      templateStylePrefix: 'style ',
+      templateLineStart: 'I would like to request a quote using the mockup "',
+      templateLineEnd: '" as the base.',
+      templateReference: ' Reference: ',
+      templateGreeting: 'Hi, ',
+      openChatAria: 'Open D4Lab chat',
+      dialogAria: 'D4Lab support chat',
+      assistantName: 'D4Lab Assistant',
+      online: 'Online',
+      continueWhatsApp: 'Continue on WhatsApp',
+      closeChatAria: 'Close chat',
+      budgetSent: 'Summary sent to Eudaldo · ',
+      inputPlaceholder: 'Type your question...',
+      sendMessageAria: 'Send message',
+      sendBudgetLink: 'Continue on WhatsApp',
+      errorPrefix: '⚠️ ',
+      connectionError: '⚠️ We could not connect to the assistant. You can contact us directly on WhatsApp.',
+      tooltip: '👋 Do you have questions or want a <strong>free quote</strong>? Ask me!',
+      tooltipCloseAria: 'Close',
+      whatsappBase: 'Hi D4Lab, I am coming from the website chat and I am interested in',
+      whatsappUsingTemplate: ' using the mockup "',
+      whatsappDefaultInterest: 'your services',
+    },
+  };
+
+  function t(key) {
+    return (I18N[lang] && I18N[lang][key]) || I18N.es[key];
+  }
+
   // ─── Configuración ───────────────────────────────────────────────────────────
   var CFG = {
     whatsapp: '34666750753',
     api: '/api/chat',
     templateStorageKey: 'd4lab:selected-template',
-    welcomeMsg: '¡Hola! Soy el asistente de **D4Lab**.\n\nPuedo ayudarte a resolver dudas sobre nuestros servicios y calcular un presupuesto estimado.\n\n¿En qué puedo ayudarte hoy?',
-    quickActions: [
-      { label: '💻 Solicitar presupuesto', msg: 'Hola, me gustaría solicitar un presupuesto para un proyecto.' },
-      { label: '🔧 Soporte IT', msg: 'Necesito ayuda con soporte técnico.' },
-      { label: '❓ Dudas sobre servicios', msg: 'Me gustaría saber más sobre los servicios que ofrecéis.' },
-    ],
+    welcomeMsg: t('welcomeMsg'),
+    quickActions: t('quickActions'),
   };
 
   // ─── Estado ──────────────────────────────────────────────────────────────────
@@ -25,7 +103,7 @@
     messages: [],   // { role: 'user'|'assistant', content: string }
     loading: false,
     budgetSent: false,
-    whatsappText: 'Hola D4Lab, me interesa vuestros servicios.',
+    whatsappText: t('whatsappBase') + ': ' + t('whatsappDefaultInterest'),
     selectedTemplate: null,
   };
 
@@ -255,11 +333,11 @@
 
     el.innerHTML = [
       '<div class="d4chat-context-copy">',
-        '<span class="d4chat-context-label">Maqueta elegida</span>',
+        '<span class="d4chat-context-label">' + escapeHtml(t('contextLabel')) + '</span>',
         '<span class="d4chat-context-title">' + escapeHtml(state.selectedTemplate.name) + '</span>',
-        '<span class="d4chat-context-meta">' + escapeHtml(meta.join(' · ') || 'Se enviará junto al presupuesto') + '</span>',
+        '<span class="d4chat-context-meta">' + escapeHtml(meta.join(' · ') || t('contextFallback')) + '</span>',
       '</div>',
-      '<button id="d4chat-context-clear" type="button">Cambiar</button>',
+      '<button id="d4chat-context-clear" type="button">' + escapeHtml(t('contextClear')) + '</button>',
     ].join('');
 
     el.classList.remove('d4chat-hidden');
@@ -298,15 +376,17 @@
     if (!template || !template.name) return baseMessage || null;
 
     var details = [];
-    if (template.category) details.push('categoría ' + template.category.toLowerCase());
-    if (template.style) details.push('estilo ' + template.style.toLowerCase());
+    if (template.category) details.push(t('templateCategoryPrefix') + template.category.toLowerCase());
+    if (template.style) details.push(t('templateStylePrefix') + template.style.toLowerCase());
 
-    var templateLine = 'Quiero pedir presupuesto tomando como base la maqueta "' + template.name + '"' + (details.length ? ' (' + details.join(', ') + ')' : '') + '.';
+    var templateLine = t('templateLineStart') + template.name + '"';
+    if (details.length) templateLine += ' (' + details.join(', ') + ')';
+    templateLine += lang === 'en' ? ' as the base.' : '.';
     if (template.description) {
-      templateLine += ' Referencia: ' + template.description + '.';
+      templateLine += t('templateReference') + template.description + '.';
     }
 
-    if (!baseMessage) return 'Hola, ' + templateLine;
+    if (!baseMessage) return t('templateGreeting') + templateLine;
     return baseMessage + '\n\n' + templateLine;
   }
 
@@ -315,7 +395,7 @@
     // Botón flotante
     var btn = document.createElement('button');
     btn.id = 'd4chat-btn';
-    btn.setAttribute('aria-label', 'Abrir chat de D4Lab');
+    btn.setAttribute('aria-label', t('openChatAria'));
     btn.innerHTML = '<span class="material-symbols-outlined" id="d4chat-btn-icon">chat</span><div class="d4chat-badge"></div>';
 
     // Panel
@@ -323,7 +403,7 @@
     panel.id = 'd4chat-panel';
     panel.classList.add('d4chat-hidden');
     panel.setAttribute('role', 'dialog');
-    panel.setAttribute('aria-label', 'Chat de asistencia D4Lab');
+    panel.setAttribute('aria-label', t('dialogAria'));
 
     // Header
     panel.innerHTML = [
@@ -331,16 +411,16 @@
         '<div class="d4chat-hinfo">',
           '<div class="d4chat-avatar">D4</div>',
           '<div>',
-            '<div class="d4chat-hname">Asistente D4Lab</div>',
-            '<div class="d4chat-hstatus"><span class="d4chat-dot"></span>En línea</div>',
+            '<div class="d4chat-hname">' + escapeHtml(t('assistantName')) + '</div>',
+            '<div class="d4chat-hstatus"><span class="d4chat-dot"></span>' + escapeHtml(t('online')) + '</div>',
           '</div>',
         '</div>',
         '<div class="d4chat-hbtns">',
-          '<a id="d4chat-wa-btn" href="' + buildWhatsAppUrl() + '" target="_blank" rel="noopener" title="Continuar por WhatsApp">',
+          '<a id="d4chat-wa-btn" href="' + buildWhatsAppUrl() + '" target="_blank" rel="noopener" title="' + escapeHtml(t('continueWhatsApp')) + '">',
             // WhatsApp SVG icon
             '<svg width="18" height="18" viewBox="0 0 24 24" fill="#64FFDA"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>',
           '</a>',
-          '<button id="d4chat-close-btn" aria-label="Cerrar chat">',
+          '<button id="d4chat-close-btn" aria-label="' + escapeHtml(t('closeChatAria')) + '">',
             '<span class="material-symbols-outlined">close</span>',
           '</button>',
         '</div>',
@@ -354,7 +434,7 @@
       // Budget notice
       '<div id="d4chat-budget-notice" class="d4chat-hidden">',
         '<span class="material-symbols-outlined">task_alt</span>',
-        '<span>Resumen enviado a Eudaldo · <a id="d4chat-wa-budget" href="#" style="color:#64FFDA;text-decoration:underline" target="_blank">Continúa por WhatsApp</a></span>',
+        '<span>' + escapeHtml(t('budgetSent')) + '<a id="d4chat-wa-budget" href="#" style="color:#64FFDA;text-decoration:underline" target="_blank">' + escapeHtml(t('sendBudgetLink')) + '</a></span>',
       '</div>',
 
       // Quick actions
@@ -362,8 +442,8 @@
 
       // Input
       '<div id="d4chat-input-wrap">',
-        '<textarea id="d4chat-input" placeholder="Escribe tu pregunta..." rows="1"></textarea>',
-        '<button id="d4chat-send" aria-label="Enviar mensaje">',
+        '<textarea id="d4chat-input" placeholder="' + escapeHtml(t('inputPlaceholder')) + '" rows="1"></textarea>',
+        '<button id="d4chat-send" aria-label="' + escapeHtml(t('sendMessageAria')) + '">',
           '<span class="material-symbols-outlined">send</span>',
         '</button>',
       '</div>',
@@ -451,6 +531,7 @@
     var payload = {
       messages: state.messages,
       selectedTemplate: state.selectedTemplate,
+      locale: lang,
     };
 
     fetch(CFG.api, {
@@ -465,7 +546,7 @@
         if (sendBtn) sendBtn.disabled = false;
 
         if (data.error) {
-          addMessage('assistant', '⚠️ ' + data.error);
+          addMessage('assistant', t('errorPrefix') + data.error);
           return;
         }
 
@@ -481,7 +562,7 @@
         hideTyping();
         state.loading = false;
         if (sendBtn) sendBtn.disabled = false;
-        addMessage('assistant', '⚠️ No se pudo conectar con el asistente. Puedes escribirnos directamente por WhatsApp.');
+        addMessage('assistant', t('connectionError'));
       });
   }
 
@@ -489,9 +570,9 @@
   function updateWhatsAppLink(lastUserMsg) {
     var templateText = '';
     if (state.selectedTemplate && state.selectedTemplate.name) {
-      templateText = ' usando la maqueta "' + state.selectedTemplate.name + '"';
+      templateText = t('whatsappUsingTemplate') + state.selectedTemplate.name + '"';
     }
-    var waText = 'Hola D4Lab, vengo del chat de la web y me interesa' + templateText + ': ' + (lastUserMsg || 'vuestros servicios');
+    var waText = t('whatsappBase') + templateText + ': ' + (lastUserMsg || t('whatsappDefaultInterest'));
     state.whatsappText = waText;
     var url = buildWhatsAppUrl(waText);
 
@@ -586,7 +667,7 @@
     var tip = document.createElement('div');
     tip.id = 'd4chat-tooltip';
     tip.setAttribute('role', 'status');
-    tip.innerHTML = '<button id="d4chat-tooltip-close" aria-label="Cerrar">×</button>👋 ¿Tienes dudas o quieres un <strong>presupuesto gratis</strong>? ¡Pregúntame!';
+    tip.innerHTML = '<button id="d4chat-tooltip-close" aria-label="' + escapeHtml(t('tooltipCloseAria')) + '">×</button>' + t('tooltip');
     document.body.appendChild(tip);
 
     // Botón X → descarta para toda la sesión

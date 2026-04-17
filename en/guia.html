@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Guide: What web or automation does your business need | D4Lab</title>
+<meta name="description" content="Discover what type of website and what automations your business needs based on your sector. Get a custom quote in seconds."/>
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<link rel="canonical" href="https://www.d4lab.es/en/guia"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="D4Lab"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://www.d4lab.es/en/guia"/>
+<meta property="og:title" content="Guide: What web or automation does your business need | D4Lab"/>
+<meta property="og:description" content="Find what your business needs and request a personalized quote in seconds. D4Lab guide by industry."/>
+<meta property="og:image" content="https://www.d4lab.es/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Guide: What web or automation does your business need | D4Lab"/>
+<meta name="twitter:description" content="Discover what type of website and what automations your business needs based on your sector."/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Guide for your web or app",
+  "description": "Interactive guide to identify which web and which automations your business needs according to your sector.",
+  "url": "https://www.d4lab.es/en/guia",
+  "publisher": {"@type": "Organization", "name": "D4Lab", "url": "https://www.d4lab.es/en/"}
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="/guia.tailwind.css" rel="stylesheet"/>
+<style>
+  .glass { background:rgba(17,34,64,0.7); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(100,255,218,0.1); }
+  .nav-item::after { content:''; display:block; width:0; height:2px; background:#64FFDA; transition:width .3s; }
+  .nav-item:hover::after { width:100%; }
+  #nav-header { transition: background .3s ease, box-shadow .3s ease; }
+  #nav-header.scrolled { background:rgba(10,25,47,0.97); box-shadow:0 1px 0 rgba(100,255,218,0.1); }
+  #mobile-menu { display:none; }
+  #mobile-menu.open { display:flex; }
+  .tag { display:inline-flex; align-items:center; padding:2px 8px; background:rgba(100,255,218,0.08); border:1px solid rgba(100,255,218,0.2); border-radius:2px; font-size:9px; font-family:'Space Grotesk',sans-serif; font-weight:700; color:#64FFDA; letter-spacing:0.15em; text-transform:uppercase; }
+  .prose-article h2 { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.4rem; color:#ccd6f6; margin-top:2.5rem; margin-bottom:1rem; }
+  .prose-article p { color:#8892b0; line-height:1.85; margin-bottom:1.2rem; font-size:0.97rem; }
+  .prose-article .callout { background:rgba(100,255,218,0.05); border-left:3px solid #64FFDA; padding:1rem 1.2rem; border-radius:0 4px 4px 0; margin:1.5rem 0; }
+  .prose-article .callout p { margin:0; color:#8892b0; }
+  /* Category cards */
+  .cat-card { background:rgba(17,34,64,0.5); border:1px solid rgba(100,255,218,0.1); border-radius:4px; padding:1.5rem; transition:border-color 0.3s, background 0.3s; cursor:pointer; display:flex; flex-direction:column; }
+  .cat-bottom { margin-top:auto; padding-top:1rem; }
+  .cat-card:hover { border-color:rgba(100,255,218,0.4); background:rgba(100,255,218,0.03); }
+  .cat-card ul { list-style:none; padding:0; margin:0.8rem 0 1.2rem; }
+  .cat-card ul li { color:#8892b0; padding-left:1.2rem; position:relative; margin-bottom:0.35rem; font-size:0.88rem; line-height:1.6; }
+  .cat-card ul li::before { content:'▹'; color:#64FFDA; position:absolute; left:0; font-size:0.8rem; }
+  .cat-card h3 { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.05rem; color:#ccd6f6; margin-bottom:0.3rem; }
+  .cat-card .price { font-family:'Space Grotesk',sans-serif; font-size:0.8rem; color:#64FFDA; font-weight:700; }
+  .cat-card .savings { display:inline-flex; align-items:center; gap:4px; font-family:'Space Grotesk',sans-serif; font-size:0.75rem; color:#64FFDA; font-weight:700; background:rgba(100,255,218,0.08); border:1px solid rgba(100,255,218,0.2); border-radius:2px; padding:3px 10px; margin-bottom:0.5rem; }
+  .cat-actions { display:flex; flex-direction:column; gap:0.7rem; margin-top:1rem; }
+  .cat-link { display:inline-flex; align-items:center; gap:6px; min-height:42px; padding:10px 20px; border-radius:2px; border:1px solid rgba(100,255,218,0.28); color:#64FFDA; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.15em; justify-content:center; text-decoration:none; transition:background 0.2s, border-color 0.2s, color 0.2s; width:100%; }
+  .cat-link:hover { background:rgba(100,255,218,0.06); border-color:rgba(100,255,218,0.45); }
+  .cat-cta { display:inline-flex; align-items:center; gap:6px; background:#64FFDA; color:#001a14; padding:10px 20px; border-radius:2px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.15em; cursor:pointer; border:none; transition:filter 0.2s; width:100%; justify-content:center; margin-top:0; }
+  .cat-cta:hover { filter:brightness(1.1); }
+  .reveal { opacity:0; transform:translateY(20px); transition:opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity:1; transform:none; }
+  .pain { font-size:0.85rem; color:#8892b0; font-style:italic; margin-bottom:0.8rem; line-height:1.55; }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen">
+
+<header id="nav-header" class="fixed top-0 left-0 right-0 z-50 glass border-b border-outline/30">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex h-20 items-center justify-between">
+    <a href="/en/" class="flex items-center gap-3 group cursor-pointer">
+      <div class="relative size-10 flex items-center justify-center">
+        <div class="absolute inset-0 border border-primary/40 rounded-sm rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+        <span class="material-symbols-outlined text-primary text-lg">terminal</span>
+      </div>
+      <span class="text-white font-headline font-bold tracking-tight" style="font-size:1.9rem;line-height:1"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-10">
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/servicios">Services</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/maquetas">Mockups</a>
+      <a class="nav-item text-primary text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/guia">Guide</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/sobre-mi">About me</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/precios">FAQ</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/blog">Blog</a>
+      <a class="text-on-surface-variant text-[10px] font-label font-bold hover:text-primary px-2 py-1 border border-primary/20 rounded-sm" href="/guia">ES</a>
+    </nav>
+    <a href="/en/contacto" class="hidden lg:inline-flex bg-primary px-6 py-2 rounded-sm text-on-primary font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all items-center gap-2">Contact</a>
+    <button id="menu-btn" class="lg:hidden text-primary" aria-label="Menu"><span class="material-symbols-outlined text-3xl">menu</span></button>
+  </div>
+  <div id="mobile-menu" class="flex-col px-6 pb-6 gap-4 lg:hidden">
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/servicios">Services</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/maquetas">Mockups</a>
+    <a class="text-primary text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/guia">Guide</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/sobre-mi">About me</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/precios">FAQ</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/blog">Blog</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/contacto">Contact</a>
+    <div class="border-t border-primary/20 pt-4 mt-2">
+      <a class="text-primary text-sm font-label font-bold uppercase tracking-[0.2em]" href="/guia">Spanish Version</a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="pt-36 pb-16 px-6 text-center border-b border-primary/10">
+  <div class="max-w-3xl mx-auto">
+    <span class="tag mb-4 inline-flex">Interactive Guide</span>
+    <h1 class="text-4xl md:text-5xl font-headline font-bold text-white tracking-tight leading-tight mb-5 mt-3">Guide for your web or app</h1>
+    <p class="text-on-surface-variant text-lg font-light leading-relaxed mb-8">Find what your business needs and request a personalized quote in seconds.</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="#web" class="min-w-[200px] bg-primary h-12 rounded-sm text-on-primary font-headline font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-2 hover:brightness-110 transition-all text-xs">
+        <span class="material-symbols-outlined text-base">web</span>
+        Which web do I need?
+      </a>
+      <a href="#automatizaciones" class="min-w-[200px] h-12 border border-primary/30 rounded-sm text-primary font-headline font-bold uppercase tracking-[0.2em] hover:bg-primary/5 transition-all flex items-center justify-center gap-2 text-xs">
+        <span class="material-symbols-outlined text-base">smart_toy</span>
+        What should I automate?
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Section 1: Web -->
+<section id="web" class="py-20 px-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="mb-10 reveal">
+      <span class="text-primary text-[10px] uppercase tracking-[0.4em] font-label font-bold mb-3 block">Section 1</span>
+      <h2 class="text-3xl md:text-4xl font-headline font-bold text-white tracking-tight mb-4">What web does your business need?</h2>
+      <p class="text-on-surface-variant font-light max-w-2xl">Not all websites are the same. Find your business type, identify what your web should include, and get a quote in seconds.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Card 1: Restaurant / Bar / Cafe -->
+      <div class="cat-card reveal">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="material-symbols-outlined text-primary text-4xl">restaurant</span>
+          <div>
+            <h3>Restaurant / Bar / Cafe</h3>
+            <span class="tag">Landing page or corporate web</span>
+          </div>
+        </div>
+        <p style="color:#8892b0; font-size:0.88rem; line-height:1.7; margin-bottom:0.5rem;">Your client needs to see the menu, know where you are, and book a table. The web has to solve those three questions in less than 10 seconds.</p>
+        <ul>
+          <li>Digital menu updatable without touching code</li>
+          <li>Integrated online booking system</li>
+          <li>Gallery of the premises and dishes</li>
+          <li>Opening hours, address, and integrated map</li>
+          <li>Direct link to WhatsApp for quick inquiries</li>
+        </ul>
+        <p class="price">From 350 €</p>
+        <div class="cat-actions">
+          <a class="cat-link" href="/en/maquetas#restauracion">
+            <span class="material-symbols-outlined text-base">web</span>
+            View mockups
+          </a>
+          <button class="cat-cta" data-d4-open data-d4-automessage="I have a restaurant/bar and I'm thinking about making a website. I'd like to know what it should include and get an indicative quote.">
+            <span class="material-symbols-outlined text-base">calculate</span>
+            Request a quote for this type
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 2: Shop / Retail -->
+      <div class="cat-card reveal">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="material-symbols-outlined text-primary text-4xl">storefront</span>
+          <div>
+            <h3>Shop / Retail</h3>
+            <span class="tag">E-commerce</span>
+          </div>
+        </div>
+        <p style="color:#8892b0; font-size:0.88rem; line-height:1.7; margin-bottom:0.5rem;">If you sell physical products and want to reach beyond your neighborhood, you need an online store that works 24/7 and manages orders automatically.</p>
+        <ul>
+          <li>Product catalog with photos and variants</li>
+          <li>Shopping cart and payment gateway (Stripe / PayPal)</li>
+          <li>Stock management and low stock alerts</li>
+          <li>Integration with social networks and Instagram Shopping</li>
+          <li>Intuitive administration panel</li>
+        </ul>
+        <p class="price">From 800 €</p>
+        <div class="cat-actions">
+          <a class="cat-link" href="/en/maquetas#comercio">
+            <span class="material-symbols-outlined text-base">web</span>
+            View mockups
+          </a>
+          <button class="cat-cta" data-d4-open data-d4-automessage="I have a shop and I want to start selling online. What type of online store do you recommend and what would it cost to set up?">
+            <span class="material-symbols-outlined text-base">calculate</span>
+            Request a quote for this type
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 3: Clinic / Spa / Beauty -->
+      <div class="cat-card reveal">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="material-symbols-outlined text-primary text-4xl">medical_services</span>
+          <div>
+            <h3>Clinic / Spa / Beauty</h3>
+            <span class="tag">Corporate web + online booking</span>
+          </div>
+        </div>
+        <p style="color:#8892b0; font-size:0.88rem; line-height:1.7; margin-bottom:0.5rem;">Your clients want to book an appointment from their mobile at 11 PM. If they only have a phone to call during opening hours, you're losing bookings every day.</p>
+        <ul>
+          <li>Service and professional staff profiles</li>
+          <li>Online appointment booking with email confirmation</li>
+          <li>Gallery of the center and before/after (if applicable)</li>
+          <li>Integrated verified reviews</li>
+          <li>Direct WhatsApp and contact form</li>
+        </ul>
+        <p class="price">From 600 €</p>
+        <div class="cat-actions">
+          <a class="cat-link" href="/en/maquetas#clinica">
+            <span class="material-symbols-outlined text-base">web</span>
+            View mockups
+          </a>
+          <button class="cat-cta" data-d4-open data-d4-automessage="I have a clinic/spa and I need a website with online appointment booking. What should it include and how much would it cost?">
+            <span class="material-symbols-outlined text-base">calculate</span>
+            Request a quote for this type
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 4: Freelancer / Consultant -->
+      <div class="cat-card reveal">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="material-symbols-outlined text-primary text-4xl">person_pin</span>
+          <div>
+            <h3>Freelancer / Consultant</h3>
+            <span class="tag">Portfolio / Landing page</span>
+          </div>
+        </div>
+        <p style="color:#8892b0; font-size:0.88rem; line-height:1.7; margin-bottom:0.5rem;">Your web is your best salesperson. While you sleep, your portfolio works for you: showing what you do, proving you're reliable, and converting visits into inquiries.</p>
+        <ul>
+          <li>Clear and client-oriented service presentation</li>
+          <li>Portfolio or success stories with results</li>
+          <li>Real client testimonials</li>
+          <li>Contact form or quote request</li>
+          <li>Optional blog for positioning and authority</li>
+        </ul>
+        <p class="price">From 300 €</p>
+        <div class="cat-actions">
+          <a class="cat-link" href="/en/maquetas#freelance">
+            <span class="material-symbols-outlined text-base">web</span>
+            View mockups
+          </a>
+          <button class="cat-cta" data-d4-open data-d4-automessage="I'm a freelancer/consultant and I need a website to present my services and attract clients. What do you recommend?">
+            <span class="material-symbols-outlined text-base">calculate</span>
+            Request a quote for this type
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 5: Builder / Installer / Technician -->
+      <div class="cat-card reveal">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="material-symbols-outlined text-primary text-4xl">construction</span>
+          <div>
+            <h3>Builder / Installer / Technician</h3>
+            <span class="tag">Local services web</span>
+          </div>
+        </div>
+        <p style="color:#8892b0; font-size:0.88rem; line-height:1.7; margin-bottom:0.5rem;">When someone searches for "HVAC installer in [your city]," you need to appear. And when they find you, your work photos have to convince them before they call someone else.</p>
+        <ul>
+          <li>Gallery of completed work with quality photos</li>
+          <li>List of services and coverage area</li>
+          <li>No-obligation quote request form</li>
+          <li>Visible phone number at all times</li>
+          <li>Reviews from satisfied clients</li>
+        </ul>
+        <p class="price">From 400 €</p>
+        <div class="cat-actions">
+          <a class="cat-link" href="/en/maquetas#instalador">
+            <span class="material-symbols-outlined text-base">web</span>
+            View mockups
+          </a>
+          <button class="cat-cta" data-d4-open data-d4-automessage="I'm an installer/technician and I want a website with my completed work and a form to request a quote. What do I need?">
+            <span class="material-symbols-outlined text-base">calculate</span>
+            Request a quote for this type
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 6: Academy / Training Center -->
+      <div class="cat-card reveal">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="material-symbols-outlined text-primary text-4xl">school</span>
+          <div>
+            <h3>Academy / Training Center</h3>
+            <span class="tag">Web with enrollment</span>
+          </div>
+        </div>
+        <p style="color:#8892b0; font-size:0.88rem; line-height:1.7; margin-bottom:0.5rem;">Your students want to see what courses are available, when they start, how much they cost, and enroll without calling. If that process is difficult, they'll go to the academy next door.</p>
+        <ul>
+          <li>Course catalog with dates, prices, and availability</li>
+          <li>Online enrollment form with payment or reservation</li>
+          <li>Updatable class calendar</li>
+          <li>Certifications, accreditations, and methodology</li>
+          <li>Private area for students (optional)</li>
+        </ul>
+        <p class="price">From 600 €</p>
+        <div class="cat-actions">
+          <a class="cat-link" href="/en/maquetas#academia">
+            <span class="material-symbols-outlined text-base">web</span>
+            View mockups
+          </a>
+          <button class="cat-cta" data-d4-open data-d4-automessage="I have an academy and I need a website with a course catalog and online enrollment. What type of website is appropriate and what would it cost?">
+            <span class="material-symbols-outlined text-base">calculate</span>
+            Request a quote for this type
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 7: Hotel / Tourist Accommodation -->
+      <div class="cat-card reveal">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="material-symbols-outlined text-primary text-4xl">hotel</span>
+          <div>
+            <h3>Hotel / Tourist Accommodation</h3>
+            <span class="tag">Web with booking engine</span>
+          </div>
+        </div>
+        <p style="color:#8892b0; font-size:0.88rem; line-height:1.7; margin-bottom:0.5rem;">Every booking that comes through Booking.com costs you between 15% and 25% commission. A direct booking engine on your web pays for itself in few weeks.</p>
+        <ul>
+          <li>Gallery of rooms and facilities</li>
+          <li>Direct booking engine with availability and rates</li>
+          <li>Clear cancellation policy and terms</li>
+          <li>Location, how to get there, and parking info</li>
+          <li>Verified reviews and ratings</li>
+        </ul>
+        <p class="price">From 900 €</p>
+        <div class="cat-actions">
+          <a class="cat-link" href="/en/maquetas#hotel">
+            <span class="material-symbols-outlined text-base">web</span>
+            View mockups
+          </a>
+          <button class="cat-cta" data-d4-open data-d4-automessage="I have a hotel or holiday home and I want a website with direct bookings to reduce commissions from OTAs. What options are there?">
+            <span class="material-symbols-outlined text-base">calculate</span>
+            Request a quote for this type
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 8: B2B / Professional Services -->
+      <div class="cat-card reveal">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="material-symbols-outlined text-primary text-4xl">business</span>
+          <div>
+            <h3>B2B / Professional Services</h3>
+            <span class="tag">Corporate web</span>
+          </div>
+        </div>
+        <p style="color:#8892b0; font-size:0.88rem; line-height:1.7; margin-bottom:0.5rem;">Your business client searches on Google before calling. If your web doesn't convey professionalism, experience, and results in the first 5 seconds, you're already discarded.</p>
+        <ul>
+          <li>Presentation of the company, team, and values</li>
+          <li>Success stories and prominent clients</li>
+          <li>Detailed services focusing on benefits</li>
+          <li>Qualified contact form</li>
+          <li>Sectorial blog for positioning and authority</li>
+        </ul>
+        <p class="price">From 700 €</p>
+        <div class="cat-actions">
+          <a class="cat-link" href="/en/maquetas#b2b">
+            <span class="material-symbols-outlined text-base">web</span>
+            View mockups
+          </a>
+          <button class="cat-cta" data-d4-open data-d4-automessage="I have a service company for other businesses and I need a professional corporate website. What should it include and how much would it cost?">
+            <span class="material-symbols-outlined text-base">calculate</span>
+            Request a quote for this type
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Separator -->
+<div class="max-w-4xl mx-auto px-6">
+  <div class="border-t border-primary/20 relative">
+    <div class="absolute left-1/2 -translate-x-1/2 -top-4 bg-surface px-4">
+      <span class="material-symbols-outlined text-primary/40 text-2xl">more_horiz</span>
+    </div>
+  </div>
+</div>
+
+<!-- Section 2: Automations -->
+<section id="automatizaciones" class="py-20 px-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="mb-10 reveal">
+      <span class="text-primary text-[10px] uppercase tracking-[0.4em] font-label font-bold mb-3 block">Section 2</span>
+      <h2 class="text-3xl md:text-4xl font-headline font-bold text-white tracking-tight mb-4">What automations does your business need?</h2>
+      <p class="text-on-surface-variant font-light max-w-2xl">There are tasks you do by hand every day that could be done by themselves. Find your sector, identify what steals your time, and discover how much you can recover.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <div class="cat-card reveal">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="material-symbols-outlined text-primary text-2xl">restaurant</span>
+          <h3>Restaurant / Bar / Cafe</h3>
+        </div>
+        <p class="pain">"I spend the day on the phone confirming bookings, updating the menu on Instagram, and always answering the same questions on WhatsApp."</p>
+        <div class="savings"><span class="material-symbols-outlined text-xs">timer</span> Estimated savings: 6–10 h/week</div>
+        <ul>
+          <li>WhatsApp bot that automatically answers hours, menu, and allergens</li>
+          <li>Online booking system with confirmation and reminder by SMS/email</li>
+          <li>Automatic publication of the daily menu on Instagram and Google</li>
+          <li>Internal notification when a booking or cancellation arrives</li>
+          <li>Automatic review collection after the visit</li>
+        </ul>
+        <div class="cat-bottom">
+          <div style="background:rgba(100,255,218,0.04);border:1px solid rgba(100,255,218,0.2);border-radius:4px;padding:0.75rem 1rem;margin-bottom:0.75rem;display:flex;align-items:flex-start;gap:0.6rem;">
+            <span class="material-symbols-outlined" style="color:#64FFDA;font-size:1rem;margin-top:1px;flex-shrink:0;">share</span>
+            <div>
+              <p style="color:#64FFDA;font-size:0.78rem;font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin:0 0 0.2rem;">Digital Trident Pack</p>
+              <p style="color:#8892b0;font-size:0.82rem;line-height:1.5;margin:0;">Post your daily menu on Facebook, Instagram, and Google Maps automatically with one photo. <a href="/blog/automatizacion-contenido-redes" style="color:#64FFDA;">150 € setup + 1st month free →</a></p>
+            </div>
+          </div>
+          <button class="cat-cta" data-d4-open data-d4-automessage="Hello, I have a restaurant and I'm interested in automating: automatic customer replies via WhatsApp, booking management with confirmations and reminders, posting the menu on social networks, and review collection. Can you help me calculate a quote?">
+            <span class="material-symbols-outlined text-sm">smart_toy</span>
+            Calculate my quote
+          </button>
+        </div>
+      </div>
+
+      <div class="cat-card reveal">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="material-symbols-outlined text-primary text-2xl">storefront</span>
+          <h3>Shop / E-commerce</h3>
+        </div>
+        <p class="pain">"I process orders manually, update stock in three different places, and spend hours sending follow-up emails that always say the same thing."</p>
+        <div class="savings"><span class="material-symbols-outlined text-xs">timer</span> Estimated savings: 8–15 h/week</div>
+        <ul>
+          <li>Stock synchronization between physical store, web, and marketplace</li>
+          <li>Automatic emails for order confirmation, shipping, and delivery</li>
+          <li>Alerts when a product drops below minimum stock</li>
+          <li>Automatic publication of new products on social media</li>
+          <li>Weekly sales report and top-selling products</li>
+        </ul>
+        <div class="cat-bottom">
+          <div style="background:rgba(100,255,218,0.04);border:1px solid rgba(100,255,218,0.2);border-radius:4px;padding:0.75rem 1rem;margin-bottom:0.75rem;display:flex;align-items:flex-start;gap:0.6rem;">
+            <span class="material-symbols-outlined" style="color:#64FFDA;font-size:1rem;margin-top:1px;flex-shrink:0;">share</span>
+            <div>
+              <p style="color:#64FFDA;font-size:0.78rem;font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin:0 0 0.2rem;">Digital Trident Pack</p>
+              <p style="color:#8892b0;font-size:0.82rem;line-height:1.5;margin:0;">Post products and offers on Facebook, Instagram, and Google Business automatically. <a href="/blog/automatizacion-contenido-redes" style="color:#64FFDA;">150 € setup + 1st month free →</a></p>
+            </div>
+          </div>
+          <button class="cat-cta" data-d4-open data-d4-automessage="Hello, I have an online store and I'm interested in automating: order and stock management, automatic emails to customers, product posts on social networks, and receiving sales reports. Can you calculate a quote for me?">
+            <span class="material-symbols-outlined text-sm">smart_toy</span>
+            Calculate my quote
+          </button>
+        </div>
+      </div>
+
+      <div class="cat-card reveal">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="material-symbols-outlined text-primary text-2xl">spa</span>
+          <h3>Clinic / Spa / Beauty</h3>
+        </div>
+        <p class="pain">"The receptionist spends the entire morning on the phone managing appointments, patients forget to come, and we have empty slots that we don't recover."</p>
+        <div class="savings"><span class="material-symbols-outlined text-xs">timer</span> Estimated savings: 5–8 h/week</div>
+        <ul>
+          <li>24/7 online agenda with automatic confirmation via WhatsApp or email</li>
+          <li>Automatic reminder 24h before the appointment (reduces no-shows by 30–50%)</li>
+          <li>Automatic waiting list when there's a cancellation</li>
+          <li>Post-treatment follow-up and review request</li>
+          <li>Monthly occupancy report and most requested services</li>
+        </ul>
+        <div class="cat-bottom">
+          <div style="background:rgba(100,255,218,0.04);border:1px solid rgba(100,255,218,0.2);border-radius:4px;padding:0.75rem 1rem;margin-bottom:0.75rem;display:flex;align-items:flex-start;gap:0.6rem;">
+            <span class="material-symbols-outlined" style="color:#64FFDA;font-size:1rem;margin-top:1px;flex-shrink:0;">share</span>
+            <div>
+              <p style="color:#64FFDA;font-size:0.78rem;font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin:0 0 0.2rem;">Digital Trident Pack</p>
+              <p style="color:#8892b0;font-size:0.82rem;line-height:1.5;margin:0;">Post treatments and promotions on Facebook, Instagram, and Google Maps automatically. <a href="/blog/automatizacion-contenido-redes" style="color:#64FFDA;">150 € setup + 1st month free →</a></p>
+            </div>
+          </div>
+          <button class="cat-cta" data-d4-open data-d4-automessage="Hello, I have a clinic or beauty center and I'm interested in automating: appointment management with automatic confirmations and reminders, waiting list for cancellations, post-treatment follow-up, and reviews. Can you calculate a quote for me?">
+            <span class="material-symbols-outlined text-sm">smart_toy</span>
+            Calculate my quote
+          </button>
+        </div>
+      </div>
+
+      <div class="cat-card reveal">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="material-symbols-outlined text-primary text-2xl">person_apron</span>
+          <h3>Freelancer / Consultant</h3>
+        </div>
+        <p class="pain">"I spend more time managing the business than working in it: invoicing, follow-up on quotes, answering emails, reminding clients about pending invoices."</p>
+        <div class="savings"><span class="material-symbols-outlined text-xs">timer</span> Estimated savings: 4–7 h/week</div>
+        <ul>
+          <li>Automatic invoice generation when a quote is approved</li>
+          <li>Automatic reminders for unpaid invoices</li>
+          <li>New client onboarding: welcome emails, data request, digital signature</li>
+          <li>Monthly report of income and active projects</li>
+          <li>Automatic response to frequent inquiries via email or form</li>
+        </ul>
+        <div class="cat-bottom">
+          <button class="cat-cta" data-d4-open data-d4-automessage="Hello, I'm a freelancer and I'm interested in automating: invoicing and collection, new client onboarding, reminders for pending quotes, and income reports. Can you calculate a quote for me?">
+            <span class="material-symbols-outlined text-sm">smart_toy</span>
+            Calculate my quote
+          </button>
+        </div>
+      </div>
+
+      <div class="cat-card reveal">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="material-symbols-outlined text-primary text-2xl">construction</span>
+          <h3>Installer / Contractor / Maintenance</h3>
+        </div>
+        <p class="pain">"The more jobs I have, the more chaos: coordinating work reports, knowing where each technician is, sending manual quotes, and spending hours reconciling hours and materials."</p>
+        <div class="savings"><span class="material-symbols-outlined text-xs">timer</span> Estimated savings: 7–12 h/week</div>
+        <ul>
+          <li>App or digital work report panel (paperless)</li>
+          <li>Automatic assignment of jobs according to technician availability</li>
+          <li>Automatic sending of PDF quotes to customers via email or WhatsApp</li>
+          <li>Tracking of materials used per job for cost control</li>
+          <li>Weekly report of technician hours and profitability per job</li>
+        </ul>
+        <div class="cat-bottom">
+          <div style="background:rgba(100,255,218,0.04);border:1px solid rgba(100,255,218,0.2);border-radius:4px;padding:0.75rem 1rem;margin-bottom:0.75rem;display:flex;align-items:flex-start;gap:0.6rem;">
+            <span class="material-symbols-outlined" style="color:#64FFDA;font-size:1rem;margin-top:1px;flex-shrink:0;">share</span>
+            <div>
+              <p style="color:#64FFDA;font-size:0.78rem;font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin:0 0 0.2rem;">Digital Trident Pack</p>
+              <p style="color:#8892b0;font-size:0.82rem;line-height:1.5;margin:0;">Automatically post photos of your finished jobs on Facebook, Instagram, and Google Maps. The visual portfolio that sells effortlessly. <a href="/blog/automatizacion-contenido-redes" style="color:#64FFDA;">150 € setup + 1st month free →</a></p>
+            </div>
+          </div>
+          <button class="cat-cta" data-d4-open data-d4-automessage="Hello, I have an installation or maintenance company and I'm interested in automating: digital work reports, technician assignment, sending quotes via WhatsApp or email, material control, and profitability reports. Can you calculate a quote for me?">
+            <span class="material-symbols-outlined text-sm">smart_toy</span>
+            Calculate my quote
+          </button>
+        </div>
+      </div>
+
+      <div class="cat-card reveal">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="material-symbols-outlined text-primary text-2xl">school</span>
+          <h3>Academy / Training Center</h3>
+        </div>
+        <p class="pain">"I manage enrollments by hand, send class reminders one by one, and spend hours sending receipts to each student at the end of the month."</p>
+        <div class="savings"><span class="material-symbols-outlined text-xs">timer</span> Estimated savings: 5–9 h/week</div>
+        <ul>
+          <li>Enrollment form with integrated payment and automatic confirmation</li>
+          <li>Class reminders and absence notifications via WhatsApp or email</li>
+          <li>Automatic issuance of receipts and payment follow-up</li>
+          <li>Sending learning material and resources after each session</li>
+          <li>Automatic satisfaction survey at the end of the course</li>
+        </ul>
+        <div class="cat-bottom">
+          <button class="cat-cta" data-d4-open data-d4-automessage="Hello, I have an academy or training center and I'm interested in automating: the enrollment and payment process, student reminders, receipt issuance, material sending, and satisfaction surveys. Can you calculate a quote for me?">
+            <span class="material-symbols-outlined text-sm">smart_toy</span>
+            Calculate my quote
+          </button>
+        </div>
+      </div>
+
+      <div class="cat-card reveal md:col-span-2">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="material-symbols-outlined text-primary text-2xl">business</span>
+          <h3>Company / Agency</h3>
+        </div>
+        <p class="pain">"We have internal processes that depend on someone watching: validating quotes, notifying the team of new leads, updating the CRM, publishing content. If that person fails, everything stops."</p>
+        <div class="savings"><span class="material-symbols-outlined text-xs">timer</span> Estimated savings: 10–20 h/week</div>
+        <ul>
+          <li>Automatic lead capture and classification from forms, email, and LinkedIn</li>
+          <li>Automatic internal notifications via Slack/Teams/email when a new lead enters</li>
+          <li>Digital approval flows for quotes, expenses, or internal documents</li>
+          <li>Single-panel social media content scheduling and posting</li>
+          <li>Unified dashboard with real-time updated KPIs (sales, traffic, campaigns)</li>
+          <li>Integration between CRM, invoicing, and team tools</li>
+        </ul>
+        <div class="cat-bottom">
+          <button class="cat-cta" data-d4-open data-d4-automessage="Hello, we have a company and we are interested in automating internal processes: lead capture and follow-up, team notifications, approval flows, social media content posting, and integration between our CRM and invoicing tools. Can you calculate a quote for me?">
+            <span class="material-symbols-outlined text-sm">smart_toy</span>
+            Calculate my quote
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="py-16 px-6 bg-surface-container-low border-t border-primary/10">
+  <div class="max-w-3xl mx-auto text-center">
+    <span class="material-symbols-outlined text-primary text-4xl mb-4 block">auto_awesome</span>
+    <h2 class="text-2xl md:text-3xl font-headline font-bold text-white tracking-tight mb-4">Don't find your business type?</h2>
+    <p class="text-on-surface-variant font-light mb-8">Tell us what you do and we'll tell you which web suits you, which automations make the most sense, and how much it would cost. No obligation.</p>
+    <button data-d4-open data-d4-automessage="Hi, I'd like to know what my business needs: what type of web suits me and what processes I can automate. Can you help me?" class="bg-primary text-on-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs shadow-xl shadow-primary/20 hover:brightness-110 transition-all inline-flex items-center justify-center gap-2 cursor-pointer border-none">
+      <span class="material-symbols-outlined text-base">chat</span>
+      Talk to the assistant
+    </button>
+  </div>
+</section>
+
+<footer class="border-t border-outline/30 py-12 px-6">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-3">
+      <div class="relative size-8 flex items-center justify-center">
+        <div class="absolute inset-0 border border-primary/40 rounded-sm rotate-45"></div>
+        <span class="material-symbols-outlined text-primary text-sm">terminal</span>
+      </div>
+      <span class="text-white font-headline font-bold"><span class="text-primary">D4</span>Lab</span>
+    </div>
+    <p class="text-on-surface-variant text-xs text-center">&copy; 2026 D4Lab — Eudaldo Cal Saul · San Isidro, Tenerife · <a href="mailto:hola@d4lab.es" class="hover:text-primary transition-colors">hola@d4lab.es</a></p>
+    <div class="flex items-center gap-4">
+      <a href="https://www.linkedin.com/company/d4lab/" target="_blank" rel="noopener" class="text-on-surface-variant hover:text-primary transition-colors text-xs font-label font-bold uppercase tracking-[0.15em]">LinkedIn</a>
+      <a href="https://wa.me/34666750753" target="_blank" rel="noopener" class="text-on-surface-variant hover:text-primary transition-colors text-xs font-label font-bold uppercase tracking-[0.15em]">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/chat-widget.js"></script>
+<script>
+  const navHeader = document.getElementById('nav-header');
+  window.addEventListener('scroll', () => {
+    navHeader.classList.toggle('scrolled', window.scrollY > 20);
+  });
+  document.getElementById('menu-btn').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  });
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Click on the whole card opens the chatbot with the button message
+  document.querySelectorAll('.cat-card').forEach(function(card) {
+    card.addEventListener('click', function(e) {
+      if (e.target.closest('.cat-cta, .cat-link')) return;
+      var btn = card.querySelector('.cat-cta[data-d4-open]');
+      if (btn) btn.click();
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IT Technology & Web Development Blog in Tenerife | D4Lab</title>
+<meta name="description" content="Practical tips on websites, networks, home automation, security, and technology for companies and individuals in Tenerife. By Eudaldo Cal, freelance IT technician."/>
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<link rel="canonical" href="https://www.d4lab.es/en/blog"/>
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="D4Lab"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://www.d4lab.es/en/blog"/>
+<meta property="og:title" content="IT Technology & Web Development Blog in Tenerife | D4Lab"/>
+<meta property="og:description" content="Practical tips on websites, networks, home automation, security, and technology for companies and individuals in Tenerife."/>
+<meta property="og:image" content="https://www.d4lab.es/og-image.png"/>
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="IT Technology & Web Development Blog in Tenerife | D4Lab"/>
+<meta name="twitter:description" content="Practical tips on websites, networks, home automation, security, and technology for companies in Tenerife."/>
+<meta name="twitter:image" content="https://www.d4lab.es/og-image.png"/>
+<!-- Schema.org Blog -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "D4Lab Blog",
+  "url": "https://www.d4lab.es/en/blog",
+  "description": "Practical articles and tips on IT technology, web development, and home automation in Tenerife",
+  "author": {
+    "@type": "Person",
+    "name": "Eudaldo Cal Saul",
+    "url": "https://www.d4lab.es/en/sobre-mi"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "D4Lab",
+    "url": "https://www.d4lab.es/en/"
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="/blog.tailwind.css" rel="stylesheet"/>
+<style>
+  .glass { background: rgba(17,34,64,0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(100,255,218,0.1); }
+  .text-glow { text-shadow: 0 0 15px rgba(100,255,218,0.4); }
+  .blueprint-grid { background-image: linear-gradient(to right, rgba(100,255,218,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(100,255,218,0.05) 1px, transparent 1px); background-size: 40px 40px; }
+  .nav-item::after { content: ''; display: block; width: 0; height: 2px; background: #64FFDA; transition: width .3s; }
+  .nav-item:hover::after { width: 100%; }
+  .kinetic-border { border: 1px solid rgba(100,255,218,0.2); transition: border-color 0.3s ease, background 0.3s ease; }
+  .kinetic-border:hover { border-color: #64FFDA; background: rgba(100,255,218,0.03); }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  #nav-header.scrolled { background: rgba(10,25,47,0.97); box-shadow: 0 1px 0 rgba(100,255,218,0.1); }
+  #mobile-menu { display: none; }
+  #mobile-menu.open { display: flex; }
+  .article-card { transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease; position: relative; cursor: pointer; display: flex; flex-direction: column; }
+  .article-card:hover { transform: translateY(-4px); border-color: #64FFDA; background: rgba(100,255,218,0.03); }
+  .article-card a.card-link::after { content: ''; position: absolute; inset: 0; z-index: 1; }
+  .tag { display: inline-flex; align-items: center; padding: 2px 8px; background: rgba(100,255,218,0.08); border: 1px solid rgba(100,255,218,0.2); border-radius: 2px; font-size: 9px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #64FFDA; letter-spacing: 0.15em; text-transform: uppercase; }
+</style>
+</head>
+<body class="bg-surface font-body text-on-surface overflow-x-hidden">
+
+<!-- Header -->
+<header id="nav-header" class="fixed top-0 left-0 right-0 z-50 glass border-b border-outline/30 transition-all">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex h-20 items-center justify-between">
+    <a href="/en/" class="flex items-center gap-3 group">
+      <div class="relative size-10 flex items-center justify-center">
+        <div class="absolute inset-0 border border-primary/40 rounded-sm rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+        <span class="material-symbols-outlined text-primary text-lg">terminal</span>
+      </div>
+      <span class="text-white font-headline font-bold tracking-tight" style="font-size:1.9rem;line-height:1"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-10">
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/servicios">Services</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/maquetas">Mockups</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/guia">Guide</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/sobre-mi">About me</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/precios">FAQ</a>
+      <a class="nav-item text-primary text-xs font-label font-bold uppercase tracking-[0.2em]" href="/en/blog">Blog</a>
+      <a class="text-on-surface-variant text-[10px] font-label font-bold hover:text-primary px-2 py-1 border border-primary/20 rounded-sm" href="/blog">ES</a>
+    </nav>
+    <a href="/en/contacto" class="hidden lg:inline-flex bg-primary px-6 py-2 rounded-sm text-on-primary font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all items-center gap-2">Contact</a>
+    <button id="menu-btn" class="lg:hidden text-primary" aria-label="Menu"><span class="material-symbols-outlined text-3xl">menu</span></button>
+  </div>
+  <div id="mobile-menu" class="flex-col px-6 pb-6 gap-4 lg:hidden">
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/servicios">Services</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/maquetas">Mockups</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/guia">Guide</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/sobre-mi">About me</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/precios">FAQ</a>
+    <a class="text-primary text-sm font-label font-bold uppercase tracking-[0.2em]" href="/en/blog">Blog</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/contacto">Contact</a>
+    <div class="border-t border-primary/20 pt-4 mt-2">
+      <a class="text-primary text-sm font-label font-bold uppercase tracking-[0.2em]" href="/blog">Spanish Version</a>
+    </div>
+  </div>
+</header>
+
+<!-- Page Hero -->
+<section class="relative pt-40 pb-24 px-6 overflow-hidden">
+  <div class="absolute inset-0 blueprint-grid opacity-20"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/5 rounded-full blur-[120px]"></div>
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="mb-4">
+      <span class="text-primary text-[10px] uppercase tracking-[0.4em] font-label font-bold">D4Lab</span>
+    </div>
+    <h1 class="text-5xl md:text-7xl font-headline font-bold text-white tracking-tighter text-glow mb-6">Blog</h1>
+    <p class="text-on-surface-variant text-xl max-w-2xl font-light leading-relaxed">
+      Practical tips on technology, websites, networks, and security. No unnecessary jargon. Written from real-world experience.
+    </p>
+    <!-- Filter tags -->
+    <div class="flex flex-wrap gap-3 mt-10">
+      <button class="tag" onclick="filterPosts('all')" data-filter="all" style="background:rgba(100,255,218,0.15);">All</button>
+      <button class="tag" style="cursor:pointer;background:transparent;" onclick="filterPosts('web')" data-filter="web">Web</button>
+      <button class="tag" style="cursor:pointer;background:transparent;" onclick="filterPosts('redes')" data-filter="redes">Networking</button>
+      <button class="tag" style="cursor:pointer;background:transparent;" onclick="filterPosts('seguridad')" data-filter="seguridad">Security</button>
+      <button class="tag" style="cursor:pointer;background:transparent;" onclick="filterPosts('domotica')" data-filter="domotica">Home Automation</button>
+      <button class="tag" style="cursor:pointer;background:transparent;" onclick="filterPosts('ia')" data-filter="ia">AI</button>
+      <button class="tag" style="cursor:pointer;background:transparent;" onclick="filterPosts('automatizacion')" data-filter="automatizacion">Automation</button>
+    </div>
+  </div>
+</section>
+
+<!-- Articles Grid -->
+<section class="px-6 max-w-7xl mx-auto pb-32">
+  <div id="posts-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Card: Canary Islands Tourism Chatbots -->
+    <article class="article-card kinetic-border rounded-sm overflow-hidden reveal" data-categories="web ia chatbots">
+      <div class="p-6 flex flex-col h-full">
+        <div class="flex items-center justify-between mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">chat</span>
+          <span class="text-on-surface-variant/40 text-[10px] font-label uppercase tracking-widest">April 2026</span>
+        </div>
+        <div class="flex gap-2 mb-3 flex-wrap"><span class="tag">Chatbots</span><span class="tag">AI</span></div>
+        <h2 class="text-white font-headline font-bold text-lg leading-snug mb-3">Hello, Canary Islands! Improve your Tourism Business with Multilingual Chatbots</h2>
+        <p class="text-on-surface-variant text-sm font-light leading-relaxed flex-1">Discover how intelligent AI chatbots can assist your clients in their native language 24/7, automating bookings and enhancing the tourist experience on the islands.</p>
+        <div class="mt-5 pt-4 border-t border-outline/30 flex items-center justify-between">
+          <span class="text-on-surface-variant/60 text-xs">6 min read</span>
+          <a href="/en/blog/hola-canarias-mejora-tu-negocio-turistico-con-chatbots-multi" class="card-link text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Read article <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Digital Trident Pack -->
+    <article class="article-card kinetic-border rounded-sm overflow-hidden reveal" data-categories="ia automatizacion" style="border-color:rgba(100,255,218,0.4); background:rgba(100,255,218,0.02);">
+      <div class="p-6 flex flex-col h-full">
+        <div class="flex items-center justify-between mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">share</span>
+          <span class="px-2 py-1 bg-primary/15 border border-primary/40 text-primary text-[9px] font-label font-bold uppercase tracking-[0.15em] rounded-sm">⚡ Launch Offer</span>
+        </div>
+        <div class="flex gap-2 mb-3 flex-wrap">
+          <span class="tag">AI</span>
+          <span class="tag">Automation</span>
+          <span class="tag">Social Media</span>
+        </div>
+        <h2 class="text-white font-headline font-bold text-lg leading-snug mb-3">Post to Facebook, Instagram, and Google Maps with one photo — Digital Trident Pack</h2>
+        <p class="text-on-surface-variant text-sm font-light leading-relaxed flex-1">Take a photo, the AI generates 3 different texts adapted to each network and posts it for you. Facebook, Instagram, and Google Business automated with n8n workflows.</p>
+        <div class="mt-5 pt-4 border-t border-outline/30 flex items-center justify-between">
+          <span class="text-on-surface-variant/60 text-xs">6 min read</span>
+          <a href="/en/blog/automatizacion-contenido-redes" class="card-link text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Read article <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Guide: Business automation -->
+    <article class="article-card kinetic-border rounded-sm overflow-hidden reveal" data-categories="ia automatizacion">
+      <div class="p-6 flex flex-col h-full">
+        <div class="flex items-center justify-between mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">auto_awesome</span>
+          <span class="text-on-surface-variant/40 text-[10px] font-label uppercase tracking-widest">Mar 2026</span>
+        </div>
+        <div class="flex gap-2 mb-3 flex-wrap">
+          <span class="tag">Guide</span>
+          <span class="tag">Automation</span>
+        </div>
+        <h2 class="text-white font-headline font-bold text-lg leading-snug mb-3">What automations your business needs based on your sector</h2>
+        <p class="text-on-surface-variant text-sm font-light leading-relaxed flex-1">There are tasks you do by hand every day that could be done by themselves. Find your sector, identify what steals your time, and discover how much you can recover.</p>
+        <div class="mt-5 pt-4 border-t border-outline/30 flex items-center justify-between">
+          <span class="text-on-surface-variant/60 text-xs">7 min read</span>
+          <a href="/en/blog/guia-automatizaciones-segun-negocio" class="card-link text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Read guide <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- AI for Small Business -->
+    <article class="article-card kinetic-border rounded-sm overflow-hidden reveal" data-categories="ia business">
+      <div class="p-6 flex flex-col h-full">
+        <div class="flex items-center justify-between mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+          <span class="text-on-surface-variant/40 text-[10px] font-label uppercase tracking-widest">Mar 2026</span>
+        </div>
+        <div class="flex gap-2 mb-3 flex-wrap">
+          <span class="tag">AI</span>
+          <span class="tag">Business</span>
+        </div>
+        <h2 class="text-white font-headline font-bold text-lg leading-snug mb-3">AI for small business: what makes sense and what is hype</h2>
+        <p class="text-on-surface-variant text-sm font-light leading-relaxed flex-1">You don't need to be Google to use AI. Discover practical and affordable tools to improve your daily work without complicating your life or spending a fortune.</p>
+        <div class="mt-5 pt-4 border-t border-outline/30 flex items-center justify-between">
+          <span class="text-on-surface-variant/60 text-xs">5 min read</span>
+          <a href="/en/blog/ia-negocios" class="card-link text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Read article <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Process Automation -->
+    <article class="article-card kinetic-border rounded-sm overflow-hidden reveal" data-categories="ia automatizacion">
+      <div class="p-6 flex flex-col h-full">
+        <div class="flex items-center justify-between mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">receipt_long</span>
+          <span class="text-on-surface-variant/40 text-[10px] font-label uppercase tracking-widest">Mar 2026</span>
+        </div>
+        <div class="flex gap-2 mb-3 flex-wrap">
+          <span class="tag">AI</span>
+          <span class="tag">Automation</span>
+        </div>
+        <h2 class="text-white font-headline font-bold text-lg leading-snug mb-3">Automate quotes, invoices, and customer follow-up with AI</h2>
+        <p class="text-on-surface-variant text-sm font-light leading-relaxed flex-1">Stop losing customers because you take too long to send a quote. Learn how to automate your administrative process and close more deals in less time.</p>
+        <div class="mt-5 pt-4 border-t border-outline/30 flex items-center justify-between">
+          <span class="text-on-surface-variant/60 text-xs">6 min read</span>
+          <a href="/en/blog/automatizacion-procesos" class="card-link text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Read article <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Guide: Web type -->
+    <article class="article-card kinetic-border rounded-sm overflow-hidden reveal" data-categories="web business">
+      <div class="p-6 flex flex-col h-full">
+        <div class="flex items-center justify-between mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">web</span>
+          <span class="text-on-surface-variant/40 text-[10px] font-label uppercase tracking-widest">Mar 2026</span>
+        </div>
+        <div class="flex gap-2 mb-3 flex-wrap">
+          <span class="tag">Guide</span>
+          <span class="tag">Web</span>
+        </div>
+        <h2 class="text-white font-headline font-bold text-lg leading-snug mb-3">What web your business needs: guide by company type</h2>
+        <p class="text-on-surface-variant text-sm font-light leading-relaxed flex-1">Restaurant, shop, clinic, freelancer, or company: each business needs a different website. Discover what yours should include and what price to expect.</p>
+        <div class="mt-5 pt-4 border-t border-outline/30 flex items-center justify-between">
+          <span class="text-on-surface-variant/60 text-xs">6 min read</span>
+          <a href="/en/blog/guia-web-segun-negocio" class="card-link text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Read guide <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- Empty state -->
+  <div id="empty-state" class="hidden text-center py-20">
+    <span class="material-symbols-outlined text-primary/30 text-6xl">search_off</span>
+    <p class="text-on-surface-variant mt-4">There are no articles in this category yet.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 px-6 bg-surface-container-low border-t border-primary/10">
+  <div class="max-w-4xl mx-auto text-center reveal">
+    <h2 class="text-3xl md:text-4xl font-headline font-bold text-white tracking-tight mb-4">Do you have a specific technical problem?</h2>
+    <p class="text-on-surface-variant text-lg font-light mb-8">Don't wait for the article. Tell me directly, and we will solve it.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="mailto:d4labes@gmail.com" class="bg-primary text-on-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs shadow-xl shadow-primary/20 hover:brightness-110 transition-all flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">mail</span>
+        d4labes@gmail.com
+      </a>
+      <a href="/en/servicios" class="border border-primary/30 text-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs hover:bg-primary/5 transition-all flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">build</span>
+        View services
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-surface-container-low py-12 px-6 border-t border-primary/10">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <a href="/en/" class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary">terminal</span>
+      <span class="text-white font-headline font-bold"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="flex flex-wrap gap-6 text-on-surface-variant text-xs font-label font-bold uppercase tracking-[0.2em]">
+      <a href="/en/" class="hover:text-primary transition-colors">Home</a>
+      <a href="/en/servicios" class="hover:text-primary transition-colors">Services</a>
+      <a href="/en/sobre-mi" class="hover:text-primary transition-colors">About me</a>
+      <a href="/en/precios" class="hover:text-primary transition-colors">FAQ</a>
+      <a href="/en/blog" class="text-primary">Blog</a>
+      <a href="/en/contacto" class="hover:text-primary transition-colors">Contact</a>
+    </nav>
+    <p class="text-on-surface-variant text-[9px] font-headline uppercase tracking-[0.3em]">© 2026 D4Lab</p>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav-header');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+  document.getElementById('menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('open'));
+  const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }), { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
+
+  function filterPosts(category) {
+    const posts = document.querySelectorAll('#posts-grid article');
+    const buttons = document.querySelectorAll('[data-filter]');
+    let visible = 0;
+    buttons.forEach(btn => btn.style.background = btn.dataset.filter === category ? 'rgba(100,255,218,0.15)' : 'transparent');
+    posts.forEach(post => {
+      const cats = post.dataset.categories || '';
+      const show = category === 'all' || cats.includes(category);
+      post.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    document.getElementById('empty-state').classList.toggle('hidden', visible > 0);
+  }
+</script>
+<script src="/chat-widget.js"></script>
+</body>
+</html>

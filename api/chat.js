@@ -8,7 +8,7 @@ const SYSTEM_PROMPT = `Eres el asistente virtual de D4Lab, el estudio tecnológi
 - Propietario: Eudaldo Cal Saul
 - Ubicación base: San Isidro, Santa Cruz de Tenerife (Canarias)
 - WhatsApp: +34 666 750 753
-- Email: eudaldocal@gmail.com
+- Email: d4labes@gmail.com
 - Web: d4lab.es
 
 ## SERVICIOS Y TARIFAS
@@ -265,7 +265,7 @@ async function sendBudgetEmail(messages, summary) {
     },
     body: JSON.stringify({
       from: process.env.RESEND_FROM_EMAIL || 'D4Lab Bot <onboarding@resend.dev>',
-      to: [process.env.NOTIFY_EMAIL || 'eudaldocal@gmail.com'],
+      to: [process.env.NOTIFY_EMAIL || 'd4labes@gmail.com'],
       subject: `🤖 Nuevo presupuesto D4Lab — ${nombre}${templateTag} — ${summary.total_estimado || '?'} € (est.)`,
       html,
     }),
@@ -289,7 +289,7 @@ module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Método no permitido' });
 
-  const { messages, selectedTemplate } = req.body || {};
+  const { messages, selectedTemplate, locale } = req.body || {};
   if (!Array.isArray(messages) || messages.length === 0) {
     return res.status(400).json({ error: 'messages requerido' });
   }
@@ -300,6 +300,10 @@ module.exports = async function handler(req, res) {
 
   const selectedTemplateContext = selectedTemplate && selectedTemplate.name
     ? `\n\n## MAQUETA ELEGIDA POR EL CLIENTE\n- Nombre: ${selectedTemplate.name}\n- Categoría: ${selectedTemplate.category || 'No especificada'}\n- Estilo: ${selectedTemplate.style || 'No especificado'}\n- Descripción: ${selectedTemplate.description || 'No especificada'}\n- Fuente: ${selectedTemplate.source || 'No especificada'}\n- Preview: ${selectedTemplate.previewUrl || 'No disponible'}\n\nSi el usuario pide presupuesto web o app, ten en cuenta esta maqueta como referencia visual y funcional.`
+    : '';
+
+  const localeContext = String(locale || '').toLowerCase().startsWith('en')
+    ? '\n\n## CONTEXTO DE IDIOMA\n- El usuario está navegando la versión en inglés de la web.\n- Responde en inglés natural y mantén el presupuesto y las preguntas de seguimiento en inglés, salvo que el usuario cambie claramente a otro idioma.'
     : '';
 
   // Convertir historial al formato de Gemini (role: user|model)
@@ -315,7 +319,7 @@ module.exports = async function handler(req, res) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          systemInstruction: { parts: [{ text: SYSTEM_PROMPT + selectedTemplateContext }] },
+          systemInstruction: { parts: [{ text: SYSTEM_PROMPT + selectedTemplateContext + localeContext }] },
           contents,
           generationConfig: {
             temperature: 0.4,

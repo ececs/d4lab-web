@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Chatbot on your website: serve customers and provide quotes automatically | D4Lab</title>
+<meta name="description" content="An AI chatbot is not a glorified FAQ. It can calculate quotes, filter leads, and answer customers at 2am. Here's how it works and what it costs."/>
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<link rel="canonical" href="https://www.d4lab.es/en/blog/chatbot-ia-web"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="D4Lab"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://www.d4lab.es/en/blog/chatbot-ia-web"/>
+<meta property="og:title" content="AI Chatbot on your website: serve customers and provide quotes automatically | D4Lab"/>
+<meta property="og:description" content="An AI chatbot is not a glorified FAQ. It can calculate quotes, filter leads, and answer customers at 2am. Here's how it works and what it costs."/>
+<meta property="og:image" content="https://www.d4lab.es/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="AI Chatbot on your website: serve customers and provide quotes automatically | D4Lab"/>
+<meta name="twitter:description" content="An AI chatbot is not a glorified FAQ. It can calculate quotes, filter leads, and answer customers at 2am. Here's how it works and what it costs."/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI Chatbot on your website: serve customers and provide quotes automatically",
+  "description": "An AI chatbot is not a glorified FAQ. It can calculate quotes, filter leads, and answer customers at 2am. Here's how it works and what it costs.",
+  "url": "https://www.d4lab.es/en/blog/chatbot-ia-web",
+  "datePublished": "2026-03-23",
+  "author": {"@type": "Person", "name": "Eudaldo Cal Saul", "url": "https://www.d4lab.es/en/sobre-mi"},
+  "publisher": {"@type": "Organization", "name": "D4Lab", "url": "https://www.d4lab.es/en"}
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="/blog/chatbot-ia-web.tailwind.css" rel="stylesheet"/>
+<style>
+  .glass { background:rgba(17,34,64,0.7); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(100,255,218,0.1); }
+  .nav-item::after { content:''; display:block; width:0; height:2px; background:#64FFDA; transition:width .3s; }
+  .nav-item:hover::after { width:100%; }
+  #nav-header.scrolled { background:rgba(10,25,47,0.97); box-shadow:0 1px 0 rgba(100,255,218,0.1); }
+  #mobile-menu { display:none; }
+  #mobile-menu.open { display:flex; }
+  .tag { display:inline-flex; align-items:center; padding:2px 8px; background:rgba(100,255,218,0.08); border:1px solid rgba(100,255,218,0.2); border-radius:2px; font-size:9px; font-family:'Space Grotesk',sans-serif; font-weight:700; color:#64FFDA; letter-spacing:0.15em; text-transform:uppercase; }
+  .prose-article h2 { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.4rem; color:#ccd6f6; margin-top:2.5rem; margin-bottom:1rem; }
+  .prose-article h3 { font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:1.1rem; color:#64FFDA; margin-top:1.8rem; margin-bottom:0.6rem; }
+  .prose-article p { color:#8892b0; line-height:1.85; margin-bottom:1.2rem; font-size:0.97rem; }
+  .prose-article ul { list-style:none; padding:0; margin-bottom:1.4rem; }
+  .prose-article ul li { color:#8892b0; padding-left:1.4rem; position:relative; margin-bottom:0.5rem; font-size:0.97rem; line-height:1.7; }
+  .prose-article ul li::before { content:'▹'; color:#64FFDA; position:absolute; left:0; }
+  .prose-article strong { color:#ccd6f6; font-weight:600; }
+  .prose-article .callout { background:rgba(100,255,218,0.05); border-left:3px solid #64FFDA; padding:1rem 1.2rem; border-radius:0 4px 4px 0; margin:1.5rem 0; }
+  .prose-article .callout p { margin:0; }
+  .chat-demo { background: rgba(17,34,64,0.6); border: 1px solid rgba(100,255,218,0.15); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+  .chat-demo .msg { margin-bottom: 0.8rem; font-size: 0.9rem; line-height: 1.6; }
+  .chat-demo .msg.user { color: #ccd6f6; padding-left: 1rem; border-left: 2px solid #64FFDA33; }
+  .chat-demo .msg.bot { color: #8892b0; padding-left: 1rem; border-left: 2px solid #64FFDA; }
+  .chat-demo .label { font-size: 0.7rem; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.2rem; }
+  .chat-demo .label.user-label { color: #64FFDA99; }
+  .chat-demo .label.bot-label { color: #64FFDA; }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen">
+
+<header id="nav-header" class="fixed top-0 left-0 right-0 z-50 glass border-b border-outline/30 transition-all">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex h-20 items-center justify-between">
+    <a href="/en" class="flex items-center gap-3 group">
+      <div class="relative size-10 flex items-center justify-center">
+        <div class="absolute inset-0 border border-primary/40 rounded-sm rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+        <span class="material-symbols-outlined text-primary text-lg">terminal</span>
+      </div>
+      <span class="text-white text-xl font-headline font-bold tracking-tight"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-10">
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/servicios">Services</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/maquetas">Mockups</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/guia">Guide</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/sobre-mi">About me</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/precios">FAQ</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/blog">Blog</a>
+      <a href="/blog/chatbot-ia-web" class="nav-item text-primary text-xs font-label font-bold uppercase tracking-[0.2em]" title="Versión en Español">ES</a>
+    </nav>
+    <a href="/en/contacto" class="hidden lg:inline-flex bg-primary px-6 py-2 rounded-sm text-on-primary font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all items-center gap-2">Contact</a>
+    <button id="menu-btn" class="lg:hidden text-primary" aria-label="Menu"><span class="material-symbols-outlined text-3xl">menu</span></button>
+  </div>
+  <div id="mobile-menu" class="flex-col px-6 pb-6 gap-4 lg:hidden">
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/servicios">Services</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/maquetas">Mockups</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/guia">Guide</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/sobre-mi">About me</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/precios">FAQ</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/blog">Blog</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/contacto">Contact</a>
+    <a class="text-primary text-sm font-label font-bold uppercase tracking-[0.2em]" href="/blog/chatbot-ia-web">Versión en Español</a>
+  </div>
+</header>
+
+<!-- Article Header -->
+<section class="pt-32 pb-12 px-6 border-b border-primary/10">
+  <div class="max-w-3xl mx-auto">
+    <div class="flex items-center gap-2 text-on-surface-variant/60 text-xs font-label uppercase tracking-wider mb-6">
+      <a href="/en/blog" class="hover:text-primary transition-colors">Blog</a>
+      <span class="material-symbols-outlined text-xs">chevron_right</span>
+      <span class="text-on-surface-variant">AI · Automation</span>
+    </div>
+    <div class="flex gap-2 flex-wrap mb-4">
+      <span class="tag">AI</span>
+      <span class="tag">Automation</span>
+      <span class="tag">Business</span>
+    </div>
+    <h1 class="text-3xl md:text-5xl font-headline font-bold text-white tracking-tight leading-tight mb-6">AI Chatbot on your website: serve customers and provide quotes automatically</h1>
+    <p class="text-on-surface-variant text-lg font-light leading-relaxed mb-8">A customer arrives at your website at 11 PM, has a specific question, and wants to know how much it will cost. If no one is there to answer, they leave and contact the next one. A modern AI chatbot can handle that inquiry, calculate the quote, and send them an email summary before they close the tab.</p>
+    <div class="flex items-center gap-4 text-on-surface-variant/60 text-xs font-label uppercase tracking-wider">
+      <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">person</span> Eudaldo Cal Saul</span>
+      <span>·</span>
+      <span>March 2026</span>
+      <span>·</span>
+      <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 6 min read</span>
+    </div>
+  </div>
+</section>
+
+<!-- Article Body -->
+<article class="max-w-3xl mx-auto px-6 py-12 prose-article">
+
+  <h2>The real problem: customers who arrive when you're not there</h2>
+  <p>If you have a service business — IT support, installations, consulting, clinic, academy — you know that inquiries don't just arrive Monday to Friday during office hours. They arrive when the customer has the problem in front of them, which could be Saturday at 8 AM or Wednesday at 11 PM.</p>
+  <p>The cost of not responding on time is direct: industry studies show that <strong>78% of customers hire the provider who responds to them first</strong>. If your competition has an immediate response system and you don't, the probability of losing that lead is extremely high, regardless of whether your service is better or cheaper.</p>
+  <p>But it's not just the schedule. It's also the volume. The same 10-15 questions repeat over and over: how much does it cost?, do you cover my area?, how long do you take?, what does the service include? Answering each one manually is time you could be investing in the real work.</p>
+
+  <h2>Basic chatbot vs AI chatbot: the difference is huge</h2>
+  <p>The classic decision-tree chatbot — "press 1 for this, press 2 for that" — has been on the market for 20 years and everyone hates it. It doesn't understand the question if it's not phrased exactly as the programmer planned, it can't reason, and it can't calculate anything.</p>
+  <p>A modern chatbot with generative AI works in a radically different way. It understands natural language, maintains conversation context, and can execute complex logic. In concrete terms, it can:</p>
+  <ul>
+    <li><strong>Identify the type of customer and their need</strong> before giving information, to not respond the same to a private individual as to a company with 50 employees.</li>
+    <li><strong>Calculate a personalized quote</strong> in real time, applying your business rates according to variables the customer enters (number of devices, distance, type of service, urgency).</li>
+    <li><strong>Search and cite your business information</strong> — hours, coverage area, available services — without making anything up.</li>
+    <li><strong>Calculate travel distances</strong> and automatically apply surcharges if your pricing includes travel expenses.</li>
+    <li><strong>Send a summary by email automatically</strong> — both to the customer and to you — with the inquiry data and the estimated budget.</li>
+    <li><strong>Request to WhatsApp or phone</strong> when it detects real purchase intent or an inquiry that requires human judgment.</li>
+  </ul>
+
+  <div class="callout"><p><strong>The key difference:</strong> an FAQ chatbot answers predefined questions. An AI chatbot reasons about your business information and generates answers tailored to each conversation. They are fundamentally different tools.</p></div>
+
+  <h2>Real example: IT support query for a company in Tenerife</h2>
+  <p>To make it clear how it works in practice, this is the flow of a real conversation:</p>
+
+  <div class="chat-demo">
+    <div class="msg user"><div class="label user-label">Customer · 23:14</div>Hi, I need IT support for my company. We have 8 computers and we are in Santa Cruz de Tenerife.</div>
+    <div class="msg bot"><div class="label bot-label">D4Lab AI</div>Hello, I'd be happy to help. To give you a precise estimate, could you tell me if you are looking for a monthly maintenance service or occasional support when a problem arises?</div>
+    <div class="msg user"><div class="label user-label">Customer · 23:15</div>Monthly maintenance preferably. We are also interested in someone coming in person if needed.</div>
+    <div class="label bot-label" style="font-size:0.7rem; color:#64FFDA; margin-bottom:0.2rem;">D4Lab AI</div>
+    <div class="msg bot">Perfect. For 8 devices with monthly maintenance and on-site coverage in Santa Cruz, the indicative rate would be <strong style="color:#64FFDA">€85-110/month</strong>, depending on the support level and guaranteed response time. Santa Cruz is within our area without travel surcharge.<br><br>Would you like me to send you an email summary with this information so you can review it at your convenience?</div>
+    <div class="msg user"><div class="label user-label">Customer · 23:16</div>Yes, send it to company@example.com</div>
+    <div class="msg bot"><div class="label bot-label">D4Lab AI</div>Done, you will receive the summary in a moment. I have also sent a copy to the D4Lab team so they can contact you tomorrow morning if that's okay. Do you have any other questions for now?</div>
+  </div>
+
+  <p>Total time: less than 2 minutes. The customer has an indicative figure, you have the lead data in your email, and the follow-up is scheduled. All without you having done absolutely anything.</p>
+
+  <h2>The technology behind: simple and reliable</h2>
+  <p>You don't need a complex infrastructure to set this up. The tech stack we use at D4Lab for these types of integrations is minimalist and with very low real costs:</p>
+  <ul>
+    <li><strong>Gemini (Google):</strong> the AI model that processes language and generates responses. With the API's free plan, you have enough capacity for hundreds of conversations per month.</li>
+    <li><strong>Serverless API (Vercel Functions or Cloudflare Workers):</strong> the backend that connects the web with the AI. There is no server to maintain or pay for while there is no traffic.</li>
+    <li><strong>Resend:</strong> the transactional email service. The free plan includes 3,000 emails per month, enough for most SMEs.</li>
+  </ul>
+
+  <div class="callout"><p>Infrastructure cost for an SME with fewer than 500 inquiries per month: <strong>€0/month</strong>. The free tiers of these tools cover that volume perfectly. The cost is the implementation, not the operation.</p></div>
+
+  <h2>ROI: what is a query answered at 2 am worth?</h2>
+  <p>Let's do some simple numbers. If your average customer ticket is €150 and your conversion rate for answered inquiries is 30%, every inquiry you receive has an expected value of €45. If you receive 20 queries per month after hours and you didn't answer any before, the chatbot has a potential monthly value of <strong>€900</strong> in revenue that was previously lost.</p>
+  <p>Even being conservative and assuming that only 20% of those night-time queries turn into real customers, the return is evident in the first month. And the chatbot also serves during the day, reducing the time you spend answering repetitive questions.</p>
+
+  <h2>What type of business does it make sense for?</h2>
+  <p>Not all businesses need this with the same urgency. It makes more sense the more any of these conditions are met:</p>
+  <ul>
+    <li>You receive repetitive inquiries with similar information (price, area, availability, what the service includes).</li>
+    <li>Your quoting process has clear variables that can be parameterized (number of units, distance, type of work).</li>
+    <li>You have direct competition that already responds quickly and losing the first response costs you customers.</li>
+    <li>Your business operates outside of typical service hours or has customers in different time zones.</li>
+    <li>The volume of inquiries has grown to the point that answering them manually consumes too much time.</li>
+  </ul>
+  <p>Sectors where we see the most immediate impact: maintenance and technical support services, clinics and health centers, academies and training, installers (electricians, plumbers, air conditioning), real estate agencies, and insurance.</p>
+
+</article>
+
+<!-- CTA -->
+<section class="py-16 px-6 bg-surface-container-low border-t border-primary/10">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-2xl md:text-3xl font-headline font-bold text-white tracking-tight mb-4">Want a chatbot like this on your website?</h2>
+    <p class="text-on-surface-variant font-light mb-8">We implement custom AI chatbots for your business: with your information, your rates, and your tone. From web integration to automatic email delivery.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <button data-d4-open class="bg-primary text-on-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs shadow-xl shadow-primary/20 hover:brightness-110 transition-all inline-flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">calculate</span>
+        Get a quote
+      </button>
+      <a href="/en/servicios" class="border border-primary/30 text-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs hover:bg-primary/5 transition-all inline-flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">build</span>
+        View services
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-surface-container-low py-12 px-6 border-t border-primary/10">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <a href="/en" class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary">terminal</span>
+      <span class="text-white font-headline font-bold"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="flex flex-wrap gap-6 text-on-surface-variant text-xs font-label font-bold uppercase tracking-[0.2em]">
+      <a href="/en" class="hover:text-primary transition-colors">Home</a>
+      <a href="/en/servicios" class="hover:text-primary transition-colors">Services</a>
+      <a href="/en/sobre-mi" class="hover:text-primary transition-colors">About me</a>
+      <a href="/en/precios" class="hover:text-primary transition-colors">FAQ</a>
+      <a href="/en/blog" class="hover:text-primary transition-colors">Blog</a>
+      <a href="/en/contacto" class="hover:text-primary transition-colors">Contact</a>
+    </nav>
+    <p class="text-on-surface-variant text-[9px] font-headline uppercase tracking-[0.3em]">© 2026 D4Lab</p>
+  </div>
+</footer>
+<script>
+  const nav = document.getElementById('nav-header');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+  document.getElementById('menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('open'));
+</script>
+<script src="/chat-widget.js"></script>
+</body>
+</html>

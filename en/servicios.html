@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IT Services & Web Development in Tenerife | D4Lab</title>
+<meta name="description" content="Web design, custom apps, remote & on-site technical support, home automation and IT infrastructure in Tenerife. No-obligation quote."/>
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<link rel="canonical" href="https://www.d4lab.es/en/servicios"/>
+<link rel="alternate" hreflang="es" href="https://www.d4lab.es/servicios"/>
+<link rel="alternate" hreflang="en" href="https://www.d4lab.es/en/servicios"/>
+<link rel="alternate" hreflang="x-default" href="https://www.d4lab.es/servicios"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="D4Lab"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://www.d4lab.es/en/servicios"/>
+<meta property="og:title" content="IT Services & Web Development in Tenerife | D4Lab"/>
+<meta property="og:description" content="Web design, custom apps, tech support, home automation and IT infrastructure in Tenerife. Freelance with over 20 years of experience."/>
+<meta property="og:image" content="https://www.d4lab.es/og-image.png"/>
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="IT Services & Web Development in Tenerife | D4Lab"/>
+<meta name="twitter:description" content="Web design, custom apps, tech support, home automation and IT infrastructure in Tenerife."/>
+<meta name="twitter:image" content="https://www.d4lab.es/og-image.png"/>
+<!-- Schema.org Service -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "D4Lab Services",
+  "url": "https://www.d4lab.es/en/servicios",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Web Development", "url": "https://www.d4lab.es/en/servicios#web"},
+    {"@type": "ListItem", "position": 2, "name": "IT Tech Support", "url": "https://www.d4lab.es/en/servicios#soporte"},
+    {"@type": "ListItem", "position": 3, "name": "Home Automation & IoT", "url": "https://www.d4lab.es/en/servicios#domotica"},
+    {"@type": "ListItem", "position": 4, "name": "Artificial Intelligence", "url": "https://www.d4lab.es/en/servicios#ia"}
+  ]
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="/servicios.tailwind.css" rel="stylesheet"/>
+<style>
+  .glass { background: rgba(17,34,64,0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(100,255,218,0.1); }
+  .text-glow { text-shadow: 0 0 15px rgba(100,255,218,0.4); }
+  .blueprint-grid { background-image: linear-gradient(to right, rgba(100,255,218,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(100,255,218,0.05) 1px, transparent 1px); background-size: 40px 40px; }
+  .nav-item::after { content: ''; display: block; width: 0; height: 2px; background: #64FFDA; transition: width .3s; }
+  .nav-item:hover::after { width: 100%; }
+  .kinetic-border { border: 1px solid rgba(100,255,218,0.2); transition: border-color 0.3s ease, background 0.3s ease; }
+  .kinetic-border:hover { border-color: #64FFDA; background: rgba(100,255,218,0.03); }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  #nav-header.scrolled { background: rgba(10,25,47,0.97); box-shadow: 0 1px 0 rgba(100,255,218,0.1); }
+  #mobile-menu { display: none; }
+  #mobile-menu.open { display: flex; }
+  .service-section { scroll-margin-top: 100px; }
+</style>
+</head>
+<body class="bg-surface font-body text-on-surface overflow-x-hidden">
+
+<!-- Header -->
+<header id="nav-header" class="fixed top-0 left-0 right-0 z-50 glass border-b border-outline/30 transition-all">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex h-20 items-center justify-between">
+    <a href="/en/" class="flex items-center gap-3 group">
+      <div class="relative size-10 flex items-center justify-center">
+        <div class="absolute inset-0 border border-primary/40 rounded-sm rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+        <span class="material-symbols-outlined text-primary text-lg">terminal</span>
+      </div>
+      <span class="text-white font-headline font-bold tracking-tight" style="font-size:1.9rem;line-height:1"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-10">
+      <a class="nav-item text-primary text-xs font-label font-bold uppercase tracking-[0.2em]" href="/en/servicios">Services</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/maquetas">Mockups</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/guia">Guide</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/sobre-mi">About me</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/precios">FAQ</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/blog">Blog</a>
+      <a class="text-on-surface-variant text-[10px] font-label font-bold hover:text-primary px-2 py-1 border border-primary/20 rounded-sm" href="/servicios">ES</a>
+    </nav>
+    <a href="/en/contacto" class="hidden lg:inline-flex bg-primary px-6 py-2 rounded-sm text-on-primary font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all items-center gap-2">Contact</a>
+    <button id="menu-btn" class="lg:hidden text-primary" aria-label="Menu"><span class="material-symbols-outlined text-3xl">menu</span></button>
+  </div>
+  <div id="mobile-menu" class="flex-col px-6 pb-6 gap-4 lg:hidden">
+    <a class="text-primary text-sm font-label font-bold uppercase tracking-[0.2em]" href="/en/servicios">Services</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/maquetas">Mockups</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/guia">Guide</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/sobre-mi">About me</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/precios">FAQ</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/blog">Blog</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/contacto">Contact</a>
+    <div class="border-t border-primary/20 pt-4 mt-2">
+      <a class="text-primary text-sm font-label font-bold uppercase tracking-[0.2em]" href="/servicios">Versión Española</a>
+    </div>
+  </div>
+</header>
+
+<!-- Page Hero -->
+<section class="relative pt-40 pb-24 px-6 overflow-hidden">
+  <div class="absolute inset-0 blueprint-grid opacity-20"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/5 rounded-full blur-[120px]"></div>
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="mb-4">
+      <span class="text-primary text-[10px] uppercase tracking-[0.4em] font-label font-bold">D4Lab</span>
+    </div>
+    <h1 class="text-5xl md:text-7xl font-headline font-bold text-white tracking-tighter text-glow mb-6">Services</h1>
+    <p class="text-on-surface-variant text-xl max-w-2xl font-light leading-relaxed">
+      Complete technical solutions: from designing your web to configuring your company network or automating your home. A single point of contact for everything.
+    </p>
+    <!-- Quick nav -->
+    <div class="flex flex-wrap gap-3 mt-10">
+      <a href="#web" class="kinetic-border px-4 py-2 rounded-sm text-xs font-label font-bold text-on-surface-variant hover:text-primary uppercase tracking-[0.15em] transition-all">Web</a>
+      <a href="#apps" class="kinetic-border px-4 py-2 rounded-sm text-xs font-label font-bold text-on-surface-variant hover:text-primary uppercase tracking-[0.15em] transition-all">Apps</a>
+      <a href="#ia" class="kinetic-border px-4 py-2 rounded-sm text-xs font-label font-bold text-on-surface-variant hover:text-primary uppercase tracking-[0.15em] transition-all">AI</a>
+      <a href="#modernizacion" class="kinetic-border px-4 py-2 rounded-sm text-xs font-label font-bold text-on-surface-variant hover:text-primary uppercase tracking-[0.15em] transition-all">Modernization</a>
+      <a href="#remoto" class="kinetic-border px-4 py-2 rounded-sm text-xs font-label font-bold text-on-surface-variant hover:text-primary uppercase tracking-[0.15em] transition-all">Remote Support</a>
+      <a href="#presencial" class="kinetic-border px-4 py-2 rounded-sm text-xs font-label font-bold text-on-surface-variant hover:text-primary uppercase tracking-[0.15em] transition-all">On-site Support</a>
+      <a href="#domotica" class="kinetic-border px-4 py-2 rounded-sm text-xs font-label font-bold text-on-surface-variant hover:text-primary uppercase tracking-[0.15em] transition-all">Home Automation</a>
+      <a href="#redes" class="kinetic-border px-4 py-2 rounded-sm text-xs font-label font-bold text-on-surface-variant hover:text-primary uppercase tracking-[0.15em] transition-all">Networking</a>
+      <a href="#mantenimiento" class="kinetic-border px-4 py-2 rounded-sm text-xs font-label font-bold text-on-surface-variant hover:text-primary uppercase tracking-[0.15em] transition-all">Maintenance</a>
+      <a href="#redes-sociales" class="kinetic-border px-4 py-2 rounded-sm text-xs font-label font-bold text-primary border-primary/40 uppercase tracking-[0.15em] transition-all flex items-center gap-1.5"><span class="text-[9px]">⚡</span>Social Media</a>
+    </div>
+  </div>
+</section>
+
+<!-- Services Sections -->
+<section class="px-6 max-w-7xl mx-auto pb-32 space-y-4">
+
+  <!-- 1. Web Design -->
+  <div id="web" class="service-section kinetic-border rounded-sm p-8 md:p-12 reveal">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="material-symbols-outlined text-primary text-5xl">web</span>
+          <span class="text-primary/30 text-5xl font-headline font-bold">01</span>
+        </div>
+        <h2 class="text-3xl font-headline font-bold text-white tracking-tight mb-3">Web Design & Development</h2>
+        <p class="text-on-surface-variant text-sm font-light leading-relaxed">Professional, fast websites adapted to all devices. From a landing page to more complex projects with administration panels.</p>
+      </div>
+      <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-surface-container rounded-sm p-5">
+          <h4 class="text-white font-label font-bold text-sm mb-3">What's included</h4>
+          <ul class="space-y-2 text-on-surface-variant text-sm font-light">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Responsive design (mobile, tablet, desktop)</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>HTML5, CSS3, vanilla JavaScript</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Backend in PHP or Python</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>SQL database integration</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Basic SEO and speed optimization</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Content administration panel</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Functional contact forms</li>
+          </ul>
+        </div>
+        <div class="bg-surface-container rounded-sm p-5">
+          <h4 class="text-white font-label font-bold text-sm mb-3">Ideal for</h4>
+          <ul class="space-y-2 text-on-surface-variant text-sm font-light">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Freelancers and small businesses</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Portfolios and personal pages</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Product catalogs</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Campaign landing pages</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Restaurants, local shops</li>
+          </ul>
+          <a href="/en/contacto" class="mt-6 inline-flex items-center gap-2 bg-primary text-on-primary px-5 py-2.5 rounded-sm font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all">
+            Request quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Web Apps -->
+  <div id="apps" class="service-section kinetic-border rounded-sm p-8 md:p-12 reveal">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="material-symbols-outlined text-primary text-5xl">apps</span>
+          <span class="text-primary/30 text-5xl font-headline font-bold">02</span>
+        </div>
+        <h2 class="text-3xl font-headline font-bold text-white tracking-tight mb-3">Web App Programming</h2>
+        <p class="text-on-surface-variant text-sm font-light leading-relaxed">Full-stack applications with real business logic. Modern frontend, robust backend, database and external services/AI integration.</p>
+      </div>
+      <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-surface-container rounded-sm p-5">
+          <h4 class="text-white font-label font-bold text-sm mb-3">Technologies</h4>
+          <ul class="space-y-2 text-on-surface-variant text-sm font-light">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Frontend: JavaScript ES6, HTML5, Tailwind CSS</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Backend: PHP, Python, Node.js / Express</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Databases: MySQL, SQL, Firestore</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Auth & hosting: Firebase</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>AI Integration: Google Gemini API</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>SSR, SEO, performance optimization</li>
+          </ul>
+        </div>
+        <div class="bg-surface-container rounded-sm p-5">
+          <h4 class="text-white font-label font-bold text-sm mb-3">Use cases</h4>
+          <ul class="space-y-2 text-on-surface-variant text-sm font-light">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Internal management platforms</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Educational or training apps</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Booking or appointment systems</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Analytics and data dashboards</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>AI-powered applications</li>
+          </ul>
+          <div class="mt-4 p-3 bg-surface-container-high rounded-sm border border-primary/10">
+            <p class="text-[10px] text-primary/70 font-label font-bold uppercase tracking-widest mb-1">Reference Project</p>
+            <p class="text-on-surface text-xs">TesIA.es — exam prep platform with AI tutor, community and progress tracking.</p>
+          </div>
+          <a href="/en/contacto" class="mt-4 inline-flex items-center gap-2 bg-primary text-on-primary px-5 py-2.5 rounded-sm font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all">
+            Request quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Remote Support -->
+  <div id="remoto" class="service-section kinetic-border rounded-sm p-8 md:p-12 reveal">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="material-symbols-outlined text-primary text-5xl">support_agent</span>
+          <span class="text-primary/30 text-5xl font-headline font-bold">03</span>
+        </div>
+        <h2 class="text-3xl font-headline font-bold text-white tracking-tight mb-3">Remote Tech Support</h2>
+        <p class="text-on-surface-variant text-sm font-light leading-relaxed">Fast and secure IT troubleshooting from anywhere. No travel, no waiting. Available for individuals and businesses.</p>
+      </div>
+      <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-surface-container rounded-sm p-5">
+          <h4 class="text-white font-label font-bold text-sm mb-3">What's included</h4>
+          <ul class="space-y-2 text-on-surface-variant text-sm font-light">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Diagnosis and resolution of system errors</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Windows and Linux support (desktop & server)</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Networking and VPN configuration</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Virus and malware removal</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Software installation and configuration</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Email and Office 365 administration</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Android and iOS support</li>
+          </ul>
+        </div>
+        <div class="bg-surface-container rounded-sm p-5">
+          <h4 class="text-white font-label font-bold text-sm mb-3">Advantages</h4>
+          <ul class="space-y-2 text-on-surface-variant text-sm font-light">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>No travel — resolved in minutes</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Available for any location</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Pay per session, no mandatory contracts</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Secure remote access with your permission</li>
+          </ul>
+          <a href="/en/contacto" class="mt-6 inline-flex items-center gap-2 bg-primary text-on-primary px-5 py-2.5 rounded-sm font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all">
+            Request quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. On-site Support -->
+  <div id="presencial" class="service-section kinetic-border rounded-sm p-8 md:p-12 reveal">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="material-symbols-outlined text-primary text-5xl">handyman</span>
+          <span class="text-primary/30 text-5xl font-headline font-bold">04</span>
+        </div>
+        <h2 class="text-3xl font-headline font-bold text-white tracking-tight mb-3">On-site Tech Support</h2>
+        <p class="text-on-surface-variant text-sm font-light leading-relaxed">Travel to home or office in Tenerife. Hardware repair, preventive and corrective maintenance, computer building and much more.</p>
+        <div class="mt-4 inline-flex items-center gap-2 px-3 py-1.5 bg-primary/5 border border-primary/20 rounded-sm">
+          <span class="material-symbols-outlined text-primary text-sm">location_on</span>
+          <span class="text-primary text-[10px] uppercase tracking-[0.2em] font-label font-bold">Tenerife</span>
+        </div>
+      </div>
+      <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-surface-container rounded-sm p-5">
+          <h4 class="text-white font-label font-bold text-sm mb-3">On-site services</h4>
+          <ul class="space-y-2 text-on-surface-variant text-sm font-light">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Desktop and laptop repair</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Component replacement (RAM, Disk, Screen)</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Preventive maintenance (cleaning, checkup)</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Assembly and setup of new equipment</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Router and network installation/config</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Data recovery</li>
+          </ul>
+        </div>
+        <div class="bg-surface-container rounded-sm p-5">
+          <h4 class="text-white font-label font-bold text-sm mb-3">Coverage area</h4>
+          <ul class="space-y-2 text-on-surface-variant text-sm font-light">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>South Tenerife (priority)</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Santa Cruz & metropolitan area</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Rest of the island upon request</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Individuals, freelancers and business</li>
+          </ul>
+          <a href="/en/contacto" class="mt-6 inline-flex items-center gap-2 bg-primary text-on-primary px-5 py-2.5 rounded-sm font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all">
+            Request quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Home Automation -->
+  <div id="domotica" class="service-section kinetic-border rounded-sm p-8 md:p-12 reveal">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="material-symbols-outlined text-primary text-5xl">home_iot_device</span>
+          <span class="text-primary/30 text-5xl font-headline font-bold">05</span>
+        </div>
+        <h2 class="text-3xl font-headline font-bold text-white tracking-tight mb-3">Home Automation</h2>
+        <p class="text-on-surface-variant text-sm font-light leading-relaxed">Smart automation for home and office. Hardware and software integration to control lighting, climate, security and more from your phone or by voice.</p>
+      </div>
+      <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-surface-container rounded-sm p-5">
+          <h4 class="text-white font-label font-bold text-sm mb-3">What I can automate</h4>
+          <ul class="space-y-2 text-on-surface-variant text-sm font-light">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Smart lighting (schedules, scenes)</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Blind, door and access control</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Climate control (smart thermostats)</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Cameras and security systems</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Temp, humidity and motion sensors</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Voice assistant integration</li>
+          </ul>
+        </div>
+        <div class="bg-surface-container rounded-sm p-5">
+          <h4 class="text-white font-label font-bold text-sm mb-3">Technical approach</h4>
+          <ul class="space-y-2 text-on-surface-variant text-sm font-light">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Hardware + software: integral solution</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Installation, configuration and training</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Scalable solutions, expandable later</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>On-site in Tenerife, remote advice</li>
+          </ul>
+          <a href="/en/contacto" class="mt-6 inline-flex items-center gap-2 bg-primary text-on-primary px-5 py-2.5 rounded-sm font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all">
+            Request quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. AI Integration -->
+  <div id="ia" class="service-section kinetic-border rounded-sm p-8 md:p-12 reveal" style="border-color: rgba(100,255,218,0.3);">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="material-symbols-outlined text-primary text-5xl">smart_toy</span>
+          <div class="flex items-center gap-2">
+            <span class="text-primary/30 text-5xl font-headline font-bold">07</span>
+            <span class="px-2 py-0.5 bg-primary/15 border border-primary/30 text-primary text-[9px] font-label font-bold uppercase tracking-wide rounded-sm self-start mt-3">New</span>
+          </div>
+        </div>
+        <h2 class="text-3xl font-headline font-bold text-white tracking-tight mb-3">AI Integration</h2>
+        <p class="text-on-surface-variant text-sm font-light leading-relaxed">Add artificial intelligence to your business or application. From customer support chatbots to process automation and data analysis with language models.</p>
+      </div>
+      <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-surface-container rounded-sm p-5">
+          <h4 class="text-white font-label font-bold text-sm mb-3">What I can integrate</h4>
+          <ul class="space-y-2 text-on-surface-variant text-sm font-light">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Smart chatbots and virtual assistants</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Automated content generation</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Document analysis & summary (PDF, text)</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Response and flow automation</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Data classification and extraction</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Integration with your existing web or app</li>
+          </ul>
+        </div>
+        <div class="bg-surface-container rounded-sm p-5">
+          <h4 class="text-white font-label font-bold text-sm mb-3">Models & Platforms</h4>
+          <ul class="space-y-2 text-on-surface-variant text-sm font-light">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Google Gemini API (real exp. in TesIA.es)</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>OpenAI / ChatGPT API</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Anthropic Claude API</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Compatible with your current stack</li>
+          </ul>
+          <div class="mt-4 p-3 bg-surface-container-high rounded-sm border border-primary/10">
+            <p class="text-[10px] text-primary/70 font-label font-bold uppercase tracking-widest mb-1">Reference Project</p>
+            <p class="text-on-surface text-xs">TesIA.es integrates Gemini as a contextual AI tutor that answers specific questions per exam query.</p>
+          </div>
+          <a href="/en/contacto" class="mt-4 inline-flex items-center gap-2 bg-primary text-on-primary px-5 py-2.5 rounded-sm font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all">
+            Request quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. Social Media Automation -->
+  <div id="redes-sociales" class="service-section kinetic-border rounded-sm p-8 md:p-12 reveal" style="border-color: rgba(100,255,218,0.4); background: rgba(100,255,218,0.015);">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="material-symbols-outlined text-primary text-5xl">share</span>
+          <div class="flex items-center gap-2">
+            <span class="text-primary/30 text-5xl font-headline font-bold">10</span>
+            <span class="px-2 py-0.5 bg-primary/15 border border-primary/40 text-primary text-[9px] font-label font-bold uppercase tracking-wide rounded-sm self-start mt-3">⚡ Launch Offer</span>
+          </div>
+        </div>
+        <h2 class="text-3xl font-headline font-bold text-white tracking-tight mb-3">Digital Trident Pack</h2>
+        <p class="text-on-surface-variant text-sm font-light leading-relaxed">Automation of content posting in the 3 essential networks for local businesses: Facebook, Instagram and Google Business Profile.</p>
+        <p class="text-on-surface-variant/70 text-sm font-light leading-relaxed mt-3 italic">"You take the photo. AI generates 3 different texts adapted to each network and posts automatically. You touch nothing else."</p>
+        <div class="mt-4 p-3 bg-surface-container rounded-sm border border-primary/10">
+          <p class="text-[10px] text-primary/70 font-label font-bold uppercase tracking-widest mb-1">Infrastructure</p>
+          <p class="text-on-surface text-xs">n8n workflows on D4Lab's own server. Full control, no execution cost, no third-party dependency.</p>
+        </div>
+      </div>
+      <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-surface-container rounded-sm p-5">
+          <h4 class="text-white font-label font-bold text-sm mb-3">What's included</h4>
+          <ul class="space-y-2 text-on-surface-variant text-sm font-light">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Auto-posting on <strong class="text-on-surface">Facebook</strong></li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Auto-posting on <strong class="text-on-surface">Instagram</strong> with local hashtags</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span><strong class="text-on-surface">Google Business Profile</strong> (Google Maps) updates</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>AI generating 3 different texts from one photo</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Posting at the highest reach times for your sector</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Automatic confirmation of each post</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Optional pre-approval if you prefer</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">swap_horiz</span><span class="text-on-surface-variant/70">Option to swap one network for X or Threads</span></li>
+          </ul>
+        </div>
+        <div class="bg-surface-container rounded-sm p-5">
+          <h4 class="text-white font-label font-bold text-sm mb-3">Rates — Launch Offer</h4>
+          <div class="space-y-3">
+            <div class="flex items-start justify-between gap-2 pb-3 border-b border-outline/30">
+              <div>
+                <p class="text-on-surface text-sm font-label font-bold">Initial Setup</p>
+                <p class="text-on-surface-variant/70 text-xs mt-0.5">Structure + Workflows + 3 Network Integration</p>
+              </div>
+              <span class="text-primary text-lg font-headline font-bold whitespace-nowrap">150 €</span>
+            </div>
+            <div class="flex items-start justify-between gap-2 pb-3 border-b border-outline/30">
+              <div>
+                <p class="text-on-surface text-sm font-label font-bold">1st Month</p>
+                <p class="text-on-surface-variant/70 text-xs mt-0.5">Included in setup</p>
+              </div>
+              <span class="text-primary text-lg font-headline font-bold">FREE</span>
+            </div>
+            <div class="flex items-start justify-between gap-2 pb-3 border-b border-outline/30">
+              <div>
+                <p class="text-on-surface text-sm font-label font-bold">Months 2–12</p>
+                <p class="text-on-surface-variant/70 text-xs mt-0.5">Monthly maintenance</p>
+              </div>
+              <span class="text-on-surface text-base font-headline font-bold whitespace-nowrap">60 €/mo</span>
+            </div>
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <p class="text-on-surface text-sm font-label font-bold">Year 2 onwards</p>
+                <p class="text-on-surface-variant/70 text-xs mt-0.5">Monthly maintenance</p>
+              </div>
+              <span class="text-on-surface text-base font-headline font-bold whitespace-nowrap">100 €/mo</span>
+            </div>
+          </div>
+          <button data-d4-open data-d4-automessage="Hi, I'm interested in the Digital Trident Pack to automate my posts on Facebook, Instagram and Google Business. Can you give me a custom quote?" class="mt-5 w-full inline-flex items-center justify-center gap-2 bg-primary text-on-primary px-5 py-2.5 rounded-sm font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all cursor-pointer">
+            <span class="material-symbols-outlined text-base">calculate</span>
+            Request Quote
+          </button>
+          <a href="/blog/automatizacion-contenido-redes" class="mt-2 w-full inline-flex items-center justify-center gap-2 border border-primary/20 text-primary/70 px-5 py-2 rounded-sm font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:border-primary/40 hover:text-primary transition-all">
+            <span class="material-symbols-outlined text-sm">article</span>
+            How it works
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Web Modernization -->
+  <div id="modernizacion" class="service-section kinetic-border rounded-sm p-8 md:p-12 reveal" style="border-color: rgba(100,255,218,0.3);">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="material-symbols-outlined text-primary text-5xl">update</span>
+          <div class="flex items-center gap-2">
+            <span class="text-primary/30 text-5xl font-headline font-bold">08</span>
+            <span class="px-2 py-0.5 bg-primary/15 border border-primary/30 text-primary text-[9px] font-label font-bold uppercase tracking-wide rounded-sm self-start mt-3">New</span>
+          </div>
+        </div>
+        <h2 class="text-3xl font-headline font-bold text-white tracking-tight mb-3">Old Website Modernization</h2>
+        <p class="text-on-surface-variant text-sm font-light leading-relaxed">Is your website more than 5 years old, not mobile-friendly or slow? We renew it without losing your content. New design, new technology, same identity.</p>
+      </div>
+      <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-surface-container rounded-sm p-5">
+          <h4 class="text-white font-label font-bold text-sm mb-3">Transformation package</h4>
+          <ul class="space-y-2 text-on-surface-variant text-sm font-light">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Complete redesign with modern aesthetics</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Mobile-first adaptation (responsive)</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Significant speed improvements</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Basic SEO optimization</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Content migration</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Clean and maintainable code</li>
+          </ul>
+        </div>
+        <div class="bg-surface-container rounded-sm p-5">
+          <h4 class="text-white font-label font-bold text-sm mb-3">When does it make sense?</h4>
+          <ul class="space-y-2 text-on-surface-variant text-sm font-light">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Site breaks on mobile devices</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Outdated design lacks trust</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Slow loading scares visitors away</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Built with obsolete technology</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>You want to add new modern features</li>
+          </ul>
+          <a href="/en/contacto" class="mt-6 inline-flex items-center gap-2 bg-primary text-on-primary px-5 py-2.5 rounded-sm font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all">
+            Request quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Infrastructure -->
+  <div id="redes" class="service-section kinetic-border rounded-sm p-8 md:p-12 reveal">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="material-symbols-outlined text-primary text-5xl">router</span>
+          <span class="text-primary/30 text-5xl font-headline font-bold">06</span>
+        </div>
+        <h2 class="text-3xl font-headline font-bold text-white tracking-tight mb-3">Infrastructure & Networking</h2>
+        <p class="text-on-surface-variant text-sm font-light leading-relaxed">Design, installation and administration of IT infrastructure: networks, servers and systems. 16 years of experience in high-availability environments.</p>
+      </div>
+      <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-surface-container rounded-sm p-5">
+          <h4 class="text-white font-label font-bold text-sm mb-3">Services</h4>
+          <ul class="space-y-2 text-on-surface-variant text-sm font-light">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>LAN/WiFi network design & install</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Linux and Windows server administration</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>VPN and secure remote access setup</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Network security (firewall, policies)</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Apache configuration, custom hosting</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Backups and contingency plans</li>
+          </ul>
+        </div>
+        <div class="bg-surface-container rounded-sm p-5">
+          <h4 class="text-white font-label font-bold text-sm mb-3">Systems & Experience</h4>
+          <ul class="space-y-2 text-on-surface-variant text-sm font-light">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Linux (Ubuntu, Debian, CentOS)</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Windows Server and Active Directory</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Virtualization and containers</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Experience in 24/7 industrial environments</li>
+          </ul>
+          <a href="/en/contacto" class="mt-6 inline-flex items-center gap-2 bg-primary text-on-primary px-5 py-2.5 rounded-sm font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all">
+            Request quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 9. Monthly Maintenance -->
+  <div id="mantenimiento" class="service-section kinetic-border rounded-sm p-8 md:p-12 reveal" style="border-color: rgba(100,255,218,0.3);">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="material-symbols-outlined text-primary text-5xl">shield_check</span>
+          <div class="flex items-center gap-2">
+            <span class="text-primary/30 text-5xl font-headline font-bold">09</span>
+            <span class="px-2 py-0.5 bg-primary/15 border border-primary/30 text-primary text-[9px] font-label font-bold uppercase tracking-wide rounded-sm self-start mt-3">New</span>
+          </div>
+        </div>
+        <h2 class="text-3xl font-headline font-bold text-white tracking-tight mb-3">Monthly Maintenance</h2>
+        <p class="text-on-surface-variant text-sm font-light leading-relaxed">Recurring maintenance plan for webs and apps. Updates, backups, monitoring and small improvements included. No surprises, no unexpected bills.</p>
+        <div class="mt-5 p-4 bg-surface-container rounded-sm border border-primary/15">
+          <p class="text-[10px] text-primary/70 font-label font-bold uppercase tracking-widest mb-2">Available plans</p>
+          <ul class="space-y-1.5 text-on-surface-variant text-xs font-light">
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">circle</span>Static sites or landings</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">circle</span>Sites with CMS or backend</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">circle</span>Web apps or platforms</li>
+          </ul>
+          <p class="text-[10px] text-on-surface-variant/60 mt-3">Pricing based on scope — contact for details</p>
+        </div>
+      </div>
+      <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-surface-container rounded-sm p-5">
+          <h4 class="text-white font-label font-bold text-sm mb-3">What's included</h4>
+          <ul class="space-y-2 text-on-surface-variant text-sm font-light">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Security updates and dependency patching</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Verified periodic backups</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Uptime monitoring</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Error and minor bug fixing</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Small content or visual adjustments</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Monthly status report</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span>Priority communication channel</li>
+          </ul>
+        </div>
+        <div class="bg-surface-container rounded-sm p-5">
+          <h4 class="text-white font-label font-bold text-sm mb-3">Terms & Limits</h4>
+          <ul class="space-y-2 text-on-surface-variant text-sm font-light">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Agreed monthly intervention hours</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Does not include new feature development</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Response time based on plan</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Large changes = separate quote</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary/60 text-base mt-0.5">arrow_right</span>Monthly contract, no lock-in</li>
+          </ul>
+          <a href="/en/contacto" class="mt-6 inline-flex items-center gap-2 bg-primary text-on-primary px-5 py-2.5 rounded-sm font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all">
+            Consult plan
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- Final CTA -->
+<section class="py-24 px-6 bg-surface-container-low border-t border-primary/10">
+  <div class="max-w-4xl mx-auto text-center reveal">
+    <h2 class="text-3xl md:text-4xl font-headline font-bold text-white tracking-tight mb-4">Didn't find what you need?</h2>
+    <p class="text-on-surface-variant text-lg font-light mb-8">Tell me your requirement. If it's within my power, we'll do it. No-obligation quote.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="mailto:d4labes@gmail.com" class="bg-primary text-on-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs shadow-xl shadow-primary/20 hover:brightness-110 transition-all flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">mail</span>
+        d4labes@gmail.com
+      </a>
+      <a href="tel:+34666750753" class="border border-primary/30 text-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs hover:bg-primary/5 transition-all flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">phone</span>
+        +34 666 750 753
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-surface-container-low py-12 px-6 border-t border-primary/10">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <a href="/en/" class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary">terminal</span>
+      <span class="text-white font-headline font-bold"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="flex flex-wrap gap-6 text-on-surface-variant text-xs font-label font-bold uppercase tracking-[0.2em]">
+      <a href="/en/" class="hover:text-primary transition-colors">Home</a>
+      <a href="/en/servicios" class="text-primary">Services</a>
+      <a href="/en/sobre-mi" class="hover:text-primary transition-colors">About me</a>
+      <a href="/en/precios" class="hover:text-primary transition-colors">FAQ</a>
+      <a href="/en/blog" class="hover:text-primary transition-colors">Blog</a>
+      <a href="/en/contacto" class="hover:text-primary transition-colors">Contact</a>
+    </nav>
+    <p class="text-on-surface-variant text-[9px] font-headline uppercase tracking-[0.3em]">© 2026 D4Lab</p>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav-header');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+  document.getElementById('menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('open'));
+  const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }), { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
+</script>
+<script src="/chat-widget.js"></script>
+</body>
+</html>

@@ -11,11 +11,11 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
 <link rel="manifest" href="/site.webmanifest"/>
-<link rel="canonical" href="https://www.d4lab.es/blog/{{SLUG}}.html"/>
+<link rel="canonical" href="https://www.d4lab.es/blog/{{SLUG}}"/>
 <meta property="og:type" content="article"/>
 <meta property="og:site_name" content="D4Lab"/>
 <meta property="og:locale" content="es_ES"/>
-<meta property="og:url" content="https://www.d4lab.es/blog/{{SLUG}}.html"/>
+<meta property="og:url" content="https://www.d4lab.es/blog/{{SLUG}}"/>
 <meta property="og:title" content="{{TITLE}}"/>
 <meta property="og:description" content="{{EXCERPT}}"/>
 <meta property="og:image" content="https://www.d4lab.es/og-image.png"/>
@@ -28,9 +28,9 @@
   "@type": "BlogPosting",
   "headline": "{{TITLE}}",
   "description": "{{EXCERPT}}",
-  "url": "https://www.d4lab.es/blog/{{SLUG}}.html",
+  "url": "https://www.d4lab.es/blog/{{SLUG}}",
   "datePublished": "{{DATE}}",
-  "author": {"@type": "Person", "name": "Eudaldo Cal Saul", "url": "https://www.d4lab.es/sobre-mi.html"},
+  "author": {"@type": "Person", "name": "Eudaldo Cal Saul", "url": "https://www.d4lab.es/sobre-mi"},
   "publisher": {"@type": "Organization", "name": "D4Lab", "url": "https://www.d4lab.es"}
 }
 </script>
@@ -69,25 +69,27 @@
       </div>
       <span class="text-white text-xl font-headline font-bold tracking-tight"><span class="text-primary">D4</span>Lab</span>
     </a>
-    <nav class="hidden md:flex items-center gap-10">
-      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/servicios.html">Servicios</a>
-      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/maquetas.html">Maquetas</a>
-      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/guia.html">Guía</a>
-      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/sobre-mi.html">Sobre mí</a>
-      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/precios.html">FAQ</a>
-      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/blog.html">Blog</a>
+    <nav class="hidden lg:flex items-center gap-10">
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/servicios">Servicios</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/maquetas">Maquetas</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/guia">Guía</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/sobre-mi">Sobre mí</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/precios">FAQ</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/blog">Blog</a>
+      <a class="text-on-surface-variant text-[10px] font-label font-bold hover:text-primary px-2 py-1 border border-primary/20 rounded-sm" href="/en/blog/{{SLUG}}">EN</a>
     </nav>
-    <a href="/contacto.html" class="hidden md:inline-flex bg-primary px-6 py-2 rounded-sm text-on-primary font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all items-center gap-2">Contactar</a>
-    <button id="menu-btn" class="md:hidden text-primary" aria-label="Menú"><span class="material-symbols-outlined text-3xl">menu</span></button>
+    <a href="/contacto" class="hidden lg:inline-flex bg-primary px-6 py-2 rounded-sm text-on-primary font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all items-center gap-2">Contactar</a>
+    <button id="menu-btn" class="lg:hidden text-primary" aria-label="Menú"><span class="material-symbols-outlined text-3xl">menu</span></button>
   </div>
-  <div id="mobile-menu" class="flex-col px-6 pb-6 gap-4 md:hidden">
-    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/servicios.html">Servicios</a>
-    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/maquetas.html">Maquetas</a>
-    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/guia.html">Guía</a>
-    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/sobre-mi.html">Sobre mí</a>
-    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/precios.html">FAQ</a>
-    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/blog.html">Blog</a>
-    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/contacto.html">Contacto</a>
+  <div id="mobile-menu" class="flex-col px-6 pb-6 gap-4 lg:hidden">
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/servicios">Servicios</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/maquetas">Maquetas</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/guia">Guía</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/sobre-mi">Sobre mí</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/precios">FAQ</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/blog">Blog</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/contacto">Contacto</a>
+    <a class="text-primary text-sm font-label font-bold uppercase tracking-[0.2em] pt-2 border-t border-primary/10" href="/en/blog/{{SLUG}}">English Version</a>
   </div>
 </header>
 
@@ -95,7 +97,7 @@
 <section class="pt-32 pb-12 px-6 border-b border-primary/10">
   <div class="max-w-3xl mx-auto">
     <div class="flex items-center gap-2 text-on-surface-variant/60 text-xs font-label uppercase tracking-wider mb-6">
-      <a href="/blog.html" class="hover:text-primary transition-colors">Blog</a>
+      <a href="/blog" class="hover:text-primary transition-colors">Blog</a>
       <span class="material-symbols-outlined text-xs">chevron_right</span>
       <span class="text-on-surface-variant">{{CATEGORY}}</span>
     </div>
@@ -125,11 +127,11 @@
     <h2 class="text-2xl md:text-3xl font-headline font-bold text-white tracking-tight mb-4">¿Quieres saber qué solución encaja con tu negocio?</h2>
     <p class="text-on-surface-variant font-light mb-8">Analizamos tu situación, identificamos qué tecnología tiene más impacto y lo implementamos. Sin compromisos, sin tecnicismos innecesarios.</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="/contacto.html" class="bg-primary text-on-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs shadow-xl shadow-primary/20 hover:brightness-110 transition-all inline-flex items-center justify-center gap-2">
+      <a href="/contacto" class="bg-primary text-on-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs shadow-xl shadow-primary/20 hover:brightness-110 transition-all inline-flex items-center justify-center gap-2">
         <span class="material-symbols-outlined text-base">mail</span>
         Contactar ahora
       </a>
-      <a href="/servicios.html" class="border border-primary/30 text-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs hover:bg-primary/5 transition-all inline-flex items-center justify-center gap-2">
+      <a href="/servicios" class="border border-primary/30 text-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs hover:bg-primary/5 transition-all inline-flex items-center justify-center gap-2">
         <span class="material-symbols-outlined text-base">build</span>
         Ver servicios
       </a>
@@ -146,11 +148,11 @@
     </a>
     <nav class="flex flex-wrap gap-6 text-on-surface-variant text-xs font-label font-bold uppercase tracking-[0.2em]">
       <a href="/" class="hover:text-primary transition-colors">Inicio</a>
-      <a href="/servicios.html" class="hover:text-primary transition-colors">Servicios</a>
-      <a href="/sobre-mi.html" class="hover:text-primary transition-colors">Sobre mí</a>
-      <a href="/precios.html" class="hover:text-primary transition-colors">FAQ</a>
-      <a href="/blog.html" class="hover:text-primary transition-colors">Blog</a>
-      <a href="/contacto.html" class="hover:text-primary transition-colors">Contacto</a>
+      <a href="/servicios" class="hover:text-primary transition-colors">Servicios</a>
+      <a href="/sobre-mi" class="hover:text-primary transition-colors">Sobre mí</a>
+      <a href="/precios" class="hover:text-primary transition-colors">FAQ</a>
+      <a href="/blog" class="hover:text-primary transition-colors">Blog</a>
+      <a href="/contacto" class="hover:text-primary transition-colors">Contacto</a>
     </nav>
     <p class="text-on-surface-variant text-[9px] font-headline uppercase tracking-[0.3em]">© 2026 D4Lab</p>
   </div>

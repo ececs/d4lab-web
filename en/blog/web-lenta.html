@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Why is your website slow and how to fix it? | D4Lab</title>
+<meta name="description" content="Discover why your website is slow: uncompressed images, excessive plugins, cheap hosting. Practical guide with Google PageSpeed Insights to fix it."/>
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<link rel="canonical" href="https://www.d4lab.es/en/blog/web-lenta"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="D4Lab"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://www.d4lab.es/en/blog/web-lenta"/>
+<meta property="og:title" content="Why is your website slow and how to fix it?"/>
+<meta property="og:description" content="Discover why your website is slow: uncompressed images, excessive plugins, cheap hosting. Practical guide with Google PageSpeed Insights to fix it."/>
+<meta property="og:image" content="https://www.d4lab.es/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Why is your website slow and how to fix it?"/>
+<meta name="twitter:description" content="Discover why your website is slow: uncompressed images, excessive plugins, cheap hosting. Practical guide with Google PageSpeed Insights to fix it."/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Why is your website slow and how to fix it?",
+  "description": "Discover why your website is slow: uncompressed images, excessive plugins, cheap hosting. Practical guide with Google PageSpeed Insights to fix it.",
+  "url": "https://www.d4lab.es/en/blog/web-lenta",
+  "datePublished": "2026-03-23",
+  "author": {"@type": "Person", "name": "Eudaldo Cal Saul", "url": "https://www.d4lab.es/sobre-mi"},
+  "publisher": {"@type": "Organization", "name": "D4Lab", "url": "https://www.d4lab.es"}
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="../../blog/web-lenta.tailwind.css" rel="stylesheet"/>
+<style>
+  .glass { background:rgba(17,34,64,0.7); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(100,255,218,0.1); }
+  .nav-item::after { content:''; display:block; width:0; height:2px; background:#64FFDA; transition:width .3s; }
+  .nav-item:hover::after { width:100%; }
+  #nav-header.scrolled { background:rgba(10,25,47,0.97); box-shadow:0 1px 0 rgba(100,255,218,0.1); }
+  #mobile-menu { display:none; }
+  #mobile-menu.open { display:flex; }
+  .tag { display:inline-flex; align-items:center; padding:2px 8px; background:rgba(100,255,218,0.08); border:1px solid rgba(100,255,218,0.2); border-radius:2px; font-size:9px; font-family:'Space Grotesk',sans-serif; font-weight:700; color:#64FFDA; letter-spacing:0.15em; text-transform:uppercase; }
+  .prose-article h2 { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.4rem; color:#ccd6f6; margin-top:2.5rem; margin-bottom:1rem; }
+  .prose-article h3 { font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:1.1rem; color:#64FFDA; margin-top:1.8rem; margin-bottom:0.6rem; }
+  .prose-article p { color:#8892b0; line-height:1.85; margin-bottom:1.2rem; font-size:0.97rem; }
+  .prose-article ul { list-style:none; padding:0; margin-bottom:1.4rem; }
+  .prose-article ul li { color:#8892b0; padding-left:1.4rem; position:relative; margin-bottom:0.5rem; font-size:0.97rem; line-height:1.7; }
+  .prose-article ul li::before { content:'▹'; color:#64FFDA; position:absolute; left:0; }
+  .prose-article strong { color:#ccd6f6; font-weight:600; }
+  .prose-article .callout { background:rgba(100,255,218,0.05); border-left:3px solid #64FFDA; padding:1rem 1.2rem; border-radius:0 4px 4px 0; margin:1.5rem 0; }
+  .prose-article .callout p { margin:0; }
+  body { background-color: #0a192f; }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body">
+
+<!-- NAV -->
+<header id="nav-header" class="fixed top-0 left-0 right-0 z-50 glass border-b border-outline/30 transition-all">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex h-20 items-center justify-between">
+    <a href="/en/" class="flex items-center gap-3 group">
+      <div class="relative size-10 flex items-center justify-center">
+        <div class="absolute inset-0 border border-primary/40 rounded-sm rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+        <span class="material-symbols-outlined text-primary text-lg">terminal</span>
+      </div>
+      <span class="text-white text-xl font-headline font-bold tracking-tight"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-10">
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/servicios">Services</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/maquetas">Mockups</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/guia">Guide</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/sobre-mi">About me</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/precios">FAQ</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/blog">Blog</a>
+      <a class="nav-item text-primary text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/blog/web-lenta">ES</a>
+    </nav>
+    <a href="/en/contacto" class="hidden lg:inline-flex bg-primary px-6 py-2 rounded-sm text-on-primary font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all items-center gap-2">Contact</a>
+    <button id="menu-btn" class="lg:hidden text-primary" aria-label="Menu"><span class="material-symbols-outlined text-3xl">menu</span></button>
+  </div>
+  <div id="mobile-menu" class="flex-col px-6 pb-6 gap-4 lg:hidden">
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/servicios">Services</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/maquetas">Mockups</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/guia">Guide</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/sobre-mi">About me</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/precios">FAQ</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/blog">Blog</a>
+    <a class="text-primary text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/blog/web-lenta">ES</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/contacto">Contact</a>
+  </div>
+</header>
+
+<!-- Article Header -->
+<section class="pt-32 pb-12 px-6 border-b border-primary/10">
+  <div class="max-w-3xl mx-auto">
+    <div class="flex items-center gap-2 text-on-surface-variant/60 text-xs font-label uppercase tracking-wider mb-6">
+      <a href="/en/blog" class="hover:text-primary transition-colors">Blog</a>
+      <span class="material-symbols-outlined text-xs">chevron_right</span>
+      <span class="text-on-surface-variant">Web</span>
+    </div>
+    <div class="flex gap-2 flex-wrap mb-4">
+      <span class="tag">Web</span>
+      <span class="tag">Performance</span>
+    </div>
+    <h1 class="text-3xl md:text-5xl font-headline font-bold text-white tracking-tight leading-tight mb-6">Why is your website slow and how to fix it?</h1>
+    <p class="text-on-surface-variant text-lg font-light leading-relaxed mb-8">A slow web is not just a technical problem: it's lost money. Every extra second of load time pushes potential customers away. Here are the most common causes and how to address them without needing to be a developer.</p>
+    <div class="flex items-center gap-4 text-on-surface-variant/60 text-xs font-label uppercase tracking-wider">
+      <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">person</span> Eudaldo Cal Saul</span>
+      <span>·</span>
+      <span>March 2026</span>
+      <span>·</span>
+      <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 5 min read</span>
+    </div>
+  </div>
+</section>
+
+<!-- Article Body -->
+<article class="max-w-3xl mx-auto px-6 py-12 prose-article">
+
+  <p>Google has been clear about it for years: <strong>load speed is a ranking factor</strong>. But beyond SEO, user behavior data is devastating. If your site takes more than 3 seconds to load, you lose approximately 53% of mobile visitors before they see a single line of your content. That's not an estimate: it's the result of Google's studies on millions of pages.</p>
+
+  <p>The good news is that the most common culprits for a slow web are always the same. And most can be corrected without touching a single line of code.</p>
+
+  <h2>The most frequent culprit: images</h2>
+
+  <p>Images represent, on average, more than 60% of a web page's total weight. The typical problem is that they are uploaded directly from a mobile or camera — 4, 6, or 8 MB files — without any prior processing. The visitor's browser has to download those whole megabytes before showing the page.</p>
+
+  <h3>WebP: the format you should always use</h3>
+
+  <p>The WebP format produces images visually identical to JPEG or PNG but with a size between 25% and 35% smaller. It has been compatible with all modern browsers for years. If your site still serves JPEG or PNG images, you are sending more data than necessary on each visit.</p>
+
+  <p>To convert images, you can use free online tools like Squoosh (squoosh.app) or simply install a plugin if you use WordPress, such as ShortPixel or Imagify, which automatically convert and compress on upload.</p>
+
+  <h3>Lazy loading: don't load what isn't seen</h3>
+
+  <p>By default, a browser tries to load all the site's images before showing it. <strong>Lazy loading</strong> tells the browser to only load images that are within the visible area of the screen, and to load the rest as the user scrolls. The result is that the page seems to load almost instantly.</p>
+
+  <p>In modern HTML, it's enough to add the <code>loading="lazy"</code> attribute to the image tag. In WordPress, there are plugins that do it globally without touching anything.</p>
+
+  <div class="callout"><p>Pro rule: no image on your web should weigh more than 200 KB. Hero or cover images, 400 KB max. If you have images over 1 MB, that's a large part of the problem.</p></div>
+
+  <h2>Excessive plugins and third-party scripts</h2>
+
+  <p>Every plugin installed on WordPress, Prestashop, or other CMS adds code that the browser must download and execute. Many plugins also load third-party scripts: external fonts, analytics trackers, chat widgets, advertising pixels, social media scripts. Each of those scripts is an additional request to an external server that can take tens or hundreds of milliseconds.</p>
+
+  <p>How many plugins are too many? There's no magic number, but <strong>more than 20-25 active plugins on WordPress is an alert sign</strong>. The problem isn't so much the number as the code quality of each. One poorly programmed plugin can slow down more than ten well-written ones.</p>
+
+  <h3>How to detect which script is slowing down your web</h3>
+
+  <p>Open Chrome, go to your site, press F12 to open developer tools, and go to the "Network" tab. Reload the page. You'll see moving bars for each resource loaded, ordered by time. Those that appear in red or take more than 500ms are the usual suspects.</p>
+
+  <ul>
+    <li>Review which WordPress plugins haven't been updated for more than two years: they are usually the slowest.</li>
+    <li>Social media scripts (share buttons, embedded Instagram feeds) are especially costly. Assess if they contribute enough to justify the speed cost.</li>
+    <li>If you have several cache plugins active at once, they might be clashing. You only need one.</li>
+  </ul>
+
+  <h2>Hosting: the foundation that holds it all</h2>
+
+  <p>You can optimize every image and remove all unnecessary plugins, but if your hosting is low quality, the performance ceiling you can reach is very low. The server is where your web lives, and its response speed is the first link in the chain.</p>
+
+  <p>Low-end shared hostings — those costing €2-3 a month — literally host thousands of webs on the same physical server. When another customer has a traffic peak, your site suffers. Also, they usually have servers far from the final user, adding latency.</p>
+
+  <p>The real difference between a €2/month hosting and a €10-15/month one is not the price: it's that the second usually includes <strong>NVMe SSD instead of hard drives</strong>, modern PHP versions, server-level caching, and servers in Europe with much lower response times. For most SME webs, hosting like SiteGround, Webempresa, or Raiola Networks offers a notable performance jump without being an exorbitant expense.</p>
+
+  <div class="callout"><p>The server response time (TTFB, Time To First Byte) should be below 200ms. If it's above 500ms, the problem is the hosting, not the code.</p></div>
+
+  <h2>How to use Google PageSpeed Insights</h2>
+
+  <p>Go to <strong>pagespeed.web.dev</strong>, enter your web's URL, and hit analyze. In less than a minute, you have a complete report divided into mobile and desktop. The score goes from 0 to 100. Below 50 is urgent; between 50 and 89 there's room for improvement; above 90 you're good.</p>
+
+  <p>The most valuable part of the report is not the score, but the "Opportunities" section, where PageSpeed tells you exactly what is dragging the speed down and how much time correcting it would save you. It shows things like "Eliminate render-blocking resources", "Properly size images", or "Reduce unused JavaScript".</p>
+
+  <h3>What to prioritize first</h3>
+
+  <p>Don't try to fix everything at once. The logical order to get the most impact with the least effort is:</p>
+
+  <ul>
+    <li><strong>First:</strong> Compress and convert all images to WebP. It's the highest impact and easiest change.</li>
+    <li><strong>Second:</strong> Activate a cache plugin if you use WordPress (WP Rocket, W3 Total Cache, or LiteSpeed Cache depending on your hosting).</li>
+    <li><strong>Third:</strong> Review and deactivate plugins you don't actively use.</li>
+    <li><strong>Fourth:</strong> If the TTFB is high, consider a hosting change.</li>
+    <li><strong>Fifth:</strong> More advanced code optimizations (CSS/JS minification, deferring non-critical scripts).</li>
+  </ul>
+
+  <h2>When it makes sense to hire help</h2>
+
+  <p>The first four points can be done by anyone with a little patience and the right tools. The fifth already requires technical knowledge. If after compressing images, installing cache, and reviewing plugins your score is still below 60, or if the problem is in the template code your site uses, it's time to ask for help from someone who knows what they're looking at.</p>
+
+  <p>A professional performance audit detects specific bottlenecks in a few hours and prioritizes actions with the highest return. In many cases, a 3-4 hour intervention can double the PageSpeed score and cut load time in half.</p>
+
+</article>
+
+<!-- CTA -->
+<section class="py-16 px-6 bg-surface-container-low border-t border-primary/10">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-2xl md:text-3xl font-headline font-bold text-white tracking-tight mb-4">Is your web still loading slow after reading this?</h2>
+    <p class="text-on-surface-variant font-light mb-8">I do performance audits and web optimization. I tell you exactly what's failing and we fix it together.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <button data-d4-open class="bg-primary text-on-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs shadow-xl shadow-primary/20 hover:brightness-110 transition-all inline-flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">calculate</span>
+        Request a quote
+      </button>
+      <a href="/en/servicios" class="border border-primary/30 text-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs hover:bg-primary/5 transition-all inline-flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">build</span>
+        See services
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-surface-container-low py-12 px-6 border-t border-primary/10">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <a href="/en/" class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary">terminal</span>
+      <span class="text-white font-headline font-bold"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="flex flex-wrap gap-6 text-on-surface-variant text-xs font-label font-bold uppercase tracking-[0.2em]">
+      <a href="/en/" class="hover:text-primary transition-colors">Home</a>
+      <a href="/en/servicios" class="hover:text-primary transition-colors">Services</a>
+      <a href="/en/sobre-mi" class="hover:text-primary transition-colors">About me</a>
+      <a href="/en/precios" class="hover:text-primary transition-colors">FAQ</a>
+      <a href="/en/blog" class="hover:text-primary transition-colors">Blog</a>
+      <a href="/en/contacto" class="hover:text-primary transition-colors">Contact</a>
+    </nav>
+    <p class="text-on-surface-variant text-[9px] font-headline uppercase tracking-[0.3em]">© 2026 D4Lab</p>
+  </div>
+</footer>
+<script>
+  const nav = document.getElementById('nav-header');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+  document.getElementById('menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('open'));
+</script>
+<script src="/chat-widget.js"></script>
+</body>
+</html>

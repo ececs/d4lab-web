@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Real-time data panel for your business without a technical team | D4Lab</title>
+<meta name="description" content="Consolidate sales, bookings, web traffic, and campaigns in an automatically updated dashboard. Make decisions with real data, not intuition. No data team needed."/>
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<link rel="canonical" href="https://www.d4lab.es/en/blog/dashboard-datos"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="D4Lab"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://www.d4lab.es/en/blog/dashboard-datos"/>
+<meta property="og:title" content="Real-time data panel for your business without a technical team | D4Lab"/>
+<meta property="og:description" content="Consolidate sales, bookings, web traffic, and campaigns in an automatically updated dashboard. Make decisions with real data, not intuition."/>
+<meta property="og:image" content="https://www.d4lab.es/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Real-time data panel for your business without a technical team | D4Lab"/>
+<meta name="twitter:description" content="Consolidate sales, bookings, web traffic, and campaigns in an automatic panel. Decisions with real data, not intuition."/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Real-time data panel for your business without a technical team",
+  "description": "Consolidate sales, bookings, web traffic, and campaigns in an automatically updated dashboard.",
+  "url": "https://www.d4lab.es/en/blog/dashboard-datos",
+  "datePublished": "2026-03-23",
+  "author": {"@type": "Person", "name": "Eudaldo Cal Saul", "url": "https://www.d4lab.es/en/sobre-mi"},
+  "publisher": {"@type": "Organization", "name": "D4Lab", "url": "https://www.d4lab.es/en"}
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="/blog/dashboard-datos.tailwind.css" rel="stylesheet"/>
+<style>
+  .glass { background:rgba(17,34,64,0.7); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(100,255,218,0.1); }
+  .nav-item::after { content:''; display:block; width:0; height:2px; background:#64FFDA; transition:width .3s; }
+  .nav-item:hover::after { width:100%; }
+  #nav-header.scrolled { background:rgba(10,25,47,0.97); box-shadow:0 1px 0 rgba(100,255,218,0.1); }
+  #mobile-menu { display:none; }
+  #mobile-menu.open { display:flex; }
+  .tag { display:inline-flex; align-items:center; padding:2px 8px; background:rgba(100,255,218,0.08); border:1px solid rgba(100,255,218,0.2); border-radius:2px; font-size:9px; font-family:'Space Grotesk',sans-serif; font-weight:700; color:#64FFDA; letter-spacing:0.15em; text-transform:uppercase; }
+  .prose-article h2 { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.4rem; color:#ccd6f6; margin-top:2.5rem; margin-bottom:1rem; }
+  .prose-article h3 { font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:1.1rem; color:#64FFDA; margin-top:1.8rem; margin-bottom:0.6rem; }
+  .prose-article p { color:#8892b0; line-height:1.85; margin-bottom:1.2rem; font-size:0.97rem; }
+  .prose-article ul { list-style:none; padding:0; margin-bottom:1.4rem; }
+  .prose-article ul li { color:#8892b0; padding-left:1.4rem; position:relative; margin-bottom:0.5rem; font-size:0.97rem; line-height:1.7; }
+  .prose-article ul li::before { content:'▹'; color:#64FFDA; position:absolute; left:0; }
+  .prose-article strong { color:#ccd6f6; font-weight:600; }
+  .prose-article .callout { background:rgba(100,255,218,0.05); border-left:3px solid #64FFDA; padding:1rem 1.2rem; border-radius:0 4px 4px 0; margin:1.5rem 0; }
+  .prose-article .callout p { margin:0; }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen">
+
+<header id="nav-header" class="fixed top-0 left-0 right-0 z-50 glass border-b border-outline/30 transition-all">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex h-20 items-center justify-between">
+    <a href="/en" class="flex items-center gap-3 group">
+      <div class="relative size-10 flex items-center justify-center">
+        <div class="absolute inset-0 border border-primary/40 rounded-sm rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+        <span class="material-symbols-outlined text-primary text-lg">terminal</span>
+      </div>
+      <span class="text-white text-xl font-headline font-bold tracking-tight"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-10">
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/servicios">Services</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/maquetas">Mockups</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/guia">Guide</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/sobre-mi">About me</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/precios">FAQ</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/blog">Blog</a>
+      <a href="/blog/dashboard-datos" class="nav-item text-primary text-xs font-label font-bold uppercase tracking-[0.2em]" title="Versión en Español">ES</a>
+    </nav>
+    <a href="/en/contacto" class="hidden lg:inline-flex bg-primary px-6 py-2 rounded-sm text-on-primary font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all items-center gap-2">Contact</a>
+    <button id="menu-btn" class="lg:hidden text-primary" aria-label="Menu"><span class="material-symbols-outlined text-3xl">menu</span></button>
+  </div>
+  <div id="mobile-menu" class="flex-col px-6 pb-6 gap-4 lg:hidden">
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/servicios">Services</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/maquetas">Mockups</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/guia">Guide</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/sobre-mi">About me</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/precios">FAQ</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/blog">Blog</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/contacto">Contact</a>
+    <a class="text-primary text-sm font-label font-bold uppercase tracking-[0.2em]" href="/blog/dashboard-datos">Versión en Español</a>
+  </div>
+</header>
+
+<section class="pt-32 pb-12 px-6 border-b border-primary/10">
+  <div class="max-w-3xl mx-auto">
+    <div class="flex items-center gap-2 text-on-surface-variant/60 text-xs font-label uppercase tracking-wider mb-6">
+      <a href="/en/blog" class="hover:text-primary transition-colors">Blog</a>
+      <span class="material-symbols-outlined text-xs">chevron_right</span>
+      <span class="text-on-surface-variant">AI · Web</span>
+    </div>
+    <div class="flex gap-2 flex-wrap mb-4">
+      <span class="tag">AI</span>
+      <span class="tag">Web</span>
+      <span class="tag">Business</span>
+    </div>
+    <h1 class="text-3xl md:text-5xl font-headline font-bold text-white tracking-tight leading-tight mb-6">Stop running your business blindly: real-time data panel without a technical team</h1>
+    <p class="text-on-surface-variant text-lg font-light leading-relaxed mb-8">The POS system says one thing, the booking website says another, Meta campaigns show their own numbers, and accounting lives in an Excel sheet. When you need to know how the business is doing, it takes an hour to gather the data. A well-made dashboard gives you that answer in seconds, always updated.</p>
+    <div class="flex items-center gap-4 text-on-surface-variant/60 text-xs font-label uppercase tracking-wider">
+      <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">person</span> Eudaldo Cal Saul</span>
+      <span>·</span>
+      <span>March 2026</span>
+      <span>·</span>
+      <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 7 min read</span>
+    </div>
+  </div>
+</section>
+
+<article class="max-w-3xl mx-auto px-6 py-12 prose-article">
+
+  <h2>The problem: data scattered across five different tools</h2>
+  <p>Most businesses accumulate useful data in completely separate places: sales in the POS, bookings in an agenda app, web traffic in Google Analytics, advertising in Meta Ads Manager, and billing in a spreadsheet. None of these tools talk to each other.</p>
+  <p>If you want to know if an advertising campaign generated more sales, you have to manually cross-reference Meta data with POS data. If you want to know which product is more profitable, you have to export data from several sites and build the table yourself. No one does it because it takes too much time, and in the end, decisions are made by intuition.</p>
+
+  <div class="callout"><p><strong>Real fact:</strong> 70% of SMEs make pricing, stock, and marketing decisions based on the owner's experience, not data. Not because they don't have it — they do — but because it's fragmented and difficult to consult in real time.</p></div>
+
+  <h2>What a dashboard is (and what it isn't)</h2>
+  <p>A dashboard is not an end-of-month report that someone prepares in Excel. It's a screen — visible on a computer, tablet, or a screen in the office — that shows your business's key metrics <strong>automatically updated</strong>. You open it and see the current status. No preparation needed.</p>
+  <p>It's also not the dashboard of a multinational with 200 indicators. A good dashboard for an SME has between 6 and 15 metrics, all with clear meaning, answering a simple question: <strong>how is the business doing today?</strong></p>
+
+  <h2>What metrics to include according to your business</h2>
+
+  <h3>Shop or retail</h3>
+  <ul>
+    <li>Daily / weekly / monthly sales vs target and vs same period last year</li>
+    <li>Average ticket per transaction</li>
+    <li>Best-selling products and products with low stock</li>
+    <li>Comparison of channels (physical store vs online)</li>
+    <li>Conversion rate from visits to purchases</li>
+  </ul>
+
+  <h3>Clinic, spa, or appointment service</h3>
+  <ul>
+    <li>Confirmed, canceled, and pending appointments for today and this week</li>
+    <li>Agenda occupancy rate (% of slots filled)</li>
+    <li>Revenue generated vs projected</li>
+    <li>New vs returning customers</li>
+    <li>Average time between first visit and next (to detect churn)</li>
+  </ul>
+
+  <h3>Service company or agency</h3>
+  <ul>
+    <li>Leads received this week and their origin (web, social media, referrals)</li>
+    <li>Quotes sent vs accepted (conversion rate)</li>
+    <li>Active projects and their status</li>
+    <li>Monthly billing vs target</li>
+    <li>Average closing time from inquiry to signing</li>
+  </ul>
+
+  <h2>What technology to use and when</h2>
+
+  <h3>Looker Studio — free, ideal for the Google ecosystem</h3>
+  <p>If your data is in Google Analytics, Google Ads, Google Sheets, or YouTube, Looker Studio is the fastest and most economical option. Completely free, with native connectors for all Google tools. For external data (Meta Ads, Shopify, custom POS) you need third-party connectors, some paid (€10-30/month).</p>
+
+  <h3>Power BI — for Microsoft environments</h3>
+  <p>If you use Office 365, Excel, Dynamics, or Azure, Power BI is the most integrated option. Included in many Microsoft 365 licenses. More powerful for complex data and large volumes, but with a steeper learning curve.</p>
+
+  <h3>Grafana — for technical data and infrastructure</h3>
+  <p>Standard for monitoring servers, applications, and databases. If you manage IT infrastructure, online stores with their own database, or custom applications, Grafana allows real-time dashboards with updates in seconds. Open-source and free to self-host.</p>
+
+  <h3>Custom dashboard with Next.js or React — total control</h3>
+  <p>When you need to integrate your own data sources, or when the dashboard must be part of your web or internal app, a custom solution is the most flexible. Higher initial investment, but maximum adaptation to exactly what your business needs.</p>
+
+  <h2>How it connects to your data sources</h2>
+  <p>A dashboard doesn't have its own data — it reads from the tools you already use. There are three ways to connect it:</p>
+  <ul>
+    <li><strong>Native APIs:</strong> Shopify, Meta Ads, Google Analytics, Holded, Stripe, and most modern tools have APIs to read data in real time.</li>
+    <li><strong>Webhooks:</strong> when an event occurs (a sale, an appointment, a new lead), the tool sends the data automatically. No delays.</li>
+    <li><strong>Centralized database:</strong> data from several sources is consolidated in PostgreSQL, BigQuery, or Supabase. More complex, but faster and with unlimited history.</li>
+  </ul>
+
+  <h2>Real cost of implementation</h2>
+  <ul>
+    <li><strong>Basic dashboard in Looker Studio</strong> (Google data + 1-2 external sources): 4-8 hours of configuration, monthly cost €0-30.</li>
+    <li><strong>Intermediate dashboard</strong> with 4-6 data sources (Meta, Shopify, CRM, Analytics): 10-20 hours, monthly cost €20-80.</li>
+    <li><strong>Custom tailored dashboard</strong> with own data and specific logic: 30-80 hours of development, monthly cost for hosting and maintenance.</li>
+  </ul>
+  <p>Once built, the dashboard requires almost no maintenance. It only updates when you change tools or add new metrics. The initial investment pays for itself quickly when the owner stops losing 2-3 hours per week looking for data.</p>
+
+  <div class="callout"><p>The business that makes decisions with fresh data has an advantage over the one that makes decisions with month-old data. And that advantage accrues over time. It's not big company technology — any SME can have it running in days.</p></div>
+
+</article>
+
+<section class="py-16 px-6 bg-surface-container-low border-t border-primary/10">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-2xl md:text-3xl font-headline font-bold text-white tracking-tight mb-4">How much time do you lose looking for data each week?</h2>
+    <p class="text-on-surface-variant font-light mb-8">We design the data panel your business needs: connected to your current tools, updated in real-time, and without technical complications for you.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <button data-d4-open class="bg-primary text-on-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs shadow-xl shadow-primary/20 hover:brightness-110 transition-all inline-flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">calculate</span>
+        Get a quote
+      </button>
+      <a href="/en/servicios" class="border border-primary/30 text-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs hover:bg-primary/5 transition-all inline-flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">build</span>
+        View services
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-surface-container-low py-12 px-6 border-t border-primary/10">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <a href="/en" class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary">terminal</span>
+      <span class="text-white font-headline font-bold"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="flex flex-wrap gap-6 text-on-surface-variant text-xs font-label font-bold uppercase tracking-[0.2em]">
+      <a href="/en" class="hover:text-primary transition-colors">Home</a>
+      <a href="/en/servicios" class="hover:text-primary transition-colors">Services</a>
+      <a href="/en/sobre-mi" class="hover:text-primary transition-colors">About me</a>
+      <a href="/en/precios" class="hover:text-primary transition-colors">FAQ</a>
+      <a href="/en/blog" class="hover:text-primary transition-colors">Blog</a>
+      <a href="/en/contacto" class="hover:text-primary transition-colors">Contact</a>
+    </nav>
+    <p class="text-on-surface-variant text-[9px] font-headline uppercase tracking-[0.3em]">© 2026 D4Lab</p>
+  </div>
+</footer>
+<script>
+  const nav = document.getElementById('nav-header');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+  document.getElementById('menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('open'));
+</script>
+<script src="/chat-widget.js"></script>
+</body>
+</html>
