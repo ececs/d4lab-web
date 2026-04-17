@@ -67,10 +67,14 @@ Para integraciones especiales o más de 5 redes: presupuesto personalizado.
 - Infraestructura IT y redes: presupuesto según proyecto
 - Domótica e instalaciones: presupuesto según proyecto (siempre presencial)
 
-## INICIO DE CONVERSACIÓN — SIEMPRE
-Antes de entrar en detalle sobre el servicio, pide al cliente sus datos de contacto en el primer o segundo mensaje:
-"Para poder enviarte el presupuesto y contactarte si tenemos alguna duda, ¿nos puedes dejar tu email o número de móvil?"
-Este dato es importante: inclúyelo en el campo "cliente_contacto" del BUDGET_SUMMARY.
+## CONTACTO DEL CLIENTE — MUY IMPORTANTE
+- Antes de presentar cualquier presupuesto, intenta pedir de forma amistosa un dato de contacto.
+- Frase recomendada: "Si quieres, antes de prepararte el presupuesto me puedes dejar tu email o tu teléfono. Así te lo enviamos y podemos contactarte si surge alguna duda."
+- Deja claro que es opcional. Si el cliente prefiere no darlo, continúa igualmente con normalidad.
+- Si el cliente facilita un email, dile de forma natural que le enviarás automáticamente una copia del presupuesto cuando se lo presentes.
+- Si el cliente facilita teléfono pero no email, guarda el teléfono como contacto y continúa.
+- Si ya has pedido el contacto y el usuario no lo ha dado todavía, vuelve a pedirlo una vez más justo antes de entregar el presupuesto, de forma breve y amable.
+- Incluye siempre el dato recibido en el campo "cliente_contacto" del BUDGET_SUMMARY. Si no ha dado ninguno, usa "EMAIL_O_MOVIL_O_DESCONOCIDO".
 
 ## FLUJO DE CONVERSACIÓN
 
@@ -101,6 +105,8 @@ Este dato es importante: inclúyelo en el campo "cliente_contacto" del BUDGET_SU
 - Tono: profesional, directo y amigable
 - No inventes precios fuera de los indicados en esta ficha
 - Si tienes dudas sobre el alcance técnico, indícalo y ofrece que Eudaldo lo confirmará personalmente
+- No entregues un presupuesto de forma seca o repentina: antes intenta pedir email o teléfono para poder enviarlo y mantener el contacto, dejando claro que es opcional.
+- Si el usuario ya ha dado su email, menciona brevemente que le llegará una copia del presupuesto por email.
 - SIEMPRE que presentes un presupuesto, incluye el aviso: "Este presupuesto es orientativo y puede variar tras el diagnóstico completo o la revisión in situ. Nos comprometemos a intentar ajustarnos al importe indicado."
 - Al finalizar un presupuesto, ofrece continuar la conversación por WhatsApp: +34 666 750 753 para cerrar los detalles
 
@@ -113,17 +119,24 @@ Cuando presentes cualquier presupuesto (aunque sea estimado), incluye AL FINAL d
 
 RECUERDA: Este bloque es OBLIGATORIO cada vez que des un presupuesto. Debe estar al final de tu respuesta, en una línea nueva, con el JSON en una sola línea entre las etiquetas.`;
 
-// Construye el HTML del email con la conversación y el resumen del presupuesto
-function buildEmailHtml(messages, summary, fecha) {
+function escapeHtml(value) {
+  return String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function isValidEmail(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || '').trim());
+}
+
+// Construye el HTML del email interno con la conversación y el resumen del presupuesto
+function buildInternalEmailHtml(messages, summary, fecha) {
   const conversacionHtml = messages
     .filter(m => m.role === 'user' || m.role === 'assistant')
     .map(msg => {
       const isUser = msg.role === 'user';
-      const contenido = (msg.content || '')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/\n/g, '<br>');
+      const contenido = escapeHtml(msg.content || '').replace(/\n/g, '<br>');
       return `
       <div style="margin:8px 0;padding:12px 16px;border-radius:6px;background:${isUser ? '#1d2d50' : '#0d1b2e'};border-left:3px solid ${isUser ? '#64FFDA' : '#8892b0'}">
         <div style="color:${isUser ? '#64FFDA' : '#8892b0'};font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:6px">
@@ -202,7 +215,7 @@ function buildEmailHtml(messages, summary, fecha) {
     <!-- Descripción y presupuesto -->
     <div style="background:#112240;border:1px solid rgba(100,255,218,0.15);border-radius:8px;padding:20px;margin-bottom:16px">
       <h2 style="margin:0 0 10px;color:#64FFDA;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em">Trabajo solicitado</h2>
-      <p style="margin:0 0 18px;color:#ccd6f6;font-size:14px;line-height:1.6">${(summary.descripcion || '—').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
+      <p style="margin:0 0 18px;color:#ccd6f6;font-size:14px;line-height:1.6">${escapeHtml(summary.descripcion || '—')}</p>
 
       <h2 style="margin:0 0 10px;color:#64FFDA;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em">Desglose del presupuesto</h2>
       <table style="width:100%;border-collapse:collapse">
@@ -217,7 +230,7 @@ function buildEmailHtml(messages, summary, fecha) {
         </tr>
       </table>
 
-      ${summary.notas ? `<div style="margin-top:12px;padding:10px 14px;background:rgba(100,255,218,0.05);border-radius:4px;border-left:2px solid rgba(100,255,218,0.3)"><p style="margin:0;color:#8892b0;font-size:12px"><strong style="color:#64FFDA">Notas:</strong> ${(summary.notas || '').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p></div>` : ''}
+      ${summary.notas ? `<div style="margin-top:12px;padding:10px 14px;background:rgba(100,255,218,0.05);border-radius:4px;border-left:2px solid rgba(100,255,218,0.3)"><p style="margin:0;color:#8892b0;font-size:12px"><strong style="color:#64FFDA">Notas:</strong> ${escapeHtml(summary.notas || '')}</p></div>` : ''}
 
       <p style="margin:12px 0 0;color:#8892b0;font-size:11px;font-style:italic">⚠️ Presupuesto orientativo. Puede variar tras diagnóstico completo o revisión in situ.</p>
     </div>
@@ -238,8 +251,117 @@ function buildEmailHtml(messages, summary, fecha) {
 </html>`;
 }
 
-// Envía el email de notificación vía Resend API
-async function sendBudgetEmail(messages, summary) {
+function buildCustomerEmailHtml(summary, fecha, locale) {
+  const isEnglish = String(locale || '').toLowerCase().startsWith('en');
+  const contactLabel = isEnglish ? 'Contact' : 'Contacto';
+  const companyLabel = isEnglish ? 'Company' : 'Empresa';
+  const clientTypeLabel = isEnglish ? 'Client type' : 'Tipo de cliente';
+  const modeLabel = isEnglish ? 'Mode' : 'Modalidad';
+  const workLabel = isEnglish ? 'Requested work' : 'Trabajo solicitado';
+  const breakdownLabel = isEnglish ? 'Estimate breakdown' : 'Desglose del presupuesto';
+  const totalLabel = isEnglish ? 'ESTIMATED TOTAL' : 'TOTAL ESTIMADO';
+  const notesLabel = isEnglish ? 'Notes' : 'Notas';
+  const disclaimer = isEnglish
+    ? 'This estimate is indicative and may change after a full review or diagnosis.'
+    : 'Este presupuesto es orientativo y puede variar tras una revisión o diagnóstico más completos.';
+  const intro = isEnglish
+    ? 'Here is a copy of your estimated budget requested through the D4Lab chatbot.'
+    : 'Te enviamos una copia del presupuesto estimado solicitado a través del chatbot de D4Lab.';
+  const closing = isEnglish
+    ? 'If you need help, want more detail, or would like to clarify any point, just reply to this email and we will be happy to help.'
+    : 'Si necesitas ayuda, quieres más detalle o deseas aclarar cualquier punto, solo tienes que responder a este email y estaremos encantados de ayudarte.';
+  const subjectTitle = isEnglish ? 'Your D4Lab estimate' : 'Tu presupuesto de D4Lab';
+  const horasRow = summary.horas_estimadas > 0
+    ? `<tr><td style="color:#8892b0;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(100,255,218,0.1)">${isEnglish ? 'Work' : 'Trabajo'} (${summary.horas_estimadas}h × ${summary.tarifa_hora} €/h)</td><td style="color:#ccd6f6;font-size:13px;text-align:right;padding:6px 0;border-bottom:1px solid rgba(100,255,218,0.1)">${(summary.horas_estimadas * summary.tarifa_hora).toFixed(0)} €</td></tr>`
+    : '';
+  const desplazamientoRow = summary.km_desplazamiento > 0
+    ? `<tr><td style="color:#8892b0;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(100,255,218,0.1)">${isEnglish ? 'Travel' : 'Desplazamiento'} (${summary.km_desplazamiento} km ida/vuelta)</td><td style="color:#ccd6f6;font-size:13px;text-align:right;padding:6px 0;border-bottom:1px solid rgba(100,255,218,0.1)">${summary.coste_desplazamiento} €</td></tr>`
+    : '';
+
+  return {
+    subject: `${subjectTitle} — ${summary.total_estimado || '?'} €`,
+    html: `<!DOCTYPE html>
+<html lang="${isEnglish ? 'en' : 'es'}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>${subjectTitle}</title>
+</head>
+<body style="margin:0;padding:0;background:#020c1b;font-family:Inter,'Helvetica Neue',Arial,sans-serif">
+  <div style="max-width:620px;margin:0 auto;padding:24px 16px">
+    <div style="background:linear-gradient(135deg,#112240,#1d2d50);border:1px solid rgba(100,255,218,0.25);border-radius:8px;padding:24px;margin-bottom:16px">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+        <span style="font-family:monospace;font-size:20px;font-weight:700;color:#64FFDA">D4Lab</span>
+      </div>
+      <h1 style="margin:0 0 8px;color:#ffffff;font-size:22px;font-weight:700">${subjectTitle}</h1>
+      <p style="margin:0;color:#8892b0;font-size:12px">${fecha}</p>
+    </div>
+
+    <div style="background:#112240;border:1px solid rgba(100,255,218,0.15);border-radius:8px;padding:20px;margin-bottom:16px">
+      <p style="margin:0;color:#ccd6f6;font-size:14px;line-height:1.7">${intro}</p>
+    </div>
+
+    <div style="background:#112240;border:1px solid rgba(100,255,218,0.15);border-radius:8px;padding:20px;margin-bottom:16px">
+      <h2 style="margin:0 0 14px;color:#64FFDA;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em">${isEnglish ? 'Your details' : 'Tus datos'}</h2>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><td style="color:#8892b0;font-size:12px;padding:5px 0;width:130px;vertical-align:top">${contactLabel}</td><td style="color:#64FFDA;font-size:14px;font-weight:600;padding:5px 0">${escapeHtml(summary.cliente_contacto || '—')}</td></tr>
+        ${summary.cliente_empresa ? `<tr><td style="color:#8892b0;font-size:12px;padding:5px 0;vertical-align:top">${companyLabel}</td><td style="color:#ccd6f6;font-size:14px;padding:5px 0">${escapeHtml(summary.cliente_empresa)}</td></tr>` : ''}
+        <tr><td style="color:#8892b0;font-size:12px;padding:5px 0;vertical-align:top">${clientTypeLabel}</td><td style="color:#ccd6f6;font-size:14px;padding:5px 0;text-transform:capitalize">${escapeHtml(summary.tipo_cliente || '—')}</td></tr>
+        <tr><td style="color:#8892b0;font-size:12px;padding:5px 0;vertical-align:top">${modeLabel}</td><td style="color:#ccd6f6;font-size:14px;padding:5px 0;text-transform:capitalize">${escapeHtml(summary.modalidad || '—')}</td></tr>
+      </table>
+    </div>
+
+    <div style="background:#112240;border:1px solid rgba(100,255,218,0.15);border-radius:8px;padding:20px;margin-bottom:16px">
+      <h2 style="margin:0 0 10px;color:#64FFDA;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em">${workLabel}</h2>
+      <p style="margin:0 0 18px;color:#ccd6f6;font-size:14px;line-height:1.6">${escapeHtml(summary.descripcion || '—')}</p>
+
+      <h2 style="margin:0 0 10px;color:#64FFDA;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em">${breakdownLabel}</h2>
+      <table style="width:100%;border-collapse:collapse">
+        ${horasRow}
+        ${desplazamientoRow}
+        <tr>
+          <td style="color:#ffffff;font-size:15px;font-weight:700;padding:10px 0 4px">${totalLabel}</td>
+          <td style="text-align:right;padding:10px 0 4px">
+            <span style="color:#64FFDA;font-size:22px;font-weight:700">${summary.total_estimado} €</span>
+            <span style="color:#8892b0;font-size:11px;margin-left:4px">+ IVA</span>
+          </td>
+        </tr>
+      </table>
+      ${summary.notas ? `<div style="margin-top:12px;padding:10px 14px;background:rgba(100,255,218,0.05);border-radius:4px;border-left:2px solid rgba(100,255,218,0.3)"><p style="margin:0;color:#8892b0;font-size:12px"><strong style="color:#64FFDA">${notesLabel}:</strong> ${escapeHtml(summary.notas || '')}</p></div>` : ''}
+      <p style="margin:12px 0 0;color:#8892b0;font-size:11px;font-style:italic">${disclaimer}</p>
+    </div>
+
+    <div style="background:#112240;border:1px solid rgba(100,255,218,0.15);border-radius:8px;padding:20px;margin-bottom:16px">
+      <p style="margin:0;color:#ccd6f6;font-size:14px;line-height:1.7">${closing}</p>
+    </div>
+
+    <div style="text-align:center;padding:16px 0;margin-top:8px">
+      <p style="margin:0;color:#8892b0;font-size:11px">D4Lab · Eudaldo Cal Saul · San Isidro, S.C. de Tenerife · d4lab.es</p>
+    </div>
+  </div>
+</body>
+</html>`,
+  };
+}
+
+async function sendResendEmail({ to, subject, html }) {
+  return fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from: process.env.RESEND_FROM_EMAIL || 'D4Lab Bot <onboarding@resend.dev>',
+      to,
+      subject,
+      html,
+    }),
+  });
+}
+
+// Envía el email interno y, si aplica, una copia resumida al cliente
+async function sendBudgetEmail(messages, summary, locale) {
   if (!process.env.RESEND_API_KEY) {
     console.log('[D4Lab] RESEND_API_KEY no configurada, omitiendo envío de email');
     return;
@@ -251,31 +373,43 @@ async function sendBudgetEmail(messages, summary) {
     hour: '2-digit', minute: '2-digit',
   });
 
-  const html = buildEmailHtml(messages, summary, fecha);
+  const html = buildInternalEmailHtml(messages, summary, fecha);
   const nombre = summary.cliente_nombre && summary.cliente_nombre !== 'NOMBRE_O_DESCONOCIDO'
     ? summary.cliente_nombre
     : 'Cliente';
   const templateTag = summary.maqueta_nombre ? ` · ${summary.maqueta_nombre}` : '';
 
-  const response = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      from: process.env.RESEND_FROM_EMAIL || 'D4Lab Bot <onboarding@resend.dev>',
-      to: [process.env.NOTIFY_EMAIL || 'd4labes@gmail.com'],
-      subject: `🤖 Nuevo presupuesto D4Lab — ${nombre}${templateTag} — ${summary.total_estimado || '?'} € (est.)`,
-      html,
-    }),
+  const response = await sendResendEmail({
+    to: [process.env.NOTIFY_EMAIL || 'd4labes@gmail.com'],
+    subject: `🤖 Nuevo presupuesto D4Lab — ${nombre}${templateTag} — ${summary.total_estimado || '?'} € (est.)`,
+    html,
   });
 
   if (!response.ok) {
     const err = await response.text();
     console.error('[D4Lab] Error Resend:', response.status, err);
   } else {
-    console.log('[D4Lab] Email de presupuesto enviado correctamente');
+    console.log('[D4Lab] Email interno de presupuesto enviado correctamente');
+  }
+
+  const customerEmail = String(summary.cliente_contacto || '').trim();
+  if (!isValidEmail(customerEmail)) {
+    console.log('[D4Lab] Cliente sin email valido, omitiendo copia de presupuesto');
+    return;
+  }
+
+  const customerMessage = buildCustomerEmailHtml(summary, fecha, locale);
+  const customerResponse = await sendResendEmail({
+    to: [customerEmail],
+    subject: customerMessage.subject,
+    html: customerMessage.html,
+  });
+
+  if (!customerResponse.ok) {
+    const err = await customerResponse.text();
+    console.error('[D4Lab] Error enviando copia al cliente:', customerResponse.status, err);
+  } else {
+    console.log('[D4Lab] Copia del presupuesto enviada al cliente');
   }
 }
 
@@ -375,7 +509,7 @@ module.exports = async function handler(req, res) {
           maqueta_fuente: selectedTemplate?.source || '',
           maqueta_preview_url: selectedTemplate?.previewUrl || '',
         };
-        sendBudgetEmail(messages, enrichedSummary).catch(e =>
+        sendBudgetEmail(messages, enrichedSummary, locale).catch(e =>
           console.error('[D4Lab] Error enviando email:', e)
         );
       } catch (e) {
