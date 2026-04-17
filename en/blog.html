@@ -87,7 +87,7 @@
       <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/sobre-mi">About me</a>
       <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/precios">FAQ</a>
       <a class="nav-item text-primary text-xs font-label font-bold uppercase tracking-[0.2em]" href="/en/blog">Blog</a>
-      <a class="text-on-surface-variant text-[10px] font-label font-bold hover:text-primary px-2 py-1 border border-primary/20 rounded-sm" href="/blog">ES</a>
+      <a class="inline-flex h-7 min-w-[2.75rem] items-center justify-center rounded-sm border border-primary/30 px-2 text-[10px] font-label font-bold uppercase tracking-[0.2em] text-primary transition-colors hover:border-primary/60 hover:text-white" href="/blog">ES</a>
     </nav>
     <a href="/en/contacto" class="hidden lg:inline-flex bg-primary px-6 py-2 rounded-sm text-on-primary font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all items-center gap-2">Contact</a>
     <button id="menu-btn" class="lg:hidden text-primary" aria-label="Menu"><span class="material-symbols-outlined text-3xl">menu</span></button>
@@ -100,9 +100,7 @@
     <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/precios">FAQ</a>
     <a class="text-primary text-sm font-label font-bold uppercase tracking-[0.2em]" href="/en/blog">Blog</a>
     <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/contacto">Contact</a>
-    <div class="border-t border-primary/20 pt-4 mt-2">
-      <a class="text-primary text-sm font-label font-bold uppercase tracking-[0.2em]" href="/blog">Spanish Version</a>
-    </div>
+    <a class="inline-flex h-7 min-w-[2.75rem] items-center justify-center self-start rounded-sm border border-primary/30 px-2 text-[10px] font-label font-bold uppercase tracking-[0.2em] text-primary transition-colors hover:border-primary/60 hover:text-white" href="/blog">ES</a>
   </div>
 </header>
 
@@ -134,6 +132,23 @@
 <!-- Articles Grid -->
 <section class="px-6 max-w-7xl mx-auto pb-32">
   <div id="posts-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Card: n8n automation -->
+    <article class="article-card kinetic-border rounded-sm overflow-hidden reveal" data-categories="automatizacion">
+      <div class="p-6 flex flex-col h-full">
+        <div class="flex items-center justify-between mb-4">
+          <span class="material-symbols-outlined text-primary text-3xl">autorenew</span>
+          <span class="text-on-surface-variant/40 text-[10px] font-label uppercase tracking-widest">April 2026</span>
+        </div>
+        <div class="flex gap-2 mb-3 flex-wrap"><span class="tag">Automation</span><span class="tag">n8n</span></div>
+        <h2 class="text-white font-headline font-bold text-lg leading-snug mb-3">n8n Automation: Eliminate Repetitive Tasks and Avoid Common Mistakes</h2>
+        <p class="text-on-surface-variant text-sm font-light leading-relaxed flex-1">A practical guide to implementing n8n workflows without building brittle automations that waste time instead of saving it.</p>
+        <div class="mt-5 pt-4 border-t border-outline/30 flex items-center justify-between">
+          <span class="text-on-surface-variant/60 text-xs">6 min read</span>
+          <a href="/en/blog/automatizacion-con-n8n-elimina-las-tareas-repetitivas-y-evit" class="card-link text-primary text-xs font-label font-bold uppercase tracking-wider flex items-center gap-1">Read article <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+      </div>
+    </article>
 
     <!-- Card: Canary Islands Tourism Chatbots -->
     <article class="article-card kinetic-border rounded-sm overflow-hidden reveal" data-categories="web ia chatbots">
