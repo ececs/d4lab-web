@@ -10,6 +10,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <link href="index.tailwind.css" rel="stylesheet"/>
+<style>
+  .glass { background:rgba(17,34,64,0.7); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(100,255,218,0.1); }
+  .text-glow { text-shadow: 0 0 20px rgba(100,255,218,0.5); }
+  .blueprint-grid {
+    background-image: linear-gradient(to right, rgba(100,255,218,0.04) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(100,255,218,0.04) 1px, transparent 1px);
     background-size: 40px 40px;
   }
   .nav-item::after { content:''; display:block; width:0; height:2px; background:#64FFDA; transition:width .3s; }
