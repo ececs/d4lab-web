@@ -177,7 +177,7 @@
       </div>
       <span class="text-white font-headline font-bold tracking-tight" style="font-size:1.9rem;line-height:1"><span class="text-primary">D4</span>Lab</span>
     </a>
-    <nav class="hidden lg:flex items-center gap-10">
+    <nav class="hidden md:flex items-center gap-10">
       <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/servicios">Servicios</a>
       <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/maquetas">Maquetas</a>
       <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/guia">Guía</a>
@@ -186,10 +186,10 @@
       <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/blog">Blog</a>
       <a class="inline-flex h-7 min-w-[2.75rem] items-center justify-center rounded-sm border border-primary/30 px-2 text-[10px] font-label font-bold uppercase tracking-[0.2em] text-primary transition-colors hover:border-primary/60 hover:text-white" href="/en/">EN</a>
     </nav>
-    <a href="/contacto" class="hidden lg:inline-flex bg-primary px-6 py-2 rounded-sm text-on-primary font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all items-center gap-2">Contactar</a>
-    <button id="menu-btn" class="lg:hidden text-primary" aria-label="Menú"><span class="material-symbols-outlined text-3xl">menu</span></button>
+    <a href="/contacto" class="hidden md:inline-flex bg-primary px-6 py-2 rounded-sm text-on-primary font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all items-center gap-2">Contactar</a>
+    <button id="menu-btn" class="md:hidden text-primary" aria-label="Menú"><span class="material-symbols-outlined text-3xl">menu</span></button>
   </div>
-  <div id="mobile-menu" class="flex-col px-6 pb-6 gap-4 lg:hidden">
+  <div id="mobile-menu" class="flex-col px-6 pb-6 gap-4 md:hidden">
     <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/servicios">Servicios</a>
     <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/maquetas">Maquetas</a>
     <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/guia">Guía</a>
@@ -475,7 +475,10 @@
   </div>
   <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-primary/10 flex flex-col md:flex-row justify-between items-center gap-4">
     <p class="text-on-surface-variant text-[9px] font-headline font-bold uppercase tracking-[0.4em]">© 2026 D4Lab — Eudaldo Cal Saul.</p>
-    <a href="/sobre-mi" class="text-primary/40 text-[9px] font-headline font-bold uppercase tracking-[0.4em] hover:text-primary/70 transition-colors">Sobre mí</a>
+    <div class="flex gap-4">
+      <a href="/sobre-mi" class="text-primary/40 text-[9px] font-headline font-bold uppercase tracking-[0.4em] hover:text-primary/70 transition-colors">Sobre mí</a>
+      <a href="/politica-privacidad" class="text-primary/40 text-[9px] font-headline font-bold uppercase tracking-[0.4em] hover:text-primary transition-colors">Privacidad</a>
+    </div>
   </div>
 </footer>
 
@@ -638,5 +641,6 @@ const cntObs = new IntersectionObserver(entries => {
 document.querySelectorAll('.counter-val').forEach(el => cntObs.observe(el.closest('section') || el));
 </script>
 <script src="/chat-widget.js"></script>
+<script src="/nav-language-switch.js"></script>
 </body>
 </html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Privacy Policy | D4Lab</title>
+<meta name="description" content="Privacy Policy of D4Lab - Web Development, Apps, and IT Support."/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="canonical" href="https://www.d4lab.es/en/privacy-policy"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="../index.tailwind.css" rel="stylesheet"/>
+<style>
+  .glass { background:rgba(17,34,64,0.7); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(100,255,218,0.1); }
+  .text-glow { text-shadow: 0 0 20px rgba(100,255,218,0.5); }
+  .blueprint-grid {
+    background-image: linear-gradient(to right, rgba(100,255,218,0.04) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(100,255,218,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .nav-item::after { content:''; display:block; width:0; height:2px; background:#64FFDA; transition:width .3s; }
+  .nav-item:hover::after { width:100%; }
+  #nav-header { transition: background .3s ease, box-shadow .3s ease; }
+  #nav-header.scrolled { background:rgba(10,25,47,0.97); box-shadow:0 1px 0 rgba(100,255,218,0.1); }
+  #mobile-menu { display:none; }
+  #mobile-menu.open { display:flex; }
+  @media (min-width: 1024px) { .pt-safe { padding-top: 180px; } }
+  @media (max-width: 1023px) { .pt-safe { padding-top: 140px; } }
+</style>
+</head>
+<body class="bg-surface font-body text-on-surface overflow-x-hidden">
+
+<header id="nav-header" class="fixed top-0 left-0 right-0 z-50 glass border-b border-outline/30">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex h-20 items-center justify-between">
+    <a href="/en/" class="flex items-center gap-3 group cursor-pointer">
+      <div class="relative size-10 flex items-center justify-center">
+        <div class="absolute inset-0 border border-primary/40 rounded-sm rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+        <span class="material-symbols-outlined text-primary text-lg">terminal</span>
+      </div>
+      <span class="text-white font-headline font-bold tracking-tight" style="font-size:1.9rem;line-height:1"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-10">
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/servicios">Services</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/maquetas">Mockups</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/guia">Guide</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/sobre-mi">About me</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/precios">FAQ</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/en/blog">Blog</a>
+      <a class="inline-flex h-7 min-w-[2.75rem] items-center justify-center rounded-sm border border-primary/30 px-2 text-[10px] font-label font-bold uppercase tracking-[0.2em] text-primary transition-colors hover:border-primary/60 hover:text-white" href="/">ES</a>
+    </nav>
+    <a href="/en/contacto" class="hidden md:inline-flex bg-primary px-6 py-2 rounded-sm text-on-primary font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all items-center gap-2">Contact</a>
+    <button id="menu-btn" class="md:hidden text-primary" aria-label="Menu"><span class="material-symbols-outlined text-3xl">menu</span></button>
+  </div>
+  <div id="mobile-menu" class="flex-col px-6 pb-6 gap-4 md:hidden">
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/servicios">Services</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/maquetas">Mockups</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/guia">Guide</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/sobre-mi">About me</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/precios">FAQ</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/blog">Blog</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/en/contacto">Contact</a>
+    <a class="inline-flex h-7 min-w-[2.75rem] items-center justify-center self-start rounded-sm border border-primary/30 px-2 text-[10px] font-label font-bold uppercase tracking-[0.2em] text-primary transition-colors hover:border-primary/60 hover:text-white" href="/">ES</a>
+  </div>
+</header>
+
+<section class="relative pt-safe pb-20 px-6 min-h-screen">
+  <div class="absolute inset-0 z-0 blueprint-grid opacity-30"></div>
+  <div class="relative z-10 max-w-4xl mx-auto glass p-8 md:p-12 rounded-sm border border-primary/20">
+    <h1 class="text-4xl md:text-5xl font-headline font-bold text-white mb-8 tracking-tighter text-glow">Privacy Policy</h1>
+    
+    <div class="space-y-6 text-on-surface-variant font-light leading-relaxed">
+      <p>Last update: April 18, 2026</p>
+
+      <h2 class="text-xl font-headline font-bold text-white mt-10 uppercase tracking-widest text-[11px]">1. Data Controller</h2>
+      <p>The controller responsible for the processing of personal data collected at <strong>D4Lab</strong> is Eudaldo Cal Saúl, residing in San Isidro, Tenerife (Spain). Contact email: <a href="mailto:d4labes@gmail.com" class="text-primary underline">d4labes@gmail.com</a>.</p>
+
+      <h2 class="text-xl font-headline font-bold text-white mt-10 uppercase tracking-widest text-[11px]">2. Data We Collect</h2>
+      <p>We collect data through contact forms, subscriptions, and the use of our integrated tools. This data includes:</p>
+      <ul class="list-disc pl-5 mt-2 space-y-1">
+        <li>First and last names.</li>
+        <li>Email address.</li>
+        <li>Phone number (optional).</li>
+        <li>Public profile information (name, ID, avatar) and access tokens when using third-party integrations (LinkedIn, Google, etc.).</li>
+        <li>Any additional information voluntarily sent by the user.</li>
+      </ul>
+
+      <h2 class="text-xl font-headline font-bold text-white mt-10 uppercase tracking-widest text-[11px]">3. Purpose of Processing</h2>
+      <p>The collected data is used exclusively to:</p>
+      <ul class="list-disc pl-5 mt-2 space-y-1">
+        <li>Respond to inquiries and quote requests.</li>
+        <li>Facilitate content publication through user-authorized integrations.</li>
+        <li>Manage the business relationship and provide IT services.</li>
+        <li>Comply with legal and fiscal obligations.</li>
+      </ul>
+
+      <h2 class="text-xl font-headline font-bold text-white mt-10 uppercase tracking-widest text-[11px]">4. Legal Basis</h2>
+      <p>The legal basis for processing your data is the explicit consent provided when submitting your data via forms or by authorizing third-party applications via OAuth, as well as the execution of a contract or business relationship when applicable.</p>
+
+      <h2 class="text-xl font-headline font-bold text-white mt-10 uppercase tracking-widest text-[11px]">5. Third-Party Services & Integrations</h2>
+      <p>This website uses third-party services for its operation:</p>
+      <ul class="list-disc pl-5 mt-2 space-y-1">
+        <li><strong>Vercel / Firebase:</strong> Secure hosting and storage of session data.</li>
+        <li><strong>Social Media APIs (LinkedIn, X, etc.):</strong> If you use our publication tools, we only access profile data and publication permissions explicitly authorized by you. We do not store passwords; the connection is made via secure tokens.</li>
+        <li><strong>Google Analytics:</strong> Anonymous traffic analysis.</li>
+        <li><strong>AI APIs (Gemini/OpenAI):</strong> Data processing for content generation. Sensitive data is anonymized.</li>
+      </ul>
+
+      <h2 class="text-xl font-headline font-bold text-white mt-10 uppercase tracking-widest text-[11px]">6. Your Rights</h2>
+      <p>As a user, you have the right to:</p>
+      <ul class="list-disc pl-5 mt-2 space-y-1">
+        <li>Access your personal data.</li>
+        <li>Request rectification or deletion of your data.</li>
+        <li>Request limitation or opposition to its processing.</li>
+        <li>Data portability.</li>
+      </ul>
+      <p>To exercise these rights, you can send an email to <a href="mailto:d4labes@gmail.com" class="text-primary underline">d4labes@gmail.com</a> attaching a copy of your ID or equivalent document.</p>
+
+      <h2 class="text-xl font-headline font-bold text-white mt-10 uppercase tracking-widest text-[11px]">7. Cookies</h2>
+      <p>If you would like information on how we use cookies, you can consult our cookie settings or general browser technical documentation.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-surface-container-low py-12 px-6 border-t border-primary/10 text-center">
+  <p class="text-on-surface-variant text-[9px] font-headline font-bold uppercase tracking-[0.4em]">© 2026 D4Lab — Eudaldo Cal Saul.</p>
+  <div class="mt-4 flex justify-center gap-4">
+    <a href="/en/" class="text-primary/40 text-[9px] font-headline font-bold uppercase tracking-[0.4em] hover:text-primary transition-colors">Home</a>
+    <a href="/en/privacy-policy" class="text-primary text-[9px] font-headline font-bold uppercase tracking-[0.4em]">Privacy</a>
+  </div>
+</footer>
+
+<script>
+  const navEl = document.getElementById('nav-header');
+  window.addEventListener('scroll', () => navEl.classList.toggle('scrolled', window.scrollY > 40), { passive:true });
+  document.getElementById('menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('open'));
+</script>
+</body>
+</html>
