@@ -18,6 +18,8 @@
                       linear-gradient(to bottom, rgba(100,255,218,0.04) 1px, transparent 1px);
     background-size: 40px 40px;
   }
+  @media (min-width: 1024px) { .pt-safe { padding-top: 180px; } }
+  @media (max-width: 1023px) { .pt-safe { padding-top: 140px; } }
 </style>
 </head>
 <body class="bg-surface font-body text-on-surface overflow-x-hidden">
@@ -37,7 +39,7 @@
   </div>
 </header>
 
-<section class="relative pt-48 pb-20 px-6 min-h-screen">
+<section class="relative pt-safe pb-20 px-6 min-h-screen">
   <div class="absolute inset-0 z-0 blueprint-grid opacity-30"></div>
   <div class="relative z-10 max-w-4xl mx-auto glass p-8 md:p-12 rounded-sm border border-primary/20">
     <h1 class="text-4xl md:text-5xl font-headline font-bold text-white mb-8 tracking-tighter text-glow">Privacy Policy</h1>
