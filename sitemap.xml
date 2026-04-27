@@ -332,4 +332,14 @@
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://www.d4lab.es/blog/tenerife-tu-pyme-compite-con-gigantes-con-la-tecnologia-de-d.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.d4lab.es/en/blog/tenerife-smes-competing-with-giants-through-d4labs-tech-edge.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
