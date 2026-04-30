@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Custom Web with Next.js & Vercel: More Speed, More Clients, More Sales | D4Lab</title>
+<meta name="description" content="Imagine your website not only looking stunning but also performing like lightning, attracting more visitors and turning them into loyal customers. At d4lab.e..."/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<link rel="canonical" href="https://www.d4lab.es/blog/custom-web-with-nextjs-vercel-more-speed-more-clients-more-s"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="D4Lab"/>
+<meta property="og:locale" content="es_ES"/>
+<meta property="og:url" content="https://www.d4lab.es/blog/custom-web-with-nextjs-vercel-more-speed-more-clients-more-s"/>
+<meta property="og:title" content="Custom Web with Next.js & Vercel: More Speed, More Clients, More Sales"/>
+<meta property="og:description" content="Imagine your website not only looking stunning but also performing like lightning, attracting more visitors and turning them into loyal customers. At d4lab.e..."/>
+<meta property="og:image" content="https://www.d4lab.es/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Custom Web with Next.js & Vercel: More Speed, More Clients, More Sales"/>
+<meta name="twitter:description" content="Imagine your website not only looking stunning but also performing like lightning, attracting more visitors and turning them into loyal customers. At d4lab.e..."/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Custom Web with Next.js & Vercel: More Speed, More Clients, More Sales",
+  "description": "Imagine your website not only looking stunning but also performing like lightning, attracting more visitors and turning them into loyal customers. At d4lab.e...",
+  "url": "https://www.d4lab.es/blog/custom-web-with-nextjs-vercel-more-speed-more-clients-more-s",
+  "datePublished": "2026-04-30",
+  "author": {"@type": "Person", "name": "Eudaldo Cal Saul", "url": "https://www.d4lab.es/sobre-mi"},
+  "publisher": {"@type": "Organization", "name": "D4Lab", "url": "https://www.d4lab.es"}
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="/blog/base.css" rel="stylesheet"/>
+<style>
+  .glass { background:rgba(17,34,64,0.7); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(100,255,218,0.1); }
+  .nav-item::after { content:''; display:block; width:0; height:2px; background:#64FFDA; transition:width .3s; }
+  .nav-item:hover::after { width:100%; }
+  #nav-header.scrolled { background:rgba(10,25,47,0.97); box-shadow:0 1px 0 rgba(100,255,218,0.1); }
+  #mobile-menu { display:none; }
+  #mobile-menu.open { display:flex; }
+  .tag { display:inline-flex; align-items:center; padding:2px 8px; background:rgba(100,255,218,0.08); border:1px solid rgba(100,255,218,0.2); border-radius:2px; font-size:9px; font-family:'Space Grotesk',sans-serif; font-weight:700; color:#64FFDA; letter-spacing:0.15em; text-transform:uppercase; }
+  .prose-article h2 { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.4rem; color:#ccd6f6; margin-top:2.5rem; margin-bottom:1rem; }
+  .prose-article h3 { font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:1.1rem; color:#64FFDA; margin-top:1.8rem; margin-bottom:0.6rem; }
+  .prose-article p { color:#8892b0; line-height:1.85; margin-bottom:1.2rem; font-size:0.97rem; }
+  .prose-article ul { list-style:none; padding:0; margin-bottom:1.4rem; }
+  .prose-article ul li { color:#8892b0; padding-left:1.4rem; position:relative; margin-bottom:0.5rem; font-size:0.97rem; line-height:1.7; }
+  .prose-article ul li::before { content:'▹'; color:#64FFDA; position:absolute; left:0; }
+  .prose-article strong { color:#ccd6f6; font-weight:600; }
+  .prose-article .callout { background:rgba(100,255,218,0.05); border-left:3px solid #64FFDA; padding:1rem 1.2rem; border-radius:0 4px 4px 0; margin:1.5rem 0; }
+  .prose-article .callout p { margin:0; }
+  body { background-color: #0a192f; }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body">
+
+<!-- NAV -->
+<header id="nav-header" class="fixed top-0 left-0 right-0 z-50 glass border-b border-outline/30 transition-all">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex h-20 items-center justify-between">
+    <a href="/" class="flex items-center gap-3 group">
+      <div class="relative size-10 flex items-center justify-center">
+        <div class="absolute inset-0 border border-primary/40 rounded-sm rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+        <span class="material-symbols-outlined text-primary text-lg">terminal</span>
+      </div>
+      <span class="text-white text-xl font-headline font-bold tracking-tight"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-10">
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/servicios">Servicios</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/maquetas">Maquetas</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/guia">Guía</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/sobre-mi">Sobre mí</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/precios">FAQ</a>
+      <a class="nav-item text-on-surface-variant text-xs font-label font-bold hover:text-primary transition-colors uppercase tracking-[0.2em]" href="/blog">Blog</a>
+      <a class="inline-flex h-7 min-w-[2.75rem] items-center justify-center rounded-sm border border-primary/30 px-2 text-[10px] font-label font-bold uppercase tracking-[0.2em] text-primary transition-colors hover:border-primary/60 hover:text-white" href="/en/blog/custom-web-with-nextjs-vercel-more-speed-more-clients-more-s">EN</a>
+    </nav>
+    <a href="/contacto" class="hidden md:inline-flex bg-primary px-6 py-2 rounded-sm text-on-primary font-headline font-bold text-[10px] uppercase tracking-[0.2em] hover:brightness-110 transition-all items-center gap-2">Contactar</a>
+    <button id="menu-btn" class="md:hidden text-primary" aria-label="Menú"><span class="material-symbols-outlined text-3xl">menu</span></button>
+  </div>
+  <div id="mobile-menu" class="flex-col px-6 pb-6 gap-4 md:hidden">
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/servicios">Servicios</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/maquetas">Maquetas</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/guia">Guía</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/sobre-mi">Sobre mí</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/precios">FAQ</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/blog">Blog</a>
+    <a class="text-on-surface-variant text-sm font-label font-bold uppercase tracking-[0.2em] hover:text-primary" href="/contacto">Contacto</a>
+    <a class="inline-flex h-7 min-w-[2.75rem] items-center justify-center self-start rounded-sm border border-primary/30 px-2 text-[10px] font-label font-bold uppercase tracking-[0.2em] text-primary transition-colors hover:border-primary/60 hover:text-white" href="/en/blog/custom-web-with-nextjs-vercel-more-speed-more-clients-more-s">EN</a>
+  </div>
+</header>
+
+<!-- Article Header -->
+<section class="pt-32 pb-12 px-6 border-b border-primary/10">
+  <div class="max-w-3xl mx-auto">
+    <div class="flex items-center gap-2 text-on-surface-variant/60 text-xs font-label uppercase tracking-wider mb-6">
+      <a href="/blog" class="hover:text-primary transition-colors">Blog</a>
+      <span class="material-symbols-outlined text-xs">chevron_right</span>
+      <span class="text-on-surface-variant">Web Development</span>
+    </div>
+    <div class="flex gap-2 flex-wrap mb-4">
+      <span class="tag">Web Development</span>
+    </div>
+    <h1 class="text-3xl md:text-5xl font-headline font-bold text-white tracking-tight leading-tight mb-6">Custom Web with Next.js & Vercel: More Speed, More Clients, More Sales</h1>
+    <p class="text-on-surface-variant text-lg font-light leading-relaxed mb-8">Imagine your website not only looking stunning but also performing like lightning, attracting more visitors and turning them into loyal customers. At d4lab.e...</p>
+    <div class="flex items-center gap-4 text-on-surface-variant/60 text-xs font-label uppercase tracking-wider">
+      <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">person</span> Eudaldo Cal Saul</span>
+      <span>·</span>
+      <span>April 2026</span>
+      <span>·</span>
+      <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 6 min lectura</span>
+    </div>
+  </div>
+</section>
+
+<!-- Article Body -->
+<article class="max-w-3xl mx-auto px-6 py-12 prose-article">
+<p>Imagine your website not only looking stunning but also performing like lightning, attracting more visitors and turning them into loyal customers. At d4lab.es, we've witnessed this vision become a reality for businesses like yours, thanks to a winning combination: Next.js and Vercel.</p>
+<h2>A Client's Challenge: Optimizing the Digital Experience</h2>
+<p>We recently worked with "Sol y Sabor," a charming café in southern Tenerife, renowned for its excellent coffee and relaxed atmosphere. Despite its local reputation, its online presence left much to be desired. Their old website, built on a generic platform, was slow, unintuitive, and didn't reflect the quality and charm of the establishment. This translated into:</p>
+<ul><li>  Few online reservations.</li>
+<li>  Difficulty showcasing their updated menu.</li>
+<li>  Poor local search rankings.</li>
+<li>  A frustrating user experience, especially on mobile devices.</li>
+</ul>
+The Sol y Sabor team knew their website was their digital storefront, but it wasn't living up to its potential. They needed a solution that would not only enhance their image but also directly impact their business: more customers and, consequently, more sales.
+<h2>The Solution: Next.js and Vercel to the Rescue</h2>
+<p>We perfectly understood their needs. For Sol y Sabor, and for many other businesses looking to stand out in Tenerife's competitive digital market, the answer lay in a custom-built website, powered by cutting-edge technologies. This is where the synergy between Next.js and Vercel comes into play.</p>
+<h3>What is Next.js and Why is it Key?</h3>
+<p>Next.js is a React framework that enables the creation of fast, scalable web applications with an exceptional developer experience. Unlike other solutions, Next.js is designed from the ground up for performance optimization and user experience.</p>
+<ul><li>  <strong>Hybrid Rendering (SSR, SSG, ISR):</strong> Next.js offers flexibility to render pages on the server (SSR), statically generate them at build time (SSG), or even incrementally (ISR). This means your website loads almost instantly, regardless of its complexity or content. For Sol y Sabor, this translated into an instantly loading menu and a site that felt agile at all times.</li>
+<li>  <strong>Image Optimization:</strong> Heavy image loading is the enemy of speed. Next.js includes an image optimization component that resizes and serves images in modern, efficient formats, drastically improving load times – crucial for showcasing their delicious dishes.</li>
+<li>  <strong>File-based Routing:</strong> Simplifies route creation and code organization, allowing our team to develop more efficiently.</li>
+<li>  <strong>Integrated API Routes:</strong> Enables creating API endpoints directly within the Next.js project, facilitating integration with external services or building custom functionalities, like a simplified reservation system.</li>
+</ul>
+<h3>Vercel: The Perfect Home for Your Website</h3>
+<p>If Next.js is the engine, Vercel is the high-speed highway. Vercel is a deployment and hosting platform specifically optimized for Next.js applications. Its global infrastructure and focus on delivery speed make a massive difference.</p>
+<ul><li>  <strong>Continuous Deployment:</strong> Every time we make a change or add a new feature, Vercel automatically deploys the updated version of the website without interruption.</li>
+<li>  <strong>Global CDN:</strong> Vercel uses a Content Delivery Network (CDN) distributed worldwide. This means your website is served from the server closest to your visitors, guaranteeing ultra-fast load times, no matter where they are. For Sol y Sabor, this ensured that both tourists from Las Palmas and locals from Adeje had a smooth experience.</li>
+<li>  <strong>Optimized Performance:</strong> Vercel is built to maximize the performance of Next.js applications, delivering exceptional Google Core Web Vitals metrics, which directly translate into better SEO.</li>
+<li>  <strong>Security and Scalability:</strong> The platform handles security and automatically scales according to traffic, freeing us from technical worries.</li>
+</ul>
+<h2>The Impact on Sol y Sabor: Speed, Clients, and Sales</h2>
+<p>The digital transformation of Sol y Sabor was remarkable. By migrating to a website built with Next.js and hosted on Vercel, the results were immediate:</p>
+<ul><li>  <strong>Improved Load Speed:</strong> The site's pages, including the interactive menu and photo gallery, went from loading in several seconds to under one second. Google Core Web Vitals metrics showed significant improvement.</li>
+<li>  <strong>Increase in Organic Traffic:</strong> Performance optimization and a better user experience boosted Sol y Sabor's ranking in local Google searches. More people found the café when searching for "café in [their area]" or "best coffee Tenerife."</li>
+<li>  <strong>Rise in Online Reservations:</strong> The new website was intuitive and easy to use. The online reservation process was simplified, resulting in a 25% increase in website reservations within the first month.</li>
+<li>  <strong>Enhanced Conversion Rate:</strong> Visitors spent more time on the site, explored the menu and promotions, and were more inclined to visit the café or make a reservation. The bounce rate decreased drastically.</li>
+<li>  <strong>Flawless Mobile Experience:</strong> With a significant portion of traffic coming from mobile devices, the mobile-optimized web design of Next.js and Vercel ensured that every user, regardless of their device, had a positive and frictionless experience.</li>
+</ul>
+<h2>Ready for Your Digital Boost?</h2>
+<p>At d4lab.es, we specialize in creating custom web solutions that drive business growth. The combination of Next.js and Vercel allows us to deliver a website that is not only aesthetically appealing but also a powerful engine for generating clients and sales. If you're looking to enhance your online presence, increase your visibility, and optimize your conversions, you've come to the right place.</p>
+<p><strong>Don't wait any longer to take your business to the next digital level! Contact us today for a free consultation and discover how a custom website can transform your company.</strong></p>
+<p>Visit d4lab.es to get started.</p>
+</article>
+
+<!-- CTA -->
+<section class="py-16 px-6 bg-surface-container-low border-t border-primary/10">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-2xl md:text-3xl font-headline font-bold text-white tracking-tight mb-4">¿Quieres saber qué solución encaja con tu negocio?</h2>
+    <p class="text-on-surface-variant font-light mb-8">Analizamos tu situación, identificamos qué tecnología tiene más impacto y lo implementamos. Sin compromisos, sin tecnicismos innecesarios.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/contacto" class="bg-primary text-on-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs shadow-xl shadow-primary/20 hover:brightness-110 transition-all inline-flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">mail</span>
+        Contactar ahora
+      </a>
+      <a href="/servicios" class="border border-primary/30 text-primary px-10 py-4 rounded-sm font-headline font-bold uppercase tracking-[0.2em] text-xs hover:bg-primary/5 transition-all inline-flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">build</span>
+        Ver servicios
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-surface-container-low py-12 px-6 border-t border-primary/10">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <a href="/" class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary">terminal</span>
+      <span class="text-white font-headline font-bold"><span class="text-primary">D4</span>Lab</span>
+    </a>
+    <nav class="flex flex-wrap gap-6 text-on-surface-variant text-xs font-label font-bold uppercase tracking-[0.2em]">
+      <a href="/" class="hover:text-primary transition-colors">Inicio</a>
+      <a href="/servicios" class="hover:text-primary transition-colors">Servicios</a>
+      <a href="/sobre-mi" class="hover:text-primary transition-colors">Sobre mí</a>
+      <a href="/precios" class="hover:text-primary transition-colors">FAQ</a>
+      <a href="/blog" class="hover:text-primary transition-colors">Blog</a>
+      <a href="/contacto" class="hover:text-primary transition-colors">Contacto</a>
+    </nav>
+    <p class="text-on-surface-variant text-[9px] font-headline uppercase tracking-[0.3em]">© 2026 D4Lab</p>
+  </div>
+</footer>
+<script>
+  const nav = document.getElementById('nav-header');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+  document.getElementById('menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('open'));
+</script>
+<script src="/chat-widget.js"></script>
+<script src="/nav-language-switch.js"></script>
+</body>
+</html>
