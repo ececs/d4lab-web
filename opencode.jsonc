@@ -1,0 +1,18 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "n8n-mcp": {
+      "type": "local",
+      "command": ["/opt/homebrew/bin/npx", "n8n-mcp"],
+      "enabled": true,
+      "environment": {
+        "PATH": "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin",
+        "MCP_MODE": "stdio",
+        "LOG_LEVEL": "error",
+        "DISABLE_CONSOLE_OUTPUT": "true",
+        "N8N_API_URL": "http://192.168.31.199:5678",
+        "N8N_API_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0YmNjMWU1Mi1jZjk4LTQyMWQtODAzZi1kNjQ0OWU1NTYxZjMiLCJpc3MiOiJuOG4iLCJhdWQiOiJwdWJsaWMtYXBpIiwianRpIjoiZjdhNjQ3ZGMtNTFjOS00NTU3LTlkOGMtOTEzMDI1ZTM2YjY1IiwiaWF0IjoxNzc4Mjg4NjU3fQ.ymD0lRpRvGRzySEQzdpOLCDj4azJQr4QiyrUVwASL9A"
+      }
+    }
+  }
+}
