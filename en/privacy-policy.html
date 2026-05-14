@@ -134,5 +134,11 @@
   window.addEventListener('scroll', () => navEl.classList.toggle('scrolled', window.scrollY > 40), { passive:true });
   document.getElementById('menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('open'));
 </script>
+<script>
+  window.si = window.si || function () { 
+    (window.siq = window.siq || []).push(arguments); 
+  };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
