@@ -123,7 +123,23 @@ function escapeHtml(value) {
   return String(value || '')
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function safeUrl(url) {
+  if (!url) return '';
+  const u = String(url).trim();
+  return /^(https?:\/\/)/i.test(u) ? escapeHtml(u) : '#';
+}
+
+function sanitizePromptInput(val, maxLength = 100) {
+  return String(val || '')
+    .replace(/[\r\n\t]/g, ' ')
+    .replace(/[#\[\]{}<>|\\\/]/g, '')
+    .trim()
+    .substring(0, maxLength);
 }
 
 function isValidEmail(value) {
@@ -208,7 +224,7 @@ function buildInternalEmailHtml(messages, summary, fecha) {
         ${summary.maqueta_categoria ? `<tr><td style="color:#8892b0;font-size:12px;padding:5px 0;vertical-align:top">Categoría</td><td style="color:#ccd6f6;font-size:14px;padding:5px 0">${summary.maqueta_categoria}</td></tr>` : ''}
         ${summary.maqueta_estilo ? `<tr><td style="color:#8892b0;font-size:12px;padding:5px 0;vertical-align:top">Estilo</td><td style="color:#ccd6f6;font-size:14px;padding:5px 0">${summary.maqueta_estilo}</td></tr>` : ''}
         ${summary.maqueta_descripcion ? `<tr><td style="color:#8892b0;font-size:12px;padding:5px 0;vertical-align:top">Referencia</td><td style="color:#ccd6f6;font-size:14px;padding:5px 0">${summary.maqueta_descripcion}</td></tr>` : ''}
-        ${summary.maqueta_preview_url ? `<tr><td style="color:#8892b0;font-size:12px;padding:5px 0;vertical-align:top">Preview</td><td style="padding:5px 0"><a href="${summary.maqueta_preview_url}" style="color:#64FFDA;font-size:13px;text-decoration:underline">${summary.maqueta_preview_url}</a></td></tr>` : ''}
+        ${summary.maqueta_preview_url ? `<tr><td style="color:#8892b0;font-size:12px;padding:5px 0;vertical-align:top">Preview</td><td style="padding:5px 0"><a href="${safeUrl(summary.maqueta_preview_url)}" style="color:#64FFDA;font-size:13px;text-decoration:underline">${escapeHtml(summary.maqueta_preview_url)}</a></td></tr>` : ''}
       </table>
     </div>` : ''}
 
@@ -415,8 +431,17 @@ async function sendBudgetEmail(messages, summary, locale) {
 
 // Handler principal de la función serverless
 module.exports = async function handler(req, res) {
-  // CORS — permite llamadas desde cualquier origen (la web es estática en el mismo dominio)
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  // CORS — restringido a dominios oficiales y entorno local
+  const allowedOrigins = [
+    'https://d4lab.es',
+    'https://www.d4lab.es'
+  ];
+  const origin = req.headers.origin;
+  if (origin && (allowedOrigins.includes(origin) || origin.startsWith('http://localhost:') || origin.startsWith('http://127.0.0.1:'))) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  } else {
+    res.setHeader('Access-Control-Allow-Origin', 'https://d4lab.es');
+  }
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
@@ -433,7 +458,7 @@ module.exports = async function handler(req, res) {
   }
 
   const selectedTemplateContext = selectedTemplate && selectedTemplate.name
-    ? `\n\n## MAQUETA ELEGIDA POR EL CLIENTE\n- Nombre: ${selectedTemplate.name}\n- Categoría: ${selectedTemplate.category || 'No especificada'}\n- Estilo: ${selectedTemplate.style || 'No especificado'}\n- Descripción: ${selectedTemplate.description || 'No especificada'}\n- Fuente: ${selectedTemplate.source || 'No especificada'}\n- Preview: ${selectedTemplate.previewUrl || 'No disponible'}\n\nSi el usuario pide presupuesto web o app, ten en cuenta esta maqueta como referencia visual y funcional.`
+    ? `\n\n## MAQUETA ELEGIDA POR EL CLIENTE\n- Nombre: ${sanitizePromptInput(selectedTemplate.name)}\n- Categoría: ${sanitizePromptInput(selectedTemplate.category || 'No especificada')}\n- Estilo: ${sanitizePromptInput(selectedTemplate.style || 'No especificado')}\n- Descripción: ${sanitizePromptInput(selectedTemplate.description || 'No especificada')}\n- Fuente: ${sanitizePromptInput(selectedTemplate.source || 'No especificada')}\n- Preview: ${safeUrl(selectedTemplate.previewUrl || 'No disponible')}\n\nSi el usuario pide presupuesto web o app, ten en cuenta esta maqueta como referencia visual y funcional.`
     : '';
 
   const localeContext = String(locale || '').toLowerCase().startsWith('en')
