@@ -502,4 +502,14 @@
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://www.d4lab.es/blog/agente-ia-247-evita-estos-5-errores-comunes-y-triunfa.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.d4lab.es/en/blog/ai-agent-247-dodge-these-5-common-mistakes-win-big.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
