@@ -722,4 +722,14 @@
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://www.d4lab.es/blog/tu-asistente-ia-el-empleado-fantastico-que-no-pide-vacacione.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.d4lab.es/en/blog/your-ai-assistant-the-fantastic-employee-who-never-takes-vac.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
