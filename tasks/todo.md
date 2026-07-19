@@ -6,3 +6,4 @@
 - [x] Fix heading level skip issue in footers of [index.html](file:///Users/daldo/VsCode/Pagina%20servicios/index.html) and [en/index.html](file:///Users/daldo/VsCode/Pagina%20servicios/en/index.html).
 - [x] Rebuild CSS styles using `npm run build`.
 - [x] Commit and push changes to trigger automated preview deployment.
+- [x] Upgrade Node.js engine version to 24.x in [package.json](file:///Users/daldo/VsCode/Pagina%20servicios/package.json) to match Vercel settings.
