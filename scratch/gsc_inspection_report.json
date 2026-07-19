@@ -1,0 +1,397 @@
+{
+  "summary": {
+    "total_urls": 193,
+    "processed": 27,
+    "indexed": 12,
+    "blocked_by_robots": 0,
+    "unrecognized": 5,
+    "other": 10
+  },
+  "blocked": [],
+  "unrecognized": [
+    {
+      "url": "https://www.d4lab.es/sobre-mi",
+      "verdict": "NEUTRAL",
+      "coverageState": "Google no reconoce esta URL",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "https://www.d4lab.es/precios",
+      "verdict": "NEUTRAL",
+      "coverageState": "Google no reconoce esta URL",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "https://www.d4lab.es/politica-privacidad",
+      "verdict": "NEUTRAL",
+      "coverageState": "Google no reconoce esta URL",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "https://www.d4lab.es/en/guia",
+      "verdict": "NEUTRAL",
+      "coverageState": "Google no reconoce esta URL",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "https://www.d4lab.es/en/contacto",
+      "verdict": "NEUTRAL",
+      "coverageState": "Google no reconoce esta URL",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    }
+  ],
+  "indexed": [
+    {
+      "url": "https://www.d4lab.es/",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/servicios",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog/automatizacion-contenido-redes",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog/automatizacion-redes-sociales",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog/chatbot-ia-web",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog/dashboard-datos",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog/domotica-inicio",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog/guia-automatizaciones-segun-negocio",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog/guia-web-segun-negocio",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog/ia-negocios",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog/mantenimiento-pc",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    }
+  ],
+  "other": [
+    {
+      "url": "https://www.d4lab.es/maquetas",
+      "verdict": "NEUTRAL",
+      "coverageState": "Descubierta: actualmente sin indexar",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "https://www.d4lab.es/guia",
+      "verdict": "NEUTRAL",
+      "coverageState": "Descubierta: actualmente sin indexar",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "https://www.d4lab.es/contacto",
+      "verdict": "NEUTRAL",
+      "coverageState": "Descubierta: actualmente sin indexar",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "https://www.d4lab.es/en/",
+      "verdict": "NEUTRAL",
+      "coverageState": "Página con redirección",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/en/servicios",
+      "verdict": "NEUTRAL",
+      "coverageState": "Descubierta: actualmente sin indexar",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "https://www.d4lab.es/en/maquetas",
+      "verdict": "NEUTRAL",
+      "coverageState": "Descubierta: actualmente sin indexar",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "https://www.d4lab.es/en/blog",
+      "verdict": "NEUTRAL",
+      "coverageState": "Rastreada: actualmente sin indexar",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/en/sobre-mi",
+      "verdict": "NEUTRAL",
+      "coverageState": "Descubierta: actualmente sin indexar",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "https://www.d4lab.es/en/precios",
+      "verdict": "NEUTRAL",
+      "coverageState": "Rastreada: actualmente sin indexar",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog/automatizacion-procesos",
+      "verdict": "NEUTRAL",
+      "coverageState": "Rastreada: actualmente sin indexar",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    }
+  ],
+  "all_results": [
+    {
+      "url": "https://www.d4lab.es/",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/servicios",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/maquetas",
+      "verdict": "NEUTRAL",
+      "coverageState": "Descubierta: actualmente sin indexar",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "https://www.d4lab.es/guia",
+      "verdict": "NEUTRAL",
+      "coverageState": "Descubierta: actualmente sin indexar",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/sobre-mi",
+      "verdict": "NEUTRAL",
+      "coverageState": "Google no reconoce esta URL",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "https://www.d4lab.es/precios",
+      "verdict": "NEUTRAL",
+      "coverageState": "Google no reconoce esta URL",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "https://www.d4lab.es/contacto",
+      "verdict": "NEUTRAL",
+      "coverageState": "Descubierta: actualmente sin indexar",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "https://www.d4lab.es/politica-privacidad",
+      "verdict": "NEUTRAL",
+      "coverageState": "Google no reconoce esta URL",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "https://www.d4lab.es/en/",
+      "verdict": "NEUTRAL",
+      "coverageState": "Página con redirección",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/en/servicios",
+      "verdict": "NEUTRAL",
+      "coverageState": "Descubierta: actualmente sin indexar",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "https://www.d4lab.es/en/maquetas",
+      "verdict": "NEUTRAL",
+      "coverageState": "Descubierta: actualmente sin indexar",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "https://www.d4lab.es/en/guia",
+      "verdict": "NEUTRAL",
+      "coverageState": "Google no reconoce esta URL",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "https://www.d4lab.es/en/blog",
+      "verdict": "NEUTRAL",
+      "coverageState": "Rastreada: actualmente sin indexar",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/en/sobre-mi",
+      "verdict": "NEUTRAL",
+      "coverageState": "Descubierta: actualmente sin indexar",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "https://www.d4lab.es/en/precios",
+      "verdict": "NEUTRAL",
+      "coverageState": "Rastreada: actualmente sin indexar",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/en/contacto",
+      "verdict": "NEUTRAL",
+      "coverageState": "Google no reconoce esta URL",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog/automatizacion-contenido-redes",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog/automatizacion-procesos",
+      "verdict": "NEUTRAL",
+      "coverageState": "Rastreada: actualmente sin indexar",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog/automatizacion-redes-sociales",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog/chatbot-ia-web",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog/dashboard-datos",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog/domotica-inicio",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog/guia-automatizaciones-segun-negocio",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog/guia-web-segun-negocio",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog/ia-negocios",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "https://www.d4lab.es/blog/mantenimiento-pc",
+      "verdict": "PASS",
+      "coverageState": "Enviada e indexada",
+      "robotsTxtState": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED"
+    }
+  ]
+}
