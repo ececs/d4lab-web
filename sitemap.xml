@@ -1092,4 +1092,14 @@
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://www.d4lab.es/blog/revoluciona-tu-hotel-en-canarias-chatbots-multilingues-que-c.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.d4lab.es/en/blog/canary-islands-tourism-unlock-growth-with-multilingual-ai-ch.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
