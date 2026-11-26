@@ -1132,4 +1132,14 @@
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://www.d4lab.es/blog/nextjs-y-vercel-la-formula-secreta-para-un-crecimiento-digit.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.d4lab.es/en/blog/nextjs-vercel-the-engine-driving-business-growth-in-the-digi.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
